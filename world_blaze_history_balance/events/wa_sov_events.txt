@@ -1,0 +1,5508 @@
+add_namespace = sov_armor
+
+country_event = {
+	id = sov_armor.001
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_tech = sov_motorised_infantry
+	}
+
+	immediate = {
+		set_country_flag = motorized_template_sov
+		set_country_flag = infantry_template_sov
+
+		division_template = {
+			name = "Soviet Rifle Division"
+			division_names_group = SOV_INF_01
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+				heavy_infantry = { x = 0 y = 3 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				anti_tank_brigade = { x = 3 y = 2 }
+				anti_tank_brigade = { x = 3 y = 3 }
+
+				anti_tank_brigade = { x = 4 y = 0 }
+				anti_tank_brigade = { x = 4 y = 1 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				horse_logistics_company = { x = 0 y = 1 }
+				heavy_artillery = { x = 0 y = 2 }
+
+				recon = { x = 1 y = 0 }
+				military_police = { x = 1 y = 1 }
+				anti_air = { x = 1 y = 2 }
+				anti_tank = { x = 1 y = 3 }
+			}
+		}
+		division_template = {
+			name = "Soviet Shock Division"
+			division_names_group = SOV_GRD_01
+			priority = 2
+
+			regiments = {
+				mountaineers = { x = 0 y = 0 }
+				mountaineers = { x = 0 y = 1 }
+				mountaineers = { x = 0 y = 2 }
+
+				mountaineers = { x = 1 y = 0 }
+				mountaineers = { x = 1 y = 1 }
+				mountaineers = { x = 1 y = 2 }
+
+				mountaineers = { x = 2 y = 0 }
+				mountaineers = { x = 2 y = 1 }
+				mountaineers = { x = 2 y = 2 }
+
+				anti_tank_brigade = { x = 3 y = 0 }
+				anti_tank_brigade = { x = 3 y = 1 }
+				anti_tank_brigade = { x = 3 y = 2 }
+
+				artillery_brigade = { x = 4 y = 0 }
+				artillery_brigade = { x = 4 y = 1 }
+				artillery_brigade = { x = 4 y = 2 }
+			}
+
+			support = {
+				shock_division_hq = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				anti_tank = { x = 0 y = 4 }
+				
+				armoured_recon = { x = 1 y = 0 }
+				engineer = { x = 1 y = 1 }
+				heavy_artillery = { x = 1 y = 2 }
+				maintenance_company = { x = 1 y = 3 }
+			}
+		}
+		division_template = {
+			name = "Soviet Light Tank Division"
+			division_names_group = SOV_ARM_01
+			template_counter = 137
+			priority = 1
+
+			regiments = {
+				light_armor = { x = 0 y = 0 }
+				light_armor = { x = 0 y = 1 }
+				light_armor = { x = 0 y = 2 }
+
+				light_armor = { x = 1 y = 0 }
+				light_armor = { x = 1 y = 1 }
+				light_armor = { x = 1 y = 2 }
+				light_armor = { x = 1 y = 3 }
+
+				light_armor = { x = 2 y = 0 }
+				light_armor = { x = 2 y = 1 }
+				light_armor = { x = 2 y = 2 }
+
+				motorized = { x = 3 y = 0 }
+				motorized = { x = 3 y = 1 }
+				motorized = { x = 3 y = 2 }
+				motorized = { x = 3 y = 3 }
+				motorized = { x = 3 y = 4 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				infantry_support = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_maintenance_company = { x = 1 y = 1 }
+				military_police = { x = 1 y = 2 }
+				heavy_artillery = { x = 1 y = 3 }
+				anti_tank = { x = 1 y = 4 }
+			}
+		}
+		division_template = {
+			name = "Soviet Garrison Division"
+			division_names_group = SOV_GAR_01
+			obsolete = yes
+			regiments = {
+				cavalry = { x = 0 y = 0 }
+				cavalry = { x = 0 y = 1 }
+				cavalry = { x = 0 y = 2 }
+
+				cavalry = { x = 1 y = 0 }
+				cavalry = { x = 1 y = 1 }
+				cavalry = { x = 1 y = 2 }
+			}
+			support = {
+				military_police = { x = 0 y = 0 }
+			}
+			priority = 0
+		}
+		delete_unit_template_and_units = {
+			division_template = "Mekhanizirovaniy Korpus"
+			disband = yes
+		}
+		#delete_unit_template_and_units = {
+		#	division_template = "Tankovaya brigada"
+		#	disband = yes
+		#}
+		delete_unit_template_and_units = {
+			division_template = "Gornostrelkovaya Diviziya"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Sredniy Korpus"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Tyazhelyy Korpus"
+			disband = yes
+		}
+		219 = {
+			create_unit = {
+				division = "division_template = \"Soviet Light Tank Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
+				owner = SOV
+				count = 24
+			}
+		}
+		219 = {
+			create_unit = {
+				division = "division_template = \"Soviet Shock Division\" start_experience_factor = 0.6 start_equipment_factor = 0.1"
+				owner = SOV
+				count = 12
+			}
+		}
+		set_country_flag = medium_armor_template_0_sov
+		set_country_flag = sov_infantry_template
+
+		SOV_georgy_zhukov = {
+			promote_leader = yes
+		}
+		SOV_aleksandr_vasilevsky = {
+			promote_leader = yes
+		}
+		SOV_konstantin_rokossovsky = {
+			promote_leader = yes
+		}
+		SOV_vasily_kuznetsov = {
+			promote_leader = yes
+		}
+		SOV_nikolay_vatutin = {
+			promote_leader = yes
+		}
+		SOV_semyon_timoshenko = {
+			promote_leader = yes
+		}
+		SOV_andrey_yeryomenko = {
+			promote_leader = yes
+		}
+	}
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.002
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_template = "Soviet Medium Tank Division"
+	}
+
+	immediate = {
+		delete_units = {
+			division_template = "Soviet Light Tank Division"
+			disband = yes
+		}
+	}
+	option = {}
+}
+
+#country_event = {
+#	id = sov_armor.003
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = SOV
+#		is_ai = yes
+#		has_tech = sov_mechanized_infantry_4
+#	}
+#
+#	immediate = {
+#		set_country_flag = mechanized_template_sov
+#
+#		division_template = {
+#			name = "Soviet Mechanized Division"
+#			division_names_group = SOV_MEC_01
+#			template_counter = 136
+#			priority = 1
+#
+#			regiments = {
+#				mechanized = { x = 0 y = 0}
+#				mechanized = { x = 0 y = 1}
+#				motorized_rocket_brigade = { x = 0 y = 2}
+#
+#				mechanized = { x = 1 y = 0}
+#				mechanized = { x = 1 y = 1}
+#				motorized_rocket_brigade = { x = 1 y = 2}
+#				scout_car = { x = 1 y = 3}
+#
+#				mechanized = { x = 2 y = 0 }
+#				mechanized = { x = 2 y = 1 }
+#				motorized_heavy_artillery_brigade = { x = 2 y = 2}
+#
+#				mechanized = { x = 3 y = 0 }
+#				mechanized = { x = 3 y = 1 }
+#				motorized_heavy_anti_tank_brigade = { x = 3 y = 2}
+#
+#				mechanized = { x = 4 y = 0 }
+#				mechanized = { x = 4 y = 1 }
+#				mechanized_anti_air_brigade = { x = 4 y = 2}
+#			}
+#
+#			support = {
+#				engineer = { x = 0 y = 0 }
+#				motorized_logistics_company = { x = 0 y = 1 }
+#				heavy_artillery = { x = 0 y = 2 }
+#				mot_maintenance_company = { x = 0 y = 3 }
+#				signal_company = { x = 0 y = 4 }
+#
+#				mobile_recon = { x = 1 y = 0 }
+#				field_hospital = { x = 1 y = 1 }
+#				anti_air = { x = 1 y = 2 }
+#			}
+#		}
+#	}
+#	option = {}
+#}
+
+########## Matching Template
+
+country_event = {
+	id = sov_armor.004
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			has_tech = sov_medium_tank_chassis_3
+			has_tech = sov_medium_tank_spg_2
+		}
+		else = {
+			has_tech = sov_medium_3
+		}
+	}
+
+	immediate = {
+
+		division_template = {
+			name = "Soviet Medium Tank Division"
+			division_names_group = SOV_ARM_01
+			template_counter = 139
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+				medium_armor = { x = 1 y = 3 }
+
+				medium_armor = { x = 2 y = 0 }
+				medium_armor = { x = 2 y = 1 }
+				medium_armor = { x = 2 y = 2 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				anti_tank = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_maintenance_company = { x = 1 y = 1 }
+				military_police = { x = 1 y = 2 }
+				heavy_artillery = { x = 1 y = 3 }
+				heavy_anti_air = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+############## Modern Armor
+
+country_event = {
+	id = sov_armor.007
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_tech = sov_modern_tank_chassis_1
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			OR = {
+				has_tech = sov_modern_tank_td_1
+				date > 1945.7.1
+			}
+		}
+		else = {
+			has_tech = sov_modern_td_1
+		}
+	}
+
+	immediate = {
+		set_country_flag = modern_armor_template_1_sov
+		division_template = {
+			name = "Soviet Modern Tank Division"
+			division_names_group = SOV_ARM_01
+			template_counter = 141
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+				heavy_armor = { x = 0 y = 3 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+
+				modern_armor = { x = 2 y = 0 }
+				modern_armor = { x = 2 y = 1 }
+				modern_armor = { x = 2 y = 2 }
+				heavy_armor = { x = 2 y = 3 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+
+				modern_tank_destroyer_brigade = { x = 4 y = 0 }
+			}
+
+			support = {
+				armored_engineer_modern = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				heavy_assault = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_maintenance_company_modern = { x = 1 y = 1 }
+				light_sp_anti_air = { x = 1 y = 2 }
+				modern_tank_destroyer = { x = 1 y = 3 }
+				motorized_rocket = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.008
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			OR = {
+				AND = {
+					has_tech = sov_modern_tank_td_3
+					has_tech = sov_modern_tank_aa_3
+				}
+				date > 1947.7.1
+			}
+		}
+		else = {
+			has_tech = sov_modern_td_3
+			has_tech = sov_modern_aa_3
+		}
+	}
+
+	immediate = {
+		set_country_flag = modern_armor_template_1_sov
+
+		division_template = {
+			name = "Soviet Improved Modern Tank Division"
+			division_names_group = SOV_ARM_01
+			template_counter = 141
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+				modern_armor = { x = 0 y = 3 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+				modern_armor = { x = 1 y = 3 }
+
+				modern_armor = { x = 2 y = 0 }
+				modern_armor = { x = 2 y = 1 }
+				modern_armor = { x = 2 y = 2 }
+				modern_armor = { x = 2 y = 3 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+
+				modern_tank_destroyer_brigade = { x = 4 y = 0 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_maintenance_company_modern = { x = 1 y = 1 }
+				modern_sp_anti_air = { x = 1 y = 2 }
+				modern_tank_destroyer = { x = 1 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.009
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			OR = {
+				has_tech = sov_modern_tank_spg_4
+				date > 1948.7.1
+			}
+		}
+		else = {
+			has_tech = sov_modern_spg_4
+		}
+	}
+
+	immediate = {
+		set_country_flag = modern_armor_template_1_sov
+
+		division_template = {
+			name = "Soviet Advanced Modern Tank Division"
+			division_names_group = SOV_ARM_01
+			template_counter = 142
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+				modern_armor = { x = 0 y = 3 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+				modern_armor = { x = 1 y = 3 }
+
+				modern_armor = { x = 2 y = 0 }
+				modern_armor = { x = 2 y = 1 }
+				modern_armor = { x = 2 y = 2 }
+				modern_armor = { x = 2 y = 3 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+
+				modern_tank_destroyer_brigade = { x = 4 y = 0 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_maintenance_company_modern = { x = 1 y = 1 }
+				modern_sp_anti_air = { x = 1 y = 2 }
+				modern_tank_destroyer = { x = 1 y = 3 }
+				modern_sp_artillery = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+############## Heavy Armor
+
+country_event = {
+	id = sov_armor.010
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1940.7.1
+		}
+		else = {
+			has_tech = sov_heavy_spg_2
+		}
+	}
+
+	immediate = {
+		set_country_flag = heavy_armor_template_1_sov
+
+		# add_equipment_to_stockpile = { type = sov_heavy_equipment_2 amount = 1000 producer = SOV }
+
+		division_template = {
+			name = "Soviet Heavy Tank Division"
+			division_names_group = SOV_GTC_01
+			template_counter = 144
+			priority = 2
+
+			regiments = {
+				heavy_armor = { x = 0 y = 0 }
+				heavy_armor = { x = 0 y = 1 }
+				heavy_armor = { x = 0 y = 2 }
+				heavy_armor = { x = 0 y = 3 }
+
+				heavy_armor = { x = 1 y = 0 }
+				heavy_armor = { x = 1 y = 1 }
+				heavy_armor = { x = 1 y = 2 }
+				heavy_armor = { x = 1 y = 3 }
+
+				mechanized = { x = 2 y = 0 }
+				mechanized = { x = 2 y = 1 }
+				mechanized = { x = 2 y = 2 }
+				mechanized = { x = 2 y = 3 }
+				mechanized = { x = 2 y = 4 }
+
+				heavy_assault_brigade = { x = 3 y = 0 }
+				heavy_assault_brigade = { x = 3 y = 1 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				heavy_maintenance_company = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_artillery = { x = 1 y = 1 }
+				heavy_assault = { x = 1 y = 2 }
+				anti_tank = { x = 1 y = 3 }
+			}
+		}
+		219 = {
+			create_unit = {
+				division = "division_template = \"Soviet Heavy Tank Division\" start_experience_factor = 0.4 start_equipment_factor = 0.7"
+				owner = SOV
+				count = 2
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.011
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1945.7.1
+		}
+		else = {
+			has_tech = sov_heavy_td_7
+		}
+	}
+
+	immediate = {
+		set_country_flag = heavy_armor_template_3_sov
+
+		division_template = {
+			name = "Soviet Modern Heavy Tank Division"
+			division_names_group = SOV_GTC_01
+			template_counter = 145
+			priority = 2
+
+			regiments = {
+				heavy_armor = { x = 0 y = 0 }
+				heavy_armor = { x = 0 y = 1 }
+				heavy_armor = { x = 0 y = 2 }
+
+				heavy_armor = { x = 1 y = 0 }
+				heavy_armor = { x = 1 y = 1 }
+				heavy_armor = { x = 1 y = 2 }
+				heavy_armor = { x = 1 y = 3 }
+
+				heavy_armor = { x = 2 y = 0 }
+				heavy_armor = { x = 2 y = 1 }
+				heavy_armor = { x = 2 y = 2 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+
+				heavy_assault_brigade = { x = 4 y = 0 }
+				heavy_tank_destroyer_brigade = { x = 4 y = 1 }
+			}
+
+			support = {
+				armored_engineer_modern  = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				heavy_maintenance_company = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_artillery = { x = 1 y = 1 }
+				heavy_assault = { x = 1 y = 2 }
+				light_sp_anti_air = { x = 1 y = 3 }
+				heavy_tank_destroyer = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+#country_event = {
+#	id = sov_armor.012
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = SOV
+#		is_ai = yes
+#		if = {
+#			limit = {
+#				has_dlc = "No Step Back"
+#			}
+#			date > 1947.7.1
+#		}
+#		else = {
+#			has_tech = sov_heavy_td_9
+#			has_tech = sov_modern_aa_3
+#		}
+#	}
+#
+#	immediate = {
+#		set_country_flag = heavy_armor_template_2_sov
+#
+#		division_template = {
+#			name = "Soviet Adv Heavy Tank Division"
+#			division_names_group = SOV_GTC_01
+#			template_counter = 145
+#			priority = 2
+#
+#			regiments = {
+#				heavy_armor = { x = 0 y = 0 }
+#				heavy_armor = { x = 0 y = 1 }
+#				heavy_armor = { x = 0 y = 2 }
+#				heavy_armor = { x = 0 y = 3 }
+#
+#				heavy_armor = { x = 1 y = 0 }
+#				heavy_armor = { x = 1 y = 1 }
+#				heavy_armor = { x = 1 y = 2 }
+#				heavy_armor = { x = 1 y = 3 }
+#
+#				heavy_armor = { x = 2 y = 0 }
+#				heavy_armor = { x = 2 y = 1 }
+#				heavy_armor = { x = 2 y = 2 }
+#				heavy_assault_brigade = { x = 2 y = 3 }
+#
+#				mechanized = { x = 3 y = 0 }
+#				mechanized = { x = 3 y = 1 }
+#				mechanized = { x = 3 y = 2 }
+#
+#				mechanized = { x = 4 y = 0 }
+#				mechanized = { x = 4 y = 1 }
+#				mechanized = { x = 4 y = 2 }
+#			}
+#
+#			support = {
+#				engineer = { x = 0 y = 0 }
+#				motorized_logistics_company = { x = 0 y = 1 }
+#				field_hospital = { x = 0 y = 2 }
+#				heavy_maintenance_company = { x = 0 y = 3 }
+#				signal_company = { x = 0 y = 4 }
+#
+#				armoured_recon = { x = 1 y = 0 }
+#				motorized_rocket = { x = 1 y = 1 }
+#				heavy_assault = { x = 1 y = 2 }
+#				modern_sp_anti_air = { x = 1 y = 3 }
+#				military_police = { x = 1 y = 4 }
+#			}
+#		}
+#	}
+#
+#	option = {}
+#}
+
+country_event = {
+	id = sov_armor.013
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_tech = converging_sheaf
+	}
+
+	immediate = {
+		set_country_flag = infantry_template_sov_2
+		set_country_flag = modern_armor_template_1_sov
+
+		division_template = {
+			name = "Soviet Adv Rifle Division"
+			division_names_group = SOV_INF_01
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+				heavy_infantry = { x = 0 y = 3 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+
+				anti_tank_brigade = { x = 4 y = 0 }
+				anti_tank_brigade = { x = 4 y = 1 }
+				anti_tank_brigade = { x = 4 y = 2 }
+				anti_tank_brigade = { x = 4 y = 3 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				field_hospital = { x = 0 y = 1 }
+				horse_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				maintenance_company = { x = 0 y = 4 }
+
+				recon = { x = 1 y = 0 }
+				heavy_artillery = { x = 1 y = 1 }
+				anti_air = { x = 1 y = 2 }
+				military_police = { x = 1 y = 3 }
+				anti_tank = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+#####upgrade infantry divisions
+country_event = {
+	id = sov_armor.014
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_template = "Soviet Rifle Division"
+		has_tech = tech_signal_company
+		has_tech = tech_field_hospital
+		has_tech = tech_maintenance_company
+	}
+
+	immediate = {
+		add_units_to_division_template = {
+			template_name = "Soviet Rifle Division"
+			support = {
+				field_hospital = 0
+				signal_company = 0
+				maintenance_company = 1
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+#####upgrade mountaineers
+country_event = {
+	id = sov_armor.015
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_template = "Soviet Shock Division"
+		has_tech = converging_sheaf
+	}
+
+	immediate = {
+		add_units_to_division_template = {
+			template_name = "Soviet Shock Division"
+			regiments = {
+				anti_tank_brigade = 3
+				artillery_brigade = 4
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+#####upgrade tanks and mountaineers
+country_event = {
+	id = sov_armor.016
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_template = "Soviet Medium Tank Division"
+		has_template = "Soviet Heavy Tank Division"
+		has_template = "Soviet Shock Division"
+		has_tech = armoured_waves
+		OR = {
+			has_tech = sov_medium_tank_spg_3
+			has_tech = sov_medium_spg_3
+		}
+		OR = {
+			has_tech = sov_medium_tank_td_3
+			has_tech = sov_medium_td_3
+		}
+	}
+
+	immediate = {
+		division_template = {
+			name = "Soviet Adv Medium Tank Division"
+			division_names_group = SOV_ARM_01
+			template_counter = 140
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+
+				medium_armor = { x = 2 y = 0 }
+				medium_armor = { x = 2 y = 1 }
+				medium_armor = { x = 2 y = 2 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+				
+				medium_tank_destroyer_brigade = { x = 4 y = 0 }
+				medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				assault_brigade = { x = 4 y = 2 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				assault = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_maintenance_company = { x = 1 y = 1 }
+				military_police = { x = 1 y = 2 }
+				heavy_artillery = { x = 1 y = 3 }
+				medium_tank_destroyer = { x = 1 y = 4 }
+			}
+		}
+		add_units_to_division_template = {
+			template_name = "Soviet Heavy Tank Division"
+			regiments = {
+				heavy_assault_brigade = 3
+				heavy_assault_brigade = 3
+			}
+			support = {
+				medium_tank_destroyer = 1
+			}
+		}
+		add_units_to_division_template = {
+			template_name = "Soviet Shock Division"
+			support = {
+				medium_tank_destroyer = 1
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+#####upgrade rifle division
+country_event = {
+	id = sov_armor.017
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_template = "Soviet Adv Rifle Division"
+		has_equipment = { anti_tank_equipment > 0 }
+		date > 1942.10.1
+
+	}
+
+	immediate = {
+		#add_equipment_to_stockpile = { type = sov_hv_at_1 amount = 3000 producer = SOV }
+		#add_units_to_division_template = {
+		#	template_name = "Soviet Adv Rifle Division"
+		#	support = {
+		#		anti_tank = 1
+		#	}
+		#}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = sov_armor.018
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_tech = converging_sheaf
+		has_tech = sov_heavy_anti_tank_1
+		NOT = {
+			has_war_with = USA
+		}
+	}
+
+	immediate = {
+		set_country_flag = infantry_template_sov_3
+		division_template = {
+			name = "Soviet Late Rifle Division"
+			division_names_group = SOV_INF_01
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+				heavy_infantry = { x = 0 y = 3 }
+				heavy_infantry = { x = 0 y = 4 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+				heavy_infantry = { x = 1 y = 3 }
+
+				artillery_brigade = { x = 2 y = 0 }
+				artillery_brigade = { x = 2 y = 1 }
+				artillery_brigade = { x = 2 y = 2 }
+				artillery_brigade = { x = 2 y = 3 }
+
+				anti_tank_brigade = { x = 3 y = 0 }
+				anti_tank_brigade = { x = 3 y = 1 }
+				anti_tank_brigade = { x = 3 y = 2 }
+
+				motorized_heavy_anti_tank_brigade = { x = 4 y = 0 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				field_hospital = { x = 0 y = 1 }
+				horse_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				maintenance_company = { x = 0 y = 4 }
+
+				recon = { x = 1 y = 0 }
+				artillery = { x = 1 y = 1 }
+				anti_air = { x = 1 y = 2 }
+				military_police = { x = 1 y = 3 }
+				heavy_anti_tank = { x = 1 y = 4 }
+			}
+		}
+		division_template = {
+			name = "Soviet Adv Shock Division"
+			division_names_group = SOV_GRD_01
+			priority = 2
+
+			regiments = {
+				mountaineers = { x = 0 y = 0 }
+				mountaineers = { x = 0 y = 1 }
+				mountaineers = { x = 0 y = 2 }
+
+				mountaineers = { x = 1 y = 0 }
+				mountaineers = { x = 1 y = 1 }
+				mountaineers = { x = 1 y = 2 }
+
+				mountaineers = { x = 2 y = 0 }
+				mountaineers = { x = 2 y = 1 }
+				mountaineers = { x = 2 y = 2 }
+
+				anti_tank_brigade = { x = 3 y = 0 }
+				anti_tank_brigade = { x = 3 y = 1 }
+				anti_tank_brigade = { x = 3 y = 2 }
+				anti_tank_brigade = { x = 3 y = 3 }
+
+				artillery_brigade = { x = 4 y = 0 }
+				artillery_brigade = { x = 4 y = 1 }
+				artillery_brigade = { x = 4 y = 2 }
+				artillery_brigade = { x = 4 y = 3 }
+			}
+
+			support = {
+				shock_division_hq = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				heavy_anti_tank = { x = 0 y = 4 }
+				
+				armoured_recon = { x = 1 y = 0 }
+				engineer = { x = 1 y = 1 }
+				heavy_artillery = { x = 1 y = 2 }
+				heavy_assault = { x = 1 y = 3 }
+				medium_tank_destroyer = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+####################################### Not cheats
+
+country_event = {
+	id = sov_armor.600
+	hidden = yes
+
+	mean_time_to_happen = { days = 8 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		date > 1936.8.1
+	}
+
+	immediate = {
+		add_political_power = 750
+		add_opinion_modifier = { target = USA modifier = ai_trade_fix }
+		add_opinion_modifier = { target = USA modifier = ai_trade_fix_2 }
+		reverse_add_opinion_modifier = { target = USA modifier = ai_trade_fix }
+		reverse_add_opinion_modifier = { target = USA modifier = ai_trade_fix_2 }
+
+		add_opinion_modifier = { target = ENG modifier = ai_trade_fix }
+		add_opinion_modifier = { target = ENG modifier = ai_trade_fix_2 }
+		reverse_add_opinion_modifier = { target = ENG modifier = ai_trade_fix }
+		reverse_add_opinion_modifier = { target = ENG modifier = ai_trade_fix_2 }
+
+		add_opinion_modifier = { target = POR modifier = ai_trade_fix }
+		add_opinion_modifier = { target = POR modifier = ai_trade_fix_2 }
+		reverse_add_opinion_modifier = { target = POR modifier = ai_trade_fix }
+		reverse_add_opinion_modifier = { target = POR modifier = ai_trade_fix_2 }
+
+
+		add_opinion_modifier = { target = SAF modifier = ai_trade_fix }
+		add_opinion_modifier = { target = SAF modifier = ai_trade_fix_2 }
+		reverse_add_opinion_modifier = { target = SAF modifier = ai_trade_fix }
+		reverse_add_opinion_modifier = { target = SAF modifier = ai_trade_fix_2 }
+
+		add_opinion_modifier = { target = TUR modifier = ai_trade_fix }
+		add_opinion_modifier = { target = TUR modifier = ai_trade_fix_2 }
+		reverse_add_opinion_modifier = { target = TUR modifier = ai_trade_fix }
+		reverse_add_opinion_modifier = { target = TUR modifier = ai_trade_fix_2 }
+
+		add_opinion_modifier = { target = SIA modifier = ai_trade_fix }
+		add_opinion_modifier = { target = SIA modifier = ai_trade_fix_2 }
+		reverse_add_opinion_modifier = { target = SIA modifier = ai_trade_fix }
+		reverse_add_opinion_modifier = { target = SIA modifier = ai_trade_fix_2 }
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.601
+	hidden = yes
+
+	mean_time_to_happen = { days = 8 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		date < 1937.1.1
+		has_country_flag = sov_infantry_template
+	}
+
+	immediate = {
+		delete_unit_template_and_units = { division_template = "Strelkovaya Diviziya" }
+		delete_unit_template_and_units = { division_template = "NKVD Strelkovaya Diviziya" }
+		delete_unit_template_and_units = { division_template = "NKVD Pogranichnaya Brigada" }
+		delete_unit_template_and_units = { division_template = "Kavaleriyskaya Diviziya" }
+		delete_unit_template_and_units = { division_template = "Motostrelkovaya Diviziya" }
+		delete_unit_template_and_units = { division_template = "Vozdushno-Desantnaya Diviziya" }
+		delete_unit_template_and_units = { division_template = "Brigada Morskoi Pekhoty" }
+		load_oob = "SOV_infantry"
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.602
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_completed_focus = SOV_eradicate_western_fascism
+		NOT = { has_global_flag = GER_SOV_ceasefire }
+		NOT = { has_war_with = GER }
+		NOT = { has_government = fascism }
+		NOT = { has_global_flag = uk_evacuated }
+		OR = {
+			date > 1942.8.1
+			AND = {
+				date > 1941.1.1
+				GER = { has_war_with = USA }
+				USA = { surrender_progress > 0.2 }
+			}
+		}
+	}
+
+	immediate = {
+		every_other_country = {
+			limit = {
+				has_government = fascism
+				OR = {
+					tag = GER
+					is_in_faction_with = GER
+					is_subject_of = GER
+					tag = ROM
+					tag = HUN
+				}
+				NOT = { has_war_with = ROOT }
+			}
+			ROOT = {
+				declare_war_on = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.603
+	hidden = yes
+
+	mean_time_to_happen = { days = 14 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		OR = {
+			AND = {
+				has_war = yes
+				NOT = { has_global_flag = sov_yes_pact }
+			}
+			AND = {
+				has_war = yes
+				any_enemy_country = {
+					NOT = { tag = POL }
+					NOT = { is_in_faction_with = ENG }
+				}
+				has_global_flag = sov_yes_pact
+			}
+		}
+	}
+
+	immediate = {
+		SOV = { set_country_flag = SOV_war_since_start }
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.604
+	hidden = yes
+
+	mean_time_to_happen = { days = 8 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		date > 1940.1.1
+		OR = {
+			date > 1942.1.1
+			NOT = {
+				has_idea = SOV_molotov_ribbentrop_pact
+			}
+		}
+	}
+
+	immediate = {
+		add_opinion_modifier = { target = USA modifier = ai_trade_fix }
+		add_opinion_modifier = { target = USA modifier = ai_trade_fix_2 }
+		reverse_add_opinion_modifier = { target = USA modifier = ai_trade_fix }
+		reverse_add_opinion_modifier = { target = USA modifier = ai_trade_fix_2 }
+
+		add_opinion_modifier = { target = SAF modifier = ai_trade_fix }
+		add_opinion_modifier = { target = SAF modifier = ai_trade_fix_2 }
+		reverse_add_opinion_modifier = { target = SAF modifier = ai_trade_fix }
+		reverse_add_opinion_modifier = { target = SAF modifier = ai_trade_fix_2 }
+	}
+
+	option = {}
+}
+
+#country_event = {
+#	id = sov_armor.605
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 2 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = SOV
+#		is_ai = yes
+#		has_war = yes
+#		has_completed_focus = SOV_left_opposition_coup
+#	}
+#
+#	immediate = {
+#		army_experience = 600
+#		add_equipment_to_stockpile = { type = sov_inf_1 amount = 70000 producer = SOV }
+#		add_equipment_to_stockpile = { type = sov_hv_inf_1 amount = 70000 producer = SOV }
+#		add_equipment_to_stockpile = { type = support_equipment_1 amount = 20000 producer = SOV }
+#		add_equipment_to_stockpile = { type = sov_at_1 amount = 1600 producer = SOV }
+#		add_equipment_to_stockpile = { type = sov_art_2 amount = 300 producer = SOV }
+#		add_equipment_to_stockpile = { type = sov_hv_art_2 amount = 700 producer = SOV }
+#		add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 5000 producer = SOV }
+#	}
+#
+#	option = {}
+#}
+
+country_event = {
+	id = sov_armor.606
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		NOT = { has_war_with = RCZ }
+		OR = {
+			RCZ = { is_puppet_of = GER }
+			RCZ = { is_in_faction_with = GER }
+		}
+	}
+
+	immediate = {
+		RCZ = {
+			add_to_war = { targeted_alliance = GER enemy = SOV hostility_reason = asked_to_join }
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.607
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		NOT = { has_war_with = RPO }
+		OR = {
+			RPO = { is_puppet_of = GER }
+			RPO = { is_in_faction_with = GER }
+		}
+	}
+
+	immediate = {
+		RPO = {
+			add_to_war = { targeted_alliance = GER enemy = SOV hostility_reason = asked_to_join }
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.608
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_war_with = SLO }
+		OR = {
+			SLO = { is_puppet_of = GER }
+			SLO = { is_in_faction_with = GER }
+		}
+	}
+
+	immediate = {
+		SLO = {
+			add_to_war = { targeted_alliance = GER enemy = SOV hostility_reason = asked_to_join }
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.609
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		POL = { has_capitulated = yes }
+	}
+
+	immediate = {
+		add_political_power = 500
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.610
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+	}
+
+	immediate = {
+		add_political_power = 650
+		add_equipment_to_stockpile = { type = convoy_1 amount = 1500 producer = SOV } ###Vladivostok to murmansk supply
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.611
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1943.4.1
+		tag = SOV
+		is_ai = yes
+	}
+
+	immediate = {
+		add_political_power = 1500
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = sov_armor.612
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1944.3.1
+		tag = SOV
+		is_ai = yes
+	}
+
+	immediate = {
+		add_political_power = 1200
+		set_technology = {
+			sov_mechanized_infantry_4 = 1
+			sov_attacker_3 = 1
+			sov_mechanized_artillery_2 = 1
+			sov_rocket_upgrade_1 = 1
+			sov_rocket_upgrade_2 = 2
+		}
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						is_researching_technology = sov_infantry_weapons_upgrade_5
+						has_tech = sov_infantry_weapons_upgrade_5
+					}
+				}
+			}
+			set_technology = {
+				sov_infantry_weapons_upgrade_5 = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						is_researching_technology = sov_battlefield_medicine_3
+						has_tech = sov_battlefield_medicine_3
+					}
+				}
+			}
+			set_technology = {
+				sov_battlefield_medicine_3 = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						is_researching_technology = sov_night_vision_1
+						has_tech = sov_night_vision_1
+					}
+				}
+			}
+			set_technology = {
+				sov_night_vision_1 = 1
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = sov_armor.613
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		date > 1943.1.1
+	}
+
+	immediate = {
+		random_owned_controlled_state = {
+			prioritize = { 583 586 570 590 }
+			limit = {
+				free_building_slots = {
+					building = steel_refinery
+					size > 4
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = steel_refinery
+				level = 5
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 583 586 570 590 }
+			limit = {
+				free_building_slots = {
+					building = steel_refinery
+					size > 4
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = steel_refinery
+				level = 5
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 583 586 570 590 }
+			limit = {
+				free_building_slots = {
+					building = steel_refinery
+					size > 4
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = steel_refinery
+				level = 5
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 583 586 570 590 }
+			limit = {
+				free_building_slots = {
+					building = steel_refinery
+					size > 4
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = steel_refinery
+				level = 5
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 588 569 742 578 575 }
+			limit = {
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 2
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 3
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 229
+			}
+			229 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 233
+			}
+			233 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+		set_technology = {
+			sov_medium_tank_spg_3 = 1
+			sov_medium_tank_td_3 = 1
+		}
+		air_experience = 300
+		SOV_georgy_zhukov = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_aleksandr_vasilevsky = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_konstantin_rokossovsky = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_boris_shaposhnikov = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_nikolay_vatutin = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_ivan_konev = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_semyon_timoshenko = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_vasily_chuykov = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_aleksandr_gorbatov = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		SOV_fyodor_tolbukhin = {
+			add_trait = { trait = bearer_of_artillery }
+		}
+		every_army_leader = {
+			limit = {
+				has_trait = organisational_leader
+				is_field_marshal = yes
+			}
+			remove_trait = { trait = organisational_leader }
+			add_trait = { trait = inspirational_leader }
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = sov_armor.614
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		has_completed_focus = SOV_merge_evacuated_plants
+		tag = SOV
+		is_ai = yes
+	}
+
+	immediate = {
+		add_political_power = 150
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = sov_armor.615
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1944.9.1
+		tag = SOV
+		is_ai = yes
+	}
+
+	immediate = {
+		add_political_power = 1000
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = sov_armor.616
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1942.1.1
+		tag = SOV
+		is_ai = yes
+		USA = {
+			is_ai = yes
+		}
+	}
+
+	immediate = {
+		USA = {
+			give_resource_rights = {
+				receiver = SOV
+				state = 388
+				resources = { coal }
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = sov_armor.617
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1942.1.1
+		tag = SOV
+		is_ai = yes
+		USA = {
+			is_ai = yes
+		}
+		has_war_with = USA
+	}
+
+	immediate = {
+		remove_resource_rights = 388
+	}
+
+	option = {}
+
+}
+
+####################################### Great Purges
+
+#First Moscow Trial
+country_event = {
+	id = sov_armor.701
+	title = sov_armor.701.t
+	desc = sov_armor.701.d
+
+	picture = GFX_report_event_SOV_purge_administration
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.701.a
+
+		#NKVD
+		if = {
+			limit = {
+				has_idea = SOV_genrikh_yagoda
+			}
+			activate_advisor = SOV_nikolay_yezhov
+		}
+		SOV_genrikh_yagoda = { SOV_purge_character_effect = yes }
+
+		#PURGE
+		if = {
+			limit = {
+				has_character = SOV_grigory_zinovyev
+			}
+			SOV_grigory_zinovyev = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_lev_kamenev
+			}
+			SOV_lev_kamenev = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_ivan_smirnov
+			}
+			SOV_ivan_smirnov = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_grigory_sokolnikov
+			}
+			SOV_grigory_sokolnikov = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_aleksandr_shlyapnikov
+			}
+			SOV_aleksandr_shlyapnikov = { SOV_purge_character_effect = yes }
+		}
+		#every_character = {
+		#	limit = {
+		#		has_character_flag = SOV_targeted_for_purge_flag
+		#		SOV_character_can_be_purged = yes
+		#	}
+		#	SOV_purge_character_effect = yes
+		#}
+
+		#PARANOIA decreases
+		SOV_paranoia_very_high_decrease_effect = yes
+		SOV_paranoia_increase_purge_counter_great = yes
+	}
+}
+
+#Second Moscow Trial
+country_event = {
+	id = sov_armor.702
+	title = sov_armor.702.t
+	desc = sov_armor.702.d
+
+	picture = GFX_report_event_soviet_purge_trial
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.702.a
+
+		#PURGE
+		if = {
+			limit = {
+				has_character = SOV_karl_radek
+			}
+			SOV_karl_radek = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_ivar_smilga
+			}
+			SOV_ivar_smilga = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_yevgeny_preobrazhensky
+			}
+			SOV_yevgeny_preobrazhensky = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_martemyan_ryutin
+			}
+			SOV_martemyan_ryutin = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_nikolay_ustryalov
+			}
+			SOV_nikolay_ustryalov = { SOV_purge_character_effect = yes }
+		}
+		#every_character = {
+		#	limit = {
+		#		has_character_flag = SOV_targeted_for_purge_flag
+		#		SOV_character_can_be_purged = yes
+		#	}
+		#	SOV_purge_character_effect = yes
+		#}
+
+		#PARANOIA decreases
+		SOV_paranoia_very_high_decrease_effect = yes
+		SOV_paranoia_increase_purge_counter_great = yes
+	}
+}
+
+#Military Conspiracy
+country_event = {
+	id = sov_armor.703
+	title = sov_armor.703.t
+	desc = sov_armor.703.d
+
+	picture = GFX_report_event_soviet_purge_officers_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.703.a
+
+		#PURGE
+		if = {
+			limit = {
+				has_character = SOV_mikhail_tukhachevsky
+			}
+			SOV_mikhail_tukhachevsky = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_aleksandr_yegorov
+			}
+			SOV_aleksandr_yegorov = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_vasily_blyukher
+			}
+			SOV_vasily_blyukher = { SOV_purge_character_effect = yes }
+		}
+		if = {
+			limit = {
+				has_character = SOV_vitaly_primakov
+			}
+			SOV_vitaly_primakov = { SOV_purge_character_effect = yes }
+		}
+		every_character = {
+			limit = {
+				has_character_flag = SOV_targeted_for_purge_flag
+				SOV_character_can_be_purged = yes
+			}
+			SOV_purge_character_effect = yes
+		}
+
+		#PARANOIA decreases
+		SOV_paranoia_very_high_decrease_effect = yes
+		SOV_paranoia_increase_purge_counter_great = yes
+	}
+}
+
+#Third Moscow Trial
+country_event = {
+	id = sov_armor.704
+	title = sov_armor.704.t
+	desc = sov_armor.704.d
+
+	picture = GFX_report_event_SOV_purge_third_moscow_trial
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.704.a
+
+		#NKVD
+		#if = {
+		#	limit = {
+		#		has_idea = SOV_nikolay_yezhov
+		#	}
+		#	activate_advisor = SOV_lavrenty_beriya
+		#}
+		SOV_nikolay_yezhov = {
+			SOV_purge_character_effect = yes
+		}
+
+		#PURGE
+		if = {
+			limit = {
+				has_character = SOV_nikolay_bukharin
+			}
+			SOV_nikolay_bukharin = { SOV_purge_character_effect = yes }
+		}
+
+		if = {
+			limit = {
+				has_character = SOV_aleksey_rykov
+			}
+			SOV_aleksey_rykov = { SOV_purge_character_effect = yes }
+		}
+
+		if = {
+			limit = {
+				has_character = SOV_mikhail_tomsky
+			}
+			SOV_mikhail_tomsky = { SOV_purge_character_effect = yes }
+		}
+
+		#every_character = {
+		#	limit = {
+		#		has_character_flag = SOV_targeted_for_purge_flag
+		#		SOV_character_can_be_purged = yes
+		#	}
+		#	SOV_purge_character_effect = yes
+		#}
+
+		#PARANOIA decreases
+		SOV_paranoia_very_high_decrease_effect = yes
+		SOV_paranoia_increase_purge_counter_great = yes
+	}
+}
+
+# General Cowed by Stalin
+country_event = {
+	id = sov_armor.705
+	title = sov_armor.705.t
+	desc = sov_armor.705.d
+
+	picture = GFX_report_event_soviet_purge_officers_02
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = { flag = cowed_by_stalin_flag days = 120 }
+		}
+	}
+
+	option = {
+		name = sov_armor.705.a
+
+		random_army_leader = {
+			limit = {
+				NOT = { has_character_flag = SOV_safe_from_purge_flag }
+				NOT = { has_trait = trait_SOV_cowed_by_stalin_army }
+			}
+			add_unit_leader_trait = trait_SOV_cowed_by_stalin_army
+		}
+		SOV_paranoia_increase_purge_counter_regular = yes
+	}
+
+	option = {
+		name = sov_armor.705.b
+
+		#add_political_power = -25
+
+		#PARANOIA increases
+		hidden_effect = {
+			SOV_paranoia_update_portraits_ui = yes
+		}
+		SOV_paranoia_low_increase_effect = yes
+	}
+}
+
+# Academy Purge
+country_event = {
+	id = sov_armor.706
+	title = sov_armor.706.t
+	desc = sov_armor.706.d
+
+	picture = GFX_report_event_SOV_purge_administration
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.706.a
+
+		add_timed_idea = {
+			idea = SOV_academy_purged
+			days = 120
+		}
+		SOV_paranoia_increase_purge_counter_regular = yes
+	}
+
+	option = {
+		name = sov_armor.706.b
+
+		#add_political_power = -25
+		custom_effect_tooltip = SOV_paranoia_cooldown_small_tt
+		set_country_flag = { flag = academy_purge_grace_flag days = 60 }
+
+		#PARANOIA increases
+		hidden_effect = {
+			SOV_paranoia_update_portraits_ui = yes
+		}
+		SOV_paranoia_low_increase_effect = yes
+	}
+}
+
+# General sent to the Gulag
+country_event = {
+	id = sov_armor.707
+	title = sov_armor.707.t
+	desc = sov_armor.707.d
+
+	picture = GFX_report_event_soviet_purge_officers_02
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = { flag = sent_to_gulag_flag days = 120 }
+		}
+	}
+
+	option = {
+		name = sov_armor.707.a
+
+		random_army_leader = {
+			limit = {
+				NOT = { has_character_flag = SOV_safe_from_purge_flag }
+			}
+			custom_effect_tooltip = SOV_sent_to_gulag_tt
+			hidden_effect = {
+				set_character_flag = SOV_sent_to_gulag_flag
+			}
+		}
+		SOV_paranoia_increase_purge_counter_great = yes
+	}
+}
+
+# Army Young Officers Purges
+country_event = {
+	id = sov_armor.708
+	title = sov_armor.708.t
+	desc = sov_armor.708.d
+
+	picture = GFX_report_event_SOV_purge_young_officers
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.708.a
+
+		add_timed_idea = {
+			idea = SOV_young_army_officers_purged
+			days = 120
+		}
+		SOV_paranoia_increase_purge_counter_regular = yes
+	}
+
+	option = {
+		name = sov_armor.708.b
+
+		#add_political_power = -50
+		custom_effect_tooltip = SOV_paranoia_cooldown_small_tt
+		hidden_effect = {
+			set_country_flag = { flag = army_young_officers_grace_flag days = 60 }
+		}
+
+		#PARANOIA increases
+		hidden_effect = {
+			SOV_paranoia_update_portraits_ui = yes
+		}
+		SOV_paranoia_medium_increase_effect = yes
+	}
+}
+
+# Air Young Officers Purges
+country_event = {
+	id = sov_armor.709
+	title = sov_armor.709.t
+	desc = sov_armor.709.d
+
+	picture = GFX_report_event_SOV_purge_young_officers
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.709.a
+
+		add_timed_idea = {
+			idea = SOV_young_air_officers_purged
+			days = 120
+		}
+		SOV_paranoia_increase_purge_counter_regular = yes
+	}
+
+	option = {
+		name = sov_armor.709.b
+
+		#add_political_power = -50
+		custom_effect_tooltip = SOV_paranoia_cooldown_small_tt
+		set_country_flag = { flag = air_young_officers_grace_flag days = 60 }
+
+		#PARANOIA increases
+		hidden_effect = {
+			SOV_paranoia_update_portraits_ui = yes
+		}
+		SOV_paranoia_medium_increase_effect = yes
+		SOV_paranoia_increase_purge_counter_great = yes
+	}
+}
+
+# Navy Young Officers Purges
+country_event = {
+	id = sov_armor.710
+	title = sov_armor.710.t
+	desc = sov_armor.710.d
+
+	picture = GFX_report_event_SOV_purge_young_officers
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.710.a
+
+		add_timed_idea = {
+			idea = SOV_young_navy_officers_purged
+			days = 120
+		}
+		SOV_paranoia_increase_purge_counter_regular = yes
+	}
+
+	option = {
+		name = sov_armor.710.b
+
+		#add_political_power = -50
+		custom_effect_tooltip = SOV_paranoia_cooldown_small_tt
+		set_country_flag = { flag = navy_young_officers_grace_flag days = 60 }
+
+		#PARANOIA increases
+		hidden_effect = {
+			SOV_paranoia_update_portraits_ui = yes
+		}
+		SOV_paranoia_medium_increase_effect = yes
+	}
+}
+
+# Administration Purges
+country_event = {
+	id = sov_armor.711
+	title = sov_armor.711.t
+	desc = sov_armor.711.d
+
+	picture = GFX_report_event_SOV_purge_administration
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.711.a
+
+		add_timed_idea = {
+			idea = SOV_administration_purged
+			days = 120
+		}
+		SOV_paranoia_increase_purge_counter_great = yes
+	}
+}
+
+# TUPOLEV Designer Purge
+country_event = {
+	id = sov_armor.712
+	title = sov_armor.712.t
+	desc = sov_armor.712.d
+
+	picture = GFX_report_event_SOV_purge_aircraft_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.712.a
+		if = {
+			limit = { # TUPOLEV
+				has_idea = SOV_tupolev_design_bureau
+			}
+			remove_ideas = SOV_tupolev_design_bureau
+		}
+		SOV_paranoia_increase_purge_counter_great = yes
+		set_country_flag = SOV_tupolev_design_bureau_dissolved_flag
+		unlock_decision_tooltip = SOV_reinstate_tupolev_design_bureau
+	}
+}
+
+####################################### England proposes a joint invasion of Iran
+
+country_event = {
+	id = sov_armor.801
+	title = sov_armor.801.t
+	desc = sov_armor.801.d
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.801.a
+		ENG = { country_event = { days = 1 id = eng_armor.847 } }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				has_country_flag = defeated_by_ger
+			}
+		}
+	}
+
+	option = {
+		name = sov_armor.801.b
+		ENG = { country_event = { days = 1 id = eng_armor.848 } }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = defeated_by_ger }
+			}
+		}
+	}
+}
+
+####################################### Romaina asks for white peace
+
+country_event = {
+	id = sov_armor.802
+	title = sov_armor.802.t
+	desc = sov_armor.802.d
+
+	picture = GFX_report_event_romania_poland_visit
+
+	is_triggered_only = yes
+
+	option = { #Accept peace
+		name = sov_armor.802.a
+		ROM = { country_event = { id = rom_armor.810 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = { #Accept peace but under puppet status
+		name = sov_armor.802.b
+		ROM = { country_event = { id = rom_armor.811 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = { #No
+		name = sov_armor.802.c
+		ROM = { country_event = { id = rom_armor.812 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+####################################### Romaina rejects puppet status
+
+country_event = {
+	id = sov_armor.803
+	title = sov_armor.803.t
+	desc = sov_armor.803.d
+
+	picture = GFX_report_event_romania_poland_visit
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.803.a
+		ROM = { country_event = { days = 1 id = rom_armor.810 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = sov_armor.803.b
+		ROM = { country_event = { days = 1 id = rom_armor.812 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+####################################### Socialist Realism
+
+#country_event = {
+#	id = sov_armor.804
+#	title = sov_armor.804.t
+#	desc = sov_armor.804.d
+#
+#	picture = GFX_report_event_spain_civil_war_volunteers_02
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = sov_armor.804.a
+#		add_ideas = SOV_socialist_realism_workforce
+#		ai_chance = {
+#			factor = 25
+#		}
+#	}
+#
+#	option = {
+#		name = sov_armor.804.b
+#		add_ideas = SOV_socialist_realism_people
+#		add_political_power = 25
+#		ai_chance = {
+#			factor = 0
+#		}
+#	}
+#
+#	option = {
+#		name = sov_armor.804.c
+#		add_ideas = SOV_socialist_realism_army
+#		army_experience = 25
+#		ai_chance = {
+#			factor = 0
+#		}
+#	}
+#
+#	option = {
+#		name = sov_armor.804.e
+#		add_ideas = SOV_socialist_realism_partisans
+#		ai_chance = {
+#			factor = 0
+#		}
+#	}
+#}
+
+####################################### Comecon
+
+country_event = {
+	id = sov_armor.805
+	title = sov_armor.805.t
+	desc = sov_armor.805.d
+
+	picture = GFX_report_event_molotov_signing_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.805.a
+		add_ideas = SOV_comecon_member
+		add_to_tech_sharing_group = comintern_research
+		if = {
+			limit = {
+				SOV = {
+					NOT = {
+						has_idea = SOV_comecon_leader
+						has_idea = SOV_comecon_leader_2
+						has_idea = SOV_comecon_leader_3
+						has_idea = SOV_comecon_leader_4
+						has_idea = SOV_comecon_leader_5
+						has_idea = SOV_comecon_leader_6
+						has_idea = SOV_comecon_leader_7
+						has_idea = SOV_comecon_leader_8
+						has_idea = SOV_comecon_leader_9
+						has_idea = SOV_comecon_leader_10
+					}
+				}
+			}
+			SOV = {
+				add_ideas = SOV_comecon_leader
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_2
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader_2
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_3
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader_3
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader_4
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader_5
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_6
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader_6
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_7
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader_7
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader_8
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_9
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SOV = {
+					has_idea = SOV_comecon_leader_9
+				}
+			}
+			SOV = {
+				swap_ideas = {
+					remove_idea = SOV_comecon_leader
+					add_idea = SOV_comecon_leader_10
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = sov_armor.805.b
+		SOV = { country_event = { days = 1 id = sov_armor.806 } }
+		set_country_flag = refused_comecon
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+####################################### Comecon Refused
+
+country_event = {
+	id = sov_armor.806
+	title = sov_armor.806.t
+	desc = sov_armor.806.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.806.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+####################################### Bulgaria asks for white peace
+
+country_event = {
+	id = sov_armor.807
+	title = sov_armor.807.t
+	desc = sov_armor.807.d
+
+	picture = GFX_report_event_romania_poland_visit
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			SOV = { SOV_is_left_opposition = no }
+		}
+		name = sov_armor.807.a
+		BUL = { country_event = { hours = 6 id = bul_armor.802 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = sov_armor.807.b
+		BUL = { country_event = { hours = 6 id = bul_armor.803 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = sov_armor.807.c
+		BUL = { country_event = { hours = 6 id = bul_armor.804 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+####################################### Bulgaria rejects puppet status
+
+country_event = {
+	id = sov_armor.808
+	title = sov_armor.808.t
+	desc = sov_armor.808.d
+
+	picture = GFX_report_event_romania_poland_visit
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.808.a
+		BUL = { country_event = { hours = 6 id = bul_armor.802 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = sov_armor.808.b
+		BUL = { country_event = { hours = 6 id = bul_armor.804 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+####################################### Liberation of Western Belarus
+
+country_event = {
+	id = sov_armor.809
+	title = sov_armor.809.t
+	desc = sov_armor.809.d
+
+	picture = GFX_report_event_soldiers_marching
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		96 = { is_fully_controlled_by = SOV }
+		95 = { is_fully_controlled_by = SOV }
+		94 = { is_fully_controlled_by = SOV }
+		93 = { is_fully_controlled_by = SOV }
+		91 = { is_fully_controlled_by = SOV }
+		89 = { is_fully_controlled_by = SOV }
+	}
+
+	option = {
+		name = sov_armor.809.a
+		ai_chance = {
+			factor = 1
+		}
+		96 = { add_core_of = SOV }
+		95 = { add_core_of = SOV }
+		94 = { add_core_of = SOV }
+		93 = { add_core_of = SOV }
+		91 = { add_core_of = SOV }
+		89 = { add_core_of = SOV }
+	}
+}
+
+####################################### FRA Confrontation
+
+country_event = {
+	id = sov_armor.810
+	title = sov_armor.810.t
+	desc = sov_armor.810.d
+
+	picture = GFX_report_event_aid_pact
+
+	is_triggered_only = yes
+
+	#yield
+	option = {
+		name = sov_armor.810.a
+		SOV = { country_event = { id = sov_armor.811 } }
+		if = {
+			limit = {
+				ROM = { has_war = no }
+				ROM = { is_guaranteed_by = FRA }
+			}
+			diplomatic_relation = {
+				country = ROM
+				relation = guarantee
+				active = no
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_war = no }
+				LIT = {is_guaranteed_by = FRA }
+			}
+			diplomatic_relation = {
+				country = LIT
+				relation = guarantee
+				active = no
+			}
+		}
+		if = {
+			limit = {
+				LAT = { has_war = no }
+				LAT = { is_guaranteed_by = FRA }
+			}
+			diplomatic_relation = {
+				country = LAT
+				relation = guarantee
+				active = no
+			}
+		}
+		if = {
+			limit = {
+				EST = { has_war = no }
+				EST = { is_guaranteed_by = FRA }
+			}
+			diplomatic_relation = {
+				country = EST
+				relation = guarantee
+				active = no
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	#dont yield
+	option = {
+		name = sov_armor.810.b
+		SOV = { country_event = { id = sov_armor.812 } }
+		if = {
+			limit = {
+				ROM = { has_war = no }
+				ROM = { NOT = { is_guaranteed_by = FRA } }
+			}
+			diplomatic_relation = {
+				country = ROM
+				relation = guarantee
+				active = yes
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_war = no }
+				LIT = { NOT = { is_guaranteed_by = FRA } }
+			}
+			diplomatic_relation = {
+				country = LIT
+				relation = guarantee
+				active = yes
+			}
+		}
+		if = {
+			limit = {
+				LAT = { has_war = no }
+				LAT = { NOT = { is_guaranteed_by = FRA } }
+			}
+			diplomatic_relation = {
+				country = LAT
+				relation = guarantee
+				active = yes
+			}
+		}
+		if = {
+			limit = {
+				EST = { has_war = no }
+				EST = { NOT = { is_guaranteed_by = FRA } }
+			}
+			diplomatic_relation = {
+				country = EST
+				relation = guarantee
+				active = yes
+			}
+		}
+		ai_chance = {
+			factor = 50
+
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+
+			modifier = {
+				factor = 0.1
+				any_enemy_country = {
+					is_major = yes
+				}
+			}
+		}
+	}
+}
+
+#yes
+country_event = {
+	id = sov_armor.811
+	title = sov_armor.811.t
+	desc = sov_armor.811.d
+
+	picture = GFX_report_event_aid_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.811.a
+		hidden_effect = {
+			set_country_flag = FRA_eastern_withdrawl
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#no
+country_event = {
+	id = sov_armor.812
+	title = sov_armor.812.t
+	desc = sov_armor.812.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.812.a
+		hidden_effect = {
+			set_country_flag = FRA_eastern_withdrawl
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+####################################### GER Confrontation
+
+country_event = {
+	id = sov_armor.813
+	title = sov_armor.813.t
+	desc = sov_armor.813.d
+
+	picture = GFX_report_event_aid_pact
+
+	is_triggered_only = yes
+
+	#yield
+	option = {
+		name = sov_armor.813.a
+		SOV = { country_event = { id = sov_armor.814 } }
+		if = {
+			limit = {
+				ROM = { has_war = no }
+				ROM = { is_guaranteed_by = FRA }
+			}
+			diplomatic_relation = {
+				country = ROM
+				relation = guarantee
+				active = no
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_war = no }
+				LIT = {is_guaranteed_by = FRA }
+			}
+			diplomatic_relation = {
+				country = LIT
+				relation = guarantee
+				active = no
+			}
+		}
+		if = {
+			limit = {
+				LAT = { has_war = no }
+				LAT = { is_guaranteed_by = FRA }
+			}
+			diplomatic_relation = {
+				country = LAT
+				relation = guarantee
+				active = no
+			}
+		}
+		if = {
+			limit = {
+				EST = { has_war = no }
+				EST = { is_guaranteed_by = FRA }
+			}
+			diplomatic_relation = {
+				country = EST
+				relation = guarantee
+				active = no
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	#dont yield
+	option = {
+		name = sov_armor.813.b
+		SOV = { country_event = { id = sov_armor.815 } }
+		if = {
+			limit = {
+				ROM = { has_war = no }
+				ROM = { NOT = { is_guaranteed_by = FRA } }
+			}
+			diplomatic_relation = {
+				country = ROM
+				relation = guarantee
+				active = yes
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_war = no }
+				LIT = { NOT = { is_guaranteed_by = FRA } }
+			}
+			diplomatic_relation = {
+				country = LIT
+				relation = guarantee
+				active = yes
+			}
+		}
+		if = {
+			limit = {
+				LAT = { has_war = no }
+				LAT = { NOT = { is_guaranteed_by = FRA } }
+			}
+			diplomatic_relation = {
+				country = LAT
+				relation = guarantee
+				active = yes
+			}
+		}
+		if = {
+			limit = {
+				EST = { has_war = no }
+				EST = { NOT = { is_guaranteed_by = FRA } }
+			}
+			diplomatic_relation = {
+				country = EST
+				relation = guarantee
+				active = yes
+			}
+		}
+		ai_chance = {
+			factor = 50
+
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+
+			modifier = {
+				factor = 0.1
+				any_enemy_country = {
+					is_major = yes
+				}
+			}
+		}
+	}
+}
+
+#yes
+country_event = {
+	id = sov_armor.814
+	title = sov_armor.814.t
+	desc = sov_armor.814.d
+
+	picture = GFX_report_event_aid_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.814.a
+		hidden_effect = {
+			set_country_flag = GER_eastern_withdrawl
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#no
+country_event = {
+	id = sov_armor.815
+	title = sov_armor.815.t
+	desc = sov_armor.815.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.815.a
+		hidden_effect = {
+			set_country_flag = GER_eastern_withdrawl
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+####################################### Event for end of civil war
+
+country_event = {
+	id = sov_armor.816
+	title = sov_armor.816.t
+	desc = sov_armor.816.d
+
+	picture = GFX_report_event_soviet_soldiers
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = SOV
+		has_government = communism
+		is_subject = no
+		has_civil_war = no
+		NOT = { has_war_with = STA }
+		has_country_leader = {
+			character = SOV_lev_trotsky
+			ruling_only = yes
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					country_exists = STA
+				}
+				SOV = { annex_country = { target = STA transfer_troops = yes } }
+			}
+		}
+	}
+
+	option = { #Appeal to Patriotism
+		name = sov_armor.816.a
+		ai_chance = {
+			factor = 60
+		}
+		add_political_power = -150
+
+		create_corps_commander = {
+			name = "Georgy Zhukov"
+			picture = "Portrait_Soviet_Gregory_Zhukov.dds"
+			traits = { armor_officer media_personality war_hero winter_specialist skilled_staffer }
+			skill = 3
+
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 5
+		}
+
+		create_navy_leader = {
+			name = "Sergey Gorshkov"
+				picture = "Portrait_Soviet_Sergey_Gorshkov.dds"
+			traits = { navy_career_officer bold }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+
+		create_corps_commander = {
+			name = "Vasily Chuikov"
+				picture = "Portrait_Soviet_Vasily_Chuikov.dds"
+			traits = { brilliant_strategist career_officer }
+			skill = 4
+
+
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
+	option = { #Appeal to Career
+		name = sov_armor.816.b
+		ai_chance = {
+			factor = 30
+		}
+		add_political_power = -50
+
+		create_corps_commander = {
+			name = "Boris Shaposhnikov"
+				picture = "Portrait_Soviet_Boris_Shaposhnikov.dds"
+			traits = { trait_cautious career_officer }
+			skill = 3
+
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+
+		create_corps_commander = {
+			name = "Ivan Konev"
+				picture = "Portrait_Soviet_Ivan_Konev.dds"
+			traits = { armor_officer harsh_leader politically_connected }
+			skill = 5
+
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 2
+			logistics_skill = 5
+		}
+
+		create_corps_commander = {
+			name = "Ivan Chernyakhovsky"
+				picture = "Portrait_Soviet_Ivan_Chernyakhovsky.dds"
+			traits = { armor_officer }
+			skill = 1
+
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+
+		create_corps_commander = {
+			name = "Issa Pliyev"
+				picture = "Portrait_Soviet_Issa_Pliyev.dds"
+			traits = { cavalry_officer }
+			skill = 1
+
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+
+		create_corps_commander = {
+			name = "Leonid Govorov"
+				picture = "Portrait_Soviet_Leonid_Govorov.dds"
+			traits = { artillery_officer }
+			skill = 3
+
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+
+		create_corps_commander = {
+			name = "Rodion Malinovsky"
+				picture = "Portrait_Soviet_Rodion_Malinovsky.dds"
+			traits = { career_officer old_guard trait_cautious politically_connected }
+			skill = 1
+
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+
+		create_navy_leader = {
+			name = "Arseniy Golovko"
+				picture = "Portrait_Soviet_Arseniy_Golovko.dds"
+			traits = { arctic_water_expert spotter }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+
+	option = { #Purge
+		name = sov_armor.816.c
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.1
+	}
+}
+
+####################################### Reserves recruited
+
+country_event = {
+	id = sov_armor.817
+	title = sov_armor.817.t
+	desc = sov_armor.817.d
+
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #Appeal to Patriotism
+		name = sov_armor.817.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+####################################### TrotskyGrad
+
+country_event = {
+	id = sov_armor.818
+	title = sov_armor.818.t
+	desc = sov_armor.818.d
+	picture = GFX_report_event_soviet_purge_speech
+
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = SOV
+		has_government = communism
+		is_subject = no
+		has_civil_war = no
+		NOT = { has_war_with = STA }
+		has_country_leader = {
+			character = SOV_lev_trotsky
+			ruling_only = yes
+		}
+		owns_state = 217
+	}
+
+	option = { #a great idea!
+		name = sov_armor.818.a
+		ai_chance = {
+			base = 100
+		}
+		set_province_name = { id = 3529 name = "Trotskygrad"}
+	}
+}
+
+
+
+
+################################################# Molotov Ribbentrop pact invade?
+
+
+
+
+country_event = {
+	id = sov_armor.819
+	title = sov_armor.819.t
+	desc = sov_armor.819.d
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = sov_armor.819.a
+		declare_war_on = {
+			type = take_state_focus
+			target = POL
+			generator = { 96 95 97 94 93 91 89 }
+		}
+		ai_chance = {
+			factor = 99
+
+			modifier = {
+				factor = 0
+				has_war_With = JAP
+			}
+			modifier = {
+				factor = 0
+				POL = { is_in_faction_with = USA }
+			}
+
+			modifier = {
+				factor = 0
+				date > 1941.1.1
+			}
+		}
+	}
+
+	option = {
+		name = sov_armor.819.b
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = { POL = { is_in_faction_with = USA } }
+				NOT = { has_war_With = JAP }
+				date < 1941.1.1
+			}
+		}
+	}
+}
+
+####################################### Inexperienced Workforce
+
+# More experienced workforce
+country_event = {
+	id = sov_armor.820
+	title = sov_armor.820.t
+	desc = sov_armor.820.d
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_munitions_production }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_mortar_production }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_23_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_33_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_34_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_44_dynamic_modifier }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			#add_to_variable = { var = SOV_fyp_production_factory_efficiency_gain_factor value = 0.05 }
+			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.05 }
+			country_event = { id = sov_armor.821 days = 365 }
+		}
+	}
+	option = {
+		name = sov_armor.820.a
+		custom_effect_tooltip = sov_armor.820.a_tt
+	}
+}
+
+# More experienced workforce
+country_event = {
+	id = sov_armor.821
+	title = sov_armor.820.t
+	desc = sov_armor.820.d
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_munitions_production }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_mortar_production }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_23_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_33_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_34_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_44_dynamic_modifier }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			#add_to_variable = { var = SOV_fyp_production_factory_efficiency_gain_factor value = 0.05 }
+			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.05 }
+			country_event = { id = sov_armor.822 days = 365 }
+		}
+	}
+	option = {
+		name = sov_armor.820.a
+		custom_effect_tooltip = sov_armor.820.a_tt
+	}
+}
+
+# More experienced workforce
+country_event = {
+	id = sov_armor.822
+	title = sov_armor.820.t
+	desc = sov_armor.820.d
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_munitions_production }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_mortar_production }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_23_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_33_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_34_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_44_dynamic_modifier }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			#add_to_variable = { var = SOV_fyp_production_factory_efficiency_gain_factor value = 0.05 }
+			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.05 }
+			country_event = { id = sov_armor.823 days = 365 }
+		}
+	}
+	option = {
+		name = sov_armor.820.a
+		custom_effect_tooltip = sov_armor.820.a_tt
+	}
+}
+
+# More experienced workforce
+country_event = {
+	id = sov_armor.823
+	title = sov_armor.820.t
+	desc = sov_armor.820.d
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_munitions_production }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_mortar_production }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_23_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_33_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_34_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_44_dynamic_modifier }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			#add_to_variable = { var = SOV_fyp_production_factory_efficiency_gain_factor value = 0.05 }
+			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.05 }
+			country_event = { id = sov_armor.824 days = 365 }
+		}
+	}
+	option = {
+		name = sov_armor.820.a
+		custom_effect_tooltip = sov_armor.820.a_tt
+	}
+}
+
+# More experienced workforce
+country_event = {
+	id = sov_armor.824
+	title = sov_armor.820.t
+	desc = sov_armor.820.d
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_munitions_production }
+			has_dynamic_modifier = { modifier = SOV_soviet_industry_dynamic_modifier_mortar_production }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_23_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_third_five_year_plan_33_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_34_dynamic_modifier }
+			#has_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_44_dynamic_modifier }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			#add_to_variable = { var = SOV_fyp_production_factory_efficiency_gain_factor value = 0.05 }
+			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.05 }
+		}
+	}
+	option = {
+		name = sov_armor.820.a
+		custom_effect_tooltip = sov_armor.820.a_tt
+	}
+}
+
+####################################### Soviet Death of stalin historical
+
+
+
+country_event = {
+	id = sov_armor.825
+	title = sov_armor.825.t
+	desc = sov_armor.825.d
+
+	trigger = {
+		tag = SOV
+		country_exists = SOV
+		has_government = communism
+		has_war = no
+		date > 1953.1.1
+		num_of_controlled_states > 30
+		NOT = { has_country_flag = SOV_surrender_wa }
+		NOT = { has_global_flag = Stalin_is_dead }
+	}
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = Stalin_is_dead
+		}
+	}
+
+	option = {
+		name = sov_armor.825.a
+		ai_chance = {
+			factor = 1
+		}
+		kill_country_leader = yes
+		add_country_leader_role = {
+			character = SOV_nikita_khrushchyov
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = stalinism
+				traits = {
+					liberal_reformer
+				}
+				desc = "POLITICS_NIKITA_KHRUSHCHEV_DESC"
+			}
+			promote_leader = yes
+		}
+		add_stability = -0.2
+		hidden_effect = {
+			news_event = { id = afo_news.34 hours = 6 }
+		}
+	}
+
+	option = {
+		name = sov_armor.825.b
+		ai_chance = {
+			factor = 0
+		}
+		kill_country_leader = yes
+		add_country_leader_role = {
+			character = SOV_georgy_malenkov
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = stalinism
+				traits = {
+					stalin_loyalist
+					power_hungry
+				}
+				desc = "POLITICS_GEORGY_MALENKOV_DESC"
+			}
+			promote_leader = yes
+		}
+		add_stability = -0.2
+		hidden_effect = {
+			news_event = { id = afo_news.34 hours = 6 }
+		}
+	}
+}
+
+####################################### Soviet Death of stalin alternate
+
+
+
+country_event = {
+	id = sov_armor.826
+	title = sov_armor.826.t
+	desc = sov_armor.826.d
+
+	trigger = {
+		tag = SOV
+		country_exists = SOV
+		has_government = communism
+		has_war = no
+		OR = {
+			has_country_flag = SOV_surrender_wa
+			num_of_controlled_states < 30
+		}
+		NOT = { has_global_flag = Stalin_is_dead }
+	}
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = Stalin_is_dead
+		}
+	}
+
+	option = {
+		name = sov_armor.826.a
+		ai_chance = {
+			factor = 1
+		}
+		set_cosmetic_tag = SOV_defeated
+		kill_country_leader = yes
+		add_country_leader_role = {
+			character = SOV_nikita_khrushchyov
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = stalinism
+				traits = {
+					liberal_reformer
+				}
+				desc = "POLITICS_NIKITA_KHRUSHCHEV_DESC"
+			}
+			promote_leader = yes
+		}
+		add_stability = -0.2
+		hidden_effect = {
+			set_country_flag = khrushchev_picked
+			news_event = { id = afo_news.35 hours = 6 }
+		}
+#	}
+#
+#	option = {
+#		name = sov_armor.826.b
+#		ai_chance = {
+#			factor = 0
+#		}
+#		kill_country_leader = yes
+#		add_stability = -0.2
+#		hidden_effect = {
+#			country_event = { id = sov_armor.827 days = 70 }
+#			set_country_flag = malenkov_picked
+#			news_event = { id = afo_news.35 hours = 6 }
+#		}
+	}
+}
+
+
+####################################### Soviet Civil War
+#
+#
+#
+#country_event = {
+#	id = sov_armor.827
+#	title = sov_armor.827.t
+#	desc = sov_armor.827.d
+#
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		hidden_effect = {
+#			set_party_name = {
+#				ideology = neutrality
+#				long_name = SOV_russia_neutral_party
+#				name = SOV_russia_neutral_party
+#			}
+#			news_event = { hours = 6 id = afo_news.36 }
+#			if = {
+#				limit = {
+#					has_country_flag = khrushchev_picked
+#				}
+#				set_politics = {
+#					ruling_party = neutrality
+#					last_election = "1933.7.1"
+#					election_frequency = 48
+#					elections_allowed = no
+#				}
+#				set_popularities = {
+#					democratic = 5
+#					fascism = 0
+#					communism = 44
+#					neutrality = 51
+#				}
+#				start_civil_war = {
+#					ideology = communism
+#					size = 0.2
+#					keep_unit_leaders = { 412 }
+#				}
+#			}
+#			if = {
+#				limit = {
+#					has_country_flag = malenkov_picked
+#				}
+#				set_popularities = {
+#					democratic = 1
+#					fascism = 0
+#					communism = 97
+#					neutrality = 2
+#				}
+#				start_civil_war = {
+#					ideology = neutrality
+#					size = 0.3
+#					keep_unit_leaders = { 401 402 410 405 406 403 407 404 }
+#				}
+#				random_other_country = {
+#					limit = {
+#						original_tag = SOV
+#						has_government = neutrality
+#					}
+#					set_rule = { can_create_factions = yes }
+#					create_faction = "Comintern"
+#					kill_country_leader = yes
+#				}
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = sov_armor.827.a
+#		ai_chance = {
+#			factor = 1
+#		}
+#		add_stability = -0.2
+#	}
+#}
+#
+####################################### Break molotov pact
+
+country_event = {
+	id = sov_armor.828
+	title = sov_armor.828.t
+	desc = sov_armor.828.d
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_subject = no
+		NOT = { has_war_with = GER }
+		NOT = { is_in_faction_with = GER }
+		GER = { has_war = yes }
+		GER = { surrender_progress > 0.25 }
+		if = {
+			limit = {
+				GER = { has_war_with = FRA }
+			}
+			FRA = { surrender_progress < 0.1 }
+		}
+		any_neighbor_country = {
+			tag = GER
+		}
+		OR = {
+			GER = { is_faction_leader = yes }
+			GER = { is_in_faction = no }
+		}
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = sov_armor.828.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				has_non_aggression_pact_with = GER
+			}
+			diplomatic_relation = {
+				country = GER
+				relation = non_aggression_pact
+				active = no
+			}
+		}
+		declare_war_on = {
+			target = GER
+			type = annex_everything
+		}
+	}
+
+	option = {
+		name = sov_armor.828.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+####################################### COLD WAR LOST
+
+#Perm
+
+#Soviet wins
+country_event = {
+	id = sov_armor.829
+	title = sov_armor.829.t
+	desc = sov_armor.829.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 398 }
+		}
+	}
+
+	option = {
+		name = sov_armor.829.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 20
+		hidden_effect = {
+			398 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.829.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet loses
+country_event = {
+	id = sov_armor.830
+	title = sov_armor.830.t
+	desc = sov_armor.830.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 398 }
+		}
+	}
+
+	option = {
+		name = sov_armor.830.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.830.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 20
+	}
+}
+
+#stalemate
+country_event = {
+	id = sov_armor.831
+	title = sov_armor.831.t
+	desc = sov_armor.831.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 398 }
+		}
+	}
+
+	option = {
+		name = sov_armor.831.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.831.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet wins NO FIGHTING
+country_event = {
+	id = sov_armor.832
+	title = sov_armor.832.t
+	desc = sov_armor.832.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = sov_armor.832.a
+		trigger = {
+			original_tag = SOV
+		}
+		hidden_effect = {
+			398 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.832.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+}
+
+#Ufa
+
+#Soviet wins
+country_event = {
+	id = sov_armor.833
+	title = sov_armor.833.t
+	desc = sov_armor.833.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 651 }
+		}
+	}
+
+	option = {
+		name = sov_armor.833.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 20
+		hidden_effect = {
+			651 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.833.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet loses
+country_event = {
+	id = sov_armor.834
+	title = sov_armor.834.t
+	desc = sov_armor.834.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 651 }
+		}
+	}
+
+	option = {
+		name = sov_armor.834.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.834.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 20
+	}
+}
+
+#stalemate
+country_event = {
+	id = sov_armor.835
+	title = sov_armor.835.t
+	desc = sov_armor.835.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 651 }
+		}
+	}
+
+	option = {
+		name = sov_armor.835.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.835.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet wins NO FIGHTING
+country_event = {
+	id = sov_armor.836
+	title = sov_armor.836.t
+	desc = sov_armor.836.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = sov_armor.836.a
+		trigger = {
+			original_tag = SOV
+		}
+		hidden_effect = {
+			651 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.836.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+}
+
+#Orenburg
+
+#Soviet wins
+country_event = {
+	id = sov_armor.837
+	title = sov_armor.837.t
+	desc = sov_armor.837.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 652 }
+		}
+	}
+
+	option = {
+		name = sov_armor.837.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 20
+		hidden_effect = {
+			652 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.837.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet loses
+country_event = {
+	id = sov_armor.838
+	title = sov_armor.838.t
+	desc = sov_armor.838.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 652 }
+		}
+	}
+
+	option = {
+		name = sov_armor.838.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.838.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 20
+	}
+}
+
+#stalemate
+country_event = {
+	id = sov_armor.839
+	title = sov_armor.839.t
+	desc = sov_armor.839.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 652 }
+		}
+	}
+
+	option = {
+		name = sov_armor.839.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.839.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet wins NO FIGHTING
+country_event = {
+	id = sov_armor.840
+	title = sov_armor.840.t
+	desc = sov_armor.840.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = sov_armor.840.a
+		trigger = {
+			original_tag = SOV
+		}
+		hidden_effect = {
+			652 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.840.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+}
+
+#Ural'sk
+
+#Soviet wins
+country_event = {
+	id = sov_armor.841
+	title = sov_armor.841.t
+	desc = sov_armor.841.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 407 }
+		}
+	}
+
+	option = {
+		name = sov_armor.841.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 20
+		hidden_effect = {
+			407 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.841.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet loses
+country_event = {
+	id = sov_armor.842
+	title = sov_armor.842.t
+	desc = sov_armor.842.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 407 }
+		}
+	}
+
+	option = {
+		name = sov_armor.842.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.842.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 20
+	}
+}
+
+#stalemate
+country_event = {
+	id = sov_armor.843
+	title = sov_armor.843.t
+	desc = sov_armor.843.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 407 }
+		}
+	}
+
+	option = {
+		name = sov_armor.843.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.843.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet wins NO FIGHTING
+country_event = {
+	id = sov_armor.844
+	title = sov_armor.844.t
+	desc = sov_armor.844.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = sov_armor.844.a
+		trigger = {
+			original_tag = SOV
+		}
+		hidden_effect = {
+			407 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.844.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+}
+
+#
+
+#Soviet wins
+country_event = {
+	id = sov_armor.845
+	title = sov_armor.845.t
+	desc = sov_armor.845.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 406 }
+		}
+	}
+
+	option = {
+		name = sov_armor.845.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 20
+		hidden_effect = {
+			406 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.845.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet loses
+country_event = {
+	id = sov_armor.846
+	title = sov_armor.846.t
+	desc = sov_armor.846.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 406 }
+		}
+	}
+
+	option = {
+		name = sov_armor.846.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.846.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 20
+	}
+}
+
+#stalemate
+country_event = {
+	id = sov_armor.847
+	title = sov_armor.847.t
+	desc = sov_armor.847.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			RSO = { transfer_state = 406 }
+		}
+	}
+
+	option = {
+		name = sov_armor.847.a
+		trigger = {
+			original_tag = SOV
+		}
+		army_experience = 10
+	}
+	option = {
+		name = sov_armor.847.b
+		trigger = {
+			original_tag = GER
+		}
+		army_experience = 10
+	}
+}
+
+#Soviet wins NO FIGHTING
+country_event = {
+	id = sov_armor.848
+	title = sov_armor.848.t
+	desc = sov_armor.848.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = sov_armor.848.a
+		trigger = {
+			original_tag = SOV
+		}
+		hidden_effect = {
+			406 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = SOV_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 0
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = SOV_infiltration_@ROOT
+						value = 1
+					}
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resistance = 10
+			}
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+	option = {
+		name = sov_armor.848.b
+		trigger = {
+			original_tag = GER
+		}
+		hidden_effect = {
+			add_to_variable = {
+			    var = SOV_infiltration_level
+			    value = 5
+			}
+		}
+	}
+}
+
+####################################### Winter War failed
+
+country_event = {
+	id = sov_armor.849
+	title = sov_armor.849.t
+	desc = {
+		text = sov_armor.849.da
+		trigger = {
+			has_country_flag = SOV_winter_war_phyrric_victory
+		}
+	}
+	desc = {
+		text = sov_armor.849.db
+		trigger = {
+			NOT = { has_country_flag = SOV_winter_war_phyrric_victory }
+		}
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = SOV_ww_over
+		}
+	}
+
+	#partial failure
+	option = {
+		name = sov_armor.849.a
+		trigger = {
+			has_country_flag = SOV_winter_war_phyrric_victory
+		}
+		ai_chance = {
+			factor = 1
+		}
+		effect_tooltip = {
+			transfer_state = 146
+			transfer_state = 1044
+			transfer_state = 1045
+			1045 = { set_state_name = "Koivisto" }
+			white_peace = FIN
+			add_war_support = -0.2
+			add_stability = -0.1
+			army_experience = 25
+			FIN = {
+				add_stability = 0.1
+			}
+		}
+		FIN = { country_event = { id = sov_armor.858 hours = 6 } }
+	}
+
+	#complete failure
+	option = {
+		name = sov_armor.849.b
+		trigger = {
+			NOT = { has_country_flag = SOV_winter_war_phyrric_victory }
+		}
+		ai_chance = {
+			factor = 1
+		}
+		effect_tooltip = {
+			white_peace = FIN
+			add_war_support = -0.3
+			add_stability = -0.2
+			FIN = {
+				add_stability = 0.2
+			}
+		}
+		FIN = { country_event = { id = sov_armor.850 hours = 6 } }
+	}
+
+	#War goes on
+	option = {
+		name = sov_armor.849.c
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -150
+		add_war_support = -0.5
+		effect_tooltip = {
+			FIN = {
+				add_war_support = 0.2
+			}
+		}
+		FIN = { country_event = { id = sov_armor.851 hours = 6 } }
+	}
+}
+
+#SU phyrric win
+country_event = {
+	id = sov_armor.858
+	title = sov_armor.858.t
+	desc = sov_armor.858.d
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = sov_armor.858.a
+		add_stability = 0.1
+		SOV = {
+			transfer_state = 146
+			transfer_state = 1044
+			transfer_state = 1045
+			1045 = { set_state_name = "Koivisto" }
+			army_experience = 25
+			white_peace = FIN
+			add_war_support = -0.1
+			add_stability = -0.05
+			hidden_effect = {
+				146 = {
+					set_building_level = {
+						type = bunker
+						level = 0
+						province = {
+							all_provinces = yes
+						}
+					}
+				}
+				1044 = {
+					set_building_level = {
+						type = bunker
+						level = 0
+						province = {
+							all_provinces = yes
+						}
+					}
+				}
+				1045 = {
+					set_building_level = {
+						type = bunker
+						level = 0
+						province = {
+							all_provinces = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#SU loses and wants peace
+country_event = {
+	id = sov_armor.850
+	title = sov_armor.850.t
+	desc = sov_armor.850.d
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	option = {
+		name = sov_armor.850.a
+		add_stability = 0.2
+		SOV = {
+			white_peace = FIN
+			add_war_support = -0.2
+			add_stability = -0.1
+		}
+	}
+}
+
+#SU doesnt want peace
+country_event = {
+	id = sov_armor.851
+	title = sov_armor.851.t
+	desc = sov_armor.851.d
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = sov_armor.851.a
+		add_war_support = 0.2
+	}
+}
+
+####################################### End of the great patriotic war
+
+country_event = {
+	id = sov_armor.852
+	title = sov_armor.852.t
+	desc = {
+		text = sov_armor.852.dalt
+		trigger = {
+			NOT = {
+				owns_state = 219
+			}
+		}
+	}
+	desc = sov_armor.852.d
+
+	picture = GFX_news_event_soviet_victory_parade
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_war = no
+		has_country_flag = great_patriotic_war_flag
+	}
+
+	option = {
+		trigger = {
+			owns_state = 219
+		}
+		name = sov_armor.852.a
+		if = {
+			limit = {
+				has_idea = great_patriotic_war
+			}
+			remove_ideas = great_patriotic_war
+		}
+		if = {
+			limit = {
+				has_idea = great_patriotic_war_2
+			}
+			remove_ideas = great_patriotic_war_2
+		}
+		add_stability = 0.4
+		random_unit_leader = {
+			limit = {
+				has_id = 410
+			}
+			add_unit_leader_trait = media_personality
+			add_unit_leader_trait = war_hero
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		trigger = {
+			NOT = {
+				owns_state = 219
+			}
+		}
+		name = sov_armor.852.aalt
+		if = {
+			limit = {
+				has_idea = great_patriotic_war
+			}
+			remove_ideas = great_patriotic_war
+		}
+		if = {
+			limit = {
+				has_idea = great_patriotic_war_2
+			}
+			remove_ideas = great_patriotic_war_2
+		}
+		add_stability = -0.2
+		random_unit_leader = {
+			limit = {
+				has_id = 410
+			}
+			add_unit_leader_trait = media_personality
+			add_unit_leader_trait = war_hero
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Germany Cedes the East
+country_event = {
+	id = sov_armor.853
+	title = sov_armor.853.t
+	desc = sov_armor.853.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.853.a
+		if = {
+			limit = {
+				GER = {
+					owns_state = 96
+					controls_state = 96
+				}
+			}
+			transfer_state = 96
+		}
+		if = {
+			limit = {
+				GER = {
+					owns_state = 95
+					controls_state = 95
+				}
+			}
+			transfer_state = 95
+		}
+		if = {
+			limit = {
+				GER = {
+					owns_state = 94
+					controls_state = 94
+				}
+			}
+			transfer_state = 94
+		}
+		if = {
+			limit = {
+				GER = {
+					owns_state = 93
+					controls_state = 93
+				}
+			}
+			transfer_state = 93
+		}
+		if = {
+			limit = {
+				GER = {
+					owns_state = 91
+					controls_state = 91
+				}
+			}
+			transfer_state = 91
+		}
+		if = {
+			limit = {
+				GER = {
+					owns_state = 89
+					controls_state = 89
+				}
+			}
+			transfer_state = 89
+		}
+		if = {
+			limit = {
+				GER = {
+					owns_state = 97
+					controls_state = 97
+				}
+			}
+			transfer_state = 97
+		}
+		if = {
+			limit = {
+				GER = {
+					owns_state = 784
+					controls_state = 784
+				}
+			}
+			transfer_state = 784
+		}
+	}
+}
+
+# Germany Refuses to Cede the East
+country_event = {
+	id = sov_armor.854
+	title = sov_armor.854.t
+	desc = sov_armor.854.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.854.a
+		create_wargoal = {
+			type = take_state_focus
+			target = GER
+			generator = { 96 95 94 93 91 89 784 }
+		}
+	}
+}
+
+country_event = {
+	id = sov_armor.855
+	hidden = yes
+
+	mean_time_to_happen = { days = 4 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		is_historical_focus_on = yes
+		ENG = { has_war_with = PER }
+		ENG = { has_completed_focus = ENG_secure_iran }
+		NOT = { has_war_With = PER }
+	}
+
+	option = {
+		declare_war_on = {
+			type = take_state_focus
+			target = PER
+			generator = { 419 420 266 418 416 }
+		}
+	}
+}
+
+####################################### Hungary asks for white peace
+
+country_event = {
+	id = sov_armor.856
+	title = sov_armor.856.t
+	desc = sov_armor.856.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.856.a
+		HUN = { country_event = { id = hun_armor.847 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = sov_armor.856.b
+		HUN = { country_event = { id = hun_armor.848 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = sov_armor.856.c
+		HUN = { country_event = { id = hun_armor.849 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+####################################### Hungary rejects puppet status
+
+country_event = {
+	id = sov_armor.857
+	title = sov_armor.857.t
+	desc = sov_armor.857.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = sov_armor.857.a
+		HUN = { country_event = { days = 1 id = hun_armor.847 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = sov_armor.857.b
+		HUN = { country_event = { days = 1 id = hun_armor.849 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+####################################### Cheats
+
+############################################Alt history stuff
+
+country_event = {
+	id = sov_armor.932
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		FRA = {
+			is_ai = yes
+		}
+		ENG = {
+			has_completed_focus = ENG_a_change_in_course
+		}
+		has_war_with = FRA
+		has_war_with = POL
+		date < 1940.1.1
+	}
+
+	immediate = {
+		white_peace = {
+			tag = FRA
+		}
+	}
+}
+
+country_event = {
+	id = sov_armor.933
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_global_flag = SOV_soviet_civil_war_over
+		has_completed_focus = SOV_approach_tukhachevsky
+	}
+
+	immediate = {
+		SOS = {
+			every_unit_leader = {
+				set_nationality = SOV
+			}
+		}
+		SOV_georgy_zhukov = {
+			set_nationality = SOV
+		}
+		SOV_georgy_zhukov_ai = {
+			promote_leader = yes
+		}
+		SOV_konstantin_rokossovsky_ai = {
+			promote_leader = yes
+		}
+		set_technology = { large_front_operations = 0 }
+		set_technology = { advanced_squad_tactics = 1 }
+		set_technology = { frontal_tanks = 0 }
+		set_technology = { tank_logistics = 0 }
+		set_technology = { combined_warfare = 1 }	
+	}
+}
+
+country_event = {
+	id = sov_armor.934
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_global_flag = SOV_soviet_civil_war_over
+		has_completed_focus = SOV_approach_tukhachevsky
+		date > 1939.10.1
+	}
+
+	immediate = {
+		set_technology = { armoured_waves = 1 }
+		army_experience = 300
+		add_war_support = 0.5
+		activate_advisor = georgy_zhukov
+		random_owned_controlled_state = {
+			prioritize = { 247 248 253 252 255 254 223 217 219 229 239 250 }
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 3
+					include_locked = yes
+				}
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 247 248 253 252 255 254 223 217 219 229 239 250 }
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 3
+					include_locked = yes
+				}
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 247 248 253 252 255 254 223 217 219 229 239 250 }
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 3
+					include_locked = yes
+				}
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 247 248 253 252 255 254 223 217 219 229 239 250 }
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 3
+					include_locked = yes
+				}
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+	}
+}

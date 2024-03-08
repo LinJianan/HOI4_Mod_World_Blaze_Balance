@@ -1,0 +1,3763 @@
+﻿add_namespace = jap_armor
+
+############## Light Armor
+
+country_event = {
+	id = jap_armor.001
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		date < 1938.6.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = { type = convoy_1 amount = 150 producer = JAP }
+		set_country_flag = light_armor_template_1_jap
+
+		division_template = {
+			name = "Light Tank Division"
+			priority = 1
+
+			regiments = {
+				light_armor = { x = 0 y = 0 }
+				light_armor = { x = 0 y = 1 }
+				light_armor = { x = 0 y = 2 }
+
+				light_armor = { x = 1 y = 0 }
+				light_armor = { x = 1 y = 1 }
+				light_armor = { x = 1 y = 2 }
+
+				motorized = { x = 2 y = 0 }
+				motorized = { x = 2 y = 1 }
+				motorized = { x = 2 y = 2 }
+
+				motorized = { x = 3 y = 0 }
+				motorized = { x = 3 y = 1 }
+				motorized = { x = 3 y = 2 }
+
+				motorized_artillery_brigade = { x = 4 y = 0 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+
+				mot_recon = { x = 1 y = 0 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+######## Medium Armor
+
+country_event = {
+	id = jap_armor.002
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		OR = {
+			has_tech = jap_medium_3
+			has_tech = jap_medium_tank_chassis_3
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_1_jap
+
+		add_political_power = 2000
+
+		division_template = {
+			name = "Mixed Tank Division"
+			priority = 1
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+				medium_armor = { x = 0 y = 3 }
+
+				light_armor = { x = 1 y = 0 }
+				light_armor = { x = 1 y = 1 }
+				light_armor = { x = 1 y = 2 }
+				light_armor = { x = 1 y = 3 }
+
+				motorized = { x = 2 y = 0 }
+				motorized = { x = 2 y = 1 }
+				motorized = { x = 2 y = 2 }
+
+				motorized = { x = 3 y = 0 }
+				motorized = { x = 3 y = 1 }
+				motorized = { x = 3 y = 2 }
+
+				motorized_artillery_brigade = { x = 4 y = 0 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				field_hospital = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_artillery = { x = 1 y = 1 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = jap_armor.003
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		has_tech = jap_heavy_artillery_1
+	}
+
+	immediate = {
+		set_country_flag = marine_template_jap
+		air_experience = 200
+		# navy_experience = 200
+
+		division_template = {
+			name = "Japanese Marine Division"
+			priority = 2
+
+			regiments = {
+				marine = { x = 0 y = 0 }
+				marine = { x = 0 y = 1 }
+				marine = { x = 0 y = 2 }
+
+				marine = { x = 1 y = 0 }
+				marine = { x = 1 y = 1 }
+				marine = { x = 1 y = 2 }
+
+				marine = { x = 2 y = 0 }
+				marine = { x = 2 y = 1 }
+				marine = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				heavy_artillery = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				military_police = { x = 0 y = 4 }
+
+				recon = { x = 1 y = 0 }
+				field_hospital = { x = 1 y = 1 }
+				heavy_anti_air = { x = 1 y = 2 }
+				anti_tank = { x = 1 y = 3 }
+				snlf = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.004
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		OR = {
+			AND = {
+				has_tech = jap_medium_td_4
+				has_tech = jap_medium_spg_4
+			}
+			date > 1941.6.1
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_2_jap
+
+		division_template = {
+			name = "Medium Tank Division"
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+
+				medium_sp_artillery_brigade = { x = 2 y = 0 }
+				medium_sp_artillery_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				motorized = { x = 4 y = 0 }
+				motorized = { x = 4 y = 1 }
+				motorized = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				maintenance_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+				heavy_artillery = { x = 1 y = 1 }
+				medium_tank_destroyer = { x = 1 y = 2 }
+
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = jap_armor.005
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		OR = {
+			AND = {
+				has_tech = jap_medium_aa_8
+			}
+			date > 1944.6.1
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_3_jap
+
+		division_template = {
+			name = "Advanced Medium Tank Division"
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+
+				medium_sp_artillery_brigade = { x = 2 y = 1 }
+				medium_sp_artillery_brigade = { x = 2 y = 2 }
+				medium_tank_destroyer_brigade = { x = 2 y = 3 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+				mechanized = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				maintenance_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+				field_hospital = { x = 1 y = 1 }
+				heavy_artillery = { x = 1 y = 2 }
+				medium_sp_anti_air = { x = 1 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = jap_armor.006
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+	}
+
+	immediate = {
+		add_fuel = 1000000
+		division_template = {
+			name = "Japanese Infantry Division"
+			division_names_group = JAP_INF_01
+			priority = 2
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+				artillery_brigade = { x = 3 y = 3 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				horse_field_hospital = { x = 0 y = 1 }
+				horse_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				recon = { x = 1 y = 0 }
+				artillery = { x = 1 y = 1 }
+				military_police = { x = 1 y = 2 }
+				maintenance_company = { x = 1 y = 3 }
+			}
+		}
+		set_country_flag = infantry_template_jap
+
+		JAP_tomoyuki_yamashita = {
+			promote_leader = yes
+		}
+		JAP_toshizo_nishio = {
+			promote_leader = yes
+		}
+		JAP_hatazo_adachi = {
+			promote_leader = yes
+		}
+		JAP_seishiro_itagaki = {
+			promote_leader = yes
+		}
+		JAP_masaharu_homma = {
+			promote_leader = yes
+		}
+		JAP_shizuichi_tanaka = {
+			promote_leader = yes
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.007
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		has_tech = converging_sheaf
+		has_tech = jap_anti_air_1
+		date > 1941.1.1
+	}
+
+	immediate = {
+		add_fuel = 1000000
+		division_template = {
+			name = "Imperial Infantry Division"
+			priority = 2
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+				artillery_brigade = { x = 3 y = 3 }
+
+				artillery_brigade = { x = 4 y = 0 }
+				anti_tank_brigade = { x = 4 y = 1 }
+				anti_tank_brigade = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				field_hospital = { x = 0 y = 1 }
+				horse_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				anti_air = { x = 0 y = 4 }
+
+				recon = { x = 1 y = 0 }
+				artillery = { x = 1 y = 1 }
+				military_police = { x = 1 y = 2 }
+				maintenance_company = { x = 1 y = 3 }
+				anti_tank = { x = 1 y = 4 }
+			}
+		}
+		set_country_flag = infantry_template_jap_2
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.008
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		OR = {
+			AND = {
+				has_tech = jap_modern_spg_1
+			}
+			date > 1947.6.1
+		}
+	}
+
+	immediate = {
+		set_country_flag =modern_armor_template_1_jap
+
+		division_template = {
+			name = "Modern Tank Division"
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+
+				modern_sp_artillery_brigade = { x = 2 y = 1 }
+				modern_sp_artillery_brigade = { x = 2 y = 2 }
+				modern_armor = { x = 2 y = 3 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+				mechanized = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				maintenance_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+				field_hospital = { x = 1 y = 1 }
+				heavy_artillery = { x = 1 y = 2 }
+				modern_sp_anti_air = { x = 1 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+####upgrade infantry and marine divisions
+country_event = {
+	id = jap_armor.009
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		has_tech = converging_sheaf
+		has_template = "Japanese Infantry Division"
+	}
+
+	immediate = {
+		navy_experience = 175
+		add_units_to_division_template = {
+			template_name = "Japanese Infantry Division"
+			regiments = {
+				artillery_brigade = 4
+				anti_tank_brigade = 4
+				anti_tank_brigade = 4
+			}
+		}
+		add_units_to_division_template = {
+			template_name = "Japanese Marine Division"
+			regiments = {
+				artillery_brigade = 3
+				artillery_brigade = 3
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+################################################################################### Japan is the one conquering
+
+
+
+
+
+
+
+
+################################################# Japan is the one conquering
+
+
+
+
+
+country_event = {
+	id = jap_armor.401
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			288 = { is_fully_controlled_by = SIA }
+			288 = { is_fully_controlled_by = IPM }
+		}
+		288 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { transfer_State = 288 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.402
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			640 = { is_fully_controlled_by = SIA }
+			640 = { is_fully_controlled_by = IPM }
+		}
+		640 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { transfer_State = 640 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.403
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			432 = { is_fully_controlled_by = SIA }
+			432 = { is_fully_controlled_by = IPM }
+		}
+		432 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { set_state_controller = 432 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.404
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			430 = { is_fully_controlled_by = SIA }
+			430 = { is_fully_controlled_by = IPM }
+		}
+		430 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { set_state_controller = 430 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.405
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			431 = { is_fully_controlled_by = SIA }
+			431 = { is_fully_controlled_by = IPM }
+		}
+		431 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { set_state_controller = 431 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.406
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			434 = { is_fully_controlled_by = SIA }
+			434 = { is_fully_controlled_by = IPM }
+		}
+		434 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { set_state_controller = 434 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.407
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			435 = { is_fully_controlled_by = SIA }
+			435 = { is_fully_controlled_by = IPM }
+		}
+		435 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { set_state_controller = 435 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.408
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			438 = { is_fully_controlled_by = SIA }
+			438 = { is_fully_controlled_by = IPM }
+		}
+		438 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { set_state_controller = 438 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.409
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			436 = { is_fully_controlled_by = SIA }
+			436 = { is_fully_controlled_by = IPM }
+		}
+		436 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { set_state_controller = 436 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.410
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = RAJ }
+		OR = {
+			426 = { is_fully_controlled_by = SIA }
+			426 = { is_fully_controlled_by = IPM }
+		}
+		426 = { is_owned_by = RAJ }
+	}
+
+	immediate = {
+		JAP = { transfer_State = 426 }
+	}
+
+	option = {}
+
+}
+
+####################################### RNC
+
+country_event = {
+	id = jap_armor.421
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = CHI }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		OR = {
+			NOT = { country_exists = CHI }
+			CHI = { is_subject_of = JAP }
+		}
+	}
+
+	immediate = {
+		every_state = {
+			limit = {
+				is_core_of = CHI
+				NOT = { is_core_of = MAN }
+			}
+			add_core_of = RNC
+		}
+		if = {
+			limit = {
+				country_exists = CHI
+				CHI = { is_subject_of = JAP }
+			}
+			RNC = { annex_country = { target = CHI } }
+		}
+		RNC = {
+			set_capital = { state = 598 }
+		}
+		if = {
+			limit = {
+				JAP = { is_ai = yes }
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_fully_controlled_by = JAP
+					}
+					is_core_of = CHI
+					NOT = { state = 745 }
+					NOT = { state = 524 }
+				}
+				RNC = { transfer_state = PREV }
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.422
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = GXC }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		GXC = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = GXC
+				GXC = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = GXC } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.423
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = YUN }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		YUN = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = YUN
+				YUN = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = YUN } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.424
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = XSM }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		XSM = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = XSM
+				XSM = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = XSM } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.425
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = SIK }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		SIK = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = SIK
+				SIK = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = SIK } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.426
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = PRC }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		PRC = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = PRC
+				PRC = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = PRC } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.427
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = SIC }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		SIC = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = SIC
+				SIC = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = SIC } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.428
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = XIK }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		XIK = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = XIK
+				XIK = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = XIK } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.429
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = GUC }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		GUC = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = GUC
+				GUC = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = GUC } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.430
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = HPC }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		HPC = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = HPC
+				HPC = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = HPC } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.431
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = SHA }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		SHA = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = SHA
+				SHA = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = SHA } }
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.432
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RNC
+		NOT = { has_war_with = NEA }
+		JAP = { has_completed_focus = JAP_the_china_project }
+		NEA = { is_subject_of = JAP }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = NEA
+				NEA = { is_subject_of = JAP }
+				JAP = { is_ai = yes }
+			}
+			RNC = { annex_country = { target = NEA } }
+		}
+	}
+
+	option = {}
+
+}
+
+################################################################################### Not Cheats
+
+country_event = {
+	id = jap_armor.601
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		date < 1937.1.1
+		has_country_flag = infantry_template_jap
+		has_country_flag = marine_template_jap
+	}
+
+	immediate = {
+		delete_unit_template_and_units = { division_template = "Dokuritsu Konsei Ryodan" }
+		delete_unit_template_and_units = { division_template = "Dokuritsu Konsei Ryodan (Sensha)" }
+		delete_unit_template_and_units = { division_template = "Keibitai" }
+		delete_unit_template_and_units = { division_template = "Kihei Ryodan" }
+		delete_unit_template_and_units = { division_template = "Hohei Shidan" }
+		delete_unit_template_and_units = { division_template = "Jidousha Shidan" disband = yes }
+		delete_unit_template_and_units = { division_template = "Rikusentai" }
+		delete_unit_template_and_units = { division_template = "Light Tank Division" }
+		delete_unit_template_and_units = { division_template = "Dokuritsu Konsei Ryodan (Houhei)" }
+		load_oob = "JAP_Infantry"
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.602
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		date > 1940.1.1
+		date < 1941.1.1
+	}
+
+	immediate = {
+		navy_experience = 300
+		air_experience = 100
+		#set_fuel_ratio = 1.0
+		create_equipment_variant = {
+			name = "Furutaka Class."
+			type = jap_heavy_cruiser_hull_2
+			name_group = JAP_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_medium_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_80_35
+				ship_battery_slot_1 = jap_ship_medium_battery_2_x1
+				ship_battery_slot_2 = jap_ship_medium_battery_2_x1
+				ship_battery_slot_3 = jap_ship_medium_battery_2_x1
+				ship_battery_slot_4 = jap_ship_medium_battery_2_x1
+				ship_battery_slot_5 = jap_ship_medium_battery_2_x1
+				ship_battery_slot_6 = jap_ship_medium_battery_2_x1
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_1_4x1
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_6x2
+				torpedo_slot_1 = jap_ship_side_torpedo_3_2x3
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Aoba Class."
+			type = jap_heavy_cruiser_hull_3
+			name_group = JAP_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_medium_ship_engine_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_80_35
+				ship_battery_slot_1 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_2 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_3 = jap_ship_medium_battery_2_x2
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_7_4x1
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_20x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_4x1
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_4x2
+				ship_anti_air_slot_4 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_5 = jap_ship_anti_air_3_6x3
+				torpedo_slot_1 = jap_ship_side_torpedo_3_2x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Myoko Class."
+			type = jap_heavy_cruiser_hull_4
+			name_group = JAP_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_medium_ship_engine_6
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_100_35
+				ship_battery_slot_1 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_2 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_3 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_4 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_5 = jap_ship_medium_battery_2_x2
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_1_30x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_4x2
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_4x2
+				ship_anti_air_slot_4 = jap_ship_anti_air_3_6x3
+				torpedo_slot_1 = jap_ship_side_torpedo_3_2x3
+				torpedo_slot_2 = jap_ship_side_torpedo_3_2x3
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+				airplane_catapult_slot_2 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Takao Class."
+			type = jap_heavy_cruiser_hull_5
+			name_group = JAP_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_medium_ship_engine_6
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_100_35
+				ship_battery_slot_1 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_2 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_3 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_4 = jap_ship_medium_battery_2_x2
+				ship_battery_slot_5 = jap_ship_medium_battery_2_x2
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_7_4x1
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_30x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_6x3
+				torpedo_slot_1 = jap_ship_side_torpedo_3_2x4
+				torpedo_slot_2 = jap_ship_side_torpedo_3_2x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+				airplane_catapult_slot_2 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Mogami Class."
+			type = jap_heavy_cruiser_hull_6
+			name_group = JAP_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_medium_ship_engine_7
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_100_35
+				ship_battery_slot_1 = jap_ship_medium_battery_3_x2
+				ship_battery_slot_2 = jap_ship_medium_battery_3_x2
+				ship_battery_slot_3 = jap_ship_medium_battery_3_x2
+				ship_battery_slot_4 = jap_ship_medium_battery_3_x2
+				ship_battery_slot_5 = jap_ship_medium_battery_3_x2
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_20x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_6x3
+				torpedo_slot_1 = jap_ship_side_torpedo_3_2x4
+				torpedo_slot_2 = jap_ship_side_torpedo_3_1x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+				airplane_catapult_slot_2 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Tone Class."
+			type = jap_heavy_cruiser_hull_7
+			name_group = JAP_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_medium_ship_engine_5
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_150_65
+				ship_battery_slot_1 = jap_ship_medium_battery_3_x2
+				ship_battery_slot_2 = jap_ship_medium_battery_3_x2
+				ship_battery_slot_3 = jap_ship_medium_battery_3_x2
+				ship_battery_slot_4 = jap_ship_medium_battery_3_x2
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_20x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_4x3
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_4x3
+				ship_anti_air_slot_4 = jap_ship_anti_air_3_2x2
+				torpedo_slot_1 = jap_ship_side_torpedo_4_2x4
+				torpedo_slot_2 = jap_ship_side_torpedo_4_1x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+				airplane_catapult_slot_2 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Kongo Class."
+			type = jap_battle_cruiser_hull_1
+			name_group = JAP_BC_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_large_ship_engine_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_220_160
+				ship_battery_slot_1 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_2 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_3 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_4 = jap_ship_heavy_battery_1_x2
+				ship_secondaries_slot_1 = jap_ship_semi_medium_casemate_secondaries_11_6x1
+				ship_secondaries_slot_2 = jap_ship_semi_medium_casemate_secondaries_11_4x1
+				ship_secondaries_slot_3 = jap_ship_semi_medium_casemate_secondaries_11_4x1
+				ship_secondaries_slot_4 = jap_ship_light_secondaries_4_4x2
+				ship_secondaries_slot_5 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_4x3
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Fuso Class."
+			type = jap_battleship_hull_2
+			name_group = JAP_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_very_large_ship_engine_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_330_150
+				ship_battery_slot_1 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_2 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_3 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_4 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_5 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_6 = jap_ship_heavy_battery_1_x2
+				ship_secondaries_slot_1 = jap_ship_semi_medium_casemate_secondaries_11_6x1
+				ship_secondaries_slot_2 = jap_ship_semi_medium_casemate_secondaries_11_4x1
+				ship_secondaries_slot_3 = jap_ship_semi_medium_casemate_secondaries_11_4x1
+				ship_secondaries_slot_4 = jap_ship_light_secondaries_4_4x2
+				ship_secondaries_slot_5 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_20x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_2_4x4
+				ship_anti_air_slot_3 = jap_ship_anti_air_2_4x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Ise Class."
+			type = jap_battleship_hull_3
+			name_group = JAP_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_very_large_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_330_150
+				ship_battery_slot_1 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_2 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_3 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_4 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_5 = jap_ship_heavy_battery_1_x2
+				ship_battery_slot_6 = jap_ship_heavy_battery_1_x2
+				ship_secondaries_slot_1 = jap_ship_semi_medium_casemate_secondaries_10_6x1
+				ship_secondaries_slot_2 = jap_ship_semi_medium_casemate_secondaries_10_6x1
+				ship_secondaries_slot_3 = jap_ship_semi_medium_casemate_secondaries_10_4x1
+				ship_secondaries_slot_4 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_20x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_6x2
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Nagato Class."
+			type = jap_battleship_hull_4
+			name_group = JAP_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_very_large_ship_engine_4
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_380_180
+				ship_battery_slot_1 = jap_ship_super_heavy_battery_2_x2
+				ship_battery_slot_2 = jap_ship_super_heavy_battery_2_x2
+				ship_battery_slot_3 = jap_ship_super_heavy_battery_2_x2
+				ship_battery_slot_4 = jap_ship_super_heavy_battery_2_x2
+				ship_secondaries_slot_1 = jap_ship_semi_medium_casemate_secondaries_10_6x1
+				ship_secondaries_slot_2 = jap_ship_semi_medium_casemate_secondaries_10_6x1
+				ship_secondaries_slot_3 = jap_ship_semi_medium_casemate_secondaries_10_6x1
+				ship_secondaries_slot_4 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_20x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_4 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_5 = jap_ship_anti_air_3_6x3
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Yamato Class."
+			type = jap_super_battleship_hull_1
+			name_group = JAP_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_colossal_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_440_260
+				ship_battery_slot_1 = jap_ship_super_heavy_battery_3_x3
+				ship_battery_slot_2 = jap_ship_super_heavy_battery_3_x3
+				ship_battery_slot_3 = jap_ship_super_heavy_battery_3_x3
+				ship_battery_slot_4 = jap_ship_semi_medium_battery_12_x3
+				ship_battery_slot_5 = jap_ship_semi_medium_battery_12_x3
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_4_6x2
+				ship_secondaries_slot_2 = jap_ship_light_secondaries_4_6x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_6x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_2_2x2
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_4 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_5 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_6 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_7 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_8 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_9 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_10 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_11 = jap_ship_anti_air_3_6x3
+				airplane_catapult_slot_1 = ship_airplane_launcher_2
+				airplane_catapult_slot_2 = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Akagi Class."
+			type = jap_carrier_hull_1
+			name_group = JAP_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_large_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_1
+				fixed_ship_armor_slot = ship_armor_150_80
+				ship_deck_slot_1 = akagi_deck_space_91
+				ship_secondaries_slot_1 = jap_ship_medium_secondaries_1_6x1
+				ship_secondaries_slot_2 = jap_ship_light_secondaries_7_6x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_4x2
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_4x2
+			}
+		}
+		create_equipment_variant = {
+			name = "Kaga Class."
+			type = jap_carrier_hull_2
+			name_group = JAP_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_large_ship_engine_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_1
+				fixed_ship_armor_slot = ship_armor_150_40
+				ship_deck_slot_1 = kaga_deck_space_90
+				ship_secondaries_slot_1 = jap_ship_medium_secondaries_1_6x1
+				ship_secondaries_slot_2 = jap_ship_medium_secondaries_1_4x1
+				ship_secondaries_slot_3 = jap_ship_light_secondaries_4_4x2
+				ship_secondaries_slot_4 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_6x2
+			}
+		}
+		create_equipment_variant = {
+			name = "Soryu Class."
+			type = jap_carrier_hull_3
+			name_group = JAP_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_medium_ship_engine_6
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_40_30
+				ship_deck_slot_1 = soryu_deck_space_72
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_4_6x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_4x3
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_4x3
+			}
+		}
+		create_equipment_variant = {
+			name = "Hiryu Class."
+			type = jap_carrier_hull_4
+			name_group = JAP_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_medium_ship_engine_9
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_150_60
+				ship_deck_slot_1 = hiryu_deck_space_72
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_4_6x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_6x2
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_4x3
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_4x3
+			}
+		}
+		create_equipment_variant = {
+			name = "Shokaku Class."
+			type = jap_carrier_hull_5
+			name_group = JAP_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = jap_semi_large_ship_engine_4
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_170_90
+				ship_deck_slot_1 = shokaku_deck_space_84
+				ship_secondaries_slot_1 = jap_ship_light_secondaries_4_4x2
+				ship_secondaries_slot_2 = jap_ship_light_secondaries_4_4x2
+				ship_anti_air_slot_1 = jap_ship_anti_air_3_10x1
+				ship_anti_air_slot_2 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_3 = jap_ship_anti_air_3_6x3
+				ship_anti_air_slot_4 = jap_ship_anti_air_3_6x3
+			}
+		}
+		destroy_ships = {
+			type = ship_hull_heavy_cruiser
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy_battleship
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_carrier
+			count = all
+		}
+		set_country_flag = JAP_fleet_refit_flag
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.604
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		has_country_flag = JAP_fleet_refit_flag
+	}
+
+	immediate = {
+		load_oob = "JAP_ships_2"
+		load_oob = "JAP_ships_air_2"
+		set_technology = {
+			jap_tactical_bomber_2 = 1
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.605
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_war_with = CHI }
+		608 = { is_controlled_by = MEN }
+		608 = { is_owned_by = CHI }
+	}
+
+	immediate = {
+		JAP = { transfer_state = 608 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = jap_armor.607
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		SIA = { is_in_faction_with = JAP }
+		SIA = { has_full_control_of_state = 336 }
+	}
+
+	immediate = {
+		JAP = { transfer_state = 336 }
+	}
+
+	option = {}
+
+}
+
+################################################################################### Events
+
+#### Marco Polo Incident Trigger
+country_event = {
+	id = jap_armor.800
+	title = jap_armor.800.t
+	desc = jap_armor.800.d
+	picture = GFX_report_event_japanese_soldiers_03
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.800.a
+		set_global_flag = japanese_china_showdown
+		if = {
+			limit = {
+				HPC = { #if HPC owns one of these states, CHI gets the event
+					OR = {
+						controls_state = 608
+						controls_state = 597
+						controls_state = 614
+						controls_state = 1011
+					}
+				}
+			}
+			CHI = {
+				country_event = china.1
+			}
+		}
+		if = {
+			limit = {
+				CHI = { #if CHI owns one of these states, they get the event
+					OR = {
+						controls_state = 608
+						controls_state = 597
+						controls_state = 614
+						controls_state = 1011
+					}
+				}
+			}
+			CHI = {
+				country_event = china.1
+			}
+		}
+		if = {
+			limit = {
+				PRC = { #only fires the event for PRC if they control ALL of the states (to ensure that only one of them gets it, to avoid issues when one selects to turn over the states and the other doesn't)
+					AND = {
+						controls_state = 608
+						controls_state = 597
+						controls_state = 614
+						controls_state = 1011
+					}
+				}
+			}
+			PRC = {
+				country_event = china.1
+			}
+		}
+		if = {
+			limit = {
+				SHX = { #only fires the event for SHX if they control ALL of the states (to ensure that only one of them gets it, to avoid issues when one selects to turn over the states and the other doesn't)
+					AND = {
+						controls_state = 608
+						controls_state = 597
+						controls_state = 614
+						controls_state = 1011
+					}
+				}
+			}
+			SHX = {
+				country_event = china.1
+			}
+		}
+		add_named_threat = { threat = 1 name = JAP_intervene_in_china }
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		name = jap_armor.800.b
+		add_political_power = -300
+		trigger = {
+			NOT = { has_completed_focus = JAP_showa_restoration }
+		}
+		custom_effect_tooltip = JAP_interservice_rivalry_towards_kantaiha_tt
+		hidden_effect = {
+			add_to_variable = { JAP_kantaiha_influence = 1 }
+			add_to_variable = { JAP_kantaiha_production_speed_dockyard_factor = 0.04 }
+			add_to_variable = { JAP_kantaiha_industrial_capacity_dockyard = 0.05 }
+			add_to_variable = { JAP_kantaiha_stability_factor = 0.05 }
+		}
+		if = {
+			limit = {
+				NOT = { has_completed_focus = JAP_purge_the_kodoha_faction }
+			}
+			custom_effect_tooltip = JAP_interservice_rivalry_against_kodoha_tt
+			hidden_effect = {
+				add_to_variable = { JAP_kodoha_influence = -1 }
+				add_to_variable = { JAP_kodoha_production_speed_arms_factory_factor = -0.04 }
+				add_to_variable = { JAP_kodoha_industrial_capacity_factory = -0.05 }
+				add_to_variable = { JAP_kodoha_stability_factor = -0.05 }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_completed_focus = JAP_support_the_kodoha_faction }
+			}
+			custom_effect_tooltip = JAP_interservice_rivalry_against_toseiha_tt
+			hidden_effect = {
+				add_to_variable = { JAP_toseiha_influence = -1 }
+				add_to_variable = { JAP_toseiha_production_speed_arms_factory_factor = -0.04 }
+				add_to_variable = { JAP_toseiha_industrial_capacity_factory = -0.05 }
+				add_to_variable = { JAP_toseiha_stability_factor = -0.05 }
+			}
+		}
+		add_timed_idea = {
+			idea = JAP_army_slighted
+			days = 720
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.800.b
+		trigger = {
+			has_completed_focus = JAP_showa_restoration
+		}
+		custom_effect_tooltip = JAP_interservice_rivalry_towards_kantaiha_tt
+		hidden_effect = {
+			add_to_variable = { JAP_kantaiha_influence = 1 }
+			add_to_variable = { JAP_kantaiha_production_speed_dockyard_factor = 0.04 }
+			add_to_variable = { JAP_kantaiha_industrial_capacity_dockyard = 0.05 }
+			add_to_variable = { JAP_kantaiha_stability_factor = 0.05 }
+		}
+		if = {
+			limit = {
+				NOT = { has_completed_focus = JAP_purge_the_kodoha_faction }
+			}
+			custom_effect_tooltip = JAP_interservice_rivalry_against_kodoha_tt
+			hidden_effect = {
+				add_to_variable = { JAP_kodoha_influence = -1 }
+				add_to_variable = { JAP_kodoha_production_speed_arms_factory_factor = -0.04 }
+				add_to_variable = { JAP_kodoha_industrial_capacity_factory = -0.05 }
+				add_to_variable = { JAP_kodoha_stability_factor = -0.05 }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_completed_focus = JAP_support_the_kodoha_faction }
+			}
+			custom_effect_tooltip = JAP_interservice_rivalry_against_toseiha_tt
+			hidden_effect = {
+				add_to_variable = { JAP_toseiha_influence = -1 }
+				add_to_variable = { JAP_toseiha_production_speed_arms_factory_factor = -0.04 }
+				add_to_variable = { JAP_toseiha_industrial_capacity_factory = -0.05 }
+				add_to_variable = { JAP_toseiha_stability_factor = -0.05 }
+			}
+		}
+		add_timed_idea = {
+			idea = JAP_army_slighted
+			days = 720
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.801
+	title = jap_armor.801.t
+	desc = jap_armor.801.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.801.a
+		every_country = {
+			limit = {
+				OR = {
+					tag = PHI
+					tag = MAL
+					tag = INS
+					tag = AST
+					tag = NZL
+					tag = RAJ
+					tag = BRM
+				}
+				OR = {
+					has_capitulated = yes
+					exists = no
+				}
+				has_war_With = JAP
+			}
+			JAP = {
+				annex_country = { target = PREV }
+			}
+		}
+		every_state = {
+			limit = {
+				OR = {
+					state = 638
+					state = 632
+					state = 631
+					state = 630
+					state = 629
+					state = 727
+					state = 642
+					state = 633
+					state = 684
+					state = 647
+					state = 288
+					state = 640
+					state = 975
+					state = 977
+					state = 326
+					state = 729
+					state = 728
+					state = 636
+					state = 635
+					state = 643
+					state = 725
+					state = 639
+				}
+				CONTROLLER = {
+					OR = {
+						is_in_faction_with = JAP
+						is_subject_of = JAP
+						tag = JAP
+					}
+				}
+			}
+			JAP = {
+				transfer_state = PREV
+			}
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					tag = CHI
+					is_in_faction_with = CHI
+				}
+				has_war_with = JAP
+				OR = {
+					is_in_faction_with = THIS
+					is_puppet_of = THIS
+					tag = THIS
+				}
+			}
+			white_peace = JAP
+		}
+		hidden_effect = {
+			play_song = "wa_tension_13"
+			news_event = {
+				id = afo_news.11
+				hours = 6
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.802
+	title = jap_armor.802.t
+	desc = jap_armor.802.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.802.a
+	}
+}
+
+##################################### MEN
+
+country_event = {
+	id = jap_armor.804
+	title = wtt_border_conflict_won_attacker.1.t
+	desc = wtt_border_conflict_won_attacker.1.desc
+
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+		remove_targeted_decision = { target = event_target:their_country decision = WTT_border_conflict_time_until_cancelled }
+	}
+
+	option = {
+		name = wtt_border_conflict_won_attacker.1.a
+		#add_political_power = 100
+		if = {
+			limit = {
+				check_variable = {
+					FROM.FROM.num_owned_states > 1
+				}
+			}
+			transfer_state = FROM.FROM.FROM
+		}
+		else = {
+			FROM.FROM = { ROOT = { annex_country = { target = PREV } } }
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.805
+	title = wtt_border_conflict_won_defender.1.t
+	desc = wtt_border_conflict_won_defender.1.desc
+
+	picture = GFX_report_event_chinese_soldiers_mountain
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = our_country
+			FROM = {
+				save_event_target_as = our_state
+				clr_state_flag = border_incident_active
+			}
+			FROM.FROM = { save_event_target_as = their_country }
+			FROM.FROM.FROM = {
+				save_event_target_as = their_state
+				clr_state_flag = border_incident_active
+			}
+			set_country_flag = show_effect_tooltips
+			clear_variable = attacker_state_vs_@FROM.FROM
+			clear_variable = defender_state_vs_@FROM.FROM
+			remove_targeted_decision = { target = event_target:their_country decision = WTT_border_conflict_time_until_cancelled }
+		}
+	}
+
+	#Same effect as attacker. Tooltip for their effects
+	option = {
+		name = wtt_border_conflict_won_defender.1.a
+		#add_political_power = 150
+		army_experience = 30
+		add_doctrine_cost_reduction = {
+			name = defensive_border_conflict_won
+			cost_reduction = 0.99
+			uses = 1
+			category = land_doctrine
+		}
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			event_target:their_country = {
+				effect_tooltip = {
+					#add_political_power = -150
+					army_experience = 10
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.806
+	title = wtt_border_conflict_lost_attacker.1.t
+	desc = wtt_border_conflict_lost_attacker.1.desc
+
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+		set_country_flag = show_effect_tooltips
+		remove_targeted_decision = { target = event_target:their_country decision = WTT_border_conflict_time_until_cancelled }
+	}
+
+	#Same effect as defender. Tooltip for their effects
+	option = {
+		name = wtt_border_conflict_lost_attacker.1.a
+		#add_political_power = -150
+		army_experience = 10
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			event_target:their_country = {
+				effect_tooltip = {
+					#add_political_power = 150
+					army_experience = 30
+					add_doctrine_cost_reduction = {
+						name = defensive_border_conflict_won
+						cost_reduction = 0.99
+						uses = 1
+						category = land_doctrine
+					}
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+	}
+}
+
+add_namespace = wtt_border_conflict_lost_defender
+
+country_event = {
+	id = jap_armor.807
+	title = wtt_border_conflict_lost_defender.1.t
+	desc = wtt_border_conflict_lost_defender.1.desc
+
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = our_country
+			FROM = {
+				save_event_target_as = our_state
+				clr_state_flag = border_incident_active
+			}
+			FROM.FROM = { save_event_target_as = their_country }
+			FROM.FROM.FROM = {
+				save_event_target_as = their_state
+				clr_state_flag = border_incident_active
+			}
+			set_country_flag = show_effect_tooltips
+			clear_variable = attacker_state_vs_@FROM.FROM
+			clear_variable = defender_state_vs_@FROM.FROM
+			remove_targeted_decision = { target = event_target:their_country decision = WTT_border_conflict_time_until_cancelled }
+		}
+	}
+
+	#Same effect as attacker. Tooltip for their effects
+	option = {
+		name = wtt_border_conflict_lost_defender.1.a
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			effect_tooltip = {
+				#add_political_power = 100
+				if = {
+					limit = {
+						check_variable = {
+							num_owned_states > 1
+						}
+					}
+					FROM.FROM = { transfer_state = FROM }
+				}
+				else = {
+					FROM.FROM = { annex_country = { target = ROOT } }
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+	}
+}
+
+add_namespace = wtt_border_conflict_canceled_attacker
+
+country_event = {
+	id = jap_armor.808
+	title = wtt_border_conflict_canceled_attacker.1.t
+	desc = wtt_border_conflict_canceled_attacker.1.desc
+
+	picture = GFX_report_event_chinese_soldiers_mountain
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+		set_country_flag = show_effect_tooltips
+	}
+
+	option = {
+		name = wtt_border_conflict_canceled_attacker.1.a
+		army_experience = 15
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			event_target:their_country = {
+				effect_tooltip = {
+					army_experience = 30
+					#add_political_power = 50
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+	}
+}
+
+add_namespace = wtt_border_conflict_canceled_defender
+
+country_event = {
+	id = jap_armor.809
+	title = wtt_border_conflict_canceled_defender.1.t
+	desc = wtt_border_conflict_canceled_defender.1.desc
+
+	picture = GFX_report_event_chinese_soldiers_mountain
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = our_country
+			FROM = {
+				save_event_target_as = our_state
+				clr_state_flag = border_incident_active
+			}
+			FROM.FROM = { save_event_target_as = their_country }
+			FROM.FROM.FROM = {
+				save_event_target_as = their_state
+				clr_state_flag = border_incident_active
+			}
+			set_country_flag = show_effect_tooltips
+			clear_variable = attacker_state_vs_@FROM.FROM
+			clear_variable = defender_state_vs_@FROM.FROM
+		}
+	}
+
+	option = {
+		name = wtt_border_conflict_canceled_defender.1.a
+		army_experience = 30
+		#add_political_power = 50
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			event_target:their_country = {
+				effect_tooltip = {
+					army_experience = 15
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+	}
+}
+
+##################################### Shanghai Incident
+
+country_event = {
+	id = jap_armor.810
+	title = jap_armor.810.t
+	desc = jap_armor.810.d
+	picture = GFX_report_event_battle_of_shanghai
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.810.a
+		add_war_support = 0.05
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 924
+				num_provinces = 1
+				on_win = jap_armor.804
+				on_lose = jap_armor.806
+				on_cancel = jap_armor.808
+			}
+
+			defender = {
+				state = 613
+				num_provinces = 1
+				on_win = jap_armor.805
+				on_lose = jap_armor.807
+				on_cancel = jap_armor.809
+			}
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = jap_armor.811 days = 7 } }
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.811
+	hidden = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					JAP = { is_ai = yes }
+				}
+				JAP = { add_timed_idea = { idea = JAP_navy_slighted days = 90 } }
+			}
+			else = {
+				JAP = { add_timed_idea = { idea = JAP_navy_slighted days = 120 } }
+			}
+			if = {
+				limit = {
+					country_exists = HPC
+				}
+				HPC = {
+					remove_ideas = he_umezu_treaty
+				}
+			}
+			if = {
+				limit = {
+					country_exists = SHA
+				}
+				SHA = {
+					remove_ideas = he_umezu_treaty
+				}
+			}
+			declare_war_on = {
+				target = CHI
+				type = annex_everything
+			}
+			if = {
+				limit = {
+					CHI = {
+						is_in_faction = yes
+						is_faction_leader = yes
+					}
+				}
+				CHI = { add_to_faction = HPC }
+				CHI = { add_to_faction = SHA }
+				HPC = {
+					add_to_war = {
+						targeted_alliance = CHI
+						enemy = JAP
+						hostility_reason = asked_to_join
+					}
+				}
+				SHA = {
+					add_to_war = {
+						targeted_alliance = CHI
+						enemy = JAP
+						hostility_reason = asked_to_join
+					}
+				}
+			}
+			else = {
+				declare_war_on = {
+					target = HPC
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = SHA
+					type = annex_everything
+				}
+				add_threat = -6.6
+			}
+			MAN = {
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = SHA
+					hostility_reason = asked_to_join
+				}
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = HPC
+					hostility_reason = asked_to_join
+				}
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = CHI
+					hostility_reason = asked_to_join
+				}
+			}
+			MEN = {
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = SHA
+					hostility_reason = asked_to_join
+				}
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = HPC
+					hostility_reason = asked_to_join
+				}
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = CHI
+					hostility_reason = asked_to_join
+				}
+			}
+
+			613 = {
+				add_dynamic_modifier = {
+					modifier = amphibious_landings
+					days = 90
+					scope = JAP
+				}
+			}
+			924 = {
+				add_dynamic_modifier = {
+					modifier = amphibious_landings
+					days = 90
+					scope = JAP
+				}
+			}
+			#add_ideas = JAP_intervene_in_china_5
+			USA = { set_country_flag = { flag = USA_china_window days = 60 value = 1 } }
+			if = {
+				limit = {
+					has_country_leader = { id = 700 ruling_only = yes }
+				}
+				remove_country_leader_trait = imperial_sanction
+				add_country_leader_trait = imperial_sanction_regular
+			}
+			608 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+			949 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+			news_event = { id = afo_news.27 }
+		}
+	}
+}
+
+##################################### He Umezu Agreement
+
+country_event = {
+	id = jap_armor.812
+	title = jap_armor.812.t
+	desc = jap_armor.812.d
+	picture = GFX_report_event_battle_of_shanghai
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.812.a
+		ai_chance = {
+			factor = 90
+		}
+		add_war_support = 0.05
+		declare_war_on = {
+			target = CHI
+			type = annex_everything
+		}
+	}
+
+	option = {
+		name = jap_armor.812.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+		}
+		add_war_support = -0.3
+		add_political_power = -100
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			random_list = {
+				50 = {
+					declare_war_on = {
+						target = CHI
+						type = annex_everything
+					}
+				}
+				50 = {
+					CHI = {
+						transfer_state = 609
+						transfer_state = 950
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+################################################# Victory in Russia
+
+
+
+
+
+country_event = {
+	id = jap_armor.813
+	title = jap_armor.813.t
+	desc = jap_armor.813.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.813.a
+		if = {
+			limit = {
+				NOT = { country_exists = IPS }
+			}
+			JAP = {
+				transfer_State = 564
+				transfer_State = 565
+				transfer_State = 563
+				transfer_State = 574
+				transfer_State = 644
+				transfer_State = 562
+				transfer_State = 953
+				transfer_State = 854
+				transfer_State = 637
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = greater_manchukuo_flag }
+			}
+			JAP = {
+				transfer_State = 561
+				transfer_State = 560
+				transfer_State = 657
+				transfer_State = 409
+				transfer_State = 408
+			}
+		}
+		JAP = {
+			transfer_state = 655
+		}
+		if = {
+			limit = {
+				OR = {
+					MEN = { is_in_faction_with = JAP }
+					MEN = { is_subject_of = JAP }
+				}
+				OR = {
+					MON = { is_in_faction_with = SOV }
+					MON = { is_subject_of = SOV }
+				}
+			}
+			MEN = {
+				annex_country = { target = MON }
+				transfer_state = 952
+				transfer_state = 954
+				transfer_state = 330
+				transfer_state = 788
+				transfer_state = 789
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					MON = { is_in_faction_with = SOV }
+					MON = { is_subject_of = SOV }
+				}
+			}
+			JAP = {
+				annex_country = { target = MON }
+				transfer_state = 952
+				transfer_state = 954
+				transfer_state = 330
+				transfer_state = 788
+				transfer_state = 789
+			}
+		}
+		SOV = {
+			white_peace = {
+				tag = JAP
+			}
+		}
+		hidden_effect = { news_event = { id = afo_news.31 hours = 6 } }
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#####################################
+
+country_event = {
+	id = jap_armor.814
+	title = jap_armor.814.t
+	desc = jap_armor.814.desc
+	picture = GFX_report_event_febuary_incident
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.814.a
+	}
+}
+
+country_event = {
+	id = jap_armor.815
+	title = jap_armor.815.t
+	desc = jap_armor.815.desc
+	picture = GFX_report_event_febuary_incident
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.815.a
+		282 = {
+			damage_building = {
+				type = infrastructure
+				damage = 4
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 5
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 5
+			}
+		}
+	}
+}
+
+##################################### MEN Claims
+
+country_event = {
+	id = jap_armor.816
+	title = jap_armor.816.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		927 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 927 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.817
+	title = jap_armor.817.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		621 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 621 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.818
+	title = jap_armor.818.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		941 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 941 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.819
+	title = jap_armor.819.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		926 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 926 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.820
+	title = jap_armor.820.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		746 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 746 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.821
+	title = jap_armor.821.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		948 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 948 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.822
+	title = jap_armor.822.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		756 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 756 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.823
+	title = jap_armor.823.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		788 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 788 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.824
+	title = jap_armor.824.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		330 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 330 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.825
+	title = jap_armor.825.t
+	desc = jap_armor.816.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		OR = {
+			is_in_faction_with = MEN
+			MEN = { is_subject_of = JAP }
+		}
+		789 = { is_controlled_by = JAP }
+		NOT = { has_country_flag = menjiang_claims_on_hold }
+	}
+
+	option = {
+		name = jap_armor.816.a
+		MEN = { transfer_State = 789 }
+		hidden_effect = {
+			MEN = { add_manpower = 5000 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = jap_armor.816.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_country_flag = menjiang_claims_on_hold
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.826
+	title = jap_armor.826.t
+	desc = jap_armor.826.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.826.a
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				has_dlc = "Waking the Tiger"
+			}
+			set_autonomy = {
+				target = SIA
+				autonomous_state = autonomy_wtt_imperial_associate
+			}
+		}
+		else = {
+			puppet = SIA
+		}
+	}
+
+	option = {
+		name = jap_armor.826.b
+		ai_chance = {
+			factor = 0
+		}
+		annex_country = { target = SIA transfer_troops = yes }
+	}
+}
+
+#################################### MAN National Cooperational Government
+
+country_event = {
+	id = jap_armor.827
+	title = jap_armor.827.t
+	desc = jap_armor.827.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.827.a
+		ai_chance = {
+			factor = 0
+		}
+		MAN = { country_event = { id = jap_armor.828 } }
+		effect_tooltip = {
+			MAN = { MAN_low_legitimacy_level_down = yes }
+			JAP = {
+				set_autonomy = { target = MAN autonomy_state = autonomy_free }
+			}
+		}
+	}
+
+	option = {
+		name = jap_armor.827.b
+		ai_chance = {
+			factor = 10
+		}
+		MAN = { country_event = { id = jap_armor.829 } }
+	}
+}
+
+country_event = {
+	id = jap_armor.828
+	title = jap_armor.828.t
+	desc = jap_armor.828.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.828.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.829
+	title = jap_armor.829.t
+	desc = jap_armor.829.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.829.a
+		ai_chance = {
+			factor = 10
+		}
+		MAN_low_legitimacy_level_down = yes
+		JAP = {
+			set_autonomy = { target = MAN autonomy_state = autonomy_free }
+		}
+	}
+}
+
+##################################### MEN Claims
+
+country_event = {
+	id = jap_armor.830
+	title = jap_armor.830.t
+	desc = jap_armor.830.d
+	picture = GFX_report_event_japanese_appointment_of_koki_hirota
+
+	mean_time_to_happen = { days = 1 }
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.830.a
+		add_country_leader_role = {
+			character = JAP_koki_hirota
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					internally_focused
+					the_academic
+					imperial_sanction
+				}
+				desc = "POLITICS_KOKI_HIROTA_DESC"
+			}
+			promote_leader = yes
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = jap_armor.830.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+##################################### Last chance to leave london naval treaty
+
+country_event = {
+	id = jap_armor.831
+	title = jap_armor.831.t
+	desc = jap_armor.831.d
+	picture = GFX_report_event_japanese_appointment_of_koki_hirota
+
+	mean_time_to_happen = { days = 1 }
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.831.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+		remove_naval_treaty_effect = yes
+		every_other_country = {
+			limit = {
+				has_naval_treaty_trigger = yes
+			}
+			country_event = { id = MTG_naval_treaty.7 days = 2 }
+		}
+		if = {
+			limit = {
+				has_global_flag = {
+					flag = MTG_naval_treaty_signatories
+					value < 3
+				}
+			}
+			random_other_country = {
+				limit = {
+					has_naval_treaty_trigger = yes
+				}
+				remove_naval_treaty_effect = yes
+			}
+			clr_global_flag = MTG_naval_treaty_signatories
+			hidden_effect = { news_event = mtg_news.60 }
+		}
+		if = {
+			limit = {
+				has_global_flag = MTG_naval_treaty_signatories
+			}
+			modify_global_flag = {
+				flag = MTG_naval_treaty_signatories
+				value = -1
+			}
+		}
+		if = {
+			limit = {
+				not = {
+					any_other_country = {
+						OR = {
+							has_idea = MTG_naval_treaty_cheating_reduced
+							has_idea = MTG_naval_treaty_adherent_reduced
+							has_idea = MTG_naval_treaty_adherent_reduced_uk
+						}
+					}
+				}
+			}
+			every_other_country = {
+				limit = {
+					OR = {
+						has_idea = MTG_naval_treaty_cheating
+						has_idea = MTG_naval_treaty_adherent
+					}
+				}
+				activate_mission = MTG_escalator_clause_invocation_mission
+				custom_effect_tooltip = MTG_escalator_clause_tt
+			}
+		}
+	}
+
+	option = {
+		name = jap_armor.831.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+##################################### 1939 Elections
+
+country_event = {
+	id = jap_armor.832
+	title = jap_armor.832.t
+	desc = jap_armor.832.d
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		date > 1939.1.1
+		has_country_leader = {
+			character = JAP_fumimaro_konoe
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = jap_armor.832.a
+		ai_chance = {
+			factor = 1
+		}
+		complete_national_focus = JAP_hiranuma_kiichiros_cabinet
+		add_ideas = JAP_political_turmoil
+		add_timed_idea = { idea = JAP_strategic_indecision days = 720 }
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = JAP_hiranuma_kiichiro
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					warrior_code
+					rearmer
+				}
+				desc = "POLITICS_HIRANUMA_KIICHIRO_DESC"
+			}
+			promote_leader = yes
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.833
+	title = jap_armor.833.t
+	desc = jap_armor.833.d
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		date > 1939.1.1
+		has_country_leader = {
+			character = JAP_kingoro_hashimoto
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = jap_armor.833.a
+		ai_chance = {
+			factor = 1
+		}
+		complete_national_focus = JAP_hiranuma_kiichiros_cabinet
+		add_ideas = JAP_political_turmoil
+		add_timed_idea = { idea = JAP_strategic_indecision days = 720 }
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = JAP_hiranuma_kiichiro
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					warrior_code
+					rearmer
+				}
+				desc = "POLITICS_HIRANUMA_KIICHIRO_DESC"
+			}
+			promote_leader = yes
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.834
+	title = jap_armor.834.t
+	desc = jap_armor.834.d
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_country_leader = {
+			character = JAP_hiranuma_kiichiro
+			ruling_only = yes
+		}
+		OR = {
+			GER = { has_completed_focus = GER_mol_rib_pact }
+			GER = { has_non_aggression_pact_with = SOV }
+			GER = { has_government = democratic }
+			GER = { has_government = communism }
+		}
+		GER = { has_war = yes }
+		NOT = { GER = { has_war_with = SOV } }
+	}
+
+	option = {
+		name = jap_armor.834.a
+		ai_chance = {
+			factor = 1
+		}
+		swap_ideas = {
+			remove_idea = JAP_political_turmoil
+			add_idea = JAP_political_turmoil_2
+		}
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = JAP_mitsumasa_yonai
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					warrior_code imperial_sanction_regular
+				}
+				desc = "POLITICS_MITSUMASA_YONAI_DESC"
+			}
+		}
+	}
+}
+
+###
+
+country_event = {
+	id = jap_armor.835
+	title = jap_armor.835.t
+	desc = jap_armor.835.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.835.a
+		if = {
+			limit = {
+				JAP = { is_faction_leader = yes }
+			}
+			JAP = { add_to_faction = SIA }
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = jap_armor.835.b
+		JAP = {
+			create_wargoal = {
+				type = annex_everything
+				target = SIA
+			}
+			country_event = { id = jap_armor.836 days = 1 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.836
+	title = jap_armor.836.t
+	desc = jap_armor.836.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.836.a
+		ai_chance = {
+			factor = 10
+		}
+		effect_tooltip = {
+			create_wargoal = {
+				type = annex_everything
+				target = SIA
+			}
+		}
+	}
+}
+
+################################################################################### Placate the Allies
+
+country_event = {
+	id = jap_armor.837
+	title = jap_armor.837.t
+	desc = jap_armor.837.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.837.a
+		custom_effect_tooltip = JAP_placate_the_allies_a
+		FROM = { country_event = { id = jap_armor.838 hours = 4 } }
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = jap_armor.837.b
+		custom_effect_tooltip = JAP_placate_the_allies_b
+		add_political_power = -150
+		add_war_support = -0.3
+		FROM = { country_event = { id = jap_armor.839 hours = 4 } }
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.838
+	title = jap_armor.838.t
+	desc = jap_armor.838.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.838.a
+		USA = { country_event = { id = jap_armor.840 hours = 4 } }
+		white_peace = CHI
+		hidden_effect = {
+			news_event = { id = afo_news.55 }
+		}
+		JAP = {
+			transfer_state = 613
+		}
+		if = {
+			limit = {
+				NOT = { country_exists = RNC }
+				NOT = { country_exists = PGC }
+			}
+			JAP = {
+				transfer_State = 608
+				transfer_State = 949
+				transfer_State = 1011
+				transfer_State = 614
+				transfer_State = 597
+				transfer_State = 743
+				transfer_State = 937
+			}
+		}
+		if = {
+			limit = {
+				NOT = { country_exists = RNC }
+				NOT = { country_exists = REF }
+			}
+			JAP = {
+				transfer_State = 598
+				transfer_State = 925
+			}
+		}
+		CHI = {
+			transfer_State = 606
+		}
+		if = {
+			limit = {
+				controls_state = 286
+				country_exists = FRV
+			}
+			FRV = { transfer_state = 286 }
+		}
+		if = {
+			limit = {
+				owns_state = 973
+				owns_state = 974
+				owns_state = 289
+				owns_state = 724
+				NOT = { country_exists = SIA }
+			}
+			release = SIA
+		}
+		else_if = {
+			limit = {
+				SIA = { is_subject_of = ROOT }
+			}
+			set_autonomy = {
+				target = SIA
+				autonomy_state = autonomy_free
+			}
+		}
+		hidden_effect = {
+			set_global_flag = JAP_peace_with_china_flag
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.839
+	title = jap_armor.839.t
+	desc = jap_armor.839.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.839.a
+		USA = { country_event = { id = jap_armor.841 hours = 4 } }
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = jap_armor.838.a
+		USA = { country_event = { id = jap_armor.840 hours = 4 } }
+		white_peace = CHI
+		hidden_effect = {
+			news_event = { id = afo_news.55 }
+		}
+		JAP = {
+			transfer_state = 608
+			transfer_state = 949
+			transfer_state = 613
+		}
+		if = {
+			limit = {
+				country_exists = PGC
+			}
+			CHI = { annex_country = { target = PGC } }
+		}
+		if = {
+			limit = {
+				country_exists = REF
+			}
+			CHI = { annex_country = { target = REF } }
+		}
+		if = {
+			limit = {
+				country_exists = RNC
+			}
+			CHI = { annex_country = { target = RNC } }
+		}
+		if = {
+			limit = {
+				controls_state = 286
+				country_exists = FRV
+			}
+			FRV = { transfer_state = 286 }
+		}
+		if = {
+			limit = {
+				owns_state = 973
+				owns_state = 974
+				owns_state = 289
+				owns_state = 724
+				NOT = { country_exists = SIA }
+			}
+			release = SIA
+		}
+		else_if = {
+			limit = {
+				SIA = { is_subject_of = ROOT }
+			}
+			set_autonomy = {
+				target = SIA
+				autonomy_state = autonomy_free
+			}
+		}
+		hidden_effect = {
+			set_global_flag = JAP_peace_with_china_flag
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.840
+	title = jap_armor.840.t
+	desc = jap_armor.840.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.840.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = jap_armor.841
+	title = jap_armor.841.t
+	desc = jap_armor.841.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = jap_armor.841.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+################################################################################### Cheats

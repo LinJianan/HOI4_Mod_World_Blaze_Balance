@@ -1,0 +1,799 @@
+﻿add_namespace = can_armor
+
+country_event = {
+	id = can_armor.101
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		OR = {
+			has_tech = anti_tank_1
+			has_tech = eng_anti_tank_1
+		}
+		is_ai = yes
+	}
+
+	immediate = {
+		division_template = {
+			name = "Canadian Infantry Division"
+			template_counter = 147
+			division_names_group = CAN_INF_01
+			priority = 1
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+				anti_tank_brigade = { x = 3 y = 3 }
+				anti_tank_brigade = { x = 3 y = 4 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				artillery = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				recon = { x = 1 y = 0 }
+				field_hospital = { x = 1 y = 1 }
+				anti_tank = { x = 1 y = 2 }
+				military_police = { x = 1 y = 3 }
+			}
+		}
+		delete_unit_template_and_units = { division_template = "District Militia" }
+		delete_unit_template_and_units = { division_template = "Infantry Division" }
+		delete_unit_template_and_units = { division_template = "Cavalry Militia" }
+		load_oob = "CAN_Infantry"
+		add_advisor_role = {
+			character = "CAN_charles_foulkes"
+			advisor = {
+				slot = high_command
+				idea_token = CAN_charles_foulkes
+				ledger = army
+				traits = {
+					army_infantry_2
+				}
+				cost = 100
+				ai_will_do = {
+					base = 0
+					modifier = {
+						add = 100
+						date > 1939.6.1
+					}
+				}
+			}
+		}
+		set_country_flag = infantry_template_can
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = can_armor.2
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		has_tech = can_medium_1
+		is_ai = yes
+	}
+
+	immediate = {
+		division_template = {
+			name = "Medium Tank Division"
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+				medium_armor = { x = 0 y = 3 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+				medium_armor = { x = 1 y = 3 }
+
+				motorized_artillery_brigade = { x = 2 y = 0 }
+				motorized_artillery_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				artillery = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				mot_recon = { x = 1 y = 0 }
+        		field_hospital = { x = 1 y = 1 }
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = can_armor.3
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		has_tech = can_medium_2_spg
+		is_ai = yes
+	}
+
+	immediate = {
+		division_template = {
+			name = "Adv Medium Tank Division"
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+				medium_armor = { x = 0 y = 3 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+				medium_armor = { x = 1 y = 3 }
+
+				medium_sp_artillery_brigade = { x = 2 y = 0 }
+				medium_sp_artillery_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				artillery = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				mot_recon = { x = 1 y = 0 }
+        		field_hospital = { x = 1 y = 1 }
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+############################################ Permanent Joint Defense Board
+
+country_event = {
+	id = can_armor.801
+	title = can_armor.801.t
+	desc = can_armor.801.d
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = USA
+		is_in_faction = no
+		has_civil_war = no
+		OR = {
+			AND = {
+				CAN = { has_completed_focus = CAN_permanent_joint_defense_board }
+				OR = {
+					970 = { CONTROLLER = { has_war_with = CAN } }
+					332 = { CONTROLLER = { has_war_with = CAN } }
+					466 = { CONTROLLER = { has_war_with = CAN } }
+					331 = { CONTROLLER = { has_war_with = CAN } }
+					468 = { CONTROLLER = { has_war_with = CAN } }
+					465 = { CONTROLLER = { has_war_with = CAN } }
+					464 = { CONTROLLER = { has_war_with = CAN } }
+					914 = { CONTROLLER = { has_war_with = CAN } }
+					915 = { CONTROLLER = { has_war_with = CAN } }
+				}
+			}
+			AND = {
+				CAN = { is_in_faction_with = ENG }
+				CAN = { has_completed_focus = CAN_permanent_joint_defense_board }
+				OR = {
+					970 = { CONTROLLER = { has_war_with = ENG } }
+					332 = { CONTROLLER = { has_war_with = ENG } }
+					466 = { CONTROLLER = { has_war_with = ENG } }
+					331 = { CONTROLLER = { has_war_with = ENG } }
+					468 = { CONTROLLER = { has_war_with = ENG } }
+					465 = { CONTROLLER = { has_war_with = ENG } }
+					464 = { CONTROLLER = { has_war_with = ENG } }
+					914 = { CONTROLLER = { has_war_with = ENG } }
+					915 = { CONTROLLER = { has_war_with = ENG } }
+					121 = { CONTROLLER = { has_war_with = ENG } }
+					122 = { CONTROLLER = { has_war_with = ENG } }
+					123 = { CONTROLLER = { has_war_with = ENG } }
+					125 = { CONTROLLER = { has_war_with = ENG } }
+					126 = { CONTROLLER = { has_war_with = ENG } }
+					127 = { CONTROLLER = { has_war_with = ENG } }
+					129 = { CONTROLLER = { has_war_with = ENG } }
+					130 = { CONTROLLER = { has_war_with = ENG } }
+					131 = { CONTROLLER = { has_war_with = ENG } }
+					132 = { CONTROLLER = { has_war_with = ENG } }
+					133 = { CONTROLLER = { has_war_with = ENG } }
+					136 = { CONTROLLER = { has_war_with = ENG } }
+					857 = { CONTROLLER = { has_war_with = ENG } }
+					859 = { CONTROLLER = { has_war_with = ENG } }
+					860 = { CONTROLLER = { has_war_with = ENG } }
+				}
+			}
+			AND = {
+				ENG = { has_cosmetic_tag = ENG_canadian_union }
+				ENG = { is_faction_leader = yes }
+				OR = {
+					970 = { CONTROLLER = { has_war_with = ENG } }
+					332 = { CONTROLLER = { has_war_with = ENG } }
+					466 = { CONTROLLER = { has_war_with = ENG } }
+					331 = { CONTROLLER = { has_war_with = ENG } }
+					468 = { CONTROLLER = { has_war_with = ENG } }
+					465 = { CONTROLLER = { has_war_with = ENG } }
+					464 = { CONTROLLER = { has_war_with = ENG } }
+					914 = { CONTROLLER = { has_war_with = ENG } }
+					915 = { CONTROLLER = { has_war_with = ENG } }
+					121 = { CONTROLLER = { has_war_with = ENG } }
+					122 = { CONTROLLER = { has_war_with = ENG } }
+					123 = { CONTROLLER = { has_war_with = ENG } }
+					125 = { CONTROLLER = { has_war_with = ENG } }
+					126 = { CONTROLLER = { has_war_with = ENG } }
+					127 = { CONTROLLER = { has_war_with = ENG } }
+					129 = { CONTROLLER = { has_war_with = ENG } }
+					130 = { CONTROLLER = { has_war_with = ENG } }
+					131 = { CONTROLLER = { has_war_with = ENG } }
+					132 = { CONTROLLER = { has_war_with = ENG } }
+					133 = { CONTROLLER = { has_war_with = ENG } }
+					136 = { CONTROLLER = { has_war_with = ENG } }
+					857 = { CONTROLLER = { has_war_with = ENG } }
+					859 = { CONTROLLER = { has_war_with = ENG } }
+					860 = { CONTROLLER = { has_war_with = ENG } }
+				}
+			}
+		}
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = can_armor.801.a
+		ai_chance = {
+			factor = 99
+		}
+		if = {
+			limit = {
+				ENG = { is_faction_leader = yes }
+				CAN = { is_in_faction_with = ENG }
+			}
+			ENG = { country_event = generic.2 }
+		}
+		else_if = {
+			limit = {
+				CAN = { is_faction_leader = yes }
+			}
+			CAN = { country_event = generic.2 }
+		}
+		else_if = {
+			limit = {
+				CAN = { is_in_faction = no }
+			}
+			create_faction = "north_american_alliance"
+			add_to_faction = CAN
+		}
+	}
+
+	option = {
+		name = can_armor.801.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				country_exists = CAN
+				CAN = {
+					has_government = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { country_exists = CAN }
+				ENG = {
+					has_government = ROOT
+				}
+			}
+		}
+	}
+}
+
+# Completed CAN_demand_labrador_and_newfoundland.
+country_event = {
+	id = can_armor.802
+	title = can_armor.802.t
+	desc = can_armor.802.d
+	picture = GFX_report_event_canadian_soldiers
+
+	is_triggered_only = yes
+
+	option = { # Agree to demands
+		name = can_armor.802.a
+
+		ai_chance = {
+			base = 0
+		}
+
+		effect_tooltip = {
+			CAN = {
+				transfer_state = 331
+				transfer_state = 332
+			}
+		}
+
+		hidden_effect = {
+			CAN = {
+				country_event = { id = can_armor.803 }
+			}
+		}
+	}
+
+	option = { # Refuse
+		name = can_armor.802.b
+
+		ai_chance = {
+			base = 100
+		}
+
+		hidden_effect = {
+			CAN = {
+				country_event = { id = can_armor.804 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = can_armor.803
+	title = can_armor.803.t
+	desc = can_armor.803.d
+	picture = GFX_report_event_canada_treaty
+
+	is_triggered_only = yes
+
+	option = {
+		name = can_armor.803.a
+		transfer_state = 331
+		transfer_state = 332
+		news_event = { id = news.248 hours = 6 }
+	}
+}
+
+country_event = {
+	id = can_armor.804
+	title = can_armor.804.t
+	desc = can_armor.804.d
+	picture = GFX_report_event_canada_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = can_armor.804.a
+	}
+}
+
+############################################ Reciprocal Trade Agreement
+
+country_event = {
+	id = can_armor.805
+	title = can_armor.805.t
+	desc = can_armor.805.d
+
+	is_triggered_only = yes
+
+	option = { # Agree to demands
+		name = can_armor.805.a
+		ai_chance = {
+			base = 10
+		}
+		economy_fatigue_level_down_1 = yes
+		add_ideas = USA_reciprocal_trade_agreement_treaty
+		CAN = {
+			add_ideas = CAN_reciprocal_trade_agreement_treaty
+			economy_fatigue_level_down_2 = yes
+		}
+		CAN = {
+			country_event = { id = can_armor.806 }
+		}
+	}
+
+	option = { # Refuse
+		name = can_armor.805.b
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = { id = can_armor.807 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = can_armor.806
+	title = can_armor.806.t
+	desc = can_armor.806.d
+	picture = GFX_report_event_reciprocal_trade_agreement
+
+
+	is_triggered_only = yes
+
+	option = {
+		name = can_armor.806.a
+		effect_tooltip = {
+			add_ideas = CAN_reciprocal_trade_agreement_treaty
+			economy_fatigue_level_down_2 = yes
+			USA = {
+				add_ideas = USA_reciprocal_trade_agreement_treaty
+				economy_fatigue_level_down_1 = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = can_armor.807
+	title = can_armor.807.t
+	desc = can_armor.807.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = can_armor.807.a
+	}
+}
+
+############################################ The Rowell Sirois Report
+
+country_event = {
+	id = can_armor.808
+	title = can_armor.808.t
+	desc = can_armor.808.d
+	picture = GFX_report_event_rowell_sirois_report
+
+	is_triggered_only = yes
+
+	option = {
+		name = can_armor.808.a
+		ai_chance = {
+			base = 1
+		}
+		add_stability = 0.05
+		economy_fatigue_level_down_10 = yes
+	}
+}
+
+############################################ Aluminium Company
+
+country_event = {
+	id = can_armor.809
+	title = can_armor.809.t
+	desc = can_armor.809.d
+	picture = GFX_report_event_canadian_aluminium_company
+
+	is_triggered_only = yes
+
+	option = { #USA
+		name = can_armor.809.a
+		trigger = {
+			country_exists = USA
+			NOT = { has_War_with = USA }
+		}
+		ai_chance = {
+			base = 998
+		}
+		USA = {
+			country_event = { id = can_armor.810 }
+		}
+	}
+
+	option = { #ENG
+		name = can_armor.809.b
+		trigger = {
+			country_exists = ENG
+			NOT = { has_War_with = ENG }
+		}
+		ai_chance = {
+			base = 1
+		}
+		ENG = {
+			country_event = { id = can_armor.810 }
+		}
+	}
+
+	option = { #CAN
+		name = can_armor.809.c
+		ai_chance = {
+			base = 1
+		}
+		unlock_decision_tooltip = CAN_aluminium_company_of_canada_stage_a
+		hidden_effect = {
+			set_country_flag = aluminium_company_of_canada_flag
+		}
+	}
+}
+
+country_event = {
+	id = can_armor.810
+	title = can_armor.810.t
+	desc = can_armor.810.d
+	picture = GFX_report_event_canadian_aluminium_company
+
+	is_triggered_only = yes
+
+	option = {
+		name = can_armor.810.a
+		ai_chance = {
+			base = 1
+		}
+		unlock_decision_tooltip = CAN_aluminium_company_of_canada_stage_a
+		hidden_effect = {
+			set_country_flag = aluminium_company_of_canada_flag
+		}
+		CAN = {
+			country_event = { id = can_armor.811 }
+		}
+	}
+
+	option = {
+		name = can_armor.810.b
+		ai_chance = {
+			base = 0
+		}
+		CAN = {
+			country_event = { id = can_armor.812 }
+		}
+		hidden_effect = {
+			set_country_flag = aluminium_company_of_canada_refused_flag
+		}
+	}
+}
+
+country_event = {
+	id = can_armor.811
+	title = can_armor.811.t
+	desc = can_armor.811.d
+	picture = GFX_report_event_canadian_aluminium_company
+
+	is_triggered_only = yes
+
+	option = {
+		name = can_armor.811.a
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = can_armor.812
+	title = can_armor.812.t
+	desc = can_armor.812.d
+	picture = GFX_report_event_canadian_aluminium_company
+
+	is_triggered_only = yes
+
+	option = { #USA
+		name = can_armor.812.a
+		ai_chance = {
+			base = 50
+		}
+		trigger = {
+			country_exists = USA
+			NOT = { has_War_with = USA }
+			NOT = {
+				USA = { has_country_flag = aluminium_company_of_canada_refused_flag }
+			}
+		}
+		USA = {
+			country_event = { id = can_armor.810 }
+		}
+	}
+
+	option = { #ENG
+		name = can_armor.812.b
+		ai_chance = {
+			base = 50
+		}
+		trigger = {
+			country_exists = ENG
+			NOT = { has_War_with = ENG }
+			NOT = {
+				ENG = { has_country_flag = aluminium_company_of_canada_refused_flag }
+			}
+		}
+		ENG = {
+			country_event = { id = can_armor.810 }
+		}
+	}
+
+	option = { #CAN
+		name = can_armor.812.c
+		ai_chance = {
+			base = 1
+		}
+		unlock_decision_tooltip = CAN_aluminium_company_of_canada_stage_a
+		hidden_effect = {
+			set_country_flag = aluminium_company_of_canada_flag
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+############################################ The Rowell Sirois Report
+
+country_event = {
+	id = can_armor.813
+	title = can_armor.813.t
+	desc = can_armor.813.d
+	picture = GFX_report_event_physics_lab_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = can_armor.813.a
+		ai_chance = {
+			base = 1
+		}
+		effect_tooltip = {
+			add_tech_bonus = {
+				name = CAN_montreal_labratory_collaboration
+				bonus = 1.5
+				uses = 1
+				technology = nuclear_reactor
+			}
+		}
+	}
+}
+
+country_event = {
+	id = can_armor.901
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		is_ai = yes
+		date > 1939.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = { type = convoy_1 amount = 300 producer = CAN }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = can_armor.902
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		is_ai = yes
+		date > 1942.3.1
+	}
+
+	immediate = {
+		set_technology = { eng_strategic_bomber_3 = 1 }
+		set_technology = { eng_strategic_bomber_2 = 1 }
+		set_technology = { eng_strategic_bomber_1 = 1 }
+		add_political_power = 500
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = can_armor.903
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		is_ai = yes
+		has_tech = converging_sheaf
+	}
+
+	immediate = {
+		add_units_to_division_template = {
+			template_name = "Canadian Infantry Division"
+			regiments = {
+				artillery_brigade = 4
+				artillery_brigade = 4
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = can_armor.904
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		is_ai = yes
+		date > 1940.5.1
+	}
+
+	immediate = {
+		971 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 6
+				instant_build = yes
+			}
+		}
+		add_offsite_building = { type = dockyard level = 1 }
+	}
+
+	option = {}
+
+}

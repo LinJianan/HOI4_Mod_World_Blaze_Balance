@@ -1,0 +1,5904 @@
+add_namespace = usa_armor
+
+country_event = {
+	id = usa_armor.001
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_tech = usa_anti_tank_1
+		has_tech = usa_anti_air_1
+		has_tech = usa_mechanized_td_1
+	}
+
+	immediate = {
+		set_country_flag = infantry_template_usa
+		division_template = {
+			name = "US Infantry Division"
+			template_counter = 159
+			division_names_group = USA_INF_01
+			priority = 1
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+
+				anti_tank_brigade = { x = 4 y = 0 }
+				anti_tank_brigade = { x = 4 y = 1 }
+				anti_tank_brigade = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				field_hospital = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				mot_maintenance_company = { x = 0 y = 4 }
+
+				mot_recon = { x = 1 y = 0 }
+				military_police = { x = 1 y = 1 }
+				anti_tank = { x = 1 y = 2 }
+				artillery = { x = 1 y = 3 }
+				heavy_anti_air = { x = 1 y = 4 }
+			}
+		}
+		USA_mark_clark = {
+			add_skill_level = 1
+			add_attack = 1
+			add_defense = 1
+			add_planning = 1
+		}
+		add_advisor_role = {
+			character = "USA_mark_clark"
+			advisor = {
+				slot = high_command
+				idea_token = USA_mark_clark
+				ledger = army
+				traits = {
+					army_infantry_2
+				}
+				cost = 100
+				ai_will_do = {
+					base = 1
+				}
+			}
+		}
+		USA_geoffrey_keyes = {
+			add_skill_level = 4
+			add_attack = 1
+			add_defense = 1
+			add_planning = 1
+			add_logistics = 1
+		}
+		add_advisor_role = {
+			character = "USA_geoffrey_keyes"
+			advisor = {
+				slot = high_command
+				idea_token = USA_geoffrey_keyes
+				ledger = army
+				traits = {
+					army_armored_2
+				}
+				cost = 100
+				ai_will_do = {
+					base = 1
+				}
+			}
+		}
+		USA_lucian_truscott = {
+			add_trait = { trait = cavalry_leader }
+			add_skill_level = 4
+			add_attack = 1
+			add_defense = 1
+			add_planning = 1
+			add_logistics = 1
+		}
+		add_advisor_role = {
+			character = "USA_lucian_truscott"
+			advisor = {
+				slot = high_command
+				idea_token = USA_lucian_truscott
+				ledger = army
+				traits = {
+					army_cavalry_3
+				}
+				cost = 100
+				ai_will_do = {
+					base = 1
+				}
+			}
+		}
+		load_oob = "USA_Infantry"
+		delete_unit_template_and_units = {
+			division_template = "Garrison Brigade"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Mountain Division"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Marine Division"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Motorized-Division"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Marine Brigade"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Infantry Division"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Infantry Brigade Garrison"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Airborne Division"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Cavalry Division"
+			disband = yes
+		}
+	}
+
+	option = {}
+
+}
+
+############## Light Armor
+
+#country_event = {
+#	id = usa_armor.005
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 2}
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = USA
+#		is_ai = yes
+#		has_tech = usa_light_2
+#	}
+#
+#	immediate = {
+#		set_country_flag = light_armor_template_1_usa
+#
+#		navy_experience = 400
+#
+#		division_template = {
+#			name = "Stuart Division"
+#			template_counter = 101
+#			priority = 1
+#
+#			regiments = {
+#				light_armor = { x = 0 y = 0 }
+#				light_armor = { x = 0 y = 1 }
+#				light_armor = { x = 0 y = 2 }
+#
+#				light_armor = { x = 1 y = 0 }
+#				light_armor = { x = 1 y = 1 }
+#				light_armor = { x = 1 y = 2 }
+#
+#				mechanized_anti_air_brigade = { x = 2 y = 0 }
+#				mechanized_anti_air_brigade = { x = 2 y = 1 }
+#				mechanized_sp_artillery_brigade = { x = 2 y = 2 }
+#				mechanized_sp_artillery_brigade = { x = 2 y = 3 }
+#
+#				motorized = { x = 3 y = 0 }
+#				motorized = { x = 3 y = 1 }
+#				motorized = { x = 3 y = 2 }
+#
+#				motorized = { x = 4 y = 0 }
+#				motorized = { x = 4 y = 1 }
+#			}
+#
+#			support = {
+#				engineer = { x = 0 y = 0 }
+#				motorized_logistics_company = { x = 0 y = 1 }
+#				maintenance_company = { x = 0 y = 2 }
+#				signal_company = { x = 0 y = 3 }
+#
+#				armoured_recon = { x = 1 y = 0 }
+#        		field_hospital = { x = 1 y = 1 }
+#        		heavy_artillery = { x = 1 y = 2 }
+#			}
+#		}
+#	}
+#
+#	option = {}
+#}
+
+#country_event = {
+#	id = usa_armor.006
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 2}
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = USA
+#		is_ai = yes
+#		has_tech = usa_light_4_spg
+#	}
+#
+#	immediate = {
+#		set_country_flag = light_armor_template_1_usa
+#
+#		add_equipment_to_stockpile = { type = convoy_1 amount = 150 producer = USA }
+#
+#		division_template = {
+#			name = "Chaffee Division"
+#			template_counter = 102
+#			priority = 1
+#
+#			regiments = {
+#				light_armor = { x = 0 y = 0 }
+#				light_armor = { x = 0 y = 1 }
+#				light_armor = { x = 0 y = 2 }
+#
+#				light_armor = { x = 1 y = 0 }
+#				light_armor = { x = 1 y = 1 }
+#				light_armor = { x = 1 y = 2 }
+#
+#				light_sp_anti_air_brigade = { x = 2 y = 0 }
+#				light_sp_artillery_brigade = { x = 2 y = 1 }
+#				light_sp_artillery_brigade = { x = 2 y = 2 }
+#
+#				mechanized = { x = 3 y = 0 }
+#				mechanized = { x = 3 y = 1 }
+#				mechanized = { x = 3 y = 2 }
+#
+#				mechanized = { x = 4 y = 0 }
+#				mechanized = { x = 4 y = 1 }
+#			}
+#
+#			support = {
+#				engineer = { x = 0 y = 0 }
+#				motorized_logistics_company = { x = 0 y = 1 }
+#				maintenance_company = { x = 0 y = 2 }
+#				signal_company = { x = 0 y = 3 }
+#
+#				armoured_recon = { x = 1 y = 0 }
+#        		field_hospital = { x = 1 y = 1 }
+#        		heavy_artillery = { x = 1 y = 2 }
+#			}
+#		}
+#	}
+#
+#	option = {}
+#}
+
+######## Medium Armor
+
+country_event = {
+	id = usa_armor.007
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			has_tech = usa_medium_tank_spg_2
+		}
+		else = {
+			has_tech = usa_medium_2_spg
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_1_usa
+
+		add_political_power = 1000
+
+		division_template = {
+			name = "US Medium Tank Division"
+			division_names_group = USA_ARM_01
+			template_counter = 165
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_sp_artillery_brigade = { x = 0 y = 2 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_sp_artillery_brigade = { x = 1 y = 2 }
+				medium_tank_destroyer_brigade = { x = 1 y = 3 }
+
+				medium_armor = { x = 2 y = 0 }
+				medium_armor = { x = 2 y = 1 }
+				medium_sp_artillery_brigade = { x = 2 y = 2 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+
+				mechanized = { x = 4 y = 0 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				mechanized_tank_destroyer = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+        		heavy_maintenance_company = { x = 1 y = 1 }
+        		medium_sp_artillery = { x = 1 y = 2 }
+        		military_police = { x = 1 y = 3 }
+				medium_tank_destroyer = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+#country_event = {
+#	id = usa_armor.008
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = USA
+#		is_ai = yes
+#		if = {
+#			limit = {
+#				has_dlc = "No Step Back"
+#			}
+#			date > 1944.3.1
+#		}
+#		else = {
+#			has_tech = usa_light_4_aa
+#		}
+#	}
+#
+#	immediate = {
+#		set_country_flag = medium_armor_template_2_usa
+#
+#		division_template = {
+#			name = "US Adv Medium Tank Division"
+#			template_counter = 165
+#			priority = 2
+#
+#			regiments = {
+#				medium_armor = { x = 0 y = 0 }
+#				medium_armor = { x = 0 y = 1 }
+#				medium_armor = { x = 0 y = 2 }
+#
+#				medium_armor = { x = 1 y = 0 }
+#				medium_armor = { x = 1 y = 1 }
+#				medium_armor = { x = 1 y = 2 }
+#
+#				medium_armor = { x = 2 y = 0 }
+#				medium_armor = { x = 2 y = 1 }
+#				medium_tank_destroyer_brigade = { x = 2 y = 2 }
+#				medium_sp_artillery_brigade = { x = 2 y = 3 }
+#
+#				mechanized = { x = 3 y = 0 }
+#				mechanized = { x = 3 y = 1 }
+#				mechanized = { x = 3 y = 2 }
+#
+#				mechanized = { x = 4 y = 0 }
+#				mechanized = { x = 4 y = 1 }
+#			}
+#
+#			support = {
+#				engineer = { x = 0 y = 0 }
+#				motorized_logistics_company = { x = 0 y = 1 }
+#				field_hospital = { x = 0 y = 2 }
+#				signal_company = { x = 0 y = 3 }
+#				military_police = { x = 0 y = 4 }
+#
+#				armoured_recon = { x = 1 y = 0 }
+#       		heavy_maintenance_company = { x = 1 y = 1 }
+#       		medium_sp_artillery = { x = 1 y = 2 }
+#       		light_sp_anti_air = { x = 1 y = 3 }
+#			}
+#		}
+#	}
+#
+#	option = {}
+#}
+
+############## Modern Armor
+
+country_event = {
+	id = usa_armor.009
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_tech = usa_light_tank_aa_4
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			has_tech = usa_modern_tank_chassis_1
+		}
+		else = {
+			has_tech = usa_modern_1
+		}
+	}
+
+	immediate = {
+		set_country_flag = modern_armor_template_1_usa
+
+		division_template = {
+			name = "US Modern Tank Division"
+			template_counter = 166
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				medium_sp_artillery_brigade = { x = 0 y = 2 }
+				medium_sp_artillery_brigade = { x = 0 y = 3 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				medium_sp_artillery_brigade = { x = 1 y = 2 }
+
+				modern_armor = { x = 2 y = 0 }
+				modern_armor = { x = 2 y = 1 }
+				medium_sp_artillery_brigade = { x = 2 y = 2 }
+				medium_sp_artillery_brigade = { x = 2 y = 3 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+
+			}
+
+			support = {
+				armored_engineer_modern = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				mechanized_tank_destroyer = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+        		heavy_maintenance_company_modern = { x = 1 y = 1 }
+        		medium_sp_artillery = { x = 1 y = 2 }
+        		light_sp_anti_air = { x = 1 y = 3 }
+				medium_tank_destroyer = { x = 1 y = 4 }
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"US Modern Tank Division\" start_experience_factor = 0.3 start_equipment_factor = 0.1"
+				owner = USA
+				count = 1
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = usa_armor.010
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1947.6.1
+		}
+		else = {
+			has_tech = usa_modern_td_2
+			has_tech = usa_modern_spg_2
+			has_tech = usa_modern_aa_2
+		}
+	}
+
+	immediate = {
+		set_country_flag = modern_armor_template_2_usa
+
+		division_template = {
+			name = "US Adv Modern Tank Division"
+			template_counter = 166
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_tank_destroyer_brigade = { x = 1 y = 2 }
+				modern_sp_artillery_brigade = { x = 1 y = 3 }
+
+				modern_armor = { x = 2 y = 0 }
+				modern_armor = { x = 2 y = 1 }
+				modern_armor = { x = 2 y = 2 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+        		heavy_maintenance_company_modern = { x = 1 y = 1 }
+        		modern_sp_artillery = { x = 1 y = 2 }
+        		modern_sp_anti_air = { x = 1 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+#country_event = {
+#	id = usa_armor.012
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = USA
+#		is_ai = yes
+#		if = {
+#			limit = {
+#				has_dlc = "No Step Back"
+#			}
+#			date > 1945.6.1
+#		}
+#		else = {
+#			has_tech = usa_heavy_3
+#			has_tech = usa_heavy_1_spg
+#		}
+#	}
+#
+#	immediate = {
+#		set_country_flag = heavy_armor_template_2_usa
+#
+#		division_template = {
+#			name = "US Heavy Tank Division"
+#			template_counter = 168
+#			priority = 2
+#
+#			regiments = {
+#				heavy_armor = { x = 0 y = 0 }
+#				heavy_armor = { x = 0 y = 1 }
+#				heavy_armor = { x = 0 y = 2 }
+#
+#				heavy_armor = { x = 1 y = 0 }
+#				heavy_armor = { x = 1 y = 1 }
+#				heavy_armor = { x = 1 y = 2 }
+#
+#				heavy_armor = { x = 2 y = 0 }
+#				heavy_armor = { x = 2 y = 1 }
+#				heavy_armor = { x = 2 y = 2 }
+#				heavy_sp_artillery_brigade = { x = 2 y = 3 }
+#
+#				mechanized = { x = 3 y = 0 }
+#				mechanized = { x = 3 y = 1 }
+#				mechanized = { x = 3 y = 2 }
+#
+#				mechanized = { x = 4 y = 0 }
+#				mechanized = { x = 4 y = 1 }
+#			}
+#
+#			support = {
+#				armored_engineer_modern = { x = 0 y = 0 }
+#				motorized_logistics_company = { x = 0 y = 1 }
+#				field_hospital = { x = 0 y = 2 }
+#				signal_company = { x = 0 y = 3 }
+#				mechanized_tank_destroyer = { x = 0 y = 4 }
+#
+#				armoured_recon = { x = 1 y = 0 }
+#				heavy_maintenance_company = { x = 1 y = 1 }
+#				heavy_sp_artillery = { x = 1 y = 2 }
+#				light_sp_anti_air = { x = 1 y = 3 }
+#				medium_tank_destroyer = { x = 1 y = 4 }
+#			}
+#		}
+#	}
+#
+#	option = {}
+#}
+
+#country_event = {
+#	id = usa_armor.013
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = USA
+#		is_ai = yes
+#		if = {
+#			limit = {
+#				has_dlc = "No Step Back"
+#			}
+#			date > 1948.6.1
+#		}
+#		else = {
+#			has_tech = usa_modern_spg_2
+#			has_tech = usa_modern_aa_2
+#		}
+#	}
+#
+#	immediate = {
+#		set_country_flag = heavy_armor_template_3_usa
+#
+#		division_template = {
+#			name = "US Adv Heavy Tank Division"
+#			template_counter = 168
+#			priority = 2
+#
+#			regiments = {
+#				heavy_armor = { x = 0 y = 0 }
+#				heavy_armor = { x = 0 y = 1 }
+#				heavy_armor = { x = 0 y = 2 }
+#
+#				heavy_armor = { x = 1 y = 0 }
+#				heavy_armor = { x = 1 y = 1 }
+#				heavy_armor = { x = 1 y = 2 }
+#
+#				heavy_armor = { x = 2 y = 0 }
+#				heavy_armor = { x = 2 y = 1 }
+#				heavy_armor = { x = 2 y = 2 }
+#				modern_sp_artillery_brigade = { x = 2 y = 3 }
+#
+#				mechanized = { x = 3 y = 0 }
+#				mechanized = { x = 3 y = 1 }
+#				mechanized = { x = 3 y = 2 }
+#
+#				mechanized = { x = 4 y = 0 }
+#				mechanized = { x = 4 y = 1 }
+#			}
+#
+#			support = {
+#				engineer = { x = 0 y = 0 }
+#				motorized_logistics_company = { x = 0 y = 1 }
+#				field_hospital = { x = 0 y = 2 }
+#				signal_company = { x = 0 y = 3 }
+#
+#				armoured_recon = { x = 1 y = 0 }
+#				heavy_maintenance_company = { x = 1 y = 1 }
+#				modern_sp_artillery = { x = 1 y = 2 }
+#				modern_sp_anti_air = { x = 1 y = 3 }
+#			}
+#		}
+#	}
+#
+#	option = {}
+#}
+
+####upgrade infantry and marine divisions
+country_event = {
+	id = usa_armor.997
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_tech = usa_medium_tank_chassis_3
+		has_tech = usa_medium_tank_spg_2
+		has_tech = usa_medium_tank_td_2
+		has_template = "US Infantry Division"
+		has_template = "US Marine Division"
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_tech = integrated_support
+				}
+			}
+			set_technology = { integrated_support = 1 }
+			set_technology = { creeping_barrages = 0 }
+			set_technology = { direct_fire = 0 }
+		}
+		army_experience = 300
+		set_technology = { converging_sheaf = 1 }
+		set_technology = { advanced_squad_tactics = 1 }
+		set_technology = { elite_troops = 1 }
+		set_technology = { quick_fire = 1 }
+		set_technology = { attritional_containment = 0 }
+		set_technology = { decisive_strategy = 0 }
+		set_technology = { zeroing_artillery = 0 }
+		if = {
+			limit = {
+				NOT = {
+					has_tech = concentrated_spacing
+				}
+			}
+			set_technology = { concentrated_spacing = 1 }
+			set_technology = { anti_tank_strong_points = 0 }
+		}
+		add_ideas = logistical_focus_spirit
+		add_equipment_to_stockpile = { type = tank_usa_medium_chassis_3 amount = 1000 producer = USA }
+		add_equipment_to_stockpile = { type = usa_amphibious_mechanized_equipment_1 amount = 1000 producer = USA }
+		add_equipment_to_stockpile = { type = tank_usa_medium_chassis_spg_2 amount = 4000 producer = USA }
+		add_equipment_to_stockpile = { type = tank_usa_medium_chassis_td_2 amount = 2000 producer = USA }
+		add_units_to_division_template = {
+			template_name = "US Marine Division"
+			regiments = {
+				mechanized_anti_air_brigade = 2
+				mechanized_anti_air_brigade = 2
+				medium_sp_artillery_brigade = 3
+				medium_sp_artillery_brigade = 3
+				medium_sp_artillery_brigade = 3
+				medium_armor = 4
+			}
+			support = {
+				medium_tank_destroyer = 0
+				medium_sp_artillery = 1
+			}
+		}
+		delete_unit_template_and_units = {
+			division_template = "National Guard Division"
+			disband = yes
+		}
+		delete_unit_template_and_units = {
+			division_template = "Airborne Division"
+			disband = yes
+		}
+		add_ideas = smoke_and_fire_spirit
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = usa_armor.998
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_template = "US Infantry Division"
+		has_tech = converging_sheaf
+	}
+
+	immediate = {
+		add_units_to_division_template = {
+			template_name = "US Infantry Division"
+			regiments = {
+				artillery_brigade = 3
+				anti_tank_brigade = 4
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = usa_armor.999
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		has_tech = usa_amphibious_1
+		has_tech = usa_mechanized_aa_1
+		has_tech = usa_mechanized_td_1
+		tag = USA
+		is_ai = yes
+		date > 1942.1.1
+	}
+
+	immediate = {
+		set_technology = {
+			wartime_train = 1
+		}
+		add_advisor_role = {
+			character = "USA_dwight_d_eisenhower"
+			advisor = {
+				slot = army_chief
+				idea_token = USA_dwight_d_eisenhower
+				ledger = army
+				traits = {
+					army_chief_offensive_1
+				}
+				cost = 100
+				ai_will_do = {
+					base = 100
+				}
+			}
+		}
+		add_advisor_role = {
+			character = "USA_j_lawton_collins"
+			advisor = {
+				slot = high_command
+				idea_token = USA_j_lawton_collins
+				ledger = army
+				traits = {
+					army_artillery_1
+				}
+				cost = 100
+				ai_will_do = {
+					base = 1
+				}
+			}
+		}
+		deactivate_advisor = george_marshall
+		activate_advisor = USA_dwight_d_eisenhower
+		activate_advisor = USA_j_lawton_collins
+		division_template = {
+			name = "US Marine Division"
+			priority = 2
+			division_names_group = USA_MAR_01
+
+			regiments = {
+				amphibious_mechanized = { x = 0 y = 0 }
+				amphibious_mechanized = { x = 0 y = 1 }
+				amphibious_mechanized = { x = 0 y = 2 }
+				amphibious_mechanized = { x = 0 y = 3 }
+				amphibious_mechanized = { x = 0 y = 4 }
+
+				amphibious_mechanized = { x = 1 y = 0 }
+				amphibious_mechanized = { x = 1 y = 1 }
+				amphibious_mechanized = { x = 1 y = 2 }
+				amphibious_mechanized = { x = 1 y = 3 }
+				amphibious_mechanized = { x = 1 y = 4 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+				military_police = { x = 1 y = 1 }
+				mechanized_tank_destroyer = { x = 1 y = 2 }
+				heavy_anti_air = { x = 1 y = 3 }
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"US Marine Division\" start_experience_factor = 0.3 start_equipment_factor = 1.0"
+				owner = USA
+				count = 15
+			}
+		}
+		set_technology = { usa_anti_tank_2 = 1 }
+	}
+
+	option = {}
+}
+
+############################################ Starting Event
+
+country_event = {
+	id = usa_armor.014
+	title = usa_armor.014.t
+	desc = usa_armor.014.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.014.a
+		custom_effect_tooltip = USA_state_depressed_infra_tt
+		hidden_effect = {
+			839 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			838 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			837 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			836 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			358 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			835 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			840 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			357 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			843 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			842 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			841 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			861 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			834 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			830 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			359 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			832 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			360 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			833 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			831 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			829 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			361 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			824 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			362 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			828 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			827 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			261 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			363 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			823 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			393 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			825 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			364 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			365 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			366 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			816 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			396 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			826 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			369 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			367 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			370 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			815 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			371 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			814 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			813 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			395 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			372 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			375 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			820 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			822 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			394 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			821 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			818 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			374 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			812 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			811 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			376 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			391 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			392 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			373 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			383 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			384 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			377 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			382 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			390 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			389 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			388 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			381 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			809 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			808 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			387 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			805 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			386 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			806 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			385 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			807 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			380 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			379 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			819 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			368 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = usa_armor.014.b
+		custom_effect_tooltip = USA_state_depressed_infra_tt2
+		hidden_effect = {
+			839 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			838 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			837 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			836 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			358 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			835 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			840 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			357 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			843 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			842 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			841 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			861 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			834 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			830 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			359 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			832 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			360 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			833 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			831 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			829 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			361 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			824 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			362 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			828 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			827 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			261 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			363 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			823 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			393 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			825 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			364 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			365 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			366 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			816 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			396 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			826 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			369 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			367 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			370 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = no
+				}
+			}
+			815 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			371 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			814 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			813 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			395 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			372 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = no
+				}
+			}
+			375 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			820 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			822 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			394 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			821 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			818 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 6
+					instant_build = no
+				}
+			}
+			374 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			812 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			811 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			376 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			391 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			392 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			373 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			383 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			384 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			377 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			382 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			390 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			389 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			388 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			381 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			809 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			808 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			387 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			805 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			386 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			806 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			385 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			807 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			380 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			379 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			819 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			368 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 6
+					instant_build = no
+				}
+			}
+			378 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = usa_armor.014.c
+		custom_effect_tooltip = USA_state_depressed_infra_tt3
+		hidden_effect = {
+			839 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			838 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			837 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			836 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			358 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			835 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			840 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			357 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			843 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			842 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			841 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			861 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			834 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			830 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			359 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			832 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			360 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			833 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			831 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			829 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			361 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			824 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			362 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			828 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			827 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			261 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			363 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			823 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			393 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			825 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			364 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			365 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			366 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			816 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			396 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			826 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			369 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			367 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			370 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			815 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			371 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			814 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			813 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			395 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			372 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			375 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			820 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			822 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			394 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			821 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			818 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			374 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			812 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			811 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			376 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			391 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			392 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			373 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			383 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			384 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			377 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			382 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			390 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			389 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			388 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			381 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			809 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			808 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			387 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = no
+				}
+			}
+			805 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			386 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			806 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			385 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			807 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			380 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = no
+				}
+			}
+			379 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = no
+				}
+			}
+			819 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+			368 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = no
+				}
+			}
+			378 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = no
+				}
+			}
+		}
+	}
+}
+
+########################################### Ohio super flood
+country_event = {
+	id = usa_armor.015
+	title = usa_armor.015.t
+	desc = usa_armor.015.d
+	picture = GFX_report_event_usa_election_generic
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1937.1.1
+	}
+
+	option = {
+		name = usa_armor.015.a
+		ai_chance = { factor = 1 }
+		set_country_flag = super_flood_flag
+		827 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		369 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		819 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		826 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		261 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		368 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		395 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		818 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		372 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+		370 = {
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+			add_dynamic_modifier = {
+				modifier = super_flood
+			}
+		}
+	}
+}
+
+country_event = {
+	id = usa_armor.016
+	title = usa_armor.016.t
+	desc = usa_armor.016.d
+	picture = GFX_report_event_usa_election_generic
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1943.5.1
+		any_enemy_country = {
+			is_major = yes
+		}
+	}
+
+	option = {
+		name = usa_armor.016.a
+		ai_chance = { factor = 1 }
+		add_ideas = USA_coal_strike_idea
+		hidden_effect = {
+			set_country_flag = coal_strike_flag
+		}
+	}
+}
+
+
+############################################ Not Cheats
+
+
+
+
+
+country_event = {
+	id = usa_armor.601
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_tech = usa_battleship_6
+		830 = { is_controlled_by = USA }
+		date < 1941.1.1
+	}
+
+	immediate = {
+		create_equipment_variant = {
+			name = "Pensacola Class."
+			type = usa_heavy_cruiser_hull_1
+			name_group = USA_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_medium_ship_engine_5
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_100_55
+				ship_battery_slot_1 = usa_ship_medium_battery_1_x2
+				ship_battery_slot_2 = usa_ship_medium_battery_1_x2
+				ship_battery_slot_3 = usa_ship_medium_battery_1_x3
+				ship_battery_slot_4 = usa_ship_medium_battery_1_x3
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_4_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_4_4x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_30x1
+				ship_anti_air_slot_2 = usa_ship_large_anti_air_6_6x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_2
+				airplane_catapult_slot_2 = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Portland Class."
+			type = usa_heavy_cruiser_hull_2
+			name_group = USA_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_medium_ship_engine_5
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_130_60
+				ship_battery_slot_1 = usa_ship_medium_battery_1_x3
+				ship_battery_slot_2 = usa_ship_medium_battery_1_x3
+				ship_battery_slot_3 = usa_ship_medium_battery_1_x3
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_4_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_4_4x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_30x1
+				ship_anti_air_slot_2 = usa_ship_large_anti_air_6_4x4
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_4x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_2
+				airplane_catapult_slot_2 = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "New Orleans Class."
+			type = usa_heavy_cruiser_hull_3
+			name_group = USA_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_medium_ship_engine_5
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_130_90
+				ship_battery_slot_1 = usa_ship_medium_battery_1_x3
+				ship_battery_slot_2 = usa_ship_medium_battery_1_x3
+				ship_battery_slot_3 = usa_ship_medium_battery_1_x3
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_4_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_4_4x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_30x1
+				ship_anti_air_slot_2 = usa_ship_large_anti_air_6_6x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_2
+				airplane_catapult_slot_2 = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Witchita Class."
+			type = usa_heavy_cruiser_hull_4
+			name_group = USA_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_medium_ship_engine_6
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_150_90
+				ship_battery_slot_1 = usa_ship_medium_battery_2_x3
+				ship_battery_slot_2 = usa_ship_medium_battery_2_x3
+				ship_battery_slot_3 = usa_ship_medium_battery_2_x3
+				ship_battery_slot_4 = usa_ship_light_battery_7_x1
+				ship_battery_slot_5 = usa_ship_light_battery_7_x1
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_7_6x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_20x1
+				ship_anti_air_slot_2 = usa_ship_anti_air_5_4x2
+				ship_anti_air_slot_3 = usa_ship_anti_air_5_4x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_2
+				airplane_catapult_slot_2 = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "New York Class."
+			type = usa_battleship_hull_1
+			name_group = USA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_large_ship_engine_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_300_150
+				ship_battery_slot_1 = usa_ship_heavy_battery_2_x2
+				ship_battery_slot_2 = usa_ship_heavy_battery_2_x2
+				ship_battery_slot_3 = usa_ship_heavy_battery_2_x2
+				ship_battery_slot_4 = usa_ship_heavy_battery_2_x2
+				ship_battery_slot_5 = usa_ship_heavy_battery_2_x2
+				ship_secondaries_slot_1 = usa_ship_3_light_secondaries_1_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_1_4x1
+				ship_secondaries_slot_3 = usa_ship_light_casemate_secondaries_5_6x1
+				ship_secondaries_slot_4 = usa_ship_anti_air_2_30x1
+				ship_secondaries_slot_5 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_1 = usa_ship_large_anti_air_6_4x4
+			}
+		}
+		create_equipment_variant = {
+			name = "Pennsylvania Class."
+			type = usa_battleship_hull_2
+			name_group = USA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_large_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_340_150
+				ship_battery_slot_1 = usa_ship_heavy_battery_2_x3
+				ship_battery_slot_2 = usa_ship_heavy_battery_2_x3
+				ship_battery_slot_3 = usa_ship_heavy_battery_2_x3
+				ship_battery_slot_4 = usa_ship_heavy_battery_2_x3
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_1_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_1_4x1
+				ship_secondaries_slot_3 = usa_ship_light_casemate_secondaries_5_4x1
+				ship_secondaries_slot_4 = usa_ship_light_casemate_secondaries_5_4x1
+				ship_secondaries_slot_5 = usa_ship_anti_air_1_20x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_1_20x1
+				ship_anti_air_slot_2 = usa_ship_large_anti_air_6_2x4
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_4x4
+				ship_anti_air_slot_4 = usa_ship_large_anti_air_6_4x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "New Mexico Class."
+			type = usa_battleship_hull_3
+			name_group = USA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_large_ship_engine_5
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_340_170
+				ship_battery_slot_1 = usa_ship_heavy_battery_3_x3
+				ship_battery_slot_2 = usa_ship_heavy_battery_3_x3
+				ship_battery_slot_3 = usa_ship_heavy_battery_3_x3
+				ship_battery_slot_4 = usa_ship_heavy_battery_3_x3
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_4_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_4_4x1
+				ship_secondaries_slot_3 = usa_ship_light_casemate_secondaries_5_4x1
+				ship_secondaries_slot_4 = usa_ship_light_casemate_secondaries_5_4x1
+				ship_secondaries_slot_5 = usa_ship_anti_air_2_20x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_20x1
+				ship_anti_air_slot_2 = usa_ship_large_anti_air_6_2x4
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_4x4
+				ship_anti_air_slot_4 = usa_ship_large_anti_air_6_4x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Colorado Class."
+			type = usa_battleship_hull_4
+			name_group = USA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_large_ship_engine_4
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_370_200
+				ship_battery_slot_1 = usa_ship_heavy_battery_3_x2
+				ship_battery_slot_2 = usa_ship_heavy_battery_3_x2
+				ship_battery_slot_3 = usa_ship_heavy_battery_3_x2
+				ship_battery_slot_4 = usa_ship_heavy_battery_3_x2
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_4_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_4_4x1
+				ship_secondaries_slot_3 = usa_ship_light_casemate_secondaries_5_4x1
+				ship_secondaries_slot_4 = usa_ship_light_casemate_secondaries_5_4x1
+				ship_secondaries_slot_5 = usa_ship_anti_air_2_20x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_20x1
+				ship_anti_air_slot_2 = usa_ship_anti_air_5_4x2
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_4x4
+				ship_anti_air_slot_4 = usa_ship_large_anti_air_6_4x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "North Carolina Class."
+			type = usa_battleship_hull_5
+			name_group = USA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_very_large_ship_engine_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_320_180
+				ship_battery_slot_1 = usa_ship_super_heavy_battery_1_x3
+				ship_battery_slot_2 = usa_ship_super_heavy_battery_1_x3
+				ship_battery_slot_3 = usa_ship_super_heavy_battery_1_x3
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_7_6x2
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_7_4x2
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_30x1
+				ship_anti_air_slot_2 = usa_ship_anti_air_2_30x1
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_4 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_5 = usa_ship_large_anti_air_6_4x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_2
+				airplane_catapult_slot_2 = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "South Dakota Class."
+			type = usa_battleship_hull_6
+			name_group = USA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_very_large_ship_engine_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_320_180
+				ship_battery_slot_1 = usa_ship_super_heavy_battery_1_x3
+				ship_battery_slot_2 = usa_ship_super_heavy_battery_1_x3
+				ship_battery_slot_3 = usa_ship_super_heavy_battery_1_x3
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_7_6x2
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_7_4x2
+				ship_anti_air_slot_1 = usa_ship_anti_air_1_30x1
+				ship_anti_air_slot_2 = usa_ship_anti_air_1_30x1
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_4 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_5 = usa_ship_large_anti_air_6_4x4
+				ship_anti_air_slot_6 = usa_ship_large_anti_air_6_4x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_2
+				airplane_catapult_slot_2 = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Lexington Class."
+			type = usa_carrier_hull_2
+			name_group = USA_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_large_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_180_50
+				ship_deck_slot_1 = lexington_deck_space_90
+				ship_secondaries_slot_1 = usa_ship_medium_secondaries_1_4x2
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_4_6x1
+				ship_secondaries_slot_3 = usa_ship_light_secondaries_4_6x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_5_6x2
+				ship_anti_air_slot_2 = usa_ship_anti_air_5_6x2
+				ship_anti_air_slot_3 = usa_ship_anti_air_5_4x2
+				ship_anti_air_slot_4 = usa_ship_anti_air_5_4x2
+				ship_anti_air_slot_5 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_6 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_7 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_8 = usa_ship_large_anti_air_6_6x4
+			}
+		}
+		create_equipment_variant = {
+			name = "Ranger Class."
+			type = usa_carrier_hull_3
+			name_group = USA_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_semi_large_ship_engine_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_50_25
+				ship_deck_slot_1 = ranger_deck_space_86
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_4_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_4_4x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_30x1
+				ship_anti_air_slot_2 = usa_ship_anti_air_2_30x1
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_4x4
+				ship_anti_air_slot_4 = usa_ship_large_anti_air_6_4x4
+			}
+		}
+		create_equipment_variant = {
+			name = "Yorktown Class."
+			type = usa_carrier_hull_4
+			name_group = USA_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_semi_large_ship_engine_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_100_50
+				ship_deck_slot_1 = yorktown_deck_space_90
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_7_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_7_4x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_20x1
+				ship_anti_air_slot_2 = usa_ship_anti_air_5_4x2
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_4 = usa_ship_large_anti_air_6_6x4
+			}
+		}
+		create_equipment_variant = {
+			name = "Wasp Class."
+			type = usa_carrier_hull_5
+			name_group = USA_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = usa_semi_large_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_armor_slot = ship_armor_90_50
+				ship_deck_slot_1 = wasp_deck_space_90
+				ship_secondaries_slot_1 = usa_ship_light_secondaries_7_4x1
+				ship_secondaries_slot_2 = usa_ship_light_secondaries_7_4x1
+				ship_anti_air_slot_1 = usa_ship_anti_air_2_20x1
+				ship_anti_air_slot_2 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_3 = usa_ship_large_anti_air_6_6x4
+				ship_anti_air_slot_4 = usa_ship_large_anti_air_6_4x4
+			}
+		}
+		destroy_ships = {
+			type = ship_hull_heavy
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy_battleship
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_carrier
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy_cruiser
+			count = all
+		}
+		set_country_flag = USA_fleet_refit_flag
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = usa_armor.602
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_country_flag = USA_fleet_refit_flag
+	}
+
+	immediate = {
+		load_oob = "USA_ships_1"
+		load_oob = "USA_ships_air_1"
+	}
+
+	option = {}
+
+}
+
+#country_event = {
+#	id = usa_armor.603
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = USA
+#		is_ai = yes
+#		has_tech = usa_destroyer_5
+#		date > 1937.1.1
+#	}
+#
+#	immediate = {
+#		create_equipment_variant = {
+#			name = "Somers Class Mine Layer"
+#			type = usa_destroyer_hull_5
+#			name_group = USA_MINELAYERS_HISTORICAL
+#			parent_version = 0
+#			modules = {
+#				fixed_ship_engine_slot = usa_small_ship_engine_4
+#				fixed_ship_fire_control_system_slot = ship_sonar_1
+#				fixed_ship_radar_slot = empty
+#				ship_battery_slot_1 = usa_ship_light_battery_6_x2
+#				ship_battery_slot_2 = usa_ship_light_battery_6_x2
+#				ship_battery_slot_3 = usa_ship_light_battery_6_x2
+#				ship_battery_slot_4 = usa_ship_light_battery_6_x2
+#				ship_anti_air_slot_1 = usa_ship_anti_air_1_2x1
+#				ship_anti_air_slot_2 = empty
+#				ship_anti_air_slot_3 = usa_ship_anti_air_5_2x4
+#				torpedo_slot_1 = usa_ship_torpedo_4_2x4
+#				torpedo_slot_2 = usa_ship_torpedo_4_1x4
+#				depth_charge_rail_slot_1 = ship_mine_layer_1
+#				depth_charge_rail_slot_2 = ship_mine_layer_1
+#			}
+#		}
+#	}
+#}
+
+
+
+############################################ JAPAN CHINA WAR SUPPORT
+
+country_event = {
+	id = usa_armor.800
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		JAP = { has_war_with = CHI }
+		OR = {
+			608 = { is_controlled_by = MEN }
+			608 = { is_controlled_by = MAN }
+			608 = { is_controlled_by = JAP }
+		}
+
+	}
+
+	immediate = {
+		USA = {
+			add_war_support = 0.025
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = usa_armor.801
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		JAP = { has_war_with = CHI }
+		OR = {
+			598 = { is_controlled_by = MEN }
+			598 = { is_controlled_by = MAN }
+			598 = { is_controlled_by = JAP }
+		}
+
+	}
+
+	immediate = {
+		USA = {
+			add_war_support = 0.025
+		}
+		hidden_effect = {
+ 			JAP = { add_named_threat = { threat = 3 name = jap_fall_of_nanjing } }
+ 		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = usa_armor.802
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		JAP = { has_war_with = CHI }
+		OR = {
+			607 = { is_controlled_by = MEN }
+			607 = { is_controlled_by = MAN }
+			607 = { is_controlled_by = JAP }
+		}
+
+	}
+
+	immediate = {
+		USA = {
+			add_war_support = 0.025
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = usa_armor.803
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		JAP = { has_war_with = CHI }
+		OR = {
+			592 = { is_controlled_by = MEN }
+			592 = { is_controlled_by = MAN }
+			592 = { is_controlled_by = JAP }
+		}
+
+	}
+
+	immediate = {
+		USA = {
+			add_war_support = 0.025
+		}
+	}
+
+	option = {}
+}
+
+############################################ Romania asks for peace
+
+country_event = {
+	id = usa_armor.804
+	title = usa_armor.804.t
+	desc = usa_armor.804.d
+
+	picture = GFX_report_event_romania_poland_visit
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.801.a
+		ROM = { country_event = { days = 1 id = rom_armor.813 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = usa_armor.801.b
+		ROM = { country_event = { days = 1 id = rom_armor.814 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+############################################ We are imposing an embargo
+
+country_event = {
+	id = usa_armor.805
+	title = usa_armor.805.t
+	desc = usa_armor.805.d
+
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.805.a
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+############################################ Judicial Reforms
+
+country_event = {#Intro to Judiciary
+	id = usa_armor.806
+	title = usa_armor.806.t
+	desc = usa_armor.806.d
+	picture = GFX_report_event_generic_usa_treaty
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = usa_armor.807 days = 14 }
+		}
+	}
+
+	option = {
+		name = usa_armor.806.a
+	}
+}
+
+country_event = {#work with the house
+	id = usa_armor.807
+	title = usa_armor.807.t
+	desc = usa_armor.807.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = usa_armor.808 days = 14 }
+		}
+	}
+
+	option = {
+		name = usa_armor.807.a
+		ai_chance = {
+			factor = 0
+		}
+		USA_congress_small_opposition = yes
+		hidden_effect = {
+			set_country_flag = USA_judicial_reform_may_pass_difficult
+		}
+	}
+
+	option = {
+		name = usa_armor.807.b
+		ai_chance = {
+			factor = 25
+		}
+		USA_congress_medium_opposition = yes
+		hidden_effect = {
+			set_country_flag = USA_judicial_reform_may_pass
+		}
+	}
+}
+
+country_event = {#Ninth Fireside Chat
+	id = usa_armor.808
+	title = usa_armor.808.t
+	desc = { text = usa_armor.808.d_house_not_told			trigger = { has_country_flag = USA_judicial_reform_may_pass_difficult } }
+	desc = { text = usa_armor.808.d_house_told 				trigger = { has_country_flag = USA_judicial_reform_may_pass } }
+	picture = GFX_report_event_journalists_speech
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = usa_armor.809 days = 14 }
+		}
+	}
+
+	option = {
+		name = usa_armor.808.a
+		trigger = { has_country_flag = USA_judicial_reform_may_pass_difficult }
+		USA_congress_small_opposition = yes
+	}
+
+	option = {
+		name = usa_armor.808.b
+		trigger = { has_country_flag = USA_judicial_reform_may_pass_difficult }
+		add_political_power = -150
+	}
+
+	option = {
+		name = usa_armor.808.c
+		trigger = { has_country_flag = USA_judicial_reform_may_pass }
+	}
+}
+
+country_event = {#debate among democrats
+	id = usa_armor.809
+	title = usa_armor.809.t
+	desc = usa_armor.809.d
+	picture = GFX_report_event_FDR_speech
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = USA_judicial_reform_may_pass
+			clr_country_flag = USA_judicial_reform_may_pass_difficult
+		}
+	}
+
+	option = {
+		name = usa_armor.809.a #Force a Compromise
+		add_stability = -0.02
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			country_event = { id = usa_armor.810 days = 24 }
+		}
+	}
+	option = {
+		name = usa_armor.809.b #Denonce the Opponents
+		USA_congress_small_opposition = yes
+		ai_chance = {
+			factor = 25
+		}
+		hidden_effect = {
+			country_event = { id = usa_armor.810 days = 24 }
+		}
+	}
+}
+
+country_event = {# Bill Result
+	id = usa_armor.810
+	title = { text = usa_armor.810.t_bill_pass				trigger = { congress_high_support_trigger = yes } }
+	title = { text = usa_armor.810.t_bill_fails 			trigger = { NOT = { congress_high_support_trigger = yes } } }
+	desc = { text = usa_armor.810.d_bill_pass				trigger = { congress_high_support_trigger = yes } }
+	desc = { text = usa_armor.810.d_bill_fails 				trigger = { NOT = { congress_high_support_trigger = yes } } }
+	picture = GFX_report_event_generic_communist_congress
+
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				congress_high_support_trigger = yes
+			}
+			hidden_effect = {
+				set_country_flag = USA_judicial_reform_pass
+				set_country_flag = USA_judicial_reform_law
+			}
+		}
+		else = {
+			set_country_flag = USA_judicial_reform_fail
+		}
+	}
+
+	option = {
+		name = usa_armor.810.a
+		trigger = { congress_high_support_trigger = yes }
+		add_to_variable = { democratic_support = -15 }
+	}
+
+	option = {
+		name = usa_armor.810.b
+		trigger = { NOT = { congress_high_support_trigger = yes } }
+		add_stability = -0.05
+	}
+}
+
+############################################ Some Events
+
+# country_event = {
+# 	id = usa_armor.813
+
+# 	fire_only_once = yes
+
+# 	hidden = yes
+
+# 	trigger = {
+# 		tag = USA
+# 		date > 1936.1.1
+# 	}
+
+# 	mean_time_to_happen = {
+# 		days = 1
+# 	}
+
+# 	immediate = {
+# 		USA = {
+# 			set_country_flag = USA_works_progress_administration_law
+# 		}
+# 	}
+# }
+
+# Us v Butler
+country_event = {
+	id = usa_armor.814
+	title = usa_armor.814.t
+	desc = usa_armor.814.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1936.1.1
+	}
+
+	mean_time_to_happen = { days = 7 }
+
+	option = {
+		name = usa_armor.814.a
+		custom_effect_tooltip = USA_agricultural_adjustment_act_1_remove_tt
+		add_to_variable = { USA_nd_consumer_goods_expected_value = -0.02 }
+		add_to_variable = { USA_nd_local_resources_factor = -0.05 }
+		add_to_variable = { USA_nd_production_speed_infrastructure_factor = -0.05 }
+	}
+}
+
+country_event = {#Flint
+	id = usa_armor.815
+	title = usa_armor.815.t
+	desc = usa_armor.815.d
+	picture = GFX_report_event_generic_strike
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1937.1.1
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = usa_armor.815.a
+		set_country_flag = USA_flint_strike_support
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = usa_armor.815.b
+		set_country_flag = USA_flint_strike_breakup
+		ai_chance = { factor = 0 }
+	}
+}
+
+#Einstein Letter
+country_event = {
+	id = usa_armor.816
+	title = usa_armor.816.t
+	desc = usa_armor.816.d
+	picture = GFX_report_event_einstein
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		GER = {
+			OR = {
+				is_researching_technology = atomic_research
+				has_tech = atomic_research
+			}
+			has_government = fascism
+		}
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = usa_armor.816.a
+	}
+}
+
+#Rossevelt Recession
+country_event = {
+	id = usa_armor.817
+	title = usa_armor.817.t
+	desc = usa_armor.817.d
+	picture = GFX_report_event_airplane_factory
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_ideas = USA_roosevelt_recession
+			economy_fatigue_level_up_10 = yes
+			random_controlled_state = {
+				limit= {
+					steel_refinery_inactive > 3
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = steel_refinery
+					level = 4
+				}
+				add_building_construction = {
+					type = steel_refinery_inactive
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				limit= {
+					steel_refinery_inactive > 3
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = steel_refinery
+					level = 4
+				}
+				add_building_construction = {
+					type = steel_refinery_inactive
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				limit= {
+					steel_refinery_inactive > 3
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = steel_refinery
+					level = 4
+				}
+				add_building_construction = {
+					type = steel_refinery_inactive
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				limit= {
+					steel_refinery_inactive > 3
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = steel_refinery
+					level = 4
+				}
+				add_building_construction = {
+					type = steel_refinery_inactive
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				limit= {
+					steel_refinery_inactive > 3
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = steel_refinery
+					level = 4
+				}
+				add_building_construction = {
+					type = steel_refinery_inactive
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				limit= {
+					steel_refinery_inactive > 3
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = steel_refinery
+					level = 4
+				}
+				add_building_construction = {
+					type = steel_refinery_inactive
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = usa_armor.817.a
+		effect_tooltip = {
+			add_ideas = USA_roosevelt_recession
+			economy_fatigue_level_up_10 = yes
+		}
+	}
+
+	option = {
+		name = usa_armor.817.b
+		effect_tooltip = {
+			add_ideas = USA_roosevelt_recession
+			economy_fatigue_level_up_10 = yes
+		}
+	}
+}
+
+############################################ Cash And Carry
+
+country_event = {
+	id = usa_armor.818
+	title = usa_armor.818.t
+	desc = usa_armor.818.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.818.a
+	}
+}
+
+############################################ USA wants to Join the Allies
+
+country_event = {
+	id = usa_armor.819
+	title = usa_armor.819.t
+	desc = usa_armor.819.d
+	picture = GFX_report_event_generic_usa_treaty
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.819.a
+		add_to_faction = USA
+		USA = {
+			add_ai_strategy = {
+				type = alliance
+				id = "ENG"
+				value = 200
+			}
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = usa_armor.819.b
+		ai_chance = { factor = 0 }
+	}
+}
+
+############################################ Unreliable Torpedos
+
+country_event = {
+	id = usa_armor.820
+	title = usa_armor.820.t
+	desc = usa_armor.820.d
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		has_war = yes
+	}
+
+	option = {
+		name = usa_armor.820.a
+		ai_chance = { factor = 1 }
+		add_timed_idea = {
+			idea = unreliable_torpedoes
+			days = 549
+		}
+		hidden_effect = {
+			country_event = { id = usa_armor.821 days = 183 }
+		}
+	}
+}
+
+country_event = {
+	id = usa_armor.821
+	title = usa_armor.821.t
+	desc = usa_armor.821.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.821.a
+		ai_chance = { factor = 1 }
+		if = {
+			limit = {
+				has_idea = unreliable_torpedoes
+			}
+			remove_ideas = unreliable_torpedoes
+			add_timed_idea = {
+				idea = unreliable_torpedoes_2
+				days = 366
+			}
+			hidden_effect = {
+				country_event = { id = usa_armor.822 days = 183 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = unreliable_torpedoes_2
+			}
+			remove_ideas = unreliable_torpedoes_2
+			add_timed_idea = {
+				idea = unreliable_torpedoes_3
+				days = 366
+			}
+			hidden_effect = {
+				country_event = { id = usa_armor.823 days = 183 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = usa_armor.822
+	title = usa_armor.822.t
+	desc = usa_armor.822.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.822.a
+		ai_chance = { factor = 1 }
+		if = {
+			limit = {
+				has_idea = unreliable_torpedoes_2
+			}
+			remove_ideas = unreliable_torpedoes_2
+			add_timed_idea = {
+				idea = unreliable_torpedoes_3
+				days = 183
+			}
+			hidden_effect = {
+				country_event = { id = usa_armor.823 days = 183 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = unreliable_torpedoes_3
+			}
+			remove_ideas = unreliable_torpedoes_3
+			add_timed_idea = {
+				idea = unreliable_torpedoes_4
+				days = 183
+			}
+			hidden_effect = {
+				country_event = { id = usa_armor.823 days = 183 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = usa_armor.823
+	title = usa_armor.823.t
+	desc = usa_armor.823.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.823.a
+		ai_chance = { factor = 1 }
+		if = {
+			limit = {
+				has_idea = unreliable_torpedoes_3
+			}
+			remove_ideas = unreliable_torpedoes_3
+		}
+		else_if = {
+			limit = {
+				has_idea = unreliable_torpedoes_4
+			}
+			remove_ideas = unreliable_torpedoes_4
+		}
+	}
+}
+
+########################################### Rubber Reserve
+country_event = {
+	id = usa_armor.824
+	title = usa_armor.824.t
+	desc = usa_armor.824.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		has_war = yes
+		has_completed_focus = USA_rubber_reserve_company
+	}
+
+	option = {
+		name = usa_armor.824.a
+		ai_chance = { factor = 1 }
+		809 = {
+			add_resource = {
+				type = rubber
+				amount = 20
+			}
+		}
+		377 = {
+			add_resource = {
+				type = rubber
+				amount = 20
+			}
+		}
+		376 = {
+			add_resource = {
+				type = rubber
+				amount = 20
+			}
+		}
+		811 = {
+			add_resource = {
+				type = rubber
+				amount = 20
+			}
+		}
+		activate_mission = USA_rubber_reserves
+	}
+}
+
+########################################### ENG Loans
+
+country_event = {
+	id = usa_armor.825
+	title = usa_armor.825.t
+	desc = usa_armor.825.d
+	picture = GFX_report_event_british_american_visit
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.825.a
+		ai_chance = { factor = 1 }
+		ENG = { country_event = { id = usa_armor.826 hours = 6 } }
+		economy_fatigue_level_up_1 = yes
+		effect_tooltip = {
+			ENG = { economy_fatigue_level_down_5 = yes }
+		}
+	}
+
+	option = {
+		name = usa_armor.825.b
+		ai_chance = { factor = 0 }
+		ENG = { country_event = { id = usa_armor.827 hours = 6 } }
+		ENG = { add_opinion_modifier = { target = USA modifier = refused_help } }
+	}
+}
+
+country_event = {
+	id = usa_armor.826
+	title = usa_armor.826.t
+	desc = usa_armor.826.d
+	picture = GFX_report_event_british_american_visit
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.826.a
+		ai_chance = { factor = 1 }
+		economy_fatigue_level_down_5 = yes
+		effect_tooltip = {
+			USA = { economy_fatigue_level_up_1 = yes }
+		}
+	}
+}
+
+country_event = {
+	id = usa_armor.827
+	title = usa_armor.827.t
+	desc = usa_armor.827.d
+	picture = GFX_report_event_british_american_visit
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.827.a
+		ai_chance = { factor = 1 }
+		effect_tooltip = {
+			add_opinion_modifier = { target = USA modifier = refused_help }
+		}
+	}
+}
+
+############################################ D Day
+
+country_event = {
+	id = usa_armor.860
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		GER = { has_war_with = USA }
+		GER = { has_war_with = ENG }
+		GER = { has_war_with = FRA }
+		OR = {
+			15 = { is_controlled_by = FRA }
+			15 = { is_controlled_by = USA }
+		}
+		FRA = { has_capitulated = yes }
+	}
+
+	immediate = {
+		news_event = { id = news.501 }
+	}
+
+	option = {}
+
+}
+
+############################################ National Guard
+
+country_event = {
+	id = usa_armor.861
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = USA
+		has_government = democratic
+		has_war = yes
+		has_civil_war = no
+		NOT = { has_completed_focus = USA_federalize_the_national_guard }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = national_guard_deployed
+			load_oob = "USA_national_guard"
+		}
+	}
+
+	option = {
+	}
+}
+
+############################################ Tehran Conference
+
+#The Tehran Conference
+country_event = {
+	id = usa_armor.870
+	title = usa_armor.870.t
+	desc = usa_armor.870.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	fire_only_once = yes
+
+	trigger = {
+		#A democratic faction leader whose faction holds at least one German core state while SOV holds another can get this.
+		has_war_with = GER
+		has_war_with = JAP
+		is_faction_leader = yes
+		has_government = democratic
+		date > 1943.12.1
+		NOT = {
+			tag = SOV
+		}
+		NOT = {
+			has_war_with = SOV
+		}
+		SOV = {
+			is_faction_leader = yes
+		}
+		GER = {
+			has_war_with = SOV
+		}
+		JAP = {
+			has_war_with = CHI
+		}
+		NOT = {
+			SOV = {
+				has_war_with = JAP
+			}
+		}
+		NOT = {
+			has_global_flag = had_tehran_conference
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	immediate = {
+		set_global_flag = had_tehran_conference
+		SOV = {
+			save_event_target_as = tehran_partner
+		}
+		ROOT = {
+			save_event_target_as = tehran_origin
+		}
+	}
+
+	option = {
+		name = usa_armor.870.a
+		hidden_effect = {
+			event_target:tehran_partner = {
+				country_event = { days = 1 id = usa_armor.871 }
+			}
+		}
+		effect_tooltip = {
+			SOV = {
+				add_state_claim = 527
+				add_state_claim = 845
+				add_state_claim = 846
+				add_state_claim = 537
+				add_state_claim = 555
+			}
+			USA = {
+				add_state_claim = 525
+				add_state_claim = 847
+				add_state_claim = 848
+				add_state_claim = 526
+				add_state_claim = 645
+				add_state_claim = 648
+				add_state_claim = 646
+				add_state_claim = 863
+				add_state_claim = 647
+				add_state_claim = 684
+				add_state_claim = 633
+				add_state_claim = 528
+				add_state_claim = 530
+				add_state_claim = 529
+				add_state_claim = 531
+				add_state_claim = 532
+				add_state_claim = 535
+				add_state_claim = 282
+				add_state_claim = 534
+				add_state_claim = 533
+				add_state_claim = 536
+			}
+		}
+		event_target:tehran_partner = {
+			custom_effect_tooltip = needs_approval
+		}
+	}
+
+	option = {
+		name = usa_armor.870.b
+		set_country_flag = disagreed_to_tehran_conference
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#Agree to the conference
+country_event = {
+	id = usa_armor.871
+	title = usa_armor.871.t
+	desc = usa_armor.871.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.871.a
+		SOV = {
+			add_state_claim = 527
+			add_state_claim = 845
+			add_state_claim = 846
+			add_state_claim = 537
+			add_state_claim = 555
+		}
+		USA = {
+			add_state_claim = 525
+			add_state_claim = 847
+			add_state_claim = 848
+			add_state_claim = 526
+			add_state_claim = 645
+			add_state_claim = 648
+			add_state_claim = 646
+			add_state_claim = 863
+			add_state_claim = 647
+			add_state_claim = 684
+			add_state_claim = 633
+			add_state_claim = 528
+			add_state_claim = 530
+			add_state_claim = 529
+			add_state_claim = 531
+			add_state_claim = 532
+			add_state_claim = 535
+			add_state_claim = 282
+			add_state_claim = 534
+			add_state_claim = 533
+			add_state_claim = 536
+		}
+		hidden_effect = {
+			event_target:tehran_origin = {
+				country_event = { days = 3 id = usa_armor.872 }
+			}
+			set_country_flag = agreed_to_tehran_conference
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = usa_armor.871.b
+		hidden_effect = {
+			event_target:tehran_origin = {
+				country_event = { days = 1 id = usa_armor.873 }
+			}
+			set_country_flag = disagreed_to_tehran_conference
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#Soviets Agree
+country_event = {
+	id = usa_armor.872
+	title = usa_armor.872.t
+	desc = usa_armor.872.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.872.a
+		set_country_flag = agreed_to_tehran_conference
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#Soviets Disagree
+country_event = {
+	id = usa_armor.873
+	title = usa_armor.873.t
+	desc = usa_armor.873.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.873.a
+		set_country_flag = disagreed_to_tehran_conference
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+############################################ Eastern Peace deal
+
+country_event = {
+	id = usa_armor.875
+	title = usa_armor.875.t
+	desc = usa_armor.875.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		NOT = { has_global_flag = EASTERN_PEACE_DEAL_DONE }
+		has_global_flag = ww2_pacific_flag
+		OR = {
+			NOT = {
+				has_war_with = JAP
+			}
+			NOT = {
+        		country_exists = JAP
+			}
+		}
+        country_exists = ENG
+        country_exists = USA
+		ENG = {
+		 	has_government = democratic
+		 	is_subject = no
+		}
+		USA = {
+		 	has_government = democratic
+		 	is_subject = no
+		}
+		USA = { is_in_faction_with = ENG }
+		OR = {
+			USA = { has_country_flag = agreed_to_tehran_conference }
+			USA = { has_country_flag = disagreed_to_tehran_conference }
+			ENG = { has_country_flag = agreed_to_tehran_conference }
+			ENG = { has_country_flag = disagreed_to_tehran_conference }
+		}
+		638 = { is_controlled_by = USA }
+		632 = { is_controlled_by = USA }
+		629 = { is_controlled_by = USA }
+		631 = { is_controlled_by = USA }
+		808 = { is_controlled_by = USA }
+		655 = { is_controlled_by = SOV }
+		408 = { is_controlled_by = SOV }
+	}
+
+	option = {
+		name = usa_armor.875.a
+
+        ############################################################################ Soviets
+		if = {
+			limit = {
+				SOV = {
+					exists = yes
+			 		has_government = communism
+			 		is_puppet = no
+			 		has_country_flag = agreed_to_tehran_conference
+		 		}
+			}
+			SOV = { transfer_state = 527 }
+	        SOV = { transfer_state = 845 }
+	        SOV = { transfer_state = 846 }
+	        SOV = { transfer_state = 537 }
+	        SOV = { transfer_state = 555 }
+		}
+		if = {
+			limit = {
+				OR = {
+					USA = {
+			 			has_country_flag = disagreed_to_tehran_conference
+		 			}
+		 			ENG = {
+			 			has_country_flag = disagreed_to_tehran_conference
+		 			}
+		 			SOV = {
+			 			has_country_flag = disagreed_to_tehran_conference
+		 			}
+		 		}
+			}
+			USA = { transfer_state = 527 }
+	        USA = { transfer_state = 845 }
+	        USA = { transfer_state = 846 }
+	        USA = { transfer_state = 537 }
+	        USA = { transfer_state = 555 }
+		}
+
+
+        ############################################################################ USA
+		USA = {
+			annex_country = { target = JAP }
+			transfer_state = 525
+			transfer_state = 847
+			transfer_state = 848
+			transfer_state = 526
+			transfer_state = 645
+			transfer_state = 648
+			transfer_state = 646
+			transfer_state = 863
+			transfer_state = 647
+			transfer_state = 684
+			transfer_state = 633
+			transfer_state = 528
+			transfer_state = 530
+			transfer_state = 529
+			transfer_state = 531
+			transfer_state = 532
+			transfer_state = 535
+			transfer_state = 282
+			transfer_state = 534
+			transfer_state = 533
+			transfer_state = 536
+		}
+
+
+        ############################################################################ Phillippines
+
+        if = {
+			limit = {
+				PHI = { exists = yes }
+			}
+			PHI = { transfer_state = 623 }
+			PHI = { transfer_state = 327 }
+			PHI = { transfer_state = 624 }
+	        PHI = { transfer_state = 625 }
+	        PHI = { transfer_state = 628 }
+	        PHI = { transfer_state = 626 }
+	        PHI = { transfer_state = 627 }
+		}
+		if = {
+			limit = {
+				PHI = { exists = no }
+			}
+			USA = { transfer_state = 623 }
+			USA = { transfer_state = 327 }
+			USA = { transfer_state = 624 }
+	        USA = { transfer_state = 625 }
+	        USA = { transfer_state = 628 }
+	        USA = { transfer_state = 626 }
+	        USA = { transfer_state = 627 }
+		}
+
+        ############################################################################ Malaysia
+
+        if = {
+        	limit = {
+        		ENG = { is_in_Faction_with = USA }
+        		country_exists = MAL
+        	}
+			MAL = { transfer_state = 862 }
+			MAL = { transfer_state = 336 }
+			MAL = { transfer_state = 333 }
+        }
+
+        else_if = {
+			limit = {
+        		ENG = { is_in_Faction_with = USA }
+        		NOT = { country_exists = MAL }
+			}
+			release = MAL
+			ENG = {
+				set_autonomy = {
+					target = MAL
+					autonomous_state = autonomy_colony
+					freedom_level = 0.5
+				}
+			}
+			MAL = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				promote_character = MAL_shenton_thomas
+			}
+			MAL = { transfer_state = 862 }
+			MAL = { transfer_state = 336 }
+			MAL = { transfer_state = 333 }
+		}
+		else = {
+			USA = { transfer_state = 862 }
+			USA = { transfer_state = 336 }
+			USA = { transfer_state = 333 }
+		}
+
+        ############################################################################ Indonesia
+
+        if = {
+        	limit = {
+        		HOL = { is_in_Faction_with = USA }
+        		country_exists = INS
+        	}
+        	INS = { transfer_state = 672 }
+			INS = { transfer_state = 335 }
+			INS = { transfer_state = 334 }
+	        INS = { transfer_state = 673 }
+	        INS = { transfer_state = 668 }
+	        INS = { transfer_state = 669 }
+	        INS = { transfer_state = 667 }
+	        INS = { transfer_state = 738 }
+        }
+
+        else_if = {
+			limit = {
+        		HOL = { is_in_Faction_with = USA }
+        		NOT = { country_exists = INS }
+			}
+			release = INS
+			HOL = {
+				set_autonomy = {
+					target = INS
+					autonomous_state = autonomy_colony
+					freedom_level = 0.5
+				}
+			}
+			INS = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				promote_character = INS_a_t_van_starkenborgh_stachouwer
+			}
+			INS = { transfer_state = 672 }
+			INS = { transfer_state = 335 }
+			INS = { transfer_state = 334 }
+	        INS = { transfer_state = 673 }
+	        INS = { transfer_state = 668 }
+	        INS = { transfer_state = 669 }
+	        INS = { transfer_state = 667 }
+	        INS = { transfer_state = 738 }
+		}
+		else_if = {
+			limit = {
+				ENG = { is_in_Faction_with = USA }
+			}
+			ENG = { transfer_state = 672 }
+			ENG = { transfer_state = 335 }
+			ENG = { transfer_state = 334 }
+	        ENG = { transfer_state = 673 }
+	        ENG = { transfer_state = 668 }
+	        ENG = { transfer_state = 669 }
+	        ENG = { transfer_state = 667 }
+	        ENG = { transfer_state = 738 }
+		}
+		else = {
+			USA = { transfer_state = 672 }
+			USA = { transfer_state = 335 }
+			USA = { transfer_state = 334 }
+	        USA = { transfer_state = 673 }
+	        USA = { transfer_state = 668 }
+	        USA = { transfer_state = 669 }
+	        USA = { transfer_state = 667 }
+	        USA = { transfer_state = 738 }
+		}
+
+        ############################################################################ Indo-China
+
+        if = {
+        	limit = {
+        		FRA = { is_in_Faction_with = USA }
+        		country_exists = FRV
+        	}
+			FRV = { transfer_state = 741 }
+			FRV = { transfer_state = 976 }
+			FRV = { transfer_state = 286 }
+			FRV = { transfer_state = 670 }
+	        FRV = { transfer_state = 671 }
+        }
+
+        else_if = {
+			limit = {
+        		FRA = { is_in_Faction_with = USA }
+        		NOT = { country_exists = FRV }
+			}
+			release = FRV
+			FRA = {
+				set_autonomy = {
+					target = FRV
+					autonomous_state = autonomy_colony
+					freedom_level = 0.5
+				}
+			}
+			FRV = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				promote_character = FRV_eugene_robin
+			}
+			FRV = { transfer_state = 741 }
+			FRV = { transfer_state = 976 }
+			FRV = { transfer_state = 286 }
+			FRV = { transfer_state = 670 }
+	        FRV = { transfer_state = 671 }
+		}
+		else_if = {
+			limit = {
+				ENG = { is_in_Faction_with = USA }
+			}
+			ENG = { transfer_state = 741 }
+			ENG = { transfer_state = 976 }
+			ENG = { transfer_state = 286 }
+			ENG = { transfer_state = 670 }
+	        ENG = { transfer_state = 671 }
+		}
+		else = {
+			USA = { transfer_state = 741 }
+			USA = { transfer_state = 976 }
+			USA = { transfer_state = 286 }
+			USA = { transfer_state = 670 }
+	        USA = { transfer_state = 671 }
+		}
+
+        ############################################################################ Manchuria
+
+        if = {
+			limit = {
+				MAN = { exists = yes }
+		 		NOT = {
+		 			CHI = { has_country_flag = achievement_JAP_sue_for_peace_CHI_completed }
+		 			PRC = { has_country_flag = achievement_JAP_sue_for_peace_CHI_completed }
+		 			JAP = { has_country_flag = achievement_JAP_sue_for_peace_CHI_completed }
+		 		}
+			}
+			PRC = { annex_country = { target = MAN } }
+		}
+
+		if = {
+			limit = {
+				SOV = {
+					exists = yes
+			 		has_government = communism
+			 		is_puppet = no
+			 		has_country_flag = agreed_to_tehran_conference
+		 		}
+		 		PRC = { exists = yes }
+		 		CHI = { exists = yes }
+		 		NOT = {
+		 			CHI = { has_country_flag = achievement_JAP_sue_for_peace_CHI_completed }
+		 			PRC = { has_country_flag = achievement_JAP_sue_for_peace_CHI_completed }
+		 			JAP = { has_country_flag = achievement_JAP_sue_for_peace_CHI_completed }
+		 		}
+			}
+			SOV = { annex_country = { target = MAN } }
+			SOV = { transfer_state = 761 }
+			SOV = { transfer_state = 951 }
+			SOV = { transfer_state = 714 }
+			SOV = { transfer_state = 942 }
+			SOV = { transfer_state = 717 }
+			SOV = { transfer_state = 328 }
+			SOV = { transfer_state = 943 }
+			SOV = { transfer_state = 944 }
+			SOV = { transfer_state = 716 }
+			SOV = { transfer_state = 946 }
+			SOV = { transfer_state = 715 }
+			SOV = { transfer_state = 610 }
+			SOV = { transfer_state = 945 }
+			SOV = { transfer_state = 745 }
+			SOV = { transfer_state = 612 }
+			SOV = { transfer_state = 611 }
+		}
+
+        ############################################################################ China
+
+		PRC = { transfer_state = 937 }
+		PRC = { transfer_state = 743 }
+		PRC = { transfer_state = 621 }
+		PRC = { transfer_state = 941 }
+		PRC = { transfer_state = 926 }
+		PRC = { transfer_state = 746 }
+		PRC = { transfer_state = 927 }
+
+		CHI = { transfer_state = 950 }
+		CHI = { transfer_state = 609 }
+		CHI = { transfer_state = 608 }
+		CHI = { transfer_state = 949 }
+		CHI = { transfer_state = 1011 }
+		CHI = { transfer_state = 614 }
+		CHI = { transfer_state = 597 }
+		CHI = { transfer_state = 937 }
+		CHI = { transfer_state = 743 }
+
+		CHI = { transfer_state = 924 }
+		CHI = { transfer_state = 728 }
+
+        ############################################################################ Taiwan
+
+        if = {
+			limit = {
+				CHI = { exists = yes }
+			}
+			CHI = { transfer_state = 524 }
+		}
+		else_if = {
+			limit = {
+				PRC = { exists = yes }
+			}
+			PRC = { transfer_state = 524 }
+		}
+		else = {
+			USA = { transfer_state = 524 }
+		}
+
+        ############################################################################ India
+
+		if = {
+			limit = {
+				RAJ = { is_in_Faction_with = USA }
+			}
+			RAJ = { transfer_state = 640 }
+			RAJ = { transfer_state = 288 }
+			RAJ = { transfer_state = 975 }
+			RAJ = { transfer_state = 977 }
+			RAJ = { transfer_state = 1007 }
+		}
+		else = {
+			ENG = { transfer_state = 640 }
+			ENG = { transfer_state = 288 }
+			ENG = { transfer_state = 975 }
+			ENG = { transfer_state = 977 }
+			ENG = { transfer_state = 1007 }
+		}
+		hidden_effect = { news_event = { id = afo_news.12 hours = 6 } }
+	}
+}
+
+############################################################################ San Francisco Conference
+
+############################################################################ Marshall Plan
+
+country_event = {
+	id = usa_armor.876
+	title = usa_armor.876.t
+	desc = usa_armor.876.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = recieved_marshall_aid
+		}
+	}
+
+	option = {
+		name = usa_armor.876.a
+		ai_chance = {
+			factor = 10
+		}
+		add_timed_idea = { idea = USA_marshall_plan_aid days = 1095 }
+		economy_fatigue_level_down_10 = yes
+		if = {
+			limit = {
+				NOT = { has_idea = free_trade }
+			}
+			add_ideas = free_trade
+		}
+	}
+
+	option = {
+		name = usa_armor.876.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			set_country_flag = marshall_plan_refused
+		}
+	}
+}
+
+############################################################################ FUTURE OF AUSTRIA
+
+country_event = {
+	id = usa_armor.877
+	title = usa_armor.877.t
+	desc = usa_armor.877.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.877.a
+		FROM = {
+			country_event = { id = usa_armor.878 hours = 6 }
+		}
+	}
+}
+
+country_event = {
+	id = usa_armor.878
+	title = usa_armor.878.t
+	desc = usa_armor.878.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.878.a
+		release = AUS
+		every_state = {
+			limit = {
+				is_core_of = AUS
+				OR = {
+					is_controlled_by = FRA
+					is_controlled_by = ENG
+					is_controlled_by = USA
+					is_controlled_by = SOV
+				}
+			}
+			AUS = { transfer_state = PREV }
+		}
+		AUS = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 60
+				fascism = 23
+				communism = 17
+			}
+		}
+		AUS = {
+			add_ideas = neutrality_idea
+		}
+	}
+}
+
+############################################################################ ACCUMULATED WEALTH TAX
+
+country_event = {
+	id = usa_armor.879
+	title = usa_armor.879.t
+	desc = usa_armor.879.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = USA_accumulated_wealth_tax
+			add_ideas = USA_accumulated_wealth_tax_2
+		}
+	}
+	option = {
+		name = usa_armor.879.a
+		custom_effect_tooltip = usa_armor.879_tt
+	}
+}
+
+################################################## FACTION NEGOTIATIONS
+country_event = {
+	id = usa_armor.880
+	title = usa_armor.880.t
+	desc = usa_armor.880.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.880.a
+		unlock_decision_tooltip = { decision = USA_ford_retooling_factories_slow show_effect_tooltip = yes }
+		set_country_flag = FORD_NEGOTIATIONS_1
+		custom_effect_tooltip = USA_Ford_positive_1_tt1
+		add_to_variable = { USA_Ford_Chrysler_attitude = 1 }
+		add_to_variable = { USA_ford_chrysler_production_speed_industrial_complex_factor = 0.075 }
+	}
+}
+
+country_event = {
+	id = usa_armor.881
+	title = usa_armor.881.t
+	desc = usa_armor.881.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.881.a
+		unlock_decision_tooltip = { decision = USA_gm_retooling_factories_slow show_effect_tooltip = yes }
+		set_country_flag = GM_NEGOTIATIONS_1
+		custom_effect_tooltip = USA_GM_positive_1_tt1
+		add_to_variable = { USA_GM_DuPont_attitude = 1 }
+		add_to_variable = { USA_gm_dupont_production_speed_industrial_complex_factor = 0.05 }
+	}
+}
+
+country_event = {
+	id = usa_armor.882
+	title = usa_armor.882.t
+	desc = usa_armor.882.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.882.a
+		set_country_flag = JPMORGAN_NEGOTIATIONS_1
+		custom_effect_tooltip = USA_JPMorgan_Positive_1_tt1
+		add_to_variable = { USA_JPMorgan_attitude = 1 }
+		add_to_variable = { USA_jpmorgan_stability_factor = 0.05 }
+		add_to_variable = { USA_jpmorgan_consumer_goods_expected_value = -0.04 }
+	}
+}
+
+country_event = {
+	id = usa_armor.883
+	title = usa_armor.883.t
+	desc = usa_armor.883.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.883.a
+
+	}
+}
+
+country_event = {
+	id = usa_armor.884
+	title = usa_armor.884.t
+	desc = usa_armor.884.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.884.a
+
+	}
+}
+
+country_event = {
+	id = usa_armor.885
+	title = usa_armor.885.t
+	desc = usa_armor.885.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.885.a
+
+	}
+}
+
+country_event = {
+	id = usa_armor.886
+	title = usa_armor.886.t
+	desc = usa_armor.886.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.886.a
+		unlock_decision_tooltip = { decision = USA_ford_retooling_factories_fast show_effect_tooltip = yes }
+		set_country_flag = FORD_NEGOTIATIONS_2
+		custom_effect_tooltip = USA_Ford_swap_tt
+		set_variable = { USA_ford_chrysler_industrial_capacity_factory = USA_ford_chrysler_production_speed_industrial_complex_factor }
+		set_variable = { USA_ford_chrysler_production_speed_industrial_complex_factor = 0 }
+	}
+}
+
+country_event = {
+	id = usa_armor.887
+	title = usa_armor.887.t
+	desc = usa_armor.887.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.887.a
+		unlock_decision_tooltip = { decision = USA_gm_retooling_factories_fast show_effect_tooltip = yes }
+		set_country_flag = GM_NEGOTIATIONS_2
+		custom_effect_tooltip = USA_GM_swap_tt
+		set_variable = { USA_gm_dupont_production_factory_efficiency_gain_factor = USA_gm_dupont_production_speed_industrial_complex_factor }
+		set_variable = { USA_gm_dupont_production_speed_industrial_complex_factor = 0 }
+	}
+}
+
+country_event = {
+	id = usa_armor.888
+	title = usa_armor.888.t
+	desc = usa_armor.888.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.888.a
+		ai_chance = {
+			base = 75
+		}
+		set_country_flag = JPMORGAN_NEGOTIATIONS_2
+		add_ideas = morgan_bank_loans
+		#custom_effect_tooltip = USA_JPMorgan_economic_reduction_tt
+	}
+
+	option = {
+		name = usa_armor.888.b
+		ai_chance = {
+			base = 0
+		}
+		economy_fatigue_level_up_5 = yes
+	}
+}
+
+country_event = {
+	id = usa_armor.889
+	title = usa_armor.889.t
+	desc = usa_armor.889.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.889.a
+		custom_effect_tooltip = USA_Kaiser_ford_cooperation_tt
+		add_to_variable = { USA_kaiser_dockyard_output = 0.15 }
+	}
+}
+
+country_event = {
+	id = usa_armor.890
+	title = usa_armor.890.t
+	desc = usa_armor.890.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = USA
+		is_ai = yes
+		OR = {
+			date > 1941.7.1
+			has_war = yes
+		}
+	}
+
+	immediate = {
+		USA_dwight_d_eisenhower = {
+			promote_leader = yes
+		}
+		USA_dwight_d_eisenhower_ai = {
+			promote_leader = yes
+		}
+		USA_geoffrey_keyes = {
+			promote_leader = yes
+		}
+		USA_geoffrey_keyes_ai = {
+			promote_leader = yes
+		}
+		USA_maurice_rose = {
+			promote_leader = yes
+		}
+		USA_maurice_rose_ai = {
+			promote_leader = yes
+		}
+		USA_courtney_hodges_ai = {
+			promote_leader = yes
+		}
+		USA_j_lawton_collins_ai = {
+			promote_leader = yes
+		}
+		set_technology = { usa_artillery_3 = 1 }
+		set_technology = { usa_mechanized_infantry_2 = 1 }
+		set_technology = { usa_mechanized_aa_2 = 1 }
+		629 = {
+			add_building_construction = {
+				type = naval_base
+				level = 6
+				province = 13364
+				instant_build = yes
+			}
+		}
+		630 = {
+			add_building_construction = {
+				type = naval_base
+				level = 9
+				province = 13051
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		631 = {
+			add_building_construction = {
+				type = naval_base
+				level = 9
+				province = 13052
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		639 = {
+			add_building_construction = {
+				type = naval_base
+				level = 7
+				province = 13021
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+		632 = {
+			add_building_construction = {
+				type = naval_base
+				level = 9
+				province = 13047
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = air_base
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		638 = {
+			add_building_construction = {
+				type = naval_base
+				level = 4
+				province = 13261
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = naval_base
+				level = 8
+				province = 12140
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = air_base
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		725 = {
+			add_building_construction = {
+				type = naval_base
+				level = 7
+				province = 13038
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				has_idea = harry_hopkins
+			}
+			remove_ideas = harry_hopkins
+			add_ideas = USA_henry_stimson
+			add_political_power = -150
+		}
+		activate_advisor = USA_donald_nelson
+	}
+	option = {}
+
+}
+
+country_event = {
+	id = usa_armor.891
+	title = usa_armor.891.t
+	desc = usa_armor.891.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.891.a
+
+	}
+}
+
+country_event = {
+	id = usa_armor.895
+	title = usa_armor.895.t
+	desc = usa_armor.895.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.895.a
+		if = {
+			limit = {
+				has_tech = usa_tactical_bomber_4
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_tac_bomber_equipment_4
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_tactical_bomber_5
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_tac_bomber_equipment_5
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_tactical_bomber_6
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_tac_bomber_equipment_6
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 35
+			}
+		}
+		if = {
+			limit = {
+				has_tech = usa_strike_bomber_1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_strike_bomber_equipment_1
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_strike_bomber_2
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_strike_bomber_equipment_2
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_strike_bomber_3
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_strike_bomber_equipment_3
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 35
+			}
+		}
+		custom_effect_tooltip = USA_Ford_positive_1_tt1
+		add_to_variable = { USA_Ford_Chrysler_attitude = 1 }
+		add_to_variable = { USA_ford_chrysler_production_speed_industrial_complex_factor = 0.075 }
+
+		ai_chance = {
+			factor = 40
+		}
+	}
+
+	option = {
+		name = usa_armor.895.b
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			if = {
+				limit = {
+					has_tech = usa_medium_tank_chassis_3
+				}
+				add_equipment_production = {
+					equipment = {
+						type = tank_usa_medium_chassis_3
+						creator = "USA"
+						# version_name = "M4A1 Sherman"
+					}
+					requested_factories = 100
+					efficiency = 35
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = usa_medium_tank_chassis_2
+				}
+				add_equipment_production = {
+					equipment = {
+						type = tank_usa_medium_chassis_2
+						creator = "USA"
+						# version_name = "M3 Lee"
+					}
+					requested_factories = 100
+					efficiency = 35
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = usa_medium_tank_chassis_1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = tank_usa_medium_chassis_1
+						creator = "USA"
+						# version_name = "M2 Medium"
+					}
+					requested_factories = 100
+					efficiency = 35
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					has_tech = usa_medium_3
+				}
+				add_equipment_production = {
+					equipment = {
+						type = usa_medium_equipment_3
+						creator = "USA"
+					}
+					requested_factories = 100
+					efficiency = 35
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = usa_medium_2
+				}
+				add_equipment_production = {
+					equipment = {
+						type = usa_medium_equipment_2
+						creator = "USA"
+					}
+					requested_factories = 100
+					efficiency = 35
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = usa_medium_1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = usa_medium_equipment_1
+						creator = "USA"
+					}
+					requested_factories = 100
+					efficiency = 35
+				}
+			}
+		}
+		custom_effect_tooltip = USA_Ford_positive_1_tt1
+		add_to_variable = { USA_Ford_Chrysler_attitude = 1 }
+		add_to_variable = { USA_ford_chrysler_production_speed_industrial_complex_factor = 0.075 }
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = usa_armor.895.c
+		if = {
+			limit = {
+				has_tech = usa_mechanized_infantry_2
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_mechanized_equipment_2
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 50
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_mechanized_infantry_1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_mechanized_equipment_1
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 50
+			}
+		}
+		custom_effect_tooltip = USA_Ford_positive_1_tt1
+		add_to_variable = { USA_Ford_Chrysler_attitude = 1 }
+		add_to_variable = { USA_ford_chrysler_production_speed_industrial_complex_factor = 0.075 }
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = usa_armor.896
+	title = usa_armor.896.t
+	desc = usa_armor.896.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.896.a
+		ai_chance = {
+			factor = 40
+		}
+		add_equipment_production = {
+			equipment = {
+				type = usa_motorized_equipment_1
+				creator = "USA"
+			}
+			requested_factories = 100
+			progress = 0.4
+			efficiency = 50
+		}
+		custom_effect_tooltip = USA_GM_positive_1_tt1
+		add_to_variable = { USA_GM_DuPont_attitude = 1 }
+		add_to_variable = { USA_gm_dupont_production_speed_industrial_complex_factor = 0.05 }
+	}
+
+	option = {
+		name = usa_armor.896.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				has_tech = usa_fighter_2
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_fighter_equipment_3
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 50
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_fighter_multirole_1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_fighter_multirole_equipment_1
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 50
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_fighter_7
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_fighter_equipment_8
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 50
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_fighter_1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_fighter_equipment_2
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 50
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = usa_fighter_0
+			}
+			add_equipment_production = {
+				equipment = {
+					type = usa_fighter_equipment_1
+					creator = "USA"
+				}
+				requested_factories = 100
+				efficiency = 50
+			}
+		}
+		custom_effect_tooltip = USA_GM_positive_1_tt1
+		add_to_variable = { USA_GM_DuPont_attitude = 1 }
+		add_to_variable = { USA_gm_dupont_production_speed_industrial_complex_factor = 0.05 }
+	}
+
+	option = {
+		name = usa_armor.896.c
+		random_core_state = {
+			limit = {
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_core_state = {
+			limit = {
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_core_state = {
+			limit = {
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_core_state = {
+			limit = {
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_core_state = {
+			limit = {
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+				instant_build = yes
+			}
+		}
+		custom_effect_tooltip = USA_GM_positive_1_tt1
+		add_to_variable = { USA_GM_DuPont_attitude = 1 }
+		add_to_variable = { USA_gm_dupont_production_speed_industrial_complex_factor = 0.05 }
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = usa_armor.897
+	title = usa_armor.897.t
+	desc = usa_armor.897.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.897.a
+		custom_effect_tooltip = USA_JPMorgan_Positive_cg_1_tt1
+		add_to_variable = { USA_JPMorgan_attitude = 1 }
+		add_to_variable = { USA_jpmorgan_consumer_goods_expected_value = -0.02 }
+
+		ai_chance = {
+			factor = 40
+		}
+	}
+
+	option = {
+		name = usa_armor.897.b
+		custom_effect_tooltip = USA_JPMorgan_Positive_stab_1_tt1
+		add_to_variable = { USA_JPMorgan_attitude = 1 }
+		add_to_variable = { USA_jpmorgan_stability_factor = 0.1 }
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = usa_armor.897.c
+		custom_effect_tooltip = USA_JPMorgan_Positive_pp_gain_1_tt1
+		add_to_variable = { USA_JPMorgan_attitude = 1 }
+		add_to_variable = { USA_public_political_power_gain = 0.25 }
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+######################################################## Saudi Arabia Oil Event
+country_event = {
+	id = usa_armor.892
+	title = usa_armor.892.t
+	desc = usa_armor.892.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.892.a
+		ai_chance = {
+			factor = 40
+		}
+		292 = {
+			add_resource = {
+				type = oil
+				amount = 26
+			}
+		}
+		add_ideas = saudi_oil
+		USA = {
+			country_event = { id = usa_armor.893 }
+			give_guarantee = SAU
+		}
+	}
+
+	option = {
+		name = usa_armor.892.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = usa_armor.892.b.tt
+		USA = {
+			country_event = { id = usa_armor.894 }
+		}
+	}
+}
+
+#They accepted
+country_event = {
+	id = usa_armor.893
+	title = usa_armor.893.t
+	desc = usa_armor.893.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.893.a
+		292 = {
+			CONTROLLER = {
+				give_resource_rights = { receiver = USA state = 292 }
+			}
+		}
+	}
+}
+
+#They rejected
+country_event = {
+	id = usa_armor.894
+	title = usa_armor.894.t
+	desc = usa_armor.894.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa_armor.894.a
+	}
+}
+
+############################################################################ US Elections
+
+country_event = {#1936 election
+	id = usa_armor.1000
+	title = usa_armor.1000.t
+	desc = usa_armor.1000.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1936.11.3
+		has_idea = home_of_the_free
+	}
+
+#	immediate = {
+#		country_event = { id = usa_armor.1100}
+#	}
+
+	option = {
+		name = usa_armor.1000.a
+	}
+}
+
+country_event = {#1940 election
+	id = usa_armor.1001
+	title = usa_armor.1001.t
+	desc = usa_armor.1001.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1940.11.3
+		has_idea = home_of_the_free
+		NOT = { has_completed_focus = USA_judicial_reform }
+		NOT = { has_country_flag = usa_second_election_happened }
+	}
+
+#	immediate = {
+#		country_event = { id = usa_armor.1100}
+#	}
+
+	option = {
+		name = usa_armor.1001.a
+		hidden_effect = {
+			set_country_flag = usa_second_election_happened
+		}
+	}
+}
+
+country_event = {#1940 election
+	id = usa_armor.1002
+	title = usa_armor.1002.t
+	desc = usa_armor.1002.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1940.11.3
+		has_idea = home_of_the_free
+		has_completed_focus = USA_judicial_reform
+		NOT = { has_country_flag = usa_second_election_happened }
+	}
+
+#	immediate = {
+#		country_event = { id = usa_armor.1100}
+#	}
+
+	option = {
+		name = usa_armor.1002.a
+		hidden_effect = {
+			set_country_flag = usa_second_election_happened
+		}
+		add_stability = -0.15
+	}
+
+	option = {
+		name = usa_armor.1002.b
+		hidden_effect = {
+			set_country_flag = usa_second_election_happened
+		}
+		add_country_leader_role = {
+			character = USA_wendell_willkie
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+
+				}
+				desc = "POLITICS_WENDELL_WILKIE_DESC"
+			}
+		}
+	}
+}
+
+country_event = {#1944 election
+	id = usa_armor.1003
+	title = usa_armor.1003.t
+	desc = usa_armor.1003.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1944.11.3
+		has_idea = home_of_the_free
+	}
+
+#	immediate = {
+#		country_event = { id = usa_armor.1100}
+#	}
+
+	option = {
+		name = usa_armor.1003.a
+	}
+}
+
+country_event = {#Congress Elections
+	id = usa_armor.1100
+	title = usa_armor.1100.t
+	desc = usa_armor.1100.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = usa_armor.1100 days = 730 }
+	}
+
+	option = {
+		name = usa_armor.1100.a
+		USA_election_congress = yes
+	}
+}
+
+######################################################################################################### Cheats

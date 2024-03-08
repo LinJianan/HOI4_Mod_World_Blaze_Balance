@@ -1,0 +1,668 @@
+﻿add_namespace = pol_armor
+
+country_event = {
+	id = pol_armor.10
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POL
+		is_ai = yes
+		date > 1936.1.1
+	}
+
+	immediate = {
+		division_template = {
+			name = "Polish Infantry Division"
+			division_names_group = POL_INF_01
+			priority = 1
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+				heavy_infantry = { x = 3 y = 3 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+				anti_tank_brigade = { x = 3 y = 3 }
+			}
+
+			support = {
+				normal_engineer = { x = 0 y = 0 }
+				horse_logistics_company = { x = 0 y = 1 }
+				horse_field_hospital = { x = 0 y = 2 }
+				horse_signal_company = { x = 0 y = 3 }
+
+				recon = { x = 1 y = 0 }
+				anti_air = { x = 1 y = 1 }
+				anti_tank = { x = 1 y = 2 }
+				artillery = { x = 1 y = 3 }
+			}
+		}
+		division_template = {
+			name = "Polish Mountaineer Division"
+			division_names_group = POL_MNT_01
+
+			regiments = {
+				mountaineers = { x = 0 y = 0 }
+				mountaineers = { x = 0 y = 1 }
+				mountaineers = { x = 0 y = 2 }
+
+				mountaineers = { x = 1 y = 0 }
+				mountaineers = { x = 1 y = 1 }
+				mountaineers = { x = 1 y = 2 }
+
+				mountaineers = { x = 2 y = 0 }
+				mountaineers = { x = 2 y = 1 }
+				mountaineers = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+				anti_tank_brigade = { x = 3 y = 2 }
+			}
+			support = {
+				normal_engineer = { x = 0 y = 0 }
+				horse_logistics_company = { x = 0 y = 1 }
+				horse_field_hospital = { x = 0 y = 2 }
+				
+				recon = { x = 1 y = 0 }
+				artillery = { x = 1 y = 1 }
+			}
+		}
+		set_country_flag = infantry_template_pol
+	}
+
+	option = {
+	}
+}
+
+country_event = {
+	id = pol_armor.22
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POL
+		OR = {
+			94 = { is_controlled_by = SOV }
+			95 = { is_controlled_by = SOV }
+			11 = { is_controlled_by = SOV }
+			189 = { is_controlled_by = SOV }
+			93 = { is_controlled_by = SOV }
+			91 = { is_controlled_by = SOV }
+			80 = { is_controlled_by = SOV }
+			79 = { is_controlled_by = SOV }
+		}
+		OR = {
+			10 = { is_controlled_by = GER }
+			10 = { is_controlled_by = RPO }
+		}
+		GER = { has_war_with = SOV }
+		GER = { has_war_with = ENG }
+		POL = { has_war_with = GER }
+		date > 1943.8.1
+		NOT = {
+ 			POL = { has_government = communism }
+ 		}
+ 		is_in_faction_with = ENG
+	}
+
+	immediate = {
+		load_oob = "POL_Uprising"
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = pol_armor.23
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POL
+		is_ai = yes
+		has_tech = motorised_infantry
+		has_tech = pol_mechanized_infantry_1
+		10 = { is_controlled_by = POL }
+		88 = { is_controlled_by = POL }
+	}
+
+	immediate = {
+		load_oob = "POL_prewar"
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = pol_armor.24
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POL
+		has_country_flag = POL_rbs
+		NOT = { has_war_with = ROM }
+		POL = {
+			is_government_in_exile = yes
+		}
+	}
+
+	immediate = {
+		add_legitimacy = 20
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = pol_armor.31
+	title = pol_armor.31.t
+	desc = pol_armor.31.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = pol_armor.31.a
+		ai_chance = {
+			factor = 5
+		}
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			DNZ = {
+				add_timed_idea = { idea = democratic_influence days = 1095 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = neutrality
+			}
+			DNZ = {
+				add_timed_idea = { idea = neutrality_influence days = 1095 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = communism
+			}
+			DNZ = {
+				add_timed_idea = { idea = communist_influence days = 1095 }
+			}
+		}
+		POL = {
+			set_autonomy = {
+				target = DNZ
+				autonomy_state = autonomy_reichsprotectorate
+			}
+		}
+		hidden_effect = {
+			DNZ = {
+				set_politics = {
+					ruling_party = fascism
+				}
+				set_popularities = {
+					fascism = 70
+					neutrality = 30
+				}
+			}
+		}
+	}
+	option = {
+		name = pol_armor.31.b
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			DNZ = {
+				add_timed_idea = { idea = democratic_influence days = 1095 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = neutrality
+			}
+			DNZ = {
+				add_timed_idea = { idea = neutrality_influence days = 1095 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = communism
+			}
+			DNZ = {
+				add_timed_idea = { idea = communist_influence days = 1095 }
+			}
+		}
+		POL = {
+			set_autonomy = {
+				target = DNZ
+				autonomy_state = autonomy_reichskommissariat
+			}
+		}
+		hidden_effect = {
+			DNZ = {
+				set_politics = {
+					ruling_party = fascism
+				}
+				set_popularities = {
+					fascism = 70
+					neutrality = 30
+				}
+			}
+		}
+	}
+	option = {
+		name = pol_armor.31.c
+		ai_chance = {
+			factor = 100
+		}
+		annex_country = { target = DNZ }
+		add_named_threat = { threat = 3 name = DNZ_annexed }
+		if = {
+			limit = {
+				GER = {
+					has_government = fascism
+				}
+				NOT = { has_war_with = GER }
+			}
+			custom_effect_tooltip = pol_armor.31.tt
+			GER = { country_event = { id = pol_armor.32 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = pol_armor.32
+	title = pol_armor.32.t
+	desc = pol_armor.32.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = pol_armor.32.a
+		ai_chance = {
+			factor = 10
+		}
+		add_state_core = 85
+		add_state_core = 798
+		create_wargoal = {
+			type = take_state_focus
+			target = POL
+			generator = { 85 798 }
+		}
+	}
+
+	option = {
+		name = pol_armor.32.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = pol_armor.33
+	title = pol_armor.33.t
+	desc = pol_armor.33.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = pol_armor.33.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				GER = { has_completed_focus = GER_danzig_or_war }
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_government = democratic
+				}
+			}
+		}
+		diplomatic_relation = {
+			country = POL
+			relation = guarantee
+			active = yes
+		}
+		if = {
+			limit = {
+				DNZ = { is_subject_of = POL }
+			}
+			diplomatic_relation = {
+				country = DNZ
+				relation = guarantee
+				active = yes
+			}
+		}
+		POL = { country_event = { id = pol_armor.34 hours = 6 } }
+	}
+
+	option = {
+		name = pol_armor.33.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				NOT = { GER = { has_completed_focus = GER_danzig_or_war } }
+				has_government = democratic
+			}
+		}
+		POL = { country_event = { id = pol_armor.35 hours = 6 } }
+	}
+}
+
+country_event = {
+	id = pol_armor.34
+	title = pol_armor.34.t
+	desc = pol_armor.34.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = pol_armor.34.a
+		set_country_flag = neutral_flag
+	}
+}
+
+country_event = {
+	id = pol_armor.35
+	title = pol_armor.35.t
+	desc = pol_armor.35.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = pol_armor.35.a
+	}
+}
+
+# Austrian Referendum - event for Austria to allow it
+country_event = {
+	id = pol_armor.801
+	title = pol_armor.801.t
+	desc = pol_armor.801.desc
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { #sure
+		name = pol_armor.801.a
+		ai_chance = {
+			factor = 80
+
+			modifier = {
+				is_in_faction = yes
+				factor = 0
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					NOT = { POL = { has_completed_focus = POL_new_polish_industry } }
+					NOT = { LIT = { has_opinion = { target = POL value > 0 } } }
+				}
+			}
+			random_list = {
+				70 = { LIT = { country_event = { id = pol_armor.802 hours = 24 } } } #country votes yes
+				30 = { LIT = { country_event = { id = pol_armor.803 hours = 24 } } } #country votes no
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						POL = { has_completed_focus = POL_new_polish_industry }
+						NOT = { LIT = { has_opinion = { target = POL value > 0 } } }
+					}
+					AND = {
+						NOT = { POL = { has_completed_focus = POL_new_polish_industry } }
+						LIT = { has_opinion = { target = POL value > 0 } }
+					}
+				}
+			}
+			random_list = {
+				80 = { LIT = { country_event = { id = pol_armor.802 hours = 24 } } } #country votes yes
+				20 = { LIT = { country_event = { id = pol_armor.803 hours = 24 } } } #country votes no
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					POL = { has_completed_focus = POL_new_polish_industry }
+					LIT = { has_opinion = { target = POL value > 0 } }
+				}
+			}
+			LIT = { country_event = { id = pol_armor.802 hours = 24 } }
+		}
+	}
+
+	option = { #no
+		name = pol_armor.801.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				has_government = democratic
+				factor = 0
+			}
+			modifier = {
+				is_in_faction = no
+				factor = 0
+			}
+		}
+		POL = { country_event = { id = pol_armor.806 hours = 6 } }
+	}
+
+	option = { #sure, but we'll make sure it gets the right result
+		name = pol_armor.801.c
+		ai_chance = { factor = 160 }
+		trigger = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
+		add_threat = -2
+		add_political_power = -50
+		LIT = { country_event = { id = pol_armor.807 hours = 24 } }
+		set_global_flag = POL_referendum_shenanigans
+	}
+}
+#country votes yes
+country_event = {
+	id = pol_armor.802
+	title = pol_armor.802.t
+	desc = pol_armor.802.desc
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = {
+		name = pol_armor.802.a
+		custom_effect_tooltip = GAME_OVER_TT
+		POL = { country_event = { id = pol_armor.804 } }
+	}
+
+}
+
+#country votes no
+country_event = {
+	id = pol_armor.803
+	title = pol_armor.803.t
+	desc = pol_armor.803.desc
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = {
+		name = pol_armor.803.a
+		POL = { country_event = { id = pol_armor.805 } }
+	}
+
+}
+#country votes yes - hungary
+country_event = {
+	id = pol_armor.804
+	title = pol_armor.804.t
+	desc = pol_armor.804.desc
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = {
+		name = pol_armor.804.a
+		LIT = {
+			every_unit_leader = {
+				set_nationality = POL
+			}
+		}
+		11 = { add_core_of = ROOT }
+		189 = { add_core_of = ROOT }
+		188 = { add_core_of = ROOT }
+		POL = { annex_country = { target = LIT transfer_troops = yes } }
+		POL = { set_country_flag = LIT_annexed_peacefully } # Used to change division name lists for POL
+		hidden_effect = { news_event = { id = afo_news.37 days = 1 } }
+	}
+
+}
+#country votes no - hungary
+country_event = {
+	id = pol_armor.805
+	title = pol_armor.805.t
+	desc = pol_armor.805.desc
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { #TO WAR
+		name = pol_armor.805.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_global_flag = POL_referendum_shenanigans
+				factor = 2
+			}
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = LIT
+		}
+	}
+
+	option = { #Let it go
+		name = pol_armor.805.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				LIT = { is_in_faction = yes }
+				factor = 3
+			}
+		}
+	}
+
+}
+#Austria refuses
+country_event = {
+	id = pol_armor.806
+	title = pol_armor.806.t
+	desc = pol_armor.806.desc
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { #TO WAR
+		name = pol_armor.806.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				LIT = {
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+				factor = 3
+			}
+			modifier = {
+				LIT = { is_in_faction = no }
+				factor = 3
+			}
+			modifier = {
+				strength_ratio = { tag = LIT ratio > 1 }
+				factor = 2
+			}
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = LIT
+		}
+	}
+	option = { #Let it go
+		name = pol_armor.806.b
+		ai_chance = {
+			factor = 70
+		}
+	}
+}
+
+#Cheat on the Referendum
+country_event = {
+	id = pol_armor.807
+	title = pol_armor.807.t
+	desc = pol_armor.807.desc
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { #say no
+		name = pol_armor.807.a
+		ai_chance = {
+			factor = 80
+		}
+		POL = { country_event = { id = pol_armor.805 } }
+
+	}
+	option = { #say yes
+		name = pol_armor.807.b
+		ai_chance = {
+			factor = 20 #brilliant plan
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+		POL = { country_event = { id = pol_armor.804 } }
+		hidden_effect = { news_event = { id = afo_news.37 days = 1 } }
+	}
+
+}
+
+#################################################################################### Cheats

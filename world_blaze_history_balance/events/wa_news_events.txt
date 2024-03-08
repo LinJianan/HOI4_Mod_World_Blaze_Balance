@@ -1,0 +1,2205 @@
+﻿add_namespace = afo_news
+
+news_event = {
+	id = afo_news.1
+	title = afo_news.1.t
+	desc = afo_news.1.d
+	picture = GFX_D_Day
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.1.a
+		trigger = { is_in_faction_with = GER }
+	}
+	option = {
+		name = afo_news.1.b
+		trigger = { is_in_faction_with = ENG }
+	}
+	option = {
+		name = afo_news.1.c
+		trigger = { is_in_faction_with = SOV }
+	}
+	option = {
+		name = afo_news.1.e
+		trigger = {
+			NOT = {
+				is_in_faction_with = SOV
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+news_event = {
+	id = afo_news.2
+	title = afo_news.2.t
+	desc = afo_news.2.d
+	picture = GFX_Axis_Africa_victory
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.2.a
+		trigger = { is_in_faction_with = GER }
+	}
+	option = {
+		name = afo_news.2.b
+		trigger = { is_in_faction_with = ENG }
+	}
+	option = {
+		name = afo_news.2.c
+		trigger = { is_in_faction_with = SOV }
+	}
+	option = {
+		name = afo_news.2.e
+		trigger = {
+			NOT = {
+				is_in_faction_with = SOV
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+news_event = {
+	id = afo_news.3
+	title = afo_news.3.t
+	desc = afo_news.3.d
+	picture = GFX_Allied_Africa_victory
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.3.a
+		trigger = { is_in_faction_with = GER }
+	}
+	option = {
+		name = afo_news.3.b
+		trigger = { is_in_faction_with = ENG }
+	}
+	option = {
+		name = afo_news.3.c
+		trigger = { is_in_faction_with = SOV }
+	}
+	option = {
+		name = afo_news.3.e
+		trigger = {
+			NOT = {
+				is_in_faction_with = SOV
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+#Hitler Assassinated
+
+news_event = {
+	id = afo_news.5
+	title = afo_news.5.t
+	desc = afo_news.5.d
+	picture = GFX_news_event_hitler_suicide
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.5.a
+		trigger = {
+			AND = {
+				is_in_faction_with = GER
+				has_government = fascism
+			}
+		}
+	}
+	option = {
+		name = afo_news.5.b
+		trigger = { has_war_with = GER }
+	}
+	option = {
+		name = afo_news.5.c
+		trigger = { tag = GER }
+	}
+	option = {
+		name = afo_news.5.e
+		trigger = {
+			NOT = {
+				has_war_with = GER
+				tag = GER
+			}
+		}
+	}
+}
+
+
+news_event = {
+	id = afo_news.6
+	title = afo_news.6.t
+	desc = afo_news.6.d
+	picture = GFX_news_event_generic_riot
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.6.a
+		trigger = { is_in_faction_with = ITA }
+	}
+	option = {
+		name = afo_news.6.b
+		trigger = { is_in_faction_with = ENG }
+	}
+	option = {
+		name = afo_news.6.c
+		trigger = { is_in_faction_with = SOV }
+	}
+	option = {
+		name = afo_news.6.e
+		trigger = {
+			NOT = {
+				is_in_faction_with = SOV
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+news_event = {
+	id = afo_news.7
+	title = afo_news.7.t
+	desc = afo_news.7.d
+	picture = GFX_news_event_hitler_suicide
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.7.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = afo_news.7.b
+		trigger = {
+			has_war_with = GER
+		}
+	}
+	option = {
+		name = afo_news.7.c
+		trigger = {
+			NOT = { has_war_with = GER }
+			NOT = { is_in_faction_with = GER }
+			NOT = { tag = GER }
+		}
+	}
+	option = {
+		name = afo_news.7.e
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+			is_in_faction_with = GER
+		}
+	}
+}
+
+####################### Vichy North Africa switches
+
+news_event = {
+	id = afo_news.8
+	title = afo_news.8.t
+	desc = afo_news.8.d
+	picture = GFX_news_event_016
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.7.a
+		trigger = {
+			tag = VIC
+		}
+	}
+	option = {
+		name = afo_news.7.b
+		trigger = {
+			is_in_faction_with = ENG
+		}
+	}
+	option = {
+		name = afo_news.7.c
+		trigger = {
+			is_in_faction_with = GER
+			NOT = { tag = VIC }
+		}
+	}
+	option = {
+		name = afo_news.7.e
+		trigger = {
+			NOT = {
+				tag = VIC
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+####################### USA
+
+news_event = {#Arsenal of Democracy
+	id = afo_news.9
+	title = afo_news.9.t
+	desc = afo_news.9.d
+	picture = GFX_news_event_arsenal_of_democracy
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.9.1
+		trigger = {
+			tag = USA
+		}
+	}
+
+	option = {
+		name = afo_news.9.2
+		trigger = {
+			has_war_with = ENG
+		}
+	}
+
+	option = {
+		name = afo_news.9.3
+		trigger = {
+			OR = {
+				tag = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+
+	option = {
+		name = afo_news.9.4
+		trigger = {
+			NOT = {
+				tag = ENG
+				is_in_faction_with = ENG
+				tag = USA
+				has_war_with = ENG
+			}
+		}
+	}
+}
+
+####################### Haile Selassie Speech
+
+news_event = {
+	id = afo_news.10
+	title = afo_news.10.t
+	desc = afo_news.10.d
+	picture = GFX_news_event_haile_selassie_speech
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.10.a
+		trigger = {
+			tag = ITA
+		}
+	}
+
+	option = {
+		name = afo_news.10.b
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+
+	option = {
+		name = afo_news.10.c
+		trigger = {
+			NOT = {
+				tag = ENG
+				tag = FRA
+				tag = ITA
+			}
+		}
+	}
+}
+
+####################### Japanese Victory in the Pacific
+
+news_event = {
+	id = afo_news.11
+	title = afo_news.11.t
+	desc = afo_news.11.d
+	picture = GFX_news_event_japanese_army_parade
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.11.a
+		trigger = { tag = JAP }
+	}
+	option = {
+		name = afo_news.11.b
+		trigger = { is_in_faction_with = USA }
+	}
+	option = {
+		name = afo_news.11.c
+		trigger = {
+			NOT = {
+				tag = JAP
+				is_in_faction_with = USA
+			}
+		}
+	}
+}
+
+####################### Allied Victory in the Pacific
+
+news_event = {
+	id = afo_news.12
+	title = afo_news.12.t
+	desc = afo_news.12.d
+	picture = GFX_news_event_057
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.12.a
+		trigger = { is_in_faction_with = JAP }
+	}
+	option = {
+		name = afo_news.12.b
+		trigger = { is_in_faction_with = USA }
+	}
+	option = {
+		name = afo_news.12.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = JAP
+				is_in_faction_with = USA
+			}
+		}
+	}
+}
+
+####################### Axis Victory in Europe
+
+news_event = {
+	id = afo_news.13
+	title = afo_news.13.t
+	desc = afo_news.13.d
+	picture = GFX_news_event_endsieg
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.13.a
+		trigger = { is_in_faction_with = GER }
+	}
+	option = {
+		name = afo_news.13.b
+		trigger = { is_in_faction_with = USA }
+	}
+	option = {
+		name = afo_news.13.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = GER
+				is_in_faction_with = USA
+			}
+		}
+	}
+}
+
+####################### Allied Victory in Europe
+
+news_event = {
+	id = afo_news.14
+	title = afo_news.14.t
+	desc = afo_news.14.d
+	picture = GFX_news_event_057
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.14.a
+		trigger = { is_in_faction_with = USA }
+	}
+	option = {
+		name = afo_news.14.b
+		trigger = { is_in_faction_with = SOV }
+	}
+	option = {
+		name = afo_news.14.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = GER
+				is_in_faction_with = USA
+			}
+		}
+	}
+}
+
+####################### Italy Joins the Allies
+
+news_event = {
+	id = afo_news.15
+	title = afo_news.15.t
+	desc = afo_news.15.d
+	picture = GFX_news_event_008
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.15.a
+		trigger = {
+			is_in_faction_with = GER
+			NOT = {
+				tag = ITA
+			}
+		}
+	}
+	option = {
+		name = afo_news.15.b
+		trigger = {
+			is_in_faction_with = ENG
+			NOT = {
+				tag = ITA
+			}
+		}
+	}
+	option = {
+		name = afo_news.15.c
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = {
+		name = afo_news.15.e
+		trigger = {
+			NOT = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+				tag = ITA
+			}
+		}
+	}
+}
+
+####################### Soiet Union loses the Winter War
+
+news_event = {
+	id = afo_news.16
+	title = afo_news.16.t
+	desc = afo_news.16.d
+	picture = GFX_news_event_012
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.16.a
+		trigger = {
+			tag = FIN
+		}
+	}
+	option = {
+		name = afo_news.16.b
+		trigger = {
+			OR = {
+				is_in_faction_with = SOV
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = afo_news.16.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = SOV
+				tag = FIN
+			}
+		}
+	}
+}
+
+####################### Northern Lights
+
+news_event = {
+	id = afo_news.17
+	title = afo_news.17.t
+	desc = afo_news.17.d
+	picture = GFX_news_event_009
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.17.a
+		trigger = {
+			is_in_faction_with = FIN
+		}
+	}
+	option = {
+		name = afo_news.17.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = FIN
+			}
+			NOT = {
+				tag = NOR
+				tag = SWE
+				tag = DEN
+			}
+		}
+	}
+	option = {
+		name = afo_news.17.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = FIN
+			}
+			OR = {
+				tag = NOR
+				tag = SWE
+				tag = DEN
+				tag = SOV
+				tag = GER
+				tag = ENG
+				tag = EST
+				tag = LAT
+				tag = LIT
+				tag = POL
+				tag = HOL
+				tag = BEL
+				tag = FRA
+			}
+		}
+	}
+}
+
+####################### Aland Islands
+
+news_event = {
+	id = afo_news.18
+	title = afo_news.18.t
+	desc = afo_news.18.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.18.a
+		trigger = {
+			tag = FIN
+		}
+	}
+	option = {
+		name = afo_news.18.b
+		trigger = {
+			tag = SWE
+		}
+	}
+	option = {
+		name = afo_news.18.c
+		trigger = {
+			NOT = {
+				tag = FIN
+				tag = SWE
+			}
+		}
+	}
+}
+
+####################### Finnish Civil War
+
+news_event = {
+	id = afo_news.19
+	title = afo_news.19.t
+	desc = afo_news.19.d
+	picture = GFX_news_event_011
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.19.a
+		trigger = {
+			original_tag = FIN
+		}
+	}
+	option = {
+		name = afo_news.19.b
+		trigger = {
+			NOT = { original_tag = FIN }
+			has_government = communism
+		}
+	}
+	option = {
+		name = afo_news.19.c
+		trigger = {
+			NOT = { original_tag = FIN }
+			has_government = fascism
+		}
+	}
+	option = {
+		name = afo_news.19.e
+		trigger = {
+			NOT = { original_tag = FIN }
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}
+	}
+}
+
+####################### Soviet Union Annexes Sinkiang
+news_event = {
+	id = afo_news.20
+	title = afo_news.20.t
+	desc = afo_news.20.d
+	picture = GFX_news_event_006
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.20.a
+		trigger = {
+			NOT = {
+				TAG = SOV
+			}
+		}
+	}
+	option = {
+		name = afo_news.20.b
+		trigger = { TAG = SOV }
+	}
+}
+
+####################### Soviet Union Puppets Sinkiang
+news_event = {
+	id = afo_news.21
+	title = afo_news.21.t
+	desc = afo_news.21.d
+	picture = GFX_news_event_006
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.21.a
+		trigger = {
+			NOT = {
+				TAG = SOV
+			}
+		}
+	}
+	option = {
+		name = afo_news.21.b
+		trigger = { TAG = SOV }
+	}
+}
+
+####################### Soviet Union Puppets Estonia
+news_event = {
+	id = afo_news.22
+	title = afo_news.22.t
+	desc = afo_news.22.d
+	picture = GFX_news_event_006
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.24.a
+		trigger = {
+            OR = {
+                is_in_faction_with = GER
+                tag = GER
+            }
+        }
+	}
+	option = {
+		name = afo_news.24.b
+		trigger = {
+            NOT = { is_in_faction_with = GER }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+            NOT = { tag = GER }
+        }
+	}
+    option = {
+		name = afo_news.22.c
+		trigger = { has_government = democratic }
+	}
+    option = {
+		name = afo_news.22.e
+		trigger = { has_government = communism }
+	}
+}
+
+####################### Soviet Union Puppets Latvia
+news_event = {
+	id = afo_news.23
+	title = afo_news.23.t
+	desc = afo_news.23.d
+	picture = GFX_news_event_006
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.24.a
+		trigger = {
+            OR = {
+                is_in_faction_with = GER
+                tag = GER
+            }
+        }
+	}
+	option = {
+		name = afo_news.24.b
+		trigger = {
+            NOT = { is_in_faction_with = GER }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+            NOT = { tag = GER }
+        }
+	}
+    option = {
+		name = afo_news.23.c
+		trigger = { has_government = democratic }
+	}
+    option = {
+		name = afo_news.23.e
+		trigger = { has_government = communism }
+	}
+}
+
+####################### Soviet Union Puppets Lithuania
+news_event = {
+	id = afo_news.24
+	title = afo_news.24.t
+	desc = afo_news.24.d
+	picture = GFX_news_event_006
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.24.a
+		trigger = {
+            OR = {
+                is_in_faction_with = GER
+                tag = GER
+            }
+        }
+	}
+	option = {
+		name = afo_news.24.b
+		trigger = {
+            NOT = { is_in_faction_with = GER }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+            NOT = { tag = GER }
+        }
+	}
+    option = {
+		name = afo_news.24.c
+		trigger = { has_government = democratic }
+	}
+    option = {
+		name = afo_news.24.e
+		trigger = { has_government = communism }
+	}
+}
+
+####################### Axis Victory in Russia
+
+news_event = {
+	id = afo_news.25
+	title = afo_news.25.t
+	desc = afo_news.25.d
+	picture = GFX_news_event_end_of_russia
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.25.a
+		trigger = { is_in_faction_with = GER }
+	}
+	option = {
+		name = afo_news.25.b
+		trigger = { is_in_faction_with = SOV }
+	}
+	option = {
+		name = afo_news.25.c
+		trigger = {
+			is_in_faction_with = USA
+		}
+	}
+	option = {
+		name = afo_news.25.e
+		trigger = {
+			NOT = {
+				is_in_faction_with = GER
+				is_in_faction_with = SOV
+				is_in_faction_with = USA
+			}
+		}
+	}
+}
+
+# Kaiser returned but not sent into power
+news_event = {
+	id = afo_news.26
+	title = afo_news.26.t
+	desc = afo_news.26.desc
+	picture = GFX_news_event_generic_parliament
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.26.a
+		trigger = {
+			original_tag = GER
+		}
+	}
+	option = {
+		name = afo_news.26.b
+		trigger = {
+			NOT = { original_tag = GER }
+			NOT = { original_tag = HOL }
+			NOT = { original_tag = ENG }
+			NOT = { original_tag = FRA }
+		}
+	}
+	option = {
+		name = afo_news.26.c
+		trigger = {
+			original_tag = HOL
+		}
+	}
+	option = {
+		name = afo_news.26.d
+		trigger = {
+			OR = {
+				original_tag = ENG
+				original_tag = FRA
+			}
+		}
+	}
+}
+
+# battle for China begins
+news_event = {
+	id = afo_news.27
+	title = afo_news.27.t
+	desc = afo_news.27.d
+	picture = GFX_news_event_battle_of_wuhan
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.27.a
+		trigger = {
+			NOT = {
+				tag = CHI
+				is_in_faction_with = CHI
+				tag = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = afo_news.27.b
+		trigger = {
+			OR = {
+				tag = CHI
+				AND = {
+					NOT = { tag = CHI }
+					is_in_faction_with = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = afo_news.27.c
+		effect_tooltip = {
+			JAP = { add_timed_idea = { idea = JAP_navy_slighted days = 120 } }
+		}
+		trigger = {
+			OR = {
+				tag = JAP
+				AND = {
+					NOT = { tag = JAP }
+					is_in_faction_with = JAP
+				}
+			}
+		}
+	}
+}
+
+# fall of Beijing
+news_event = {
+	id = afo_news.28
+	title = afo_news.28.t
+	desc = afo_news.28.d
+	picture = GFX_news_event_fall_of_beijing
+
+	major = yes
+
+	trigger = {
+		608 = { is_controlled_by = JAP }
+		OR = {
+			has_global_flag = second_sino_japanese_war_has_started
+			AND = {
+				JAP = { has_war_with = CHI }
+				608 = { is_owned_by = CHI }
+			}
+			AND = {
+				JAP = { has_war_with = HPC }
+				608 = { is_owned_by = HPC }
+			}
+		}
+		NOT = { has_global_flag = fall_of_beijing }
+	}
+
+	immediate = {
+		set_global_flag = fall_of_beijing
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = afo_news.28.a
+		trigger = {
+			NOT = {
+				tag = CHI
+				is_in_faction_with = CHI
+				tag = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = afo_news.28.b
+		trigger = {
+			OR = {
+				tag = CHI
+				AND = {
+					NOT = { tag = CHI }
+					is_in_faction_with = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = afo_news.28.c
+		trigger = {
+			OR = {
+				tag = JAP
+				AND = {
+					NOT = { tag = JAP }
+					is_in_faction_with = JAP
+				}
+			}
+		}
+	}
+}
+
+# fall of Shanghai
+news_event = {
+	id = afo_news.29
+	title = afo_news.29.t
+	desc = afo_news.29.d
+	picture = GFX_news_event_041
+
+	major = yes
+
+	trigger = {
+		613 = { is_controlled_by = JAP }
+		OR = {
+			has_global_flag = second_sino_japanese_war_has_started
+			AND = {
+				JAP = { has_war_with = CHI }
+				613 = { is_owned_by = CHI }
+			}
+		}
+		NOT = { has_global_flag = fall_of_shanghai }
+	}
+
+	immediate = {
+		set_global_flag = fall_of_shanghai
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = afo_news.29.a
+		trigger = {
+			NOT = {
+				tag = CHI
+				is_in_faction_with = CHI
+				tag = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = afo_news.29.b
+		trigger = {
+			OR = {
+				tag = CHI
+				AND = {
+					NOT = { tag = CHI }
+					is_in_faction_with = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = afo_news.29.c
+		trigger = {
+			OR = {
+				tag = JAP
+				AND = {
+					NOT = { tag = JAP }
+					is_in_faction_with = JAP
+				}
+			}
+		}
+	}
+}
+
+# fall of wuhan
+news_event = {
+	id = afo_news.30
+	title = afo_news.30.t
+	desc = afo_news.30.d
+	picture = GFX_news_event_fall_of_wuhan
+
+	major = yes
+
+	trigger = {
+		620 = { is_controlled_by = JAP }
+		OR = {
+			has_global_flag = second_sino_japanese_war_has_started
+			AND = {
+				JAP = { has_war_with = CHI }
+				620 = { is_owned_by = CHI }
+			}
+		}
+		NOT = { has_global_flag = fall_of_wuhan }
+	}
+
+	immediate = {
+		set_global_flag = fall_of_wuhan
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = afo_news.30.a
+		trigger = {
+			NOT = {
+				tag = CHI
+				is_in_faction_with = CHI
+				tag = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = afo_news.30.b
+		trigger = {
+			OR = {
+				tag = CHI
+				AND = {
+					NOT = { tag = CHI }
+					is_in_faction_with = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = afo_news.30.c
+		trigger = {
+			OR = {
+				tag = JAP
+				AND = {
+					NOT = { tag = JAP }
+					is_in_faction_with = JAP
+				}
+			}
+		}
+	}
+}
+
+####################### Japanese Victory in Russia
+
+news_event = {
+	id = afo_news.31
+	title = afo_news.31.t
+	desc = afo_news.31.d
+	picture = GFX_news_event_japanese_army_parade
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.31.a
+		trigger = { is_in_faction_with = JAP }
+	}
+	option = {
+		name = afo_news.31.b
+		trigger = { is_in_faction_with = SOV }
+	}
+	option = {
+		name = afo_news.31.c
+		trigger = {
+			is_in_faction_with = USA
+		}
+	}
+	option = {
+		name = afo_news.31.e
+		trigger = {
+			NOT = {
+				is_in_faction_with = JAP
+				is_in_faction_with = SOV
+				is_in_faction_with = USA
+			}
+		}
+	}
+}
+
+####################### PRC Victory in civil War
+
+news_event = {
+	id = afo_news.32
+	title = afo_news.32.t
+	desc = afo_news.32.d
+	picture = GFX_news_event_050
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.32.a
+		trigger = {
+			OR = {
+				is_in_faction_with = PRC
+				tag = PRC
+			}
+		}
+	}
+	option = {
+		name = afo_news.32.b
+		trigger = {
+			OR = {
+				is_in_faction_with = CHI
+				tag = CHI
+			}
+		}
+	}
+	option = {
+		name = afo_news.32.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = CHI
+				tag = CHI
+				is_in_faction_with = PRC
+				tag = PRC
+			}
+		}
+	}
+}
+
+####################### UK evacuates
+
+news_event = {
+	id = afo_news.33
+	title = afo_news.33.t
+	desc = afo_news.33.d
+	picture = GFX_news_event_churchill_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.33.a
+		trigger = {
+			OR = {
+				is_in_faction_with = ENG
+				tag = ENG
+			}
+		}
+	}
+	option = {
+		name = afo_news.33.b
+		trigger = {
+			has_war_with = ENG
+		}
+	}
+	option = {
+		name = afo_news.33.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = ENG
+				tag = ENG
+				has_war_with = ENG
+			}
+		}
+	}
+}
+
+####################### Stalin Dies historical
+
+news_event = {
+	id = afo_news.34
+	title = afo_news.34.t
+	desc = afo_news.34.d
+	picture = GFX_news_event_death_of_stalin
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.34.a
+		trigger = {
+			OR = {
+				has_government = communism
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = afo_news.34.b
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = afo_news.34.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}
+
+####################### Stalin Dies Ahistorical
+
+news_event = {
+	id = afo_news.35
+	title = afo_news.35.t
+	desc = afo_news.35.d
+	picture = GFX_news_event_death_of_stalin
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.35.a
+		trigger = {
+			OR = {
+				has_government = communism
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = afo_news.35.b
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = afo_news.35.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}
+
+####################### Soviet Civil War
+
+news_event = {
+	id = afo_news.36
+	title = afo_news.36.t
+	desc = afo_news.36.d
+	picture = GFX_news_event_soviet_offensive
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.36.a
+		trigger = {
+			original_tag = SOV
+		}
+	}
+	option = {
+		name = afo_news.36.b
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = afo_news.36.c
+		trigger = {
+			NOT = {
+				original_tag = SOV
+				has_government = fascism
+			}
+		}
+	}
+}
+
+#Austria votes yes on referendum - suspected shenanigans
+news_event = {
+	id = afo_news.37
+	title = afo_news.37.t
+	desc = afo_news.37.d
+	picture = GFX_news_event_generic_riot
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.37.a
+		trigger = {
+			TAG = POL
+		}
+	}
+	option = {
+		name = afo_news.37.b
+		trigger = {
+			TAG = SOV
+		}
+	}
+	option = {
+		name = afo_news.37.c
+		trigger = {
+			NOT = {
+				TAG = POL
+				TAG = SOV
+				has_government = democratic
+			}
+		}
+	}
+	option = {
+		name = afo_news.37.e
+		trigger = {
+			NOT = {
+				TAG = POL
+				TAG = SOV
+			}
+			has_government = democratic
+		}
+	}
+}
+
+# The Italian Civil War
+news_event = {
+	id = afo_news.38
+	title = afo_news.38.t
+	desc = afo_news.38.d
+	picture = GFX_news_event_032
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.38.a
+		trigger = {
+			NOT = { original_tag = ITA }
+		}
+	}
+	option = {
+		name = afo_news.38.b
+		trigger = {
+			original_tag = ITA
+		}
+	}
+}
+
+# End of the Italian Civil War
+news_event = {
+	id = afo_news.39
+	title = afo_news.39.t
+	desc = afo_news.39.d
+	picture = GFX_news_event_033
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = icw_over
+	}
+
+	option = {
+		name = afo_news.39.a
+		trigger = {
+			NOT = { original_tag = ITA }
+		}
+	}
+	option = {
+		name = afo_news.39.b
+		trigger = {
+			original_tag = ITA
+		}
+	}
+}
+
+# Protector of the Balkans
+news_event = {
+	id = afo_news.40
+	title = afo_news.40.t
+	desc = afo_news.40.d
+	picture = GFX_news_event_banovina_croatia
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = icw_over
+	}
+
+	option = {
+		name = afo_news.40.a
+		trigger = {
+			original_tag = ITA
+		}
+	}
+	option = {
+		name = afo_news.40.b
+		trigger = {
+			NOT = { original_tag = ITA }
+			is_subject_of = ITA
+			OR = {
+				tag = AUS
+				tag = CZE
+				tag = HUN
+				tag = ROM
+				tag = YUG
+				tag = BUL
+			}
+		}
+	}
+	option = {
+		name = afo_news.40.b
+		trigger = {
+			NOT = { original_tag = ITA }
+			NOT = { is_subject_of = ITA }
+			OR = {
+				tag = AUS
+				tag = CZE
+				tag = HUN
+				tag = ROM
+				tag = YUG
+				tag = BUL
+			}
+		}
+	}
+	option = {
+		name = afo_news.40.e
+		trigger = {
+			NOT = { original_tag = ITA }
+			NOT = {
+				tag = AUS
+				tag = CZE
+				tag = HUN
+				tag = ROM
+				tag = YUG
+				tag = BUL
+			}
+			NOT = {
+				tag = GER
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = afo_news.40.f
+		trigger = {
+			NOT = { original_tag = ITA }
+			OR = {
+				tag = GER
+				tag = SOV
+			}
+		}
+	}
+}
+
+#Beirut Conference
+news_event = {
+	id = afo_news.41
+	title = afo_news.41.t
+	desc = afo_news.41.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = afo_news.41.a
+		trigger = {
+			tag = GER
+		}
+	}
+
+	option = {
+		name = afo_news.41.b
+		trigger = {
+			OR = {
+				event_target:beirut_origin = {
+					tag = ROOT
+				}
+				event_target:beirut_partner = {
+					tag = ROOT
+				}
+			}
+		}
+	}
+
+	option = {
+		name = afo_news.41.c
+		trigger = {
+			NOT = {
+				OR = {
+					event_target:beirut_origin = {
+						tag = ROOT
+					}
+					event_target:beirut_partner = {
+						tag = ROOT
+					}
+				}
+			}
+			has_war_with = GER
+		}
+	}
+
+	option = {
+		name = afo_news.41.e
+		trigger = {
+			NOT = {
+				OR = {
+					event_target:beirut_origin = {
+						tag = ROOT
+					}
+					event_target:beirut_partner = {
+						tag = ROOT
+					}
+				}
+			}
+			NOT = {
+				has_war_with = GER
+			}
+			NOT = {
+				tag = GER
+			}
+		}
+	}
+}
+
+## Iran Surrenders
+news_event = {
+	id = afo_news.43
+	title = afo_news.43.t
+	desc = afo_news.43.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.43.a
+		trigger = {
+			OR = {
+				has_government = communism
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = afo_news.43.b
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = afo_news.43.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}
+
+# Soviets kicked out of the league of nations
+news_event = {
+	id = afo_news.44
+	title = afo_news.44.t
+	desc = afo_news.44.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.44.a
+		trigger = {
+			OR = {
+				has_government = communism
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = afo_news.44.b
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = afo_news.44.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}
+
+# The Mediterranean-Balkan Assistance Bloc
+news_event = {
+	id = afo_news.45
+	title = afo_news.45.t
+	desc = afo_news.45.d
+	picture = GFX_news_event_mediterranean_balkan_assistance_bloc
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.45.a
+		trigger = {
+			is_in_faction_with = ITA
+		}
+	}
+	option = {
+		name = afo_news.45.b
+		trigger = {
+			NOT = { is_in_faction_with = ITA }
+			has_war_with = GER
+			NOT = { tag = GER }
+		}
+	}
+	option = {
+		name = afo_news.45.c
+		trigger = {
+			NOT = { is_in_faction_with = ITA }
+			NOT = { has_war_with = GER }
+			NOT = { tag = GER }
+		}
+	}
+	option = {
+		name = afo_news.45.e
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+####################### Clement Attlee Election
+
+news_event = {
+	id = afo_news.46
+	title = afo_news.46.t
+	desc = afo_news.46.d
+	picture = GFX_news_event_clement_attlee_election
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.46.a
+		trigger = {
+			is_in_faction_with = ENG
+			NOT = { tag = ENG }
+		}
+	}
+	option = {
+		name = afo_news.46.b
+		trigger = { tag = ENG }
+	}
+	option = {
+		name = afo_news.46.c
+		trigger = {
+			NOT = {
+				tag = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+####################### Winston Churchill Election
+
+news_event = {
+	id = afo_news.47
+	title = afo_news.47.t
+	desc = afo_news.47.d
+	picture = GFX_news_event_winston_churchill_election
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.47.a
+		trigger = {
+			is_in_faction_with = ENG
+			NOT = { tag = ENG }
+		}
+	}
+	option = {
+		name = afo_news.47.b
+		trigger = { tag = ENG }
+	}
+	option = {
+		name = afo_news.47.c
+		trigger = {
+			NOT = {
+				tag = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+####################### Death of Wilhelm II
+news_event = {
+	id = afo_news.50
+	title = afo_news.50.t
+	desc = afo_news.50.d
+	picture = GFX_news_event_death_of_wilhelm_ii
+
+	major = yes
+
+	trigger = {
+		date > 1941.06.04
+		NOT = {
+			has_global_flag = death_of_wilhelm_ii
+		}
+		NOT = {
+			HOL = {
+				has_completed_focus = HOL_wilhelminism
+			}
+		}
+		NOT = {
+			GER = {
+				has_completed_focus = GER_prepare_the_opposition
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = afo_news.50.a
+		trigger = {
+			NOT = {
+				TAG = GER
+			}
+		}
+	}
+	option = {
+		name = afo_news.50.b
+		trigger = { TAG = GER }
+	}
+}
+
+# First Comic Release
+#news_event = {
+#	id = afo_news.51
+#	title = afo_news.51.t
+#	desc = afo_news.51.d
+#	picture = GFX_news_event_captain_america_comic
+#
+#	major = yes
+#
+#	trigger = {
+#		date > 1941.03.01
+#		NOT = {
+#			has_global_flag = afo_51
+#		}
+#	}
+#
+#	immediate = {
+#		set_global_flag = afo_51
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+#
+#	fire_only_once = yes
+#
+#	option = {
+#		name = afo_news.51.a
+#		trigger = {
+#			NOT = {
+#				TAG = USA
+#				TAG = GER
+#			}
+#		}
+#	}
+#	option = {
+#		name = afo_news.51.b
+#		trigger = { TAG = GER }
+#	}
+#	option = {
+#		name = afo_news.51.c
+#		trigger = { TAG = USA }
+#	}
+#}
+
+# No Oranges
+#news_event = {
+#	id = afo_news.52
+#	title = afo_news.52.t
+#	desc = afo_news.52.d
+#	picture = GFX_news_event_no_oranges
+#
+#	trigger = {
+#		tag = GER
+#		has_idea = tot_economic_mobilisation
+#		any_other_country = {
+#			is_major = yes
+#			has_war_with = GER
+#		}
+#		NOT = {
+#			has_global_flag = afo_52
+#		}
+#	}
+#
+#	immediate = {
+#		set_global_flag = afo_52
+#	}
+#
+#	mean_time_to_happen = {
+#		months = 16
+#	}
+#
+#	fire_only_once = yes
+#
+#	option = {
+#		name = afo_news.52.a
+#	}
+#}
+
+# Japanese Internment
+#news_event = {
+#	id = afo_news.53
+#	title = afo_news.53.t
+#	desc = afo_news.53.d
+#	picture = afo_news_event_053
+#
+#	major = yes
+#
+#	trigger = {
+#		USA = {
+#			has_war_with = JAP
+#		}
+#		NOT = {
+#			has_global_flag = afo_53
+#		}
+#	}
+#
+#	immediate = {
+#		set_global_flag = afo_53
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+#
+#	fire_only_once = yes
+#
+#	option = {
+#		name = afo_news.53.a
+#		trigger = {
+#			NOT = {
+#				TAG = USA
+#			}
+#		}
+#	}
+#	option = {
+#		name = afo_news.53.b
+#		trigger = { TAG = USA }
+#		add_political_power = -20
+#	}
+#}
+
+####################### Speer takes power
+
+news_event = {
+	id = afo_news.54
+	title = afo_news.54.t
+	desc = afo_news.54.d
+	picture = GFX_news_event_speer_appointed
+
+	major = yes
+
+	trigger = {
+		GER = {
+			has_country_leader = {
+				character = GER_albert_speer
+				ruling_only = yes
+			}
+		}
+	}
+
+	immediate = {
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = afo_news.54.a
+		trigger = {
+			NOT = {
+				TAG = GER
+			}
+		}
+	}
+	option = {
+		name = afo_news.54.b
+		trigger = { TAG = GER }
+	}
+}
+
+####################### Soviet Union Annexes East Anatolia
+news_event = {
+	id = afo_news.55
+	title = afo_news.55.t
+	desc = afo_news.55.d
+	picture = GFX_news_event_006
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.55.a
+		trigger = {
+            OR = {
+                is_in_faction_with = GER
+                tag = GER
+            }
+        }
+	}
+	option = {
+		name = afo_news.55.b
+		trigger = {
+            NOT = { is_in_faction_with = GER }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+            NOT = { tag = GER }
+        }
+	}
+    option = {
+		name = afo_news.55.c
+		trigger = { has_government = democratic }
+	}
+    option = {
+		name = afo_news.55.e
+		trigger = { has_government = communism }
+	}
+}
+
+####################### Japan placate the allies peace with china
+
+news_event = {
+	id = afo_news.56
+	title = afo_news.56.t
+	desc = afo_news.56.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.56.a
+		trigger = {
+			OR = {
+				is_in_faction_with = JAP
+				tag = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	option = {
+		name = afo_news.56.b
+		trigger = {
+			OR = {
+				is_in_faction_with = CHI
+				tag = CHI
+				is_subject_of = CHI
+			}
+		}
+	}
+	option = {
+		name = afo_news.56.c
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = {
+		name = afo_news.56.e
+		trigger = {
+			NOT = { tag = SOV }
+			NOT = {
+				is_in_faction_with = JAP
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = CHI
+				tag = CHI
+				is_subject_of = CHI
+			}
+		}
+	}
+}
+
+############## Monarchist/Fascist coup in france
+
+news_event = {
+	id = afo_news.57
+	title = afo_news.57.t
+	desc = afo_news.57.d
+	picture = GFX_news_event_french_parade
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afo_news.57.a
+		trigger = {
+			NOT = {
+				is_in_faction_with = FRA
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = afo_news.57.b
+		trigger = {
+			OR = {
+				is_in_faction_with = FRA
+				TAG = FRA
+			}
+		}
+	}
+}

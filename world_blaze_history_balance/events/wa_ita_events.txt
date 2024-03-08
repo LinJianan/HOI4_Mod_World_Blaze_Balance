@@ -1,0 +1,4961 @@
+ add_namespace = ita_armor
+
+############## Light Armor
+
+country_event = {
+	id = ita_armor.001
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		OR = {
+			has_tech = ita_light_1
+			date > 1936.6.1
+		}
+	}
+
+	immediate = {
+		set_country_flag = light_armor_template_1_ita
+
+		division_template = {
+			name = "Light Tank Division"
+			template_counter = 101
+			division_names_group = ITA_ARM_01
+			priority = 1
+
+			regiments = {
+				light_armor = { x = 0 y = 0 }
+				light_armor = { x = 0 y = 1 }
+				light_armor = { x = 0 y = 2 }
+
+				light_armor = { x = 1 y = 0 }
+				light_armor = { x = 1 y = 1 }
+				light_armor = { x = 1 y = 2 }
+
+				motorized_artillery_brigade = { x = 2 y = 0 }
+				motorized_artillery_brigade = { x = 2 y = 1 }
+
+				motorized = { x = 3 y = 0 }
+				motorized = { x = 3 y = 1 }
+				motorized = { x = 3 y = 2 }
+
+				motorized = { x = 4 y = 0 }
+				motorized = { x = 4 y = 1 }
+				motorized = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+			}
+		}
+
+		division_template = {
+			name = "Italian Infantry Division"
+			template_counter = 99
+			division_names_group = ITA_INF_01
+			priority = 1
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+
+				anti_tank_brigade = { x = 4 y = 0 }
+				anti_tank_brigade = { x = 4 y = 1 }
+				anti_tank_brigade = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				horse_field_hospital = { x = 0 y = 1 }
+				horse_logistics_company = { x = 0 y = 2 }
+				horse_signal_company = { x = 0 y = 3 }
+
+				recon = { x = 1 y = 0 }
+				heavy_artillery = { x = 1 y = 1 }
+				anti_air = { x = 1 y = 2 }
+				military_police = { x = 1 y = 3 }
+			}
+		}
+		set_country_flag = infantry_template_ita
+	}
+
+	option = {}
+}
+
+########## Matching Template
+
+######## Medium Armor
+
+country_event = {
+	id = ita_armor.002
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		OR = {
+			has_tech = ita_medium_1
+			has_tech = ita_medium_tank_chassis_1
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_1_ita
+		division_template = {
+			name = "Medium Tank Division"
+			template_counter = 104
+			division_names_group = ITA_ARM_01
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+
+				motorized_artillery_brigade = { x = 2 y = 0 }
+				motorized_heavy_anti_air_brigade = { x = 2 y = 1 }
+
+				motorized = { x = 3 y = 0 }
+				motorized = { x = 3 y = 1 }
+				motorized = { x = 3 y = 2 }
+
+				motorized = { x = 4 y = 0 }
+				motorized = { x = 4 y = 1 }
+				motorized = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				mobile_recon = { x = 1 y = 0 }
+        		heavy_artillery = { x = 1 y = 1 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = ita_armor.003
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		OR = {
+			AND = {
+				has_tech = ita_medium_aa_3
+				has_tech = ita_assault_3
+			}
+			date > 1941.6.1
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_2_ita
+
+		division_template = {
+			name = "Adv Medium Tank Division"
+			template_counter = 105
+			division_names_group = ITA_ARM_01
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+
+				assault_brigade = { x = 2 y = 0 }
+				assault_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+				mechanized = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				mobile_recon = { x = 1 y = 0 }
+        		heavy_artillery = { x = 1 y = 1 }
+				medium_tank_destroyer = { x = 1 y = 2 }
+				medium_sp_anti_air = { x = 0 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = ita_armor.004
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		OR = {
+			has_tech = ita_modern_1
+			has_tech = ita_modern_3
+			date > 1944.6.1
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_4_ita
+
+		division_template = {
+			name = "Modern Tank Division"
+			template_counter = 106
+			division_names_group = ITA_ARM_01
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+
+				medium_sp_artillery_brigade = { x = 2 y = 0 }
+				medium_sp_artillery_brigade = { x = 2 y = 1 }
+				medium_sp_artillery_brigade = { x = 2 y = 3 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+				mechanized = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				mobile_recon = { x = 1 y = 0 }
+        		heavy_artillery = { x = 1 y = 1 }
+				medium_tank_destroyer = { x = 1 y = 2 }
+				medium_sp_anti_air = { x = 0 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = ita_armor.005
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		OR = {
+			AND = {
+				has_tech = ita_modern_td_3
+				has_tech = ita_modern_spg_3
+				has_tech = ita_modern_aa_3
+			}
+			date > 1947.6.1
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_4_ita
+
+		division_template = {
+			name = "Advanced Modern Tank Division"
+			template_counter = 106
+			division_names_group = ITA_ARM_01
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+
+				modern_sp_artillery_brigade = { x = 2 y = 0 }
+				modern_sp_artillery_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+        		heavy_artillery = { x = 1 y = 1 }
+				modern_tank_destroyer = { x = 1 y = 2 }
+				modern_sp_anti_air = { x = 0 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = ita_armor.006
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		OR = {
+			AND = {
+				has_tech = ita_heavy_td_1
+				has_tech = ita_assault_4
+			}
+			date > 1943.6.1
+		}
+	}
+
+	immediate = {
+		set_country_flag = heavy_armor_template_1_ita
+
+		division_template = {
+			name = "Heavy Tank Division"
+			template_counter = 107
+			division_names_group = ITA_ARM_01
+			priority = 2
+
+			regiments = {
+				heavy_armor = { x = 0 y = 0 }
+				heavy_armor = { x = 0 y = 1 }
+				heavy_armor = { x = 0 y = 2 }
+
+				heavy_armor = { x = 1 y = 0 }
+				heavy_armor = { x = 1 y = 1 }
+				heavy_armor = { x = 1 y = 2 }
+
+				heavy_tank_destroyer_brigade = { x = 2 y = 0 }
+				heavy_assault_brigade = { x = 2 y = 1 }
+				heavy_assault_brigade = { x = 2 y = 2 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0}
+				mobile_recon = { x = 0 y = 1 }
+				maintenance_company = { x = 0 y = 2 }
+				horse_logistics_company = { x = 0 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = ita_armor.007
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		has_tech = ita_heavy_3
+	}
+
+	immediate = {
+		set_country_flag = heavy_armor_template_2_ita
+
+		division_template = {
+			name = "Adv Heavy Tank Division"
+			template_counter = 109
+			division_names_group = ITA_ARM_01
+			priority = 2
+
+			regiments = {
+				heavy_armor = { x = 0 y = 0 }
+				heavy_armor = { x = 0 y = 1 }
+				heavy_armor = { x = 0 y = 2 }
+
+				heavy_armor = { x = 1 y = 0 }
+				heavy_armor = { x = 1 y = 1 }
+				heavy_armor = { x = 1 y = 2 }
+
+				heavy_tank_destroyer_brigade = { x = 2 y = 0 }
+				heavy_assault_brigade = { x = 2 y = 1 }
+				heavy_assault_brigade = { x = 2 y = 2 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				maintenance_company = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				mobile_recon = { x = 1 y = 0 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+#####upgrade infantry divisions
+country_event = {
+	id = ita_armor.008
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		has_template = "Italian Infantry Division"
+		has_tech = converging_sheaf
+	}
+
+	immediate = {
+		add_units_to_division_template = {
+			template_name = "Italian Infantry Division"
+			regiments = {
+				anti_tank_brigade = 4
+				artillery_brigade = 3
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+
+############################################### Modernization Check
+
+
+country_event = {
+	id = ita_armor.601
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		has_war = yes
+		has_idea = ITA_intense_modernization_effort
+	}
+
+	immediate = {
+		remove_ideas = ITA_intense_modernization_effort
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = ita_armor.602
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		date > 1940.1.1
+		NOT = { date > 1940.6.1 }
+		is_subject = no
+		has_war = no
+	}
+
+	immediate = {
+		create_equipment_variant = {
+			name = "Conti di Cavour Class."
+			type = ita_battleship_hull_1
+			name_group = ITA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = ita_semi_large_ship_engine_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_armor_slot = ship_armor_250_40
+				ship_battery_slot_1 = ita_ship_heavy_battery_2_x3
+				ship_battery_slot_2 = ita_ship_heavy_battery_2_x3
+				ship_battery_slot_3 = ita_ship_heavy_battery_2_x2
+				ship_battery_slot_4 = ita_ship_heavy_battery_2_x2
+				ship_secondaries_slot_1 = ita_ship_semi_medium_casemate_secondaries_6_6x1
+				ship_secondaries_slot_2 = ita_ship_semi_medium_casemate_secondaries_6_6x1
+				ship_secondaries_slot_3 = ita_ship_semi_medium_casemate_secondaries_6_6x1
+				ship_secondaries_slot_4 = ita_ship_semi_medium_casemate_secondaries_6_2x1
+				ship_secondaries_slot_5 = ita_ship_light_secondaries_2_6x1
+				ship_anti_air_slot_1 = ita_ship_anti_air_1_6x2
+				ship_anti_air_slot_2 = ita_ship_large_anti_air_3_6x2
+			}
+		}
+		create_equipment_variant = {
+			name = "Andrea Doria Class."
+			type = ita_battleship_hull_2
+			name_group = ITA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = ita_semi_large_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_armor_slot = ship_armor_250_100
+				ship_battery_slot_1 = ita_ship_heavy_battery_2_x3
+				ship_battery_slot_2 = ita_ship_heavy_battery_2_x3
+				ship_battery_slot_3 = ita_ship_heavy_battery_2_x2
+				ship_battery_slot_4 = ita_ship_heavy_battery_2_x2
+				ship_secondaries_slot_1 = ita_ship_medium_secondaries_8_4x3
+				ship_secondaries_slot_2 = ita_ship_light_secondaries_3_6x1
+				ship_secondaries_slot_3 = ita_ship_light_secondaries_3_4x1
+				ship_anti_air_slot_1 = ita_ship_anti_air_2_4x2
+				ship_anti_air_slot_2 = ita_ship_anti_air_2_4x2
+				ship_anti_air_slot_3 = ita_ship_large_anti_air_3_4x1
+				ship_anti_air_slot_4 = ita_ship_large_anti_air_3_6x2
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Littorio Class."
+			type = ita_battleship_hull_3
+			name_group = ITA_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = ita_large_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_armor_slot = ship_armor_370_140
+				ship_battery_slot_1 = ita_ship_super_heavy_battery_3_x3
+				ship_battery_slot_2 = ita_ship_super_heavy_battery_3_x3
+				ship_battery_slot_3 = ita_ship_super_heavy_battery_3_x3
+				ship_secondaries_slot_1 = ita_ship_medium_secondaries_9_4x3
+				ship_secondaries_slot_2 = ita_ship_light_secondaries_3_6x1
+				ship_secondaries_slot_3 = ita_ship_light_secondaries_3_6x1
+				ship_anti_air_slot_1 = ita_ship_anti_air_2_6x2
+				ship_anti_air_slot_2 = ita_ship_anti_air_2_6x2
+				ship_anti_air_slot_3 = ita_ship_anti_air_2_4x2
+				ship_anti_air_slot_4 = ita_ship_large_anti_air_3_4x2
+				ship_anti_air_slot_5 = ita_ship_large_anti_air_3_4x2
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "San Giorgio Class."
+			type = ita_heavy_cruiser_hull_1
+			name_group = ITA_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = ita_medium_ship_engine_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_armor_slot = ship_armor_200_50
+				ship_battery_slot_1 = ita_ship_semi_heavy_battery_1_x2
+				ship_battery_slot_2 = ita_ship_semi_heavy_battery_1_x2
+				ship_secondaries_slot_1 = ita_ship_medium_secondaries_1_4x2
+				ship_secondaries_slot_2 = ita_ship_light_casemate_secondaries_2_6x1
+				ship_secondaries_slot_3 = ita_ship_light_casemate_secondaries_2_4x1
+				ship_secondaries_slot_4 = ita_ship_light_secondaries_2_4x1
+				ship_secondaries_slot_5 = ita_ship_light_secondaries_2_4x1
+				ship_anti_air_slot_1 = ita_ship_anti_air_1_10x1
+				torpedo_slot_1 = ita_ship_torpedo_3_2x1
+				torpedo_slot_2 = ita_ship_torpedo_3_1x1
+			}
+		}
+		create_equipment_variant = {
+			name = "Trento Class."
+			type = ita_heavy_cruiser_hull_2
+			name_group = ITA_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = ita_medium_ship_engine_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_armor_slot = ship_armor_70_50
+				ship_battery_slot_1 = ita_ship_medium_battery_2_x2
+				ship_battery_slot_2 = ita_ship_medium_battery_2_x2
+				ship_battery_slot_3 = ita_ship_medium_battery_2_x2
+				ship_battery_slot_4 = ita_ship_medium_battery_2_x2
+				ship_secondaries_slot_1 = ita_ship_light_secondaries_6_6x2
+				ship_anti_air_slot_1 = ita_ship_anti_air_2_4x2
+				ship_anti_air_slot_2 = ita_ship_anti_air_2_6x2
+				ship_anti_air_slot_3 = ita_ship_large_anti_air_3_4x2
+				torpedo_slot_1 = ita_ship_torpedo_3_2x2
+				torpedo_slot_2 = ita_ship_torpedo_3_2x2
+			}
+		}
+		create_equipment_variant = {
+			name = "Zara Class."
+			type = ita_heavy_cruiser_hull_3
+			name_group = ITA_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = ita_medium_ship_engine_4
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_armor_slot = ship_armor_150_70
+				ship_battery_slot_1 = ita_ship_medium_battery_3_x2
+				ship_battery_slot_2 = ita_ship_medium_battery_3_x2
+				ship_battery_slot_3 = ita_ship_medium_battery_3_x2
+				ship_battery_slot_4 = ita_ship_medium_battery_3_x2
+				ship_secondaries_slot_1 = ita_ship_light_secondaries_6_6x2
+				ship_anti_air_slot_1 = ita_ship_anti_air_1_10x1
+				ship_anti_air_slot_2 = ita_ship_anti_air_2_4x2
+				ship_anti_air_slot_3 = ita_ship_large_anti_air_3_6x2
+				#torpedo_slot_1 = ita_ship_torpedo_1_2x3
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Bolzano Class."
+			type = ita_heavy_cruiser_hull_4
+			name_group = ITA_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = ita_medium_ship_engine_4
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_armor_slot = ship_armor_150_70
+				ship_battery_slot_1 = ita_ship_medium_battery_3_x2
+				ship_battery_slot_2 = ita_ship_medium_battery_3_x2
+				ship_battery_slot_3 = ita_ship_medium_battery_3_x2
+				ship_battery_slot_4 = ita_ship_medium_battery_3_x2
+				ship_secondaries_slot_1 = ita_ship_light_secondaries_6_4x2
+				ship_secondaries_slot_2 = ita_ship_light_secondaries_6_4x2
+				ship_anti_air_slot_1 = ita_ship_anti_air_1_10x1
+				ship_anti_air_slot_2 = ita_ship_large_anti_air_3_4x1
+				ship_anti_air_slot_3 = ita_ship_large_anti_air_3_4x2
+				torpedo_slot_1 = ita_ship_torpedo_3_2x4
+				airplane_catapult_slot_1 = ship_airplane_launcher_1
+			}
+		}
+		destroy_ships = {
+			type = ship_hull_heavy_cruiser
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy_battleship
+			count = all
+		}
+		set_country_flag = ITA_fleet_refit_flag
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = ita_armor.603
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		date > 1940.1.1
+		NOT = { date > 1941.1.1 }
+		has_country_flag = ITA_fleet_refit_flag
+	}
+
+	immediate = {
+		load_oob = "ITA_ships_3"
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = ita_armor.604
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		OR = {
+			ETH = { has_capitulated = yes }
+			NOT = { country_exists = ETH }
+			ETH = { is_subject = yes }
+		}
+	}
+
+	immediate = {
+		set_country_flag = ETH_dead
+	}
+
+	option = {}
+
+}
+
+
+############################################### War with Ethiopia going on for too long
+
+#country_event = {
+#	id = ita_armor.811
+#	title = ita_armor.811.t
+#	desc = ita_armor.811.d
+#	picture = GFX_report_event_iww_demonstration
+#
+#	trigger = {
+#		tag = ITA
+#		has_war_with = ETH
+#		ETH = { is_in_faction = no }
+#		date > 1936.8.1
+#		NOT = { has_country_flag = ETH_dead }
+#	}
+#
+#	fire_only_once = yes
+#
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#
+#	option = {
+#		ai_chance = { factor = 1 }
+#		name = ita_armor.811.a
+#		add_war_support = -0.05
+#	}
+#}
+#
+#country_event = {
+#	id = ita_armor.812
+#	title = ita_armor.812.t
+#	desc = ita_armor.812.d
+#	picture = GFX_report_event_iww_demonstration
+#
+#	trigger = {
+#		tag = ITA
+#		has_war_with = ETH
+#		ETH = { is_in_faction = no }
+#		date > 1936.10.1
+#		NOT = { has_country_flag = ETH_dead }
+#	}
+#
+#	fire_only_once = yes
+#
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#
+#	option = {
+#		ai_chance = { factor = 1 }
+#		name = ita_armor.812.a
+#		add_war_support = -0.1
+#	}
+#}
+#
+#country_event = {
+#	id = ita_armor.813
+#	title = ita_armor.813.t
+#	desc = ita_armor.813.d
+#	picture = GFX_report_event_iww_demonstration
+#
+#	trigger = {
+#		tag = ITA
+#		has_war_with = ETH
+#		ETH = { is_in_faction = no }
+#		date > 1937.1.1
+#		NOT = { has_country_flag = ETH_dead }
+#	}
+#
+#	fire_only_once = yes
+#
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#
+#	option = {
+#		ai_chance = { factor = 1 }
+#		name = ita_armor.813.a
+#		add_war_support = -0.15
+#	}
+#}
+#
+#country_event = {
+#	id = ita_armor.814
+#	title = ita_armor.814.t
+#	desc = ita_armor.814.d
+#	picture = GFX_report_event_iww_demonstration
+#
+#	trigger = {
+#		tag = ITA
+#		has_war_with = ETH
+#		ETH = { is_in_faction = no }
+#		date > 1937.2.1
+#		NOT = { has_country_flag = ETH_dead }
+#	}
+#
+#	fire_only_once = yes
+#
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#
+#	option = {
+#		ai_chance = { factor = 1 }
+#		name = ita_armor.814.a
+#		add_war_support = -0.2
+#	}
+#}
+#
+#country_event = {
+#	id = ita_armor.815
+#	title = ita_armor.815.t
+#	desc = ita_armor.815.d
+#	picture = GFX_report_event_iww_demonstration
+#
+#	trigger = {
+#		tag = ITA
+#		has_war_with = ETH
+#		ETH = { is_in_faction = no }
+#		date > 1937.4.1
+#		NOT = { has_country_flag = ETH_dead }
+#	}
+#
+#	fire_only_once = yes
+#
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#
+#	option = {
+#		ai_chance = { factor = 1 }
+#		name = ita_armor.815.a
+#		add_war_support = -0.25
+#	}
+#}
+#
+#country_event = {
+#	id = ita_armor.816
+#	title = ita_armor.816.t
+#	desc = ita_armor.816.d
+#	picture = GFX_report_event_iww_demonstration
+#
+#	trigger = {
+#		tag = ITA
+#		has_war_with = ETH
+#		ETH = { is_in_faction = no }
+#		date > 1937.6.1
+#		NOT = { has_country_flag = ETH_dead }
+#	}
+#
+#	fire_only_once = yes
+#
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#
+#	option = {
+#		ai_chance = { factor = 1 }
+#		name = ita_armor.816.a
+#		white_peace = ETH
+#	}
+#}
+
+################################################ Italy in Crisis
+
+country_event = {
+	id = ita_armor.817
+	title = ita_armor.817.t
+	desc = ita_armor.817.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		ITA = { has_war_with = ENG }
+		NOT = {
+			115 = { is_controlled_by = ITA }
+			1032 = { is_controlled_by = ITA }
+			271 = { is_controlled_by = ITA }
+			909 = { is_controlled_by = ITA }
+			910 = { is_controlled_by = ITA }
+			448 = { is_controlled_by = ITA }
+			449 = { is_controlled_by = ITA }
+			450 = { is_controlled_by = ITA }
+			451 = { is_controlled_by = ITA }
+			550 = { is_controlled_by = ITA }
+			559 = { is_controlled_by = ITA }
+			661 = { is_controlled_by = ITA }
+			662 = { is_controlled_by = ITA }
+			663 = { is_controlled_by = ITA }
+		}
+	}
+
+	option = {
+		name = ita_armor.817.a
+	}
+}
+
+
+############################################### CZE Protection
+
+
+country_event = {
+	id = ita_armor.818
+	title = ita_armor.818.t
+	desc = ita_armor.818.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.818.a
+		ai_chance = { factor = 1 }
+		ITA = { country_event = { id = ita_armor.819 } }
+		effect_tooltip = {
+			CZE = {
+				send_equipment = {
+					target = ITA
+					type = infantry_equipment
+					amount = 5000
+					old_prioritised = yes
+				}
+			}
+			CZE = {
+				send_equipment = {
+					target = ITA
+					type = heavy_infantry_equipment
+					amount = 2500
+					old_prioritised = yes
+				}
+			}
+			CZE = {
+				send_equipment = {
+					target = ITA
+					type = artillery_equipment
+					amount = 360
+					old_prioritised = yes
+				}
+			}
+			CZE = {
+				send_equipment = {
+					target = ITA
+					type = light_tank_chassis
+					amount = 100
+					old_prioritised = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ita_armor.818.b
+		ai_chance = { factor = 0 }
+		ITA = { country_event = { id = ita_armor.820 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.819
+	title = ita_armor.819.t
+	desc = ita_armor.819.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.819.a
+		effect_tooltip = {
+			CZE = {
+				send_equipment = {
+					target = ITA
+					type = infantry_equipment
+					amount = 5000
+					old_prioritised = yes
+				}
+			}
+			CZE = {
+				send_equipment = {
+					target = ITA
+					type = heavy_infantry_equipment
+					amount = 2500
+					old_prioritised = yes
+				}
+			}
+			CZE = {
+				send_equipment = {
+					target = ITA
+					type = artillery_equipment
+					amount = 360
+					old_prioritised = yes
+				}
+			}
+			CZE = {
+				send_equipment = {
+					target = ITA
+					type = light_tank_chassis
+					amount = 100
+					old_prioritised = yes
+				}
+			}
+		}
+		hidden_effect = {
+			add_equipment_to_stockpile = { type = cze_inf_1 amount = 5000 producer = CZE }
+			add_equipment_to_stockpile = { type = cze_hv_inf_1 amount = 2500 producer = CZE }
+			add_equipment_to_stockpile = { type = cze_art_1 amount = 180 producer = CZE }
+			if = {
+				limit = {
+					not = {
+						has_dlc = "No Step Back"
+					}
+				}
+				add_equipment_to_stockpile = { type = cze_interwar_equipment_1 amount = 100 producer = CZE }
+			}
+			else = {
+				add_equipment_to_stockpile = { type = tank_cze_light_chassis_2 amount = 100 producer = CZE }
+			}
+		}
+		ITA = { give_guarantee = CZE }
+	}
+}
+
+country_event = {
+	id = ita_armor.820
+	title = ita_armor.820.t
+	desc = ita_armor.820.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.820.a
+	}
+}
+
+
+############################################### Bulgarian occupation
+
+
+country_event = {
+	id = ita_armor.821
+	title = ita_armor.821.t
+	desc = ita_armor.821.d
+
+	is_triggered_only = yes
+
+	option = { # Yield
+		name = ita_armor.821.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				any_other_country = {
+					NOT = { tag = ITA }
+					has_guaranteed = BUL
+				}
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = GER
+			}
+			modifier = {
+				factor = 0
+				ITA = { has_war = yes }
+			}
+		}
+		ITA = { country_event = { id = ita_armor.822 } }
+	}
+
+	option = { # Resist
+		name = ita_armor.821.b
+		ai_chance = { factor = 1 }
+		add_war_support = 0.3
+		ITA = { country_event = { id = ita_armor.823 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.822
+	title = ita_armor.822.t
+	desc = ita_armor.822.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.822.a
+		annex_country = { target = BUL }
+		economy_fatigue_level_down_5 = yes
+		add_named_threat = { threat = 5 name = ITA_bulgaria_war_goal }
+	}
+}
+
+country_event = {
+	id = ita_armor.823
+	title = ita_armor.823.t
+	desc = ita_armor.823.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.823.a
+		if = {
+			limit = {
+				is_in_faction_with = BUL
+				is_faction_leader = yes
+			}
+			remove_from_faction = BUL
+		}
+		create_wargoal = {
+			target = BUL
+			type = annex_everything
+			expire = 0
+		}
+	}
+}
+
+
+############################################### Demand Istanbul
+
+
+country_event = {
+	id = ita_armor.824
+	title = ita_armor.824.t
+	desc = ita_armor.824.d
+
+	is_triggered_only = yes
+
+	option = { # Yield
+		name = ita_armor.824.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				446 = { is_controlled_by = ENG }
+			}
+			modifier = {
+				factor = 0
+				446 = { is_controlled_by = UKE }
+			}
+			modifier = {
+				factor = 0
+				231 = { is_controlled_by = SOV }
+			}
+		}
+		ITA = { country_event = { id = ita_armor.825 } }
+	}
+
+	option = { # Resist
+		name = ita_armor.824.b
+		ai_chance = {
+			factor = 1
+		}
+		add_war_support = 0.1
+		ITA = { country_event = { id = ita_armor.826 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.825
+	title = ita_armor.825.t
+	desc = ita_armor.825.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.825.a
+		ITA = { transfer_state = 341 }
+		economy_fatigue_level_down_2 = yes
+		add_named_threat = { threat = 5 name = ITA_istanbul_transfered }
+		set_province_name = { id = 9833 name = "Constantinople"}
+		add_war_support = 0.1
+		hidden_effect = {
+			set_country_flag = istanbul_conquered
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.826
+	title = ita_armor.826.t
+	desc = ita_armor.826.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.826.a
+	}
+}
+
+
+############################################### Constantinople
+
+
+country_event = {
+	id = ita_armor.827
+	title = ita_armor.827.t
+	desc = ita_armor.827.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		NOT = { has_war_with = TUR }
+		NOT = { has_country_flag = istanbul_conquered }
+		341 = { is_controlled_by = ITA }
+	}
+
+	option = {
+		name = ita_armor.827.a
+		set_province_name = { id = 9833 name = "Constantinople"}
+		add_war_support = 0.2
+	}
+}
+
+
+############################################### Germany doing anschluss
+
+
+country_event = {
+	id = ita_armor.828
+	title = ita_armor.828.t
+	desc = ita_armor.828.d
+
+	is_triggered_only = yes
+
+	option = { # abandon austria
+		name = ita_armor.828.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_completed_focus = ITA_protection_for_czechoslovakian_arms
+			}
+		}
+		add_stability = -0.1
+		ITA = {
+			diplomatic_relation = {
+				country = AUS
+				relation = guarantee
+				active = no
+			}
+		}
+		GER = { country_event = { id = ita_armor.829 } }
+	}
+
+	option = { # stand by austria
+		name = ita_armor.828.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = ITA_protection_for_czechoslovakian_arms }
+			}
+		}
+		GER = { country_event = { id = ita_armor.830 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.829
+	title = ita_armor.829.t
+	desc = ita_armor.829.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.829.a
+	}
+}
+
+country_event = {
+	id = ita_armor.830
+	title = ita_armor.830.t
+	desc = ita_armor.830.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.830.a
+	}
+}
+
+
+############################################### Dismissal of Mussolini
+
+
+country_event = {
+	id = ita_armor.831
+	title = ita_armor.831.t
+	desc = ita_armor.831.d
+	picture = GFX_report_event_dismissal_of_mussolini
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.831.a
+		ai_chance = { factor = 50 }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+		remove_country_leader_role = {
+			character = ITA_victor_emmanuel_iii
+			ideology = despotism
+		}
+		add_country_leader_role = {
+			character = ITA_victor_emmanuel_iii
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					popular_figurehead2
+					human_rights_activist
+				}
+				desc = "POLITICS_VICTOR_EMMANUEL_III_DESC"
+			}
+		}
+		if = {
+			limit = {
+				country_exists = ITL
+			}
+			ITL = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = ITS
+			}
+			ITS = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = yes
+				}
+			}
+		}
+		remove_ideas = victor_emmanuel
+		remove_ideas = ITA_grand_council_of_fascism
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.3
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		custom_effect_tooltip = Vatican_attitude_tt
+		hidden_effect = {
+			add_to_variable = { var = ITA_vatican_attitude value = 1 }
+			ITA = { country_event = { id = ita_armor.832 days = 3 } }
+		}
+	}
+
+	option = {
+		name = ita_armor.831.b
+		ai_chance = { factor = 50 }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		remove_country_leader_role = {
+			character = ITA_victor_emmanuel_iii
+			ideology = despotism
+		}
+		add_country_leader_role = {
+			character = ITA_victor_emmanuel_iii
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					popular_figurehead2
+					human_rights_activist
+				}
+				desc = "POLITICS_VICTOR_EMMANUEL_III_DESC"
+			}
+			promote_leader = yes
+		}
+		if = {
+			limit = {
+				country_exists = ITL
+			}
+			ITL = {
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = ITS
+			}
+			ITS = {
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+			}
+		}
+		remove_ideas = victor_emmanuel
+		remove_ideas = ITA_grand_council_of_fascism
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.2
+		}
+		custom_effect_tooltip = Vatican_attitude_tt
+		hidden_effect = {
+			add_to_variable = { var = ITA_vatican_attitude value = 1 }
+			ITA = { country_event = { id = ita_armor.832 days = 3 } }
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.832
+	title = ita_armor.832.t
+	desc = ita_armor.832.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.832.a
+		ai_chance = { factor = 50 }
+		hidden_effect = {
+			set_country_flag = ITA_civil_war_imminent_flag
+			country_event = { id = ita_armor.891 }
+			set_variable = { var = ita_civil_war_divisions_counter_icon_var value = 20 }
+			set_variable = { var = rit_civil_war_divisions_counter_icon_var value = 46 }
+			ITA = { country_event = { id = ita_armor.833 days = 60 } }
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.833
+	title = ita_armor.833.t
+	desc = ita_armor.833.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.833.a
+		ai_chance = { factor = 50 }
+	}
+}
+
+
+################################################ Our territorial demands
+
+
+country_event = {
+	id = ita_armor.834
+	title = ita_armor.834.t
+	desc = ita_armor.834.d
+	picture = GFX_report_event_german_italian_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.834.a
+		ai_chance = {
+			factor = 50
+		}
+		ITA = {
+			transfer_state = 735
+		}
+		ITA = { country_event = { id = ita_armor.839 } }
+	}
+
+	option = {
+		name = ita_armor.834.b
+		ai_chance = {
+			factor = 0
+		}
+		ITA = { country_event = { id = ita_armor.840 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.835
+	title = ita_armor.835.t
+	desc = ita_armor.835.d
+	picture = GFX_report_event_german_italian_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.835.a
+		ai_chance = {
+			factor = 50
+		}
+		ITA = {
+			transfer_state = 1
+		}
+		ITA = { country_event = { id = ita_armor.839 } }
+	}
+
+	option = {
+		name = ita_armor.835.b
+		ai_chance = {
+			factor = 0
+		}
+		ITA = { country_event = { id = ita_armor.840 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.836
+	title = ita_armor.836.t
+	desc = ita_armor.836.d
+	picture = GFX_report_event_german_italian_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.836.a
+		ai_chance = {
+			factor = 50
+		}
+		ITA = {
+			transfer_state = 116
+		}
+		ITA = { country_event = { id = ita_armor.839 } }
+	}
+
+	option = {
+		name = ita_armor.836.b
+		ai_chance = {
+			factor = 0
+		}
+		ITA = { country_event = { id = ita_armor.840 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.837
+	title = ita_armor.837.t
+	desc = ita_armor.837.d
+	picture = GFX_report_event_german_italian_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.837.a
+		ai_chance = {
+			factor = 50
+		}
+		ITA = {
+			transfer_state = 1022
+			transfer_state = 103
+		}
+		ITA = {
+			transfer_state = 999
+		}
+		ITA = { country_event = { id = ita_armor.839 } }
+	}
+
+	option = {
+		name = ita_armor.837.b
+		ai_chance = {
+			factor = 0
+		}
+		ITA = { country_event = { id = ita_armor.840 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.8371
+	title = ita_armor.8371.t
+	desc = ita_armor.8371.d
+	picture = GFX_report_event_german_italian_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.8371.a
+		ai_chance = {
+			factor = 50
+		}
+		ITA = {
+			transfer_state = 908
+		}
+		ITA = { country_event = { id = ita_armor.839 } }
+	}
+
+	option = {
+		name = ita_armor.8371.b
+		ai_chance = {
+			factor = 0
+		}
+		ITA = { country_event = { id = ita_armor.840 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.838
+	title = ita_armor.838.t
+	desc = ita_armor.838.d
+	picture = GFX_report_event_german_italian_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.838.a
+		ai_chance = {
+			factor = 50
+		}
+		ITA = {
+			transfer_state = 151
+		}
+		ITA = { country_event = { id = ita_armor.839 } }
+	}
+
+	option = {
+		name = ita_armor.838.b
+		ai_chance = {
+			factor = 0
+		}
+		ITA = { country_event = { id = ita_armor.840 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.865
+	title = ita_armor.865.t
+	desc = ita_armor.865.d
+	picture = GFX_report_event_german_italian_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.865.a
+		ai_chance = {
+			factor = 50
+		}
+		ITA = {
+			transfer_state = 182
+		}
+		ITA = { country_event = { id = ita_armor.839 } }
+	}
+
+	option = {
+		name = ita_armor.865.b
+		ai_chance = {
+			factor = 0
+		}
+		ITA = { country_event = { id = ita_armor.840 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.839
+	title = ita_armor.839.t
+	desc = ita_armor.839.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.839.a
+	}
+}
+
+country_event = {
+	id = ita_armor.840
+	title = ita_armor.840.t
+	desc = ita_armor.840.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.840.a
+	}
+}
+
+
+################################################ Our territorial demands
+
+
+country_event = {
+	id = ita_armor.841
+	title = ita_armor.841.t
+	desc = ita_armor.841.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.841.a
+		ai_chance = {
+			factor = 50
+		}
+		ITA = { country_event = { id = ita_armor.842 } }
+		hidden_effect = {
+			ENG = { country_event = { id = ita_armor.844 days = 1 } }
+		}
+	}
+
+	option = {
+		name = ita_armor.841.b
+		ai_chance = {
+			factor = 0
+		}
+		ITA = { country_event = { id = ita_armor.843 } }
+	}
+}
+
+country_event = {
+	id = ita_armor.842
+	title = ita_armor.842.t
+	desc = ita_armor.842.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.842.a
+	}
+}
+
+country_event = {
+	id = ita_armor.843
+	title = ita_armor.843.t
+	desc = ita_armor.843.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.843.a
+	}
+}
+
+country_event = {
+	id = ita_armor.844
+	title = ita_armor.844.t
+	desc = ita_armor.844.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.844.a
+		add_stability = -0.05
+		hidden_effect = {
+			ITA = { country_event = { id = ita_armor.845 days = 3 random_days = 9 } }
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.845
+	title = ita_armor.845.t
+	desc = ita_armor.845.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.845.a
+		effect_tooltip = {
+			ENG = {
+				add_stability = -0.05
+			}
+		}
+		118 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = naval_base
+				damage = 2
+			}
+			damage_building = {
+				type = bunker
+				damage = 3
+			}
+			damage_building = {
+				type = coastal_bunker
+				damage = 3
+			}
+		}
+	}
+
+	option = {
+		name = ita_armor.845.b
+		every_country = {
+			limit = {
+				original_tag = SPR
+				is_in_faction_with = ROOT
+				controls_state = 169
+				controls_state = 173
+			}
+			declare_war_on = {
+				type = take_state_focus
+				target = ENG
+				generator = { 118 }
+			}
+		}
+		declare_war_on = {
+			target = ENG
+			type = annex_everything
+		}
+		effect_tooltip = {
+			ENG = {
+				add_stability = -0.05
+			}
+		}
+		118 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = naval_base
+				damage = 2
+			}
+			damage_building = {
+				type = bunker
+				damage = 3
+			}
+			damage_building = {
+				type = coastal_bunker
+				damage = 3
+			}
+		}
+	}
+}
+
+
+################################################ Election post civil war
+
+
+country_event = {
+	id = ita_armor.846
+	title = ita_armor.846.t
+	desc = ita_armor.846.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = Italian_elections_finished
+		}
+	}
+
+	option = {
+		name = ita_armor.846.a
+		# ai_chance = {
+		# 	factor = 50
+		# 	modifier = {
+		# 		factor = 0
+		# 		OR = {
+		# 			has_game_rule = {
+		# 				rule = ITA_ai_behavior
+		# 				option = MONARCHIST
+		# 			}
+		# 			has_game_rule = {
+		# 				rule = ITA_ai_behavior
+		# 				option = COMMUNIST
+		# 			}
+		# 		}
+		# 	}
+		# }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.3
+		}
+	}
+	option = {
+		name = ita_armor.846.b
+		# ai_chance = {
+		# 	factor = 50
+		# 	modifier = {
+		# 		factor = 0
+		# 		OR = {
+		# 			has_game_rule = {
+		# 				rule = ITA_ai_behavior
+		# 				option = COMMUNIST
+		# 			}
+		# 			has_game_rule = {
+		# 				rule = ITA_ai_behavior
+		# 				option = DEMOCRATIC
+		# 			}
+		# 		}
+		# 	}
+		# }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.3
+		}
+		hidden_effect = {
+			country_event = { id = ita_armor.847 days = 3 }
+		}
+	}
+	option = {
+		name = ita_armor.846.c
+		# ai_chance = {
+		# 	factor = 50
+		# 	modifier = {
+		# 		factor = 0
+		# 		OR = {
+		# 			has_game_rule = {
+		# 				rule = ITA_ai_behavior
+		# 				option = MONARCHIST
+		# 			}
+		# 			has_game_rule = {
+		# 				rule = ITA_ai_behavior
+		# 				option = DEMOCRATIC
+		# 			}
+		# 		}
+		# 	}
+		# }
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.3
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.847
+	title = ita_armor.847.t
+	desc = ita_armor.847.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.847.a
+        retire_country_leader = yes
+		add_country_leader_role = {
+			character = ITA_ferdinando_umberto_filippo_adalberto
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					popular_figurehead2
+					headstrong
+					humble
+				}
+				desc = ""
+			}
+		}
+		create_navy_leader = {
+			name = "Ferdinando Umberto Filippo Adalberto"
+			gfx = "GFX_portrait_ITA_ferdinando_adalberto"
+			traits = { gentlemanly career_officer superior_tactician }
+			skill = 3 #13
+			id = 77
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.848
+	title = ita_armor.848.t
+	desc = ita_armor.848.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.848.a
+		YUG = { country_event = { days = 1 id = ita_armor.849 } }
+	}
+
+	option = {
+		name = ita_armor.848.b
+	}
+}
+
+country_event = {
+	id = ita_armor.849
+	title = ita_armor.849.t
+	desc = ita_armor.849.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = ita_armor.849.a
+		ai_chance = {
+			factor = 50
+			modifier = { # Don't accept if in a faction that can protect them
+				factor = 0
+				any_other_country = {
+					is_major = yes
+					NOT = { tag = ITA }
+					OR = {
+						is_in_faction_with = YUG
+						has_guaranteed = YUG
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					has_army_manpower = { size < 500000 }
+				}
+			}
+			modifier = {
+				factor = 2
+				ITA = {
+					has_army_manpower = { size > 749999 }
+				}
+			}
+			modifier = {
+				factor = 2
+				ITA = {
+					has_army_manpower = { size > 999999 }
+				}
+			}
+		}
+		ITA = {
+			country_event = { days = 1 id = ita_armor.850 }
+		}
+		add_stability = -0.2
+	}
+
+	option = { # Refuse
+		name = ita_armor.849.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				is_in_faction = yes
+				NOT = { is_in_faction_with = ITA }
+			}
+		}
+		ITA = {
+			country_event = { days = 1 id = ita_armor.851 }
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_state
+					target = YUG
+					generator = { 908 999 }
+					expire = 0
+				}
+			}
+		}
+	}
+}
+
+# Yugoslavia surrenders Dalmatia
+country_event = {
+	id = ita_armor.850
+	title = ita_armor.850.t
+	desc = ita_armor.850.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.850.a
+		ITA = {
+			transfer_state = 908
+			transfer_state = 1022
+			transfer_state = 999
+		}
+		hidden_effect = {
+			add_named_threat = { threat = 4 name = dalmatia_annexed }
+			USA = {
+				set_country_flag = { flag = USA_yugoslavia_window days = 60 value = 1 }
+			}
+		}
+	}
+}
+
+# Yugoslavia refuses to surrender Dalmatia
+country_event = {
+	id = ita_armor.851
+	title = ita_armor.851.t
+	desc = ita_armor.851.d
+	picture = GFX_report_event_poland_rejects
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.851.a
+		create_wargoal = {
+			type = take_state
+			target = YUG
+			generator = { 908 999 }
+			expire = 0
+		}
+	}
+}
+
+
+################################################ Carving up of Central Europe
+
+
+country_event = {
+	id = ita_armor.852
+	title = ita_armor.852.t
+	desc = ita_armor.852.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.852.a
+		trigger = {
+			OR = {
+				AND = {
+					country_exists = GER
+					NOT = { has_war_with = GER }
+					NOT = { GER = { is_subject_of = ITA } }
+					NOT = { SWI = { is_in_faction_with = GER } }
+					NOT = { AUS = { is_in_faction_with = GER } }
+					NOT = { HUN = { is_in_faction_with = GER } }
+					NOT = { SWI = { is_subject_of = GER } }
+					NOT = { AUS = { is_subject_of = GER } }
+					NOT = { HUN = { is_subject_of = GER } }
+				}
+				AND = {
+					country_exists = FRA
+					NOT = { has_war_with = FRA }
+					NOT = { FRA = { is_subject_of = ITA } }
+					NOT = { SWI = { is_in_faction_with = FRA } }
+					NOT = { AUS = { is_in_faction_with = FRA } }
+					NOT = { HUN = { is_in_faction_with = FRA } }
+					NOT = { SWI = { is_subject_of = FRA } }
+					NOT = { AUS = { is_subject_of = FRA } }
+					NOT = { HUN = { is_subject_of = FRA } }
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					country_exists = GER
+					NOT = { has_war_with = GER }
+					NOT = { GER = { is_subject_of = ITA } }
+					NOT = { SWI = { is_in_faction_with = GER } }
+					NOT = { AUS = { is_in_faction_with = GER } }
+					NOT = { HUN = { is_in_faction_with = GER } }
+					NOT = { SWI = { is_subject_of = GER } }
+					NOT = { AUS = { is_subject_of = GER } }
+					NOT = { HUN = { is_subject_of = GER } }
+				}
+			}
+			GER = { country_event = { id = ita_armor.853 days = 1 } }
+			effect_tooltip = {
+				GER = {
+					add_state_claim = 152
+					add_state_claim = 4
+					add_state_claim = 998
+					add_state_claim = 882
+					add_state_claim = 852
+					add_state_claim = 155
+					add_state_claim = 889
+					add_state_claim = 43
+					add_state_claim = 3
+					add_state_claim = 912
+				}
+			}
+			hidden_effect = {
+				set_country_flag = partner_1_carve_up_ce
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					country_exists = FRA
+					NOT = { has_war_with = FRA }
+					NOT = { FRA = { is_subject_of = ITA } }
+					NOT = { SWI = { is_in_faction_with = FRA } }
+					NOT = { AUS = { is_in_faction_with = FRA } }
+					NOT = { HUN = { is_in_faction_with = FRA } }
+					NOT = { SWI = { is_subject_of = FRA } }
+					NOT = { AUS = { is_subject_of = FRA } }
+					NOT = { HUN = { is_subject_of = FRA } }
+				}
+			}
+			FRA = { country_event = { id = ita_armor.854 days = 1 } }
+			effect_tooltip = {
+				FRA = {
+					add_state_claim = 911
+				}
+			}
+			hidden_effect = {
+				set_country_flag = partner_2_carve_up_ce
+			}
+		}
+		unlock_decision_tooltip = ITA_operazione_martello
+	}
+
+	option = {
+		name = ita_armor.852.b
+		ai_chance = {
+			base = 0
+		}
+		trigger = {
+			OR = {
+				AND = {
+					country_exists = GER
+					NOT = { has_war_with = GER }
+					NOT = { GER = { is_subject_of = ITA } }
+					NOT = { SWI = { is_in_faction_with = GER } }
+					NOT = { AUS = { is_in_faction_with = GER } }
+					NOT = { HUN = { is_in_faction_with = GER } }
+					NOT = { SWI = { is_subject_of = GER } }
+					NOT = { AUS = { is_subject_of = GER } }
+					NOT = { HUN = { is_subject_of = GER } }
+				}
+				AND = {
+					country_exists = FRA
+					NOT = { has_war_with = FRA }
+					NOT = { FRA = { is_subject_of = ITA } }
+					NOT = { SWI = { is_in_faction_with = FRA } }
+					NOT = { AUS = { is_in_faction_with = FRA } }
+					NOT = { HUN = { is_in_faction_with = FRA } }
+					NOT = { SWI = { is_subject_of = FRA } }
+					NOT = { AUS = { is_subject_of = FRA } }
+					NOT = { HUN = { is_subject_of = FRA } }
+				}
+			}
+		}
+		unlock_decision_tooltip = ITA_operazione_martello
+		hidden_effect = {
+			set_country_flag = no_partners_carve_up_ce
+		}
+	}
+
+	option = {
+		name = ita_armor.852.c
+		trigger = {
+			OR = {
+				NOT = { country_exists = GER }
+				has_war_with = GER
+				GER = { is_subject_of = ITA }
+				SWI = { is_in_faction_with = GER }
+				AUS = { is_in_faction_with = GER }
+				HUN = { is_in_faction_with = GER }
+				SWI = { is_subject_of = GER }
+				AUS = { is_subject_of = GER }
+				HUN = { is_subject_of = GER }
+			}
+			OR = {
+				NOT = { country_exists = FRA }
+				has_war_with = FRA
+				FRA = { is_subject_of = ITA }
+				SWI = { is_in_faction_with = FRA }
+				AUS = { is_in_faction_with = FRA }
+				HUN = { is_in_faction_with = FRA }
+				SWI = { is_subject_of = FRA }
+				AUS = { is_subject_of = FRA }
+				HUN = { is_subject_of = FRA }
+			}
+		}
+		unlock_decision_tooltip = ITA_operazione_martello
+		hidden_effect = {
+			set_country_flag = no_partners_carve_up_ce
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.853
+	title = ita_armor.853.t
+	desc = ita_armor.853.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.853.a
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 3
+				date > 1939.1.1
+			}
+
+			modifier = {
+				factor = 0
+				has_government = democratic
+			}
+
+			modifier = {
+				factor = 0
+				has_government = neutrality
+				HUN = { has_government = neutrality }
+			}
+
+			modifier = {
+				factor = 0
+				has_government = fascism
+				HUN = { has_government = fascism }
+			}
+		}
+		custom_effect_tooltip = carving_up_central_europe_enemies_tt
+		add_state_claim = 152
+		add_state_claim = 4
+		add_state_claim = 882
+		add_state_claim = 998
+		add_state_claim = 852
+		add_state_claim = 155
+		add_state_claim = 889
+		add_state_claim = 43
+		add_state_claim = 3
+		add_state_claim = 912
+		ITA = { country_event = { id = ita_armor.855 days = 7 } }
+		hidden_effect = {
+			ITA = { set_country_flag = partner_1_confirmed_carve_up_ce }
+			ITA = { set_country_flag = partner_1_yes_carve_up_ce }
+		}
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = SWI
+					tag = AUS
+					tag = HUN
+				}
+				is_guaranteed_by = ROOT
+			}
+			ROOT = {
+				diplomatic_relation = {
+					country = PREV
+					relation = guarantee
+					active = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ita_armor.853.b
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 0
+				has_government = fascism
+				NOT = { HUN = { has_government = fascism } }
+			}
+		}
+		ITA = { country_event = { id = ita_armor.856 days = 1 } }
+		hidden_effect = {
+			ITA = { set_country_flag = partner_1_confirmed_carve_up_ce }
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.854
+	title = ita_armor.854.t
+	desc = ita_armor.854.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.854.a
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 0
+				has_government = democratic
+			}
+		}
+		custom_effect_tooltip = carving_up_central_europe_enemies_tt
+		add_state_claim = 911
+		ITA = { country_event = { id = ita_armor.855 days = 7 } }
+		hidden_effect = {
+			ITA = { set_country_flag = partner_2_confirmed_carve_up_ce }
+			ITA = { set_country_flag = partner_2_yes_carve_up_ce }
+		}
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = SWI
+					tag = AUS
+					tag = HUN
+				}
+				is_guaranteed_by = ROOT
+			}
+			ROOT = {
+				diplomatic_relation = {
+					country = PREV
+					relation = guarantee
+					active = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ita_armor.854.b
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 0
+				date > 1940.1.1
+			}
+
+			modifier = {
+				factor = 0
+				NOT = { has_government = democratic }
+			}
+		}
+		ITA = { country_event = { id = ita_armor.856 days = 1 } }
+		hidden_effect = {
+			ITA = { set_country_flag = partner_2_confirmed_carve_up_ce }
+		}
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = SWI
+					tag = AUS
+					tag = HUN
+				}
+				is_guaranteed_by = ROOT
+			}
+			ROOT = {
+				diplomatic_relation = {
+					country = PREV
+					relation = guarantee
+					active = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ita_armor.854.c
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 0
+				date < 1940.1.1
+			}
+
+			modifier = {
+				factor = 0
+				NOT = { has_government = democratic }
+			}
+		}
+		ITA = { country_event = { id = ita_armor.856 days = 1 } }
+		hidden_effect = {
+			ITA = { set_country_flag = partner_2_confirmed_carve_up_ce }
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.855
+	title = ita_armor.855.t
+	desc = ita_armor.855.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.855.a
+	}
+}
+
+country_event = {
+	id = ita_armor.856
+	title = ita_armor.856.t
+	desc = ita_armor.856.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.856.a
+	}
+}
+
+
+################################################ Carving up of Eastern Europe
+
+
+country_event = {
+	id = ita_armor.857
+	title = ita_armor.857.t
+	desc = ita_armor.857.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.857.a
+		trigger = {
+			AND = {
+				country_exists = SOV
+				NOT = { has_war_with = SOV }
+				NOT = { SOV = { is_subject_of = ITA } }
+				NOT = { ROM = { is_in_faction_with = SOV } }
+				NOT = { BUL = { is_in_faction_with = SOV } }
+				NOT = { ROM = { is_subject_of = SOV } }
+				NOT = { BUL = { is_subject_of = SOV } }
+			}
+		}
+		SOV = { country_event = { id = ita_armor.858 days = 1 } }
+		effect_tooltip = {
+			SOV = {
+				add_state_claim = 80
+				add_state_claim = 78
+				add_state_claim = 79
+				add_state_claim = 766
+			}
+		}
+		hidden_effect = {
+			set_country_flag = partner_1_carve_up_ee
+		}
+		unlock_decision_tooltip = ITA_operazione_incudine
+	}
+
+	option = {
+		name = ita_armor.857.b
+		ai_chance = {
+			base = 0
+		}
+		trigger = {
+			AND = {
+				country_exists = SOV
+				NOT = { has_war_with = SOV }
+				NOT = { SOV = { is_subject_of = ITA } }
+				NOT = { ROM = { is_in_faction_with = SOV } }
+				NOT = { BUL = { is_in_faction_with = SOV } }
+				NOT = { ROM = { is_subject_of = SOV } }
+				NOT = { BUL = { is_subject_of = SOV } }
+			}
+		}
+		unlock_decision_tooltip = ITA_operazione_incudine
+		hidden_effect = {
+			set_country_flag = no_partners_carve_up_ee
+		}
+	}
+
+	option = {
+		name = ita_armor.857.c
+		trigger = {
+			OR = {
+				NOT = { country_exists = SOV }
+				has_war_with = SOV
+				SOV = { is_subject_of = ITA }
+				ROM = { is_in_faction_with = SOV }
+				BUL = { is_in_faction_with = SOV }
+				ROM = { is_subject_of = SOV }
+				BUL = { is_subject_of = SOV }
+			}
+		}
+		unlock_decision_tooltip = ITA_operazione_incudine
+		hidden_effect = {
+			set_country_flag = no_partners_carve_up_ee
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.858
+	title = ita_armor.858.t
+	desc = ita_armor.858.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.858.a
+		custom_effect_tooltip = carving_up_eastern_europe_enemies_tt
+		add_state_claim = 80
+		add_state_claim = 78
+		add_state_claim = 79
+		add_state_claim = 766
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = ROM
+					tag = BUL
+				}
+				is_guaranteed_by = ROOT
+			}
+			ROOT = {
+				diplomatic_relation = {
+					country = PREV
+					relation = guarantee
+					active = no
+				}
+			}
+		}
+		ITA = { country_event = { id = ita_armor.859 days = 7 } }
+		hidden_effect = {
+			ITA = { set_country_flag = partner_1_confirmed_carve_up_ee }
+			ITA = { set_country_flag = partner_1_yes_carve_up_ee }
+		}
+	}
+
+	option = {
+		name = ita_armor.858.b
+		ITA = { country_event = { id = ita_armor.860 days = 1 } }
+		hidden_effect = {
+			ITA = { set_country_flag = partner_1_confirmed_carve_up_ee }
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.859
+	title = ita_armor.859.t
+	desc = ita_armor.859.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.859.a
+	}
+}
+
+country_event = {
+	id = ita_armor.860
+	title = ita_armor.860.t
+	desc = ita_armor.860.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.860.a
+	}
+}
+
+
+################################################ Alliance for Vojvodina
+
+
+country_event = {
+	id = ita_armor.861
+	title = ita_armor.861.t
+	desc = { # FROM and ROOT are Democratic
+		text = generic.5.d.a
+		trigger = {
+			AND = {
+				FROM = {
+					has_government = democratic
+				}
+				has_government = democratic
+			}
+		}
+	}
+	desc = { # FROM and ROOT are Fascist
+		text = ita_armor.861.d.b
+		trigger = {
+			AND = {
+				FROM = {
+					has_government = fascism
+				}
+				has_government = fascism
+			}
+		}
+	}
+	desc = { # FROM and ROOT are Communist
+		text = ita_armor.861.d.c
+		trigger = {
+			AND = {
+				FROM = {
+					has_government = communism
+				}
+				has_government = communism
+			}
+		}
+	}
+	desc = { # FROM and ROOT are different ideologies
+		text = ita_armor.861.d.e
+		trigger = {
+			NOT = {
+				AND = {
+					FROM = {
+						has_government = democratic
+					}
+					has_government = democratic
+				}
+				AND = {
+					FROM = {
+						has_government = fascism
+					}
+					has_government = fascism
+				}
+				AND = {
+					FROM = {
+						has_government = communism
+					}
+					has_government = communism
+				}
+			}
+		}
+	}
+	picture = GFX_report_event_generic_read_write
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = alliance_applicant
+			FROM = {
+				save_event_target_as = alliance_inviter
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = { #Agree / Both Democratic
+		name = ita_armor.861.a
+		trigger = {
+			is_in_faction = no
+			AND = {
+				FROM = {
+					has_government = democratic
+				}
+				has_government = democratic
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		HUN = { transfer_state = 45 }
+		HUN = { transfer_state = 764 }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = generic.6 hours = 6 }
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			if = {
+				limit = {
+					FROM = { is_major = yes }
+				}
+				news_event = { id = news.289 hours = 12 }
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GER
+						has_government = democratic
+					}
+					NOT = { has_idea = GER_pool_technical_know_how }
+				}
+				add_ideas = GER_pool_technical_know_how
+			}
+		}
+	}
+	option = { #Agree / Both Fascist
+		name = ita_armor.861.b
+		trigger = {
+			is_in_faction = no
+			AND = {
+				FROM = {
+					has_government = fascism
+				}
+				has_government = fascism
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		HUN = { transfer_state = 45 }
+		HUN = { transfer_state = 764 }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = generic.6 hours = 6 }
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			news_event = { id = news.289 hours = 12 }
+		}
+	}
+	option = { #Agree / Both Communist
+		name = ita_armor.861.c
+		trigger = {
+			is_in_faction = no
+			AND = {
+				FROM = {
+					has_government = communism
+				}
+				has_government = communism
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		HUN = { transfer_state = 45 }
+		HUN = { transfer_state = 764 }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = generic.6 hours = 6 }
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			news_event = { id = news.289 hours = 12 }
+		}
+	}
+	option = { #Agree / Both different
+		name = ita_armor.861.e
+		trigger = {
+			is_in_faction = no
+			NOT = {
+				AND = {
+					FROM = {
+						has_government = democratic
+					}
+					has_government = democratic
+				}
+				AND = {
+					FROM = {
+						has_government = fascism
+					}
+					has_government = fascism
+				}
+				AND = {
+					FROM = {
+						has_government = communism
+					}
+					has_government = communism
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+
+			modifier = {
+				factor = 0.5
+				has_war = no
+				FROM = {
+					has_war = yes
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				NOT = {
+					has_government = neutrality
+				}
+			}
+
+			modifier = {
+				factor = 0.75
+				FROM = {
+					is_major = no
+				}
+			}
+		}
+		HUN = { transfer_state = 45 }
+		HUN = { transfer_state = 764 }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = generic.6 hours = 6 }
+		}
+		if = {
+			limit = {
+				is_literally_china = yes
+				has_DLC = "Waking the Tiger"
+			}
+			CHI_set_ally_strat_on_current_leader = yes #sets ally strategy to current Chinese leader
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			news_event = { id = news.289 hours = 12 }
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GER
+						has_government = democratic
+						has_completed_focus = GER_pool_technical_know_how
+					}
+					NOT = { has_idea = GER_pool_technical_know_how }
+				}
+				add_ideas = GER_pool_technical_know_how
+			}
+		}
+	}
+
+	option = { #Reject
+		name = ita_armor.861.f
+		trigger = {
+			is_in_faction = no
+		}
+		ai_chance = {
+			factor = 50
+
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					target = FROM
+					value > 65
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					target = FROM
+					value > 35
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					target = FROM
+					value > 5
+				}
+			}
+
+			modifier = {
+				factor = 2.0
+				has_opinion = {
+					target = FROM
+					value < 35
+				}
+			}
+
+			modifier = {
+				factor = 2.0
+				has_opinion = {
+					target = FROM
+					value < 65
+				}
+			}
+
+			modifier = {
+				factor = 0.1
+				has_war = yes
+				FROM = {
+					has_war = no
+				}
+			}
+
+			modifier = {
+				factor = 0.1
+				FROM = {
+					is_major = yes
+				}
+			}
+		}
+		FROM = {
+			country_event = { id = generic.7 hours = 6 }
+		}
+	}
+
+	option = { #Reject if in faction
+		name = ita_armor.861.g
+		trigger = {
+			is_in_faction = yes
+		}
+		FROM = {
+			country_event = { id = generic.7 hours = 6 }
+		}
+	}
+}
+
+
+################################################ Alliance for Thrace
+
+
+country_event = {
+	id = ita_armor.862
+	title = ita_armor.862.t
+	desc = { # FROM and ROOT are Democratic
+		text = generic.5.d.a
+		trigger = {
+			AND = {
+				FROM = {
+					has_government = democratic
+				}
+				has_government = democratic
+			}
+		}
+	}
+	desc = { # FROM and ROOT are Fascist
+		text = ita_armor.862.d.b
+		trigger = {
+			AND = {
+				FROM = {
+					has_government = fascism
+				}
+				has_government = fascism
+			}
+		}
+	}
+	desc = { # FROM and ROOT are Communist
+		text = ita_armor.862.d.c
+		trigger = {
+			AND = {
+				FROM = {
+					has_government = communism
+				}
+				has_government = communism
+			}
+		}
+	}
+	desc = { # FROM and ROOT are different ideologies
+		text = ita_armor.862.d.e
+		trigger = {
+			NOT = {
+				AND = {
+					FROM = {
+						has_government = democratic
+					}
+					has_government = democratic
+				}
+				AND = {
+					FROM = {
+						has_government = fascism
+					}
+					has_government = fascism
+				}
+				AND = {
+					FROM = {
+						has_government = communism
+					}
+					has_government = communism
+				}
+			}
+		}
+	}
+	picture = GFX_report_event_generic_read_write
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = alliance_applicant
+			FROM = {
+				save_event_target_as = alliance_inviter
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = { #Agree / Both Democratic
+		name = ita_armor.862.a
+		trigger = {
+			is_in_faction = no
+			AND = {
+				FROM = {
+					has_government = democratic
+				}
+				has_government = democratic
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		BUL = { transfer_state = 184 }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = generic.6 hours = 6 }
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			if = {
+				limit = {
+					FROM = { is_major = yes }
+				}
+				news_event = { id = news.289 hours = 12 }
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GER
+						has_government = democratic
+						has_completed_focus = GER_pool_technical_know_how
+					}
+					NOT = { has_idea = GER_pool_technical_know_how }
+				}
+				add_ideas = GER_pool_technical_know_how
+			}
+		}
+	}
+	option = { #Agree / Both Fascist
+		name = ita_armor.862.b
+		trigger = {
+			is_in_faction = no
+			AND = {
+				FROM = {
+					has_government = fascism
+				}
+				has_government = fascism
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		BUL = { transfer_state = 184 }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = generic.6 hours = 6 }
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			news_event = { id = news.289 hours = 12 }
+		}
+	}
+	option = { #Agree / Both Communist
+		name = ita_armor.862.c
+		trigger = {
+			is_in_faction = no
+			AND = {
+				FROM = {
+					has_government = communism
+				}
+				has_government = communism
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		BUL = { transfer_state = 184 }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = generic.6 hours = 6 }
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			news_event = { id = news.289 hours = 12 }
+		}
+	}
+	option = { #Agree / Both different
+		name = ita_armor.862.e
+		trigger = {
+			is_in_faction = no
+			NOT = {
+				AND = {
+					FROM = {
+						has_government = democratic
+					}
+					has_government = democratic
+				}
+				AND = {
+					FROM = {
+						has_government = fascism
+					}
+					has_government = fascism
+				}
+				AND = {
+					FROM = {
+						has_government = communism
+					}
+					has_government = communism
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+
+			modifier = {
+				factor = 0.5
+				has_war = no
+				FROM = {
+					has_war = yes
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				NOT = {
+					has_government = neutrality
+				}
+			}
+
+			modifier = {
+				factor = 0.75
+				FROM = {
+					is_major = no
+				}
+			}
+		}
+		BUL = { transfer_state = 184 }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = generic.6 hours = 6 }
+		}
+		if = {
+			limit = {
+				is_literally_china = yes
+				has_DLC = "Waking the Tiger"
+			}
+			CHI_set_ally_strat_on_current_leader = yes #sets ally strategy to current Chinese leader
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			news_event = { id = news.289 hours = 12 }
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GER
+						has_government = democratic
+						has_completed_focus = GER_pool_technical_know_how
+					}
+					NOT = { has_idea = GER_pool_technical_know_how }
+				}
+				add_ideas = GER_pool_technical_know_how
+			}
+		}
+	}
+
+	option = { #Reject
+		name = ita_armor.862.f
+		trigger = {
+			is_in_faction = no
+		}
+		ai_chance = {
+			factor = 50
+
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					target = FROM
+					value > 65
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					target = FROM
+					value > 35
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					target = FROM
+					value > 5
+				}
+			}
+
+			modifier = {
+				factor = 2.0
+				has_opinion = {
+					target = FROM
+					value < 35
+				}
+			}
+
+			modifier = {
+				factor = 2.0
+				has_opinion = {
+					target = FROM
+					value < 65
+				}
+			}
+
+			modifier = {
+				factor = 0.1
+				has_war = yes
+				FROM = {
+					has_war = no
+				}
+			}
+
+			modifier = {
+				factor = 0.1
+				FROM = {
+					is_major = yes
+				}
+			}
+		}
+		FROM = {
+			country_event = { id = generic.7 hours = 6 }
+		}
+	}
+
+	option = { #Reject if in faction
+		name = ita_armor.862.g
+		trigger = {
+			is_in_faction = yes
+		}
+		FROM = {
+			country_event = { id = generic.7 hours = 6 }
+		}
+	}
+}
+
+################################################ Axis Split
+
+country_event = {
+	id = ita_armor.863
+	title = ita_armor.863.t
+	desc = ita_armor.863.d
+	picture = GFX_report_event_mutual_assistance_bloc
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		is_in_faction_with = GER
+		has_global_flag = soviet_union_defeated
+		OR = {
+			AND = {
+				GER = { has_war_with = HUN }
+				HUN = { is_in_faction = no }
+			}
+			AND = {
+				GER = { has_war_with = ROM }
+				ROM = { is_in_faction = no }
+			}
+			AND = {
+				GER = { has_war_with = BUL }
+				BUL = { is_in_faction = no }
+			}
+		}
+		is_subject = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Form the Mediterranean Assistance Bloc
+		name = ita_armor.863.a
+		add_war_support = 0.1
+		ITA = {
+			leave_faction = yes
+			create_faction = mediterranean_assistance_bloc
+			set_faction_leader = yes
+		}
+		GER = {
+			set_faction_name = germania_faction
+		}
+		ITA = {
+			set_rule = { can_not_declare_war = yes }
+		}
+		ROM = {
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				ROM = {
+					set_rule = { can_not_declare_war = yes }
+				}
+			    ITA = {
+					add_to_faction = ROM
+				}
+			}
+		}
+		BUL = {
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				BUL = {
+					set_rule = { can_not_declare_war = yes }
+				}
+			    ITA = {
+					add_to_faction = BUL
+				}
+			}
+		}
+		HUN = {
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				HUN = {
+					set_rule = { can_not_declare_war = yes }
+				}
+			    ITA = {
+					add_to_faction = HUN
+				}
+			}
+		}
+		ALB = {
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				ALB = {
+					set_rule = { can_not_declare_war = yes }
+				}
+			    ITA = {
+					add_to_faction = ALB
+				}
+			}
+		}
+		TUR = {
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				TUR = {
+					set_rule = { can_not_declare_war = yes }
+				}
+			    ITA = {
+					add_to_faction = TUR
+				}
+			}
+		}
+	    POR = {
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				POR = {
+					set_rule = { can_not_declare_war = yes }
+				}
+			    ITA = {
+					add_to_faction = POR
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					has_war_with = USA
+					has_war_with = ENG
+				}
+				OR = {
+					is_in_faction_with = ITA
+					is_puppet_of = ITA
+					tag = ITA
+				}
+			}
+			white_peace = USA
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = afo_news.45 }
+		}
+	}
+
+	option = {
+		name = ita_armor.863.b
+		add_stability = -0.1
+	}
+}
+
+
+
+
+
+################################################# Speeches
+
+
+
+
+
+# Mussolini Speech
+country_event = {
+	id = ita_armor.864
+	title = ita_armor.864.t
+	desc = ita_armor.864.d
+	picture = GFX_report_event_mussolini_war_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ita_armor.864.a
+	}
+}
+
+################################################ Mission Generator simulating communist sabotage
+
+
+################################################ Mission Generator simulating other side expanding garrison influence
+
+
+country_event = {
+	id = ita_armor.891
+
+	trigger = {
+		NOT = { has_global_flag = italian_civil_war }
+	}
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	immediate = {
+		random_list = {
+			20 = {
+				modifier = {
+					factor = 0
+					114 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					114 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 0.1
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_sardinia_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					115 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					115 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 0.1
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_sicily_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					1032 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					1032 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 0.1
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_southern_sicily_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					156 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					156 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 0.1
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_calabria_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					117 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					117 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 5
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_campania_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					986 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					986 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 5
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_puglia_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					157 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					157 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 5
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_abruzzo_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					2 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					2 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 10
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_latium_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					856 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					856 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 10
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_rome_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					162 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					162 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 10
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_tuscany_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					161 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					161 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 50
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_emilia_romagna_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					158 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					158 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 50
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_piedmont_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					159 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					159 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 50
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_lombardy_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					39 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					39 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 50
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_south_tyrol_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					160 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					160 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 50
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_veneto_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					885 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					885 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 50
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_friuli_giulia_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					886 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					886 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 50
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_primorska_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					736 = { check_variable = { var = ITA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					736 = { has_state_flag = ITA_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 50
+					has_completed_focus = ITA_depose_mussolini
+				}
+				activate_mission = ITA_expand_influence_in_the_istria_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					any_owned_state = {
+						check_variable = { var = ITA_garrison_control value = 4 compare = less_than }
+					}
+				}
+				country_event = { id = ita_armor.891 days = 1 random_days = 9 }
+			}
+		}
+	}
+}
+
+
+############################################### Civil war time alt history
+
+# Italian Civil War
+country_event = {
+	id = ita_armor.892
+	title = ita_armor.892.t
+	desc = ita_armor.892.d
+	picture = GFX_report_event_italian_civil_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				set_state_flag = ITA_core_of_italy_flag
+			}
+			news_event = { id = lar_news.10 days = 1 }
+			set_global_flag = { flag = ITA_civil_war_startup value = 1 days = 3 } # Make AI avoid attacking for a few days
+		}
+		hidden_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.3
+			}
+			set_nationality = {
+				target_country = ITF
+				character = ITA_benito_mussolini
+			}
+			ITF = {
+				ITA_benito_mussolini = {
+					remove_country_leader_role = {
+						ideology = fascism_ideology
+					}
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1965.1.1"
+							ideology = fascism_ideology
+							traits = {
+								opportunist
+								ambitious
+								dictator
+							}
+							desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+						}
+						promote_leader = yes
+					}
+				}
+				set_popularities = {
+					fascism = 100
+				}
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = yes
+				}
+				transfer_state = 159
+				159 = { set_state_flag = ITA_sided_with_fascists_flag }
+			}
+			division_template = {
+				name = "Guarnigione Repubblicano"
+				is_locked = yes
+				template_counter = 6
+				division_names_group = ITA_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+				}
+			}
+			ITF = {
+				division_template = {
+					name = "Guarnigione Fascisti"
+					is_locked = yes
+					template_counter = 6
+					division_names_group = ITA_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = ICW_concessions_to_the_communists
+				}
+				ITA = {
+					transfer_state = 117
+					117 = { set_state_flag = ITA_sided_with_republicans_flag }
+					division_template = {
+						name = "Divisione Garibaldi"
+						template_counter = 4
+						division_names_group = ITA_INF_03
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+
+							infantry = { x = 2 y = 0 }
+
+							artillery_brigade = { x = 3 y = 0 }
+							artillery_brigade = { x = 3 y = 1 }
+						}
+						support = {
+							recon = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+						}
+					}
+					117 = {
+						create_unit = {
+							division = "division_template = \"Divisione Garibaldi\" start_experience_factor = 0.3"
+							owner = ITA
+							count = 10
+						}
+					}
+				}
+			}
+			transfer_units_fraction = {
+				target = ITF
+				size = 0.5 # Fallback in case one of the ratios below are not stipulated
+				stockpile_ratio = 0.5
+				army_ratio = 0.5
+				navy_ratio = 0.5
+				air_ratio = 0.5
+				keep_unit_leaders = {
+
+				}
+				keep_unit_leaders_trigger = {
+					NOT = { has_trait = trait_ITA_fascist_loyalties }
+				}
+			}
+			every_owned_state = {
+				limit = {
+					check_variable = { var = ITA_garrison_control value = 1 compare = equals }
+					NOT = {
+						state = 163
+					}
+				}
+				create_unit = {
+					division = "division_template = \"Guarnigione Repubblicano\" start_experience_factor = 0.1"
+					owner = ITA
+					allow_spawning_on_enemy_provs = yes
+					count = 3
+				}
+			}
+			115 = { # Extra 6 divisions to make Madrid harder to capture (as historically)
+				create_unit = {
+					division = "division_template = \"Guarnigione Repubblicano\" start_experience_factor = 0.1"
+					owner = ITA
+					allow_spawning_on_enemy_provs = yes
+					count = 6
+				}
+			}
+			every_owned_state = {
+				limit = {
+					check_variable = { var = ITA_garrison_control value = 4 compare = equals }
+				}
+				ITF = {
+					transfer_state = PREV
+				}
+				set_state_flag = ITF_sided_with_nationalists_flag
+				create_unit = {
+					division = "division_template = \"Guarnigione Fascisti\" start_experience_factor = 0.1"
+					owner = ITF
+					allow_spawning_on_enemy_provs = yes
+					count = 3
+				}
+			}
+			ITF = {
+				declare_war_on = {
+					target = ITA
+					type = civil_war
+				}
+				add_civil_war_target = ITA
+			}
+			every_owned_state = {
+				limit = {
+					check_variable = { var = ITA_garrison_control value = 2 compare = equals }
+				}
+				create_unit = {
+					division = "division_template = \"Guarnigione Repubblicano\" start_experience_factor = 0.1"
+					owner = ITA
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Guarnigione Fascisti\" start_experience_factor = 0.1"
+					owner = ITF
+					allow_spawning_on_enemy_provs = yes
+					count = 1
+				}
+			}
+			every_owned_state = {
+				limit = {
+					check_variable = { var = ITA_garrison_control value = 3 compare = equals }
+				}
+				create_unit = {
+					division = "division_template = \"Guarnigione Repubblicano\" start_experience_factor = 0.1"
+					owner = ITA
+					allow_spawning_on_enemy_provs = yes
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Guarnigione Fascisti\" start_experience_factor = 0.1"
+					owner = ITF
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+				}
+			}
+			ITF = {
+				load_focus_tree = {
+					tree = italian_focus
+					keep_completed = no
+				}
+				unlock_national_focus = ITA_triumph_in_africa
+				unlock_national_focus = ITA_leave_the_league_of_nations
+			}
+			every_owned_state = {
+				set_state_flag = ITA_sided_with_republicans_flag
+			}
+			if = {
+				limit = {
+					115 = { is_owned_by = ROOT }
+				}
+				set_capital = { state = 115 }
+			}
+			else_if = {
+				limit = {
+					114 = { is_owned_by = ROOT }
+				}
+				set_capital = { state = 114 }
+			}
+			else = {
+				random_owned_state = {
+					ROOT = { set_capital = { state = PREV } }
+				}
+			}
+			ITF = {
+				every_state = {
+					limit = {
+						has_state_flag = ITA_core_of_italy_flag
+					}
+					add_core_of = ITF
+				}
+				inherit_technology = ITA
+				if = {
+					limit = {
+						159 = { is_owned_by = ITF }
+					}
+					ITF = { set_capital = { state = 159 } }
+				}
+				else_if = {
+					limit = {
+						856 = { is_owned_by = ITF }
+					}
+					ITF = { set_capital = { state = 856 } }
+				}
+				else = {
+					random_owned_state = {
+						ITF = { set_capital = { state = PREV } }
+					}
+				}
+			}
+			ITF = { add_timed_idea = { idea = ITF_death_before_surrender days = 900 } }
+			add_timed_idea = { idea = ITA_death_before_surrender days = 900 }
+			set_global_flag = italian_civil_war
+		}
+	}
+
+	option = { # Option for Monarchists
+		name = ita_armor.892.a
+		ai_chance = {
+			base = 40
+			# modifier = {
+			# 	factor = 0
+			# 	OR = {
+			# 		has_country_flag = ITA_AI_RANDOM_DEMOCRATIC
+			# 		has_game_rule = {
+			# 			rule = ITA_ai_behavior
+			# 			option = DEMOCRATIC
+			# 		}
+			# 	}
+			# }
+		}
+		# Remove Spirits that will no longer be relevant
+		custom_effect_tooltip = death_to_the_fascists
+		effect_tooltip = {
+			add_timed_idea = { idea = ITA_death_before_surrender days = 900 }
+			ITF = { add_timed_idea = { idea = ITF_death_before_surrender days = 900 } }
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.3
+		}
+		kill_ideology_leader = fascism
+		hidden_effect = {
+			set_country_flag = ITA_monarchy_chosen
+		}
+	}
+	option = { # Option for Democratic
+		name = ita_armor.892.b
+		ai_chance = {
+			base = 30
+			# modifier = {
+			# 	factor = 0
+			# 	OR = {
+			# 		has_country_flag = ITA_AI_RANDOM_MONARCHIST
+			# 		has_game_rule = {
+			# 			rule = ITA_ai_behavior
+			# 			option = MONARCHIST
+			# 		}
+			# 	}
+			# }
+		}
+		# Remove Spirits that will no longer be relevant
+		custom_effect_tooltip = death_to_the_fascists
+		effect_tooltip = {
+			add_timed_idea = { idea = ITA_death_before_surrender days = 900 }
+			ITF = { add_timed_idea = { idea = ITF_death_before_surrender days = 900 } }
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.3
+		}
+		kill_ideology_leader = fascism
+		hidden_effect = {
+			set_country_flag = ITA_democracy_chosen
+		}
+	}
+}
+
+country_event = {
+	id = ita_armor.893
+	title = ita_armor.893.t
+	desc = ita_armor.893.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # Step Down
+		name = ita_armor.893.a
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = ITA_not_on_the_brink
+
+		add_stability = 0.2
+		add_war_support = -0.4
+		remove_ideas = ITA_grand_council_of_fascism
+
+		hidden_effect = {
+			retire_country_leader = yes
+			set_country_flag = italy_switching_sides
+		}
+		add_country_leader_role = {
+			character = ITA_pietro_badoglio
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+				}
+			}
+			promote_leader = yes
+		}
+
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.3
+		}
+
+		activate_mission = ITA_armistice_mission
+		hidden_effect = {
+			if = {
+				limit = {
+					any_enemy_country = {
+						is_faction_leader = yes
+						is_major = yes
+						OR = {
+							has_government = democratic
+							has_government = neutrality
+						}
+					}
+				}
+				random_enemy_country = {
+					limit = {
+						is_faction_leader = yes
+						is_major = yes
+						OR = {
+							has_government = democratic
+							has_government = neutrality
+						}
+					}
+					activate_mission = ITA_armistice_mission_allies_timer
+				}
+			}
+			else = {
+				random_enemy_country = {
+					limit = {
+						is_faction_leader = yes
+						is_major = yes
+						OR = {
+							has_government = fascism
+							has_government = communism
+						}
+					}
+					activate_mission = ITA_armistice_mission_allies_timer
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				is_in_faction_with = GER
+			}
+			GER = {
+				country_event = { id = ita_armor.896 }
+			}
+		}
+	}
+
+	option = { # Stand Strong
+		name = ita_armor.893.b
+		ai_chance = { factor = 0 }
+		custom_effect_tooltip = ITA_on_the_brink
+		hidden_effect = {
+			set_country_flag = italy_stands_strong
+			remove_ideas = ITA_grand_council_of_fascism
+		}
+		hidden_effect = {
+			set_cosmetic_tag = ITA_WAR
+			create_dynamic_country = {
+				original_tag = ITA
+				save_event_target_as = republican_italy
+				transfer_state = 115
+				transfer_state = 114
+				transfer_state = 117
+				transfer_state = 986
+				transfer_state = 156
+				set_province_controller = 3923
+				set_province_controller = 3966
+				set_province_controller = 923
+				set_province_controller = 963
+				set_province_controller = 6831
+				every_state = {
+					limit = {
+						is_core_of = ITA
+					}
+					add_core_of = PREV
+				}
+				set_capital = { state = 115 }
+				set_cosmetic_tag = ITA_REP
+				add_stability = 0.50
+				add_war_support = 0.80
+
+				add_country_leader_role = {
+					character = ITA_victor_emmanuel_iii
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = {
+							popular_figurehead2
+							human_rights_activist
+						}
+						desc = "POLITICS_VICTOR_EMMANUEL_III_DESC"
+					}
+					promote_leader = yes
+				}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.8
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+				set_country_flag = ITA_republican_italy_flag
+				ITA = {
+					transfer_units_fraction = {
+						target = event_target:republican_italy
+						stockpile_ratio = 0.4
+						army_ratio = 0.5
+						navy_ratio = 0.7
+						air_ratio = 0.7
+					}
+				}
+			}
+			ITA = {
+				every_unit_leader = {
+					limit = {
+						NOT = { has_trait = trait_ITA_fascist_loyalties }
+					}
+					set_nationality = REP
+				}
+			}
+
+			REP = {
+				declare_war_on = {
+				    target = ITA
+				    type = civil_war
+				}
+				add_civil_war_target = ITA
+				every_unit_leader = {
+					limit = {
+						has_trait = trait_ITA_fascist_loyalties
+					}
+					set_nationality = ITA
+				}
+			}
+			news_event = { hours = 6 id = afo_news.6 }
+		}
+	}
+}
+
+# Civil war over. Move Capital
+country_event = {
+	id = ita_armor.894
+	title = ita_armor.894.t
+	desc = ita_armor.894.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	trigger = {
+		tag = REP
+		has_war = no
+		2 = { is_controlled_by = REP }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		ai_chance = { factor = 1 }
+		name = ita_armor.894.a
+		set_capital = { state = 2 }
+	}
+}
+
+
+############################################### Republican Italy events
+
+# Italy asks for peace
+country_event = {
+	id = ita_armor.895
+	title = ita_armor.895.t
+	desc = ita_armor.895.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_capitulated = no
+	}
+
+	option = {
+		ai_chance = { factor = 1 }
+		name = ita_armor.895.a
+		if = {
+			limit = {
+				any_state = {
+					is_core_of = ITA
+					or = {
+						region = 21
+						region = 23
+						region = 238
+					}
+					not = {
+						is_fully_controlled_by = ITA
+						state = 115
+					}
+				}
+			}
+			ITA = {
+				country_event = { id = ita_armor.897 days = 1 }
+			}
+		}
+		else = {
+			custom_effect_tooltip = italy_armistice_tt
+			hidden_effect = {
+				ITA = {
+					set_country_flag = allies_accept_peace_flag
+				}
+			}
+		}
+	}
+
+	option = {
+		ai_chance = { factor = 0 }
+		name = ita_armor.895.b
+		ITA = {
+			country_event = { id = ita_armor.898 days = 1 }
+		}
+	}
+}
+
+# Italy assures loyalty...
+country_event = {
+	id = ita_armor.896
+	title = ita_armor.896.t
+	desc = ita_armor.896.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				GER = { is_ai = no }
+			}
+			hidden_effect = {
+				activate_mission = GER_fall_achse_preperation
+			}
+		}
+		else = {
+			hidden_effect = {
+				activate_mission = GER_fall_achse_preperation_ai
+			}
+		}
+	}
+
+	option = {
+		ai_chance = { factor = 1 }
+		name = ita_armor.896.a
+		effect_tooltip = {
+			activate_mission = GER_fall_achse_preperation
+		}
+	}
+}
+
+# Italy gets peace
+country_event = {
+	id = ita_armor.897
+	title = ita_armor.897.t
+	desc = ita_armor.897.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				any_enemy_country = {
+					is_faction_leader = yes
+					is_major = yes
+					OR = {
+						has_government = democratic
+						has_government = neutrality
+					}
+				}
+			}
+			hidden_effect = {
+				random_enemy_country = {
+					limit = {
+						is_faction_leader = yes
+						is_major = yes
+						OR = {
+							has_government = democratic
+							has_government = neutrality
+						}
+					}
+					save_event_target_as = italy_new_ally_target
+				}
+			}
+		}
+		else = {
+			hidden_effect = {
+				random_enemy_country = {
+					limit = {
+						is_faction_leader = yes
+						is_major = yes
+						NOT = { has_government = communism }
+					}
+					save_event_target_as = italy_new_ally_target
+				}
+			}
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
+				}
+				save_event_target_as = italy_new_enemy_target
+			}
+		}
+		if = {
+			limit = {
+				GER = { has_country_flag = GER_fall_achse_prepared }
+				GER = { has_capitulated = no }
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						CONTROLLER = {
+							tag = ITA
+						}
+						NOT = { is_core_of = ITA }
+					}
+					GER = {
+						transfer_state = PREV
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					is_subject_of = ITA
+					has_capitulated = no
+				}
+				hidden_effect = {
+					GER = { annex_country = { target = PREV transfer_troops = no } }
+				}
+			}
+			every_state = {
+				limit = {
+					has_state_flag = GER_fall_achse_flag
+					is_controlled_by = ITA
+				}
+				hidden_effect = {
+					GER = { transfer_state = PREV }
+				}
+			}
+			#ITA = {
+			#	set_province_controller = 3923
+			#	set_province_controller = 3966
+			#	set_province_controller = 923
+			#	set_province_controller = 963
+			#	set_province_controller = 6831
+			#}
+			if = {
+				limit = {
+					GER = { is_ai = yes }
+				}
+				hidden_effect = {
+					GER = {
+						load_oob = "GER_achse"
+					}
+				}
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = afo_news.15 }
+				ITA = {
+					every_state = {
+						limit = {
+							NOT = { is_fully_controlled_by = ITA }
+						}
+						teleport_armies = {
+							limit = {
+								tag = ITA
+							}
+							to_state_array = owned_controlled_states
+						}
+					}
+					retire_country_leader = yes
+					add_country_leader_role = {
+						character = ITA_victor_emmanuel_iii
+						country_leader = {
+							expire = "1965.1.1"
+							ideology = conservatism
+							traits = {
+							}
+							desc = "POLITICS_VICTOR_EMMANUEL_III_DESC"
+						}
+						promote_leader = yes
+					}
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+					}
+					add_popularity = {
+						ideology = democratic
+						popularity = 0.6
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.4
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							event_target:italy_new_ally_target = {
+								is_in_faction_with = ENG
+							}
+							event_target:italy_new_ally_target = {
+								tag = ENG
+							}
+						}
+					}
+					ENG = {
+						transfer_state = 448
+						transfer_state = 449
+						transfer_state = 450
+						transfer_state = 451
+						transfer_state = 661
+						transfer_state = 662
+						transfer_state = 663
+						transfer_state = 273
+					}
+				}
+				else = {
+					event_target:italy_new_ally_target = {
+						transfer_state = 448
+						transfer_state = 449
+						transfer_state = 450
+						transfer_state = 451
+						transfer_state = 661
+						transfer_state = 662
+						transfer_state = 663
+						transfer_state = 273
+					}
+				}
+				hidden_effect = {
+					random_country = {
+						limit = {
+							is_faction_leader = yes
+							is_in_faction_with = ROOT
+						}
+						remove_from_faction = ROOT
+					}
+					every_country = {
+						limit = {
+							has_war_with = ITA
+						}
+						remove_wargoal = {
+							type = all
+							target = ITA
+						}
+						white_peace = ITA
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							event_target:italy_new_ally_target = {
+								is_in_faction_with = ENG
+							}
+							event_target:italy_new_ally_target = {
+								tag = ENG
+							}
+						}
+					}
+					hidden_effect = {
+						ENG = {
+							transfer_state = 448
+							transfer_state = 449
+							transfer_state = 450
+							transfer_state = 451
+							transfer_state = 661
+							transfer_state = 662
+							transfer_state = 663
+							transfer_state = 273
+						}
+					}
+					if = {
+						limit = {
+							country_exists = ITS
+							country_exists = UKT
+						}
+						hidden_effect = {
+							UKT = {
+								annex_country = { target = ITS transfer_troops = no }
+							}
+						}
+					}
+					if = {
+						limit = {
+							country_exists = ITE
+							country_exists = UKE
+						}
+						hidden_effect = {
+							UKE = {
+								annex_country = { target = ITE transfer_troops = no }
+							}
+						}
+					}
+					if = {
+						limit = {
+							country_exists = UKT
+						}
+						UKT = {
+							transfer_state = 550
+							transfer_state = 559
+						}
+					}
+					if = {
+						limit = {
+							NOT = { country_exists = UKT }
+						}
+						ENG = {
+							transfer_state = 550
+							transfer_state = 559
+						}
+					}
+				}
+				else = {
+					hidden_effect = {
+						event_target:italy_new_ally_target = {
+							transfer_state = 448
+							transfer_state = 449
+							transfer_state = 450
+							transfer_state = 451
+							transfer_state = 661
+							transfer_state = 662
+							transfer_state = 663
+							transfer_state = 273
+						}
+					}
+				}
+				hidden_effect = {
+					event_target:italy_new_enemy_target = {
+						declare_war_on = {
+							target = ITA
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ita_armor.897.a
+		ai_chance = { factor = 1 }
+		event_target:italy_new_ally_target = {
+			add_to_faction = ITA
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = ITA_victor_emmanuel_iii
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+					}
+					desc = "POLITICS_VICTOR_EMMANUEL_III_DESC"
+				}
+				promote_leader = yes
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.6
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.4
+			}
+		}
+	}
+	option = {
+		name = ita_armor.897.b
+		trigger = { ITA = { has_capitulated = yes } }
+		ai_chance = { factor = 1 }
+	}
+}
+
+# Italy remains in the axis
+country_event = {
+	id = ita_armor.898
+	title = ita_armor.898.t
+	desc = ita_armor.898.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = { factor = 1 }
+		name = ita_armor.898.a
+	}
+}
+
+############################################### End of the civil war
+
+
+country_event = {
+	id = ita_armor.899
+	title = ita_armor.899.t
+	desc = ita_armor.899.d
+	picture = GFX_report_event_generic_military_parade
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = ITA_death_before_surrender
+			delete_unit_template_and_units = {
+				division_template = "Guarnigione Repubblicano"
+				disband = yes
+			}
+		}
+	}
+	option = {
+		name = ita_armor.899.a
+		ai_chance = { factor = 1 }
+		add_stability = 0.05
+		if = {
+			limit = {
+				tag = ITA
+			}
+			ITA = {
+				country_event = { id = ita_armor.846 days = 30 }
+			}
+			every_state = {
+				limit = {
+					has_state_flag = ITA_core_of_italy_flag
+				}
+				remove_core_of = ITF
+			}
+		}
+		else_if = {
+			limit = {
+				tag = ITF
+			}
+			every_state = {
+				limit = {
+					has_state_flag = ITA_core_of_italy_flag
+				}
+				remove_core_of = ITA
+			}
+		}
+	}
+}
+
+############################################### Cheats

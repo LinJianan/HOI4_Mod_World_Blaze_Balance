@@ -1,0 +1,5555 @@
+add_namespace = eng_armor
+
+country_event = {
+	id = eng_armor.001
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		NOT = { date > 1939.1.1 }
+	}
+
+	immediate = {
+		118 = {
+			add_building_construction = {
+				type = naval_base
+				level = 7
+				province = 4135
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		116 = {
+			add_building_construction = {
+				type = naval_base
+				level = 7
+				province = 12003
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 6
+				instant_build = yes
+			}
+		}
+		456 = {
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				province = 10844
+				instant_build = yes
+			}
+		}
+		set_division_template_lock = {
+			division_template = "Cavalry Brigade"
+			is_locked = yes
+		}
+		set_technology = { eng_anti_air_1 = 1 }
+		if = {
+			limit = {
+				NOT = { has_global_flag = disable_cheats }
+			}
+			add_fuel = 1000000
+		}
+		division_template = {
+			name = "British Garrison Division"
+			division_names_group = ENG_GAR_01
+			obsolete = yes
+			regiments = {
+				cavalry = { x = 0 y = 0 }
+				cavalry = { x = 0 y = 1 }
+				cavalry = { x = 0 y = 2 }
+
+				cavalry = { x = 1 y = 0 }
+				cavalry = { x = 1 y = 1 }
+				cavalry = { x = 1 y = 2 }
+			}
+			support = {
+				military_police = { x = 0 y = 0 }
+			}
+			priority = 0
+		}
+		division_template = {
+			name = "British Infantry Division"
+			division_names_group = ENG_INF_01
+			template_counter = 147
+			priority = 1
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+
+				heavy_infantry = { x = 2 y = 0 }
+				heavy_infantry = { x = 2 y = 1 }
+				heavy_infantry = { x = 2 y = 2 }
+
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+
+				anti_tank_brigade = { x = 4 y = 0 }
+				anti_tank_brigade = { x = 4 y = 1 }
+				anti_tank_brigade = { x = 4 y = 2 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_maintenance_company = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				field_hospital = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				mot_recon = { x = 1 y = 0 }
+				heavy_artillery = { x = 1 y = 1 }
+				anti_air = { x = 1 y = 2 }
+				military_police = { x = 1 y = 3 }
+				anti_tank = { x = 1 y = 4 }
+			}
+		}
+		set_country_flag = infantry_template_eng
+
+		ENG_bernard_montgomery = {
+			promote_leader = yes
+		}
+		ENG_richard_oconnor = {
+			promote_leader = yes
+		}
+		ENG_miles_dempsey = {
+			promote_leader = yes
+		}
+		ENG_richard_mccreery = {
+			promote_leader = yes
+		}
+		ENG_harold_alexander = {
+			promote_leader = yes
+		}
+	}
+
+	option = {}
+
+}
+
+#####upgrade infantry divisions
+country_event = {
+	id = eng_armor.002
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_tech = converging_sheaf
+		has_template = "British Infantry Division"
+	}
+
+	immediate = {
+		add_units_to_division_template = {
+			template_name = "British Infantry Division"
+			regiments = {
+				anti_tank_brigade = 4
+				artillery_brigade = 3
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.003
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_tech = eng_mechanized_infantry_1
+	}
+
+	immediate = {
+		set_technology = {
+			eng_heavy_artillery_2 = 1
+		}
+		division_template = {
+			name = "British Mechanized Division"
+			template_counter = 148
+			division_names_group = ENG_MEC_01
+			priority = 2
+
+			regiments = {
+				mechanized = { x = 0 y = 0 }
+				mechanized = { x = 0 y = 1 }
+				mechanized = { x = 0 y = 2 }
+
+				mechanized = { x = 1 y = 0 }
+				mechanized = { x = 1 y = 1 }
+				mechanized = { x = 1 y = 2 }
+
+				mechanized = { x = 2 y = 0 }
+				mechanized = { x = 2 y = 1 }
+				mechanized = { x = 2 y = 2 }
+
+				motorized_anti_tank_brigade = { x = 3 y = 0 }
+				motorized_anti_tank_brigade = { x = 3 y = 1 }
+				motorized_anti_tank_brigade = { x = 3 y = 2 }
+				motorized_anti_tank_brigade = { x = 3 y = 3 }
+
+				motorized_artillery_brigade = { x = 4 y = 0 }
+				motorized_artillery_brigade = { x = 4 y = 1 }
+				motorized_artillery_brigade = { x = 4 y = 2 }
+				motorized_artillery_brigade = { x = 4 y = 3 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_maintenance_company = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				field_hospital = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				mot_recon = { x = 1 y = 0 }
+				heavy_artillery = { x = 1 y = 1 }
+				heavy_anti_air = { x = 1 y = 2 }
+				military_police = { x = 1 y = 3 }
+				anti_tank = { x = 1 y = 4 }
+			}
+		}
+	}
+	option = {}
+}
+
+#####upgrade tank divisions
+country_event = {
+	id = eng_armor.004
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_tech = converging_sheaf
+		has_template = "British Early Medium Tank Division"
+		OR = {
+			has_tech = eng_medium_aa_5
+			has_tech = eng_medium_tank_aa_5
+		}
+		OR = {
+			has_tech = eng_medium_tank_td_6
+			has_tech = eng_medium_td_6
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			add_equipment_to_stockpile = { type = tank_eng_heavy_chassis_infantry_support_3 amount = 1000 producer = ENG }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = eng_medium_tank_assault_chassis_5 amount = 1000 producer = ENG }
+		}
+		add_units_to_division_template = {
+			template_name = "British Early Medium Tank Division"
+			support = {
+				medium_sp_anti_air = 1
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+######## Medium Armor
+
+country_event = {
+	id = eng_armor.005
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1937.6.1
+		}
+		else = {
+			has_tech = eng_medium_spg_1
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_1_eng
+
+		division_template = {
+			name = "British Early Medium Tank Division"
+			division_names_group = ENG_ARM_01
+			template_counter = 149
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+				infantry_support_armor = { x = 0 y = 3 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+				infantry_support_armor = { x = 1 y = 3 }
+
+				medium_armor = { x = 2 y = 0 }
+				medium_armor = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				heavy_maintenance_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				infantry_support = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+        		field_hospital = { x = 1 y = 1 }
+        		heavy_artillery = { x = 1 y = 2 }
+				heavy_anti_air = { x = 1 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.006
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1942.6.1
+		}
+		else = {
+			has_tech = eng_medium_aa_4
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_2_eng
+
+		division_template = {
+			name = "British Medium Tank Division"
+			division_names_group = ENG_ARM_01
+			template_counter = 151
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+				infantry_support_armor = { x = 0 y = 3 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+				infantry_support_armor = { x = 1 y = 3 }
+
+				medium_armor = { x = 2 y = 0 }
+				medium_armor = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				heavy_maintenance_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+				infantry_support = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+        		field_hospital = { x = 1 y = 1 }
+        		heavy_artillery = { x = 1 y = 2 }
+				heavy_anti_air = { x = 1 y = 3 }
+				medium_sp_anti_air = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.007
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1943.6.1
+		}
+		else = {
+			has_tech = eng_medium_td_6
+			has_tech = eng_medium_spg_9
+		}
+	}
+
+	immediate = {
+		set_country_flag = medium_armor_template_3_eng
+
+		division_template = {
+			name = "British Adv Medium Tank Division"
+			division_names_group = ENG_ARM_01
+			template_counter = 152
+			priority = 2
+
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+				medium_armor = { x = 0 y = 3 }
+
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+				medium_armor = { x = 1 y = 3 }
+
+				medium_sp_artillery_brigade = { x = 2 y = 0 }
+				medium_tank_destroyer_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				heavy_maintenance_company = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+        		medium_sp_artillery = { x = 1 y = 1 }
+        		medium_tank_destroyer = { x = 1 y = 2 }
+				medium_sp_anti_air = { x = 1 y = 3 }
+				infantry_support = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+############## Modern Armor
+
+country_event = {
+	id = eng_armor.008
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1945.6.1
+		}
+		else = {
+			has_tech = eng_modern_1
+		}
+	}
+
+	immediate = {
+		set_country_flag = modern_armor_template_1_eng
+
+		division_template = {
+			name = "British Early Modern Tank Division"
+			division_names_group = ENG_ARM_01
+			template_counter = 153
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+				modern_armor = { x = 0 y = 3 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+				modern_armor = { x = 1 y = 3 }
+
+				medium_sp_artillery_brigade = { x = 2 y = 0 }
+				medium_tank_destroyer_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				heavy_maintenance_company_modern = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				mot_recon = { x = 1 y = 0 }
+        		medium_sp_artillery = { x = 1 y = 1 }
+        		medium_tank_destroyer = { x = 1 y = 2 }
+				medium_sp_anti_air = { x = 1 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.009
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1947.6.1
+		}
+		else = {
+			has_tech = eng_modern_2_spg
+		}
+	}
+
+	immediate = {
+		set_country_flag = modern_armor_template_2_eng
+
+		division_template = {
+			name = "British Modern Tank Division"
+			division_names_group = ENG_ARM_01
+			template_counter = 153
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+				modern_armor = { x = 0 y = 3 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+				modern_armor = { x = 1 y = 3 }
+
+				modern_sp_artillery_brigade = { x = 2 y = 0 }
+				medium_tank_destroyer_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				heavy_maintenance_company_modern = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				mot_recon = { x = 1 y = 0 }
+        		modern_sp_artillery = { x = 1 y = 1 }
+        		medium_tank_destroyer = { x = 1 y = 2 }
+				medium_sp_anti_air = { x = 1 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.010
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			date > 1949.6.1
+		}
+		else = {
+			has_tech = eng_modern_3_td
+			has_tech = eng_modern_3_aa
+		}
+	}
+
+	immediate = {
+		set_country_flag = modern_armor_template_3_eng
+
+		division_template = {
+			name = "British Adv Modern Tank Division"
+			division_names_group = ENG_ARM_01
+			template_counter = 153
+			priority = 2
+
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+				modern_armor = { x = 0 y = 3 }
+
+				modern_armor = { x = 1 y = 0 }
+				modern_armor = { x = 1 y = 1 }
+				modern_armor = { x = 1 y = 2 }
+				modern_armor = { x = 1 y = 3 }
+
+				modern_sp_artillery_brigade = { x = 2 y = 0 }
+				modern_tank_destroyer_brigade = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				field_hospital = { x = 0 y = 2 }
+				heavy_maintenance_company_modern = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				mot_recon = { x = 1 y = 0 }
+        		modern_sp_artillery = { x = 1 y = 1 }
+        		modern_tank_destroyer = { x = 1 y = 2 }
+				modern_sp_anti_air = { x = 1 y = 3 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+######## Heavy Armor
+
+country_event = {
+	id = eng_armor.011
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			has_tech = eng_heavy_tank_chassis_2
+			has_tech = eng_mechanized_infantry_1
+			has_tech = eng_armoured_car_1
+		}
+		else = {
+			has_tech = eng_heavy_2
+			has_tech = eng_mechanized_infantry_1
+		}
+	}
+
+	immediate = {
+		set_country_flag = heavy_armor_template_1_eng
+
+		446 = {
+			add_building_construction = {
+				type = naval_base
+				level = 4
+				province = 4073
+				instant_build = yes
+			}
+		}
+
+		division_template = {
+			name = "British Heavy Tank Division"
+			division_names_group = ENG_ARM_03
+			template_counter = 154
+			priority = 2
+
+			regiments = {
+				heavy_armor = { x = 0 y = 0 }
+				heavy_armor = { x = 0 y = 1 }
+				heavy_armor = { x = 0 y = 2 }
+
+				heavy_armor = { x = 1 y = 0 }
+				heavy_armor = { x = 1 y = 1 }
+				heavy_armor = { x = 1 y = 2 }
+
+				heavy_armor = { x = 2 y = 0 }
+				heavy_armor = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				heavy_maintenance_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				armoured_recon = { x = 1 y = 0 }
+        		field_hospital = { x = 1 y = 1 }
+        		heavy_artillery = { x = 1 y = 2 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+#####upgrade tank divisions
+country_event = {
+	id = eng_armor.012
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_template = "British Heavy Tank Division"
+		has_tech = eng_heavy_tank_spg_2
+	}
+
+	immediate = {
+		add_units_to_division_template = {
+			template_name = "British Heavy Tank Division"
+			regiments = {
+				heavy_infantry_support_armor = 1
+				heavy_infantry_support_armor = 2
+			}
+			support = {
+				heavy_infantry_support = 0
+				heavy_anti_air = 1
+				military_police = 1
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.013
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			has_tech = eng_heavy_tank_spg_1
+			has_tech = eng_heavy_tank_td_3
+			has_tech = eng_armoured_car_1
+		}
+		else = {
+			has_tech = eng_heavy_1_spg
+			has_tech = eng_heavy_td_3
+		}
+	}
+
+	immediate = {
+		set_country_flag = heavy_armor_template_2_eng
+
+		division_template = {
+			name = "British Adv Heavy Tank Division"
+			division_names_group = ENG_ARM_03
+			template_counter = 155
+			priority = 2
+
+			regiments = {
+				heavy_armor = { x = 0 y = 0 }
+				heavy_armor = { x = 0 y = 1 }
+				heavy_armor = { x = 0 y = 2 }
+
+				heavy_armor = { x = 1 y = 0 }
+				heavy_armor = { x = 1 y = 1 }
+				heavy_armor = { x = 1 y = 2 }
+
+				heavy_armor = { x = 2 y = 0 }
+				heavy_armor = { x = 2 y = 1 }
+
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mechanized = { x = 3 y = 4 }
+
+				heavy_sp_artillery_brigade = { x = 4 y = 0 }
+				heavy_sp_artillery_brigade = { x = 4 y = 1 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				motorized_logistics_company = { x = 0 y = 1 }
+				heavy_maintenance_company = { x = 0 y = 2 }
+				signal_company = { x = 0 y = 3 }
+
+				mot_recon = { x = 1 y = 0 }
+        		field_hospital = { x = 1 y = 1 }
+        		heavy_sp_artillery = { x = 1 y = 2 }
+        		heavy_tank_destroyer = { x = 1 y = 3 }
+				medium_sp_anti_air = { x = 1 y = 4 }
+			}
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.014
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_template = "British Mechanized Division"
+		has_template = "British Infantry Division"
+		has_tech = eng_medium_tank_spg_7
+		has_tech = eng_medium_tank_aa_5
+		has_tech = eng_medium_tank_td_7
+		has_tech = eng_heavy_anti_tank_1
+	}
+
+	immediate = {
+		division_template = {
+			name = "British Adv Mechanized Division"
+			template_counter = 148
+			division_names_group = ENG_MEC_01
+			priority = 2
+
+			regiments = {
+				mechanized = { x = 0 y = 0 }
+				mechanized = { x = 0 y = 1 }
+				mechanized = { x = 0 y = 2 }
+
+				mechanized = { x = 1 y = 0 }
+				mechanized = { x = 1 y = 1 }
+				mechanized = { x = 1 y = 2 }
+
+				mechanized = { x = 2 y = 0 }
+				mechanized = { x = 2 y = 1 }
+				mechanized = { x = 2 y = 2 }
+
+				motorized_artillery_brigade = { x = 3 y = 0 }
+				motorized_artillery_brigade = { x = 3 y = 1 }
+				motorized_artillery_brigade = { x = 3 y = 2 }
+				motorized_artillery_brigade = { x = 3 y = 3 }
+
+				motorized_heavy_anti_tank_brigade = { x = 4 y = 0 }
+				motorized_heavy_anti_tank_brigade = { x = 4 y = 1 }
+				motorized_heavy_anti_tank_brigade = { x = 4 y = 2 }
+				motorized_heavy_anti_tank_brigade = { x = 4 y = 3 }
+			}
+
+			support = {
+				armored_engineer = { x = 0 y = 0 }
+				mot_maintenance_company = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				field_hospital = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				armoured_recon = { x = 1 y = 0 }
+				medium_sp_artillery = { x = 1 y = 1 }
+				medium_sp_anti_air = { x = 1 y = 2 }
+				medium_tank_destroyer = { x = 1 y = 3 }
+				heavy_anti_tank = { x = 1 y = 4 }
+			}
+		}
+		division_template = {
+			name = "British Adv Infantry Division"
+			division_names_group = ENG_INF_01
+			template_counter = 147
+			priority = 1
+
+			regiments = {
+				heavy_infantry = { x = 0 y = 0 }
+				heavy_infantry = { x = 0 y = 1 }
+				heavy_infantry = { x = 0 y = 2 }
+				heavy_infantry = { x = 0 y = 3 }
+				heavy_infantry = { x = 0 y = 4 }
+
+				heavy_infantry = { x = 1 y = 0 }
+				heavy_infantry = { x = 1 y = 1 }
+				heavy_infantry = { x = 1 y = 2 }
+				heavy_infantry = { x = 1 y = 3 }
+
+				artillery_brigade = { x = 2 y = 0 }
+				artillery_brigade = { x = 2 y = 1 }
+				artillery_brigade = { x = 2 y = 2 }
+				artillery_brigade = { x = 2 y = 3 }
+
+				anti_tank_brigade = { x = 3 y = 0 }
+				anti_tank_brigade = { x = 3 y = 1 }
+				anti_tank_brigade = { x = 3 y = 2 }
+
+				motorized_heavy_anti_tank_brigade = { x = 4 y = 0 }
+			}
+
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_maintenance_company = { x = 0 y = 1 }
+				motorized_logistics_company = { x = 0 y = 2 }
+				field_hospital = { x = 0 y = 3 }
+				signal_company = { x = 0 y = 4 }
+
+				mot_recon = { x = 1 y = 0 }
+				artillery = { x = 1 y = 1 }
+				heavy_anti_air = { x = 1 y = 2 }
+				military_police = { x = 1 y = 3 }
+				heavy_anti_tank = { x = 1 y = 4 }
+			}
+		}
+		set_country_flag = mechanized_template_2_eng
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"British Adv Infantry Division\" start_experience_factor = 0.3 start_equipment_factor = 0.1"
+				owner = ENG
+				count = 1
+			}
+		}
+	}
+	option = {}
+}
+
+
+######upgrade infantry divisions second upgrade
+#country_event = {
+#	id = eng_armor.013
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = ENG
+#		is_ai = yes
+#		has_tech = converging_sheaf
+#		has_template = "British Infantry Division"
+#		has_tech = eng_heavy_anti_tank_1
+#	}
+#
+#	immediate = {
+#		add_equipment_to_stockpile = { type =  eng_hv_at_1 amount = 1000 producer = ENG }
+#		add_units_to_division_template = {
+#			template_name = "British Infantry Division"
+#			regiments = {
+#				motorized_heavy_anti_tank_brigade = 3
+#			}
+#		}
+#	}
+#
+#	option = {}
+#
+#}
+
+####################################### Not Cheats
+
+country_event = {
+	id = eng_armor.602
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		ENG = { has_completed_focus = ENG_secure_iran }
+		ENG = { has_war_with = PER }
+		SOV = { has_war_with = PER }
+		PER = { has_capitulated = yes }
+	}
+
+	immediate = {
+		SOV = { transfer_state = 419 }
+		SOV = { transfer_state = 420 }
+		SOV = { transfer_state = 266 }
+		SOV = { transfer_state = 418 }
+		SOV = { transfer_state = 416 }
+
+		#Persian Lend lease Corridor
+		SOV = { transfer_state = 421 }
+		SOV = { transfer_state = 413 }
+		SOV = { transfer_state = 417 }
+		SOV = { give_resource_rights = { receiver = ENG state = 413 } }
+
+		ENG = { transfer_state = 410 }
+		ENG = { transfer_state = 411 }
+		ENG = { transfer_state = 412 }
+		ENG = { transfer_state = 414 }
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.603
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_war_with = ITA
+		NOT = { has_war_with = ITS }
+		OR = {
+			ITS = { is_puppet_of = ITA }
+			ITS = { is_in_faction_with = ITA }
+		}
+	}
+
+	immediate = {
+		ITS = {
+			add_to_war = { targeted_alliance = ITA enemy = ENG hostility_reason = asked_to_join }
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.604
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_war_with = ITA
+		NOT = { has_war_with = ITL }
+		OR = {
+			ITL = { is_subject_of = ITA }
+			ITL = { is_in_faction_with = ITA }
+		}
+	}
+
+	immediate = {
+		ITL = {
+			add_to_war = { targeted_alliance = ITA enemy = ENG hostility_reason = asked_to_join }
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.605
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_war_with = GER
+		NOT = { has_war_with = RCZ }
+		OR = {
+			RCZ = { is_subject_of = GER }
+			RCZ = { is_in_faction_with = GER }
+		}
+	}
+
+	immediate = {
+		RCZ = {
+			add_to_war = { targeted_alliance = GER enemy = ENG hostility_reason = asked_to_join }
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.606
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_war_with = RPO }
+		date > 1943.6.1
+		OR = {
+			RPO = { is_subject_of = GER }
+			RPO = { is_in_faction_with = GER }
+		}
+	}
+
+	immediate = {
+		RPO = {
+			add_to_war = { targeted_alliance = GER enemy = ENG hostility_reason = asked_to_join }
+		}
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.607
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_war_with = GER
+		NOT = { has_war_with = SLO }
+		OR = {
+			SLO = { is_subject_of = GER }
+			SLO = { is_in_faction_with = GER }
+		}
+	}
+
+	immediate = {
+		SLO = {
+			add_to_war = { targeted_alliance = GER enemy = ENG hostility_reason = asked_to_join }
+		}
+	}
+
+	option = {}
+}
+
+#country_event = {
+#	id = eng_armor.608
+#	hidden = yes
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = ENG
+#		POL = { has_war_With = GER }
+#		NOT = { has_war_with = GER }
+#		is_in_faction_with = POL
+#		is_ai = yes
+#	}
+#
+#	immediate = {
+#		ENG = {
+#			add_to_war = { targeted_alliance = POL enemy = GER hostility_reason = asked_to_join }
+#		}
+#	}
+#
+#	option = {}
+#
+#}
+
+country_event = {
+	id = eng_armor.608
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		date > 1939.3.1
+		NOT = { date > 1939.6.1 }
+		has_war = no
+		125 = { is_controlled_by = ENG } 
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = anglo_german_naval_agreement_ripped_up }
+			}
+			create_equipment_variant = {
+				name = "Hawkins Class."
+				type = eng_heavy_cruiser_hull_1
+				name_group = ENG_CA_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_medium_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_80_60
+					ship_battery_slot_1 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_2 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_3 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_4 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_5 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_6 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_7 = eng_ship_medium_battery_1_x1
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_4_4x1
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_4_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_4x2
+					ship_anti_air_slot_2 = eng_ship_anti_air_2_4x2
+					torpedo_slot_1 = eng_ship_torpedo_2_2x2
+				}
+			}
+			create_equipment_variant = {
+				name = "County Class."
+				type = eng_heavy_cruiser_hull_2
+				name_group = ENG_CA_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_medium_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_110_60
+					ship_battery_slot_1 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_2 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_3 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_4 = eng_ship_medium_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_4_4x1
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_4_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_4x2
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+					torpedo_slot_1 = eng_ship_torpedo_2_2x4
+				}
+			}
+			create_equipment_variant = {
+				name = "York Class."
+				type = eng_heavy_cruiser_hull_3
+				name_group = ENG_CA_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_medium_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_150_70
+					ship_battery_slot_1 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_2 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_3 = eng_ship_medium_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_4_4x1
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_4_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_5_4x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_2x8
+					torpedo_slot_1 = eng_ship_torpedo_2_2x3
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Revenge Class."
+				type = eng_battleship_hull_1
+				name_group = ENG_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_large_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_330_60
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_4 = eng_ship_super_heavy_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_semi_medium_casemate_secondaries_13_6x1
+					ship_secondaries_slot_2 = eng_ship_semi_medium_casemate_secondaries_13_6x1
+					ship_secondaries_slot_3 = eng_ship_semi_medium_casemate_secondaries_13_2x1
+					ship_secondaries_slot_4 = eng_ship_light_secondaries_1_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_10x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_2x4
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_2x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Queen Elizabeth Class."
+				type = eng_battleship_hull_2
+				name_group = ENG_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_large_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_330_80
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_4 = eng_ship_super_heavy_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_semi_medium_casemate_secondaries_13_6x1
+					ship_secondaries_slot_2 = eng_ship_semi_medium_casemate_secondaries_13_6x1
+					ship_secondaries_slot_3 = eng_ship_semi_medium_casemate_secondaries_13_4x1
+					ship_secondaries_slot_4 = eng_ship_light_secondaries_1_6x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_10x1
+					ship_anti_air_slot_2 = eng_ship_anti_air_2_4x2
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_4x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Nelson Class."
+				type = eng_battleship_hull_3
+				name_group = ENG_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_very_large_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_360_160
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x3
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x3
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x3
+					ship_secondaries_slot_1 = eng_ship_medium_secondaries_1_6x2
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_6_6x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_5_20x1
+					ship_anti_air_slot_2 = eng_ship_anti_air_2_20x1
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_6x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "King George V Class."
+				type = eng_battleship_hull_4
+				name_group = ENG_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_very_large_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_420_180
+					ship_battery_slot_1 = eng_ship_heavy_battery_1_x4
+					ship_battery_slot_2 = eng_ship_heavy_battery_1_x4
+					ship_battery_slot_3 = eng_ship_heavy_battery_1_x2
+					ship_secondaries_slot_1 = eng_ship_medium_secondaries_2_4x2
+					ship_secondaries_slot_2 = eng_ship_medium_secondaries_2_4x2
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_20x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_4x4
+					ship_anti_air_slot_4 = eng_ship_large_anti_air_5_6x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Renown Class."
+				type = eng_battle_cruiser_hull_1
+				name_group = ENG_BC_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_semi_large_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_250_60
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_3_4x2
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_3_4x2
+					ship_secondaries_slot_3 = eng_ship_light_secondaries_1_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_10x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+				}
+			}
+			create_equipment_variant = {
+				name = "Admiral Class."
+				type = eng_battle_cruiser_hull_2
+				name_group = ENG_BC_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_large_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_300_130
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_4 = eng_ship_super_heavy_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_semi_medium_casemate_secondaries_12_6x1
+					ship_secondaries_slot_2 = eng_ship_semi_medium_casemate_secondaries_12_6x1
+					ship_secondaries_slot_3 = eng_ship_semi_medium_casemate_secondaries_12_4x1
+					ship_secondaries_slot_4 = eng_ship_light_secondaries_1_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_20x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_4x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Eagle Class."
+				type = eng_carrier_hull_1
+				name_group = ENG_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_medium_ship_engine_6
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_110_40
+					ship_deck_slot_1 = eagle_deck_space_30
+					ship_secondaries_slot_1 = eng_ship_medium_secondaries_1_6x1
+					ship_secondaries_slot_2 = eng_ship_medium_secondaries_1_4x1
+					ship_secondaries_slot_3 = eng_ship_light_secondaries_4_6x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_4x2
+				}
+			}
+			create_equipment_variant = {
+				name = "Courageous Class."
+				type = eng_carrier_hull_2
+				name_group = ENG_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_semi_large_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_80_25
+					ship_deck_slot_1 = courageous_deck_space_48
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_6_6x1
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_6_6x1
+					ship_secondaries_slot_3 = eng_ship_light_secondaries_6_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_20x1
+				}
+			}
+			create_equipment_variant = {
+				name = "Ark Royal Class."
+				type = eng_carrier_hull_3
+				name_group = ENG_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_semi_large_ship_engine_3
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_110_90
+					ship_deck_slot_1 = ark_royal_deck_space_72
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_10_4x2
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_10_4x2
+					ship_anti_air_slot_1 = eng_ship_anti_air_1_4x4
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x8
+				}
+			}
+			create_equipment_variant = {
+				name = "Illustrious Class."
+				type = eng_carrier_hull_4
+				name_group = ENG_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_semi_large_ship_engine_3
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_110_140
+					ship_deck_slot_1 = illustrious_deck_space_58
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_10_4x2
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_10_4x2
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_30x1
+					ship_anti_air_slot_2 = eng_ship_anti_air_2_10x1
+					ship_anti_air_slot_3 = eng_ship_anti_air_5_10x1
+					ship_anti_air_slot_4 = eng_ship_anti_air_2_2x2
+					ship_anti_air_slot_5 = eng_ship_large_anti_air_5_2x4
+					ship_anti_air_slot_6 = eng_ship_large_anti_air_5_6x8
+				}
+			}
+		}
+		else = {
+			create_equipment_variant = {
+				name = "Hawkins Class."
+				type = eng_heavy_cruiser_hull_1
+				name_group = ENG_CA_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_medium_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_80_60
+					ship_battery_slot_1 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_2 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_3 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_4 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_5 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_6 = eng_ship_medium_battery_1_x1
+					ship_battery_slot_7 = eng_ship_medium_battery_1_x1
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_4_4x1
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_4_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_4x2
+					ship_anti_air_slot_2 = eng_ship_anti_air_2_4x2
+					torpedo_slot_1 = eng_ship_side_torpedo_2_2x2
+				}
+			}
+			create_equipment_variant = {
+				name = "County Class."
+				type = eng_heavy_cruiser_hull_2
+				name_group = ENG_CA_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_medium_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_110_60
+					ship_battery_slot_1 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_2 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_3 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_4 = eng_ship_medium_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_4_4x1
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_4_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_4x2
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+					torpedo_slot_1 = eng_ship_side_torpedo_2_2x4
+				}
+			}
+			create_equipment_variant = {
+				name = "York Class."
+				type = eng_heavy_cruiser_hull_3
+				name_group = ENG_CA_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_medium_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_150_70
+					ship_battery_slot_1 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_2 = eng_ship_medium_battery_2_x2
+					ship_battery_slot_3 = eng_ship_medium_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_4_4x1
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_4_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_3_4x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_2x8
+					torpedo_slot_1 = eng_ship_side_torpedo_2_2x3
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Revenge Class."
+				type = eng_battleship_hull_1
+				name_group = ENG_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_large_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_330_60
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_4 = eng_ship_super_heavy_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_semi_medium_casemate_secondaries_13_6x1
+					ship_secondaries_slot_2 = eng_ship_semi_medium_casemate_secondaries_13_6x1
+					ship_secondaries_slot_3 = eng_ship_semi_medium_casemate_secondaries_13_2x1
+					ship_secondaries_slot_4 = eng_ship_light_secondaries_1_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_10x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_2x4
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_2x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Queen Elizabeth Class."
+				type = eng_battleship_hull_2
+				name_group = ENG_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_large_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_330_80
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_4 = eng_ship_super_heavy_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_semi_medium_casemate_secondaries_13_6x1
+					ship_secondaries_slot_2 = eng_ship_semi_medium_casemate_secondaries_13_6x1
+					ship_secondaries_slot_3 = eng_ship_semi_medium_casemate_secondaries_13_4x1
+					ship_secondaries_slot_4 = eng_ship_light_secondaries_1_6x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_10x1
+					ship_anti_air_slot_2 = eng_ship_anti_air_2_4x2
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_4x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Nelson Class."
+				type = eng_battleship_hull_3
+				name_group = ENG_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_very_large_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_360_160
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x3
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x3
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x3
+					ship_secondaries_slot_1 = eng_ship_medium_secondaries_1_6x2
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_6_6x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_5_20x1
+					ship_anti_air_slot_2 = eng_ship_anti_air_2_20x1
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_6x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "King George V Class."
+				type = eng_battleship_hull_4
+				name_group = ENG_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_very_large_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_420_180
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_4_x3
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_4_x3
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_4_x3
+					ship_secondaries_slot_1 = eng_ship_medium_secondaries_2_4x2
+					ship_secondaries_slot_2 = eng_ship_medium_secondaries_2_4x2
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_20x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_4x4
+					ship_anti_air_slot_4 = eng_ship_large_anti_air_5_6x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Renown Class."
+				type = eng_battle_cruiser_hull_1
+				name_group = ENG_BC_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_semi_large_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_250_60
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_3_4x2
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_3_4x2
+					ship_secondaries_slot_3 = eng_ship_light_secondaries_1_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_10x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+				}
+			}
+			create_equipment_variant = {
+				name = "Admiral Class."
+				type = eng_battle_cruiser_hull_2
+				name_group = ENG_BC_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_large_ship_engine_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_300_130
+					ship_battery_slot_1 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_2 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_3 = eng_ship_super_heavy_battery_2_x2
+					ship_battery_slot_4 = eng_ship_super_heavy_battery_2_x2
+					ship_secondaries_slot_1 = eng_ship_semi_medium_casemate_secondaries_12_6x1
+					ship_secondaries_slot_2 = eng_ship_semi_medium_casemate_secondaries_12_6x1
+					ship_secondaries_slot_3 = eng_ship_semi_medium_casemate_secondaries_12_4x1
+					ship_secondaries_slot_4 = eng_ship_light_secondaries_1_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_20x1
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x4
+					ship_anti_air_slot_3 = eng_ship_large_anti_air_5_4x8
+					airplane_catapult_slot_1 = ship_airplane_launcher_2
+				}
+			}
+			create_equipment_variant = {
+				name = "Eagle Class."
+				type = eng_carrier_hull_1
+				name_group = ENG_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_medium_ship_engine_6
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_110_40
+					ship_deck_slot_1 = eagle_deck_space_30
+					ship_secondaries_slot_1 = eng_ship_medium_secondaries_1_6x1
+					ship_secondaries_slot_2 = eng_ship_medium_secondaries_1_4x1
+					ship_secondaries_slot_3 = eng_ship_light_secondaries_4_6x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_4x2
+				}
+			}
+			create_equipment_variant = {
+				name = "Courageous Class."
+				type = eng_carrier_hull_2
+				name_group = ENG_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_semi_large_ship_engine_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_80_25
+					ship_deck_slot_1 = courageous_deck_space_48
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_6_6x1
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_6_6x1
+					ship_secondaries_slot_3 = eng_ship_light_secondaries_6_4x1
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_20x1
+				}
+			}
+			create_equipment_variant = {
+				name = "Ark Royal Class."
+				type = eng_carrier_hull_3
+				name_group = ENG_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_semi_large_ship_engine_3
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_110_90
+					ship_deck_slot_1 = ark_royal_deck_space_72
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_10_4x2
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_10_4x2
+					ship_anti_air_slot_1 = eng_ship_anti_air_1_4x4
+					ship_anti_air_slot_2 = eng_ship_large_anti_air_5_4x8
+				}
+			}
+			create_equipment_variant = {
+				name = "Illustrious Class."
+				type = eng_carrier_hull_4
+				name_group = ENG_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_engine_slot = eng_semi_large_ship_engine_3
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_armor_slot = ship_armor_110_140
+					ship_deck_slot_1 = illustrious_deck_space_58
+					ship_secondaries_slot_1 = eng_ship_light_secondaries_10_4x2
+					ship_secondaries_slot_2 = eng_ship_light_secondaries_10_4x2
+					ship_anti_air_slot_1 = eng_ship_anti_air_2_30x1
+					ship_anti_air_slot_2 = eng_ship_anti_air_2_10x1
+					ship_anti_air_slot_3 = eng_ship_anti_air_5_10x1
+					ship_anti_air_slot_4 = eng_ship_anti_air_2_2x2
+					ship_anti_air_slot_5 = eng_ship_large_anti_air_5_2x4
+					ship_anti_air_slot_6 = eng_ship_large_anti_air_5_6x8
+				}
+			}
+		}
+		destroy_ships = {
+			type = ship_hull_heavy_cruiser
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy_battleship
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_carrier
+			count = all
+		}
+		set_country_flag = ENG_fleet_refit_flag
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.610
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_country_flag = ENG_fleet_refit_flag
+	}
+
+	immediate = {
+		load_oob = "ENG_ships_1"
+		load_oob = "ENG_ships_air_1"
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.611
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_tech = eng_frigate_6
+	}
+
+	immediate = {
+		create_equipment_variant = {
+			name = "Black Swan Mine Layer"
+			type = eng_frigate_hull_6
+			name_group = ENG_MINELAYERS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = eng_tiny_ship_engine_5
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = empty
+				ship_battery_slot_1 = eng_ship_light_battery_5_x2
+				ship_battery_slot_2 = empty
+				ship_battery_slot_3 = empty
+				ship_anti_air_slot_1 = eng_ship_anti_air_2_2x1
+				ship_anti_air_slot_2 = eng_ship_large_anti_air_5_2x4
+				depth_charge_rail_slot_1 = ship_mine_layer_1
+				depth_charge_rail_slot_2 = ship_mine_layer_1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.612
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		451 = { is_fully_controlled_by = UKE }
+	}
+
+	immediate = {
+		ENG = {
+			set_state_controller = 451
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.613
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		450 = { is_fully_controlled_by = UKE }
+	}
+
+	immediate = {
+		ENG = {
+			set_state_controller = 450
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.614
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		449 = { is_fully_controlled_by = UKE }
+	}
+
+	immediate = {
+		ENG = {
+			set_state_controller = 449
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.615
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		448 = { is_fully_controlled_by = UKE }
+	}
+
+	immediate = {
+		ENG = {
+			set_state_controller = 448
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.616
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		663 = { is_fully_controlled_by = UKE }
+	}
+
+	immediate = {
+		ENG = {
+			set_state_controller = 663
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.617
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		662 = { is_fully_controlled_by = UKE }
+	}
+
+	immediate = {
+		ENG = {
+			set_state_controller = 662
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.618
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		661 = { is_fully_controlled_by = UKE }
+	}
+
+	immediate = {
+		ENG = {
+			set_state_controller = 661
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.619
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		is_in_faction_with = DEN
+		OR = {
+			DEN = { has_capitulated = yes }
+			37 = { is_fully_controlled_by = RDE }
+			37 = { is_fully_controlled_by = GER }
+		}
+		337 = { is_fully_controlled_by = DEN }
+	}
+
+	immediate = {
+		ENG = { transfer_state = 337 }
+	}
+
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.620
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		date > 1937.3.1
+		NOT = { date > 1937.7.1 }
+		has_war_Support < 0.3
+	}
+
+	immediate = {
+		add_war_support = 0.1
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.621
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_tech = decimetric_radar
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = UKE
+			}
+			UKE = {
+				set_technology = {
+					decimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKM
+			}
+			UKM = {
+				set_technology = {
+					decimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKN
+			}
+			UKN = {
+				set_technology = {
+					decimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKO
+			}
+			UKO = {
+				set_technology = {
+					decimetric_radar = 1
+				}
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.622
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_tech = improved_decimetric_radar
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = UKE
+			}
+			UKE = {
+				set_technology = {
+					improved_decimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKM
+			}
+			UKM = {
+				set_technology = {
+					improved_decimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKN
+			}
+			UKN = {
+				set_technology = {
+					improved_decimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKO
+			}
+			UKO = {
+				set_technology = {
+					improved_decimetric_radar = 1
+				}
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.623
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_tech = centimetric_radar
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = UKE
+			}
+			UKE = {
+				set_technology = {
+					centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKM
+			}
+			UKM = {
+				set_technology = {
+					centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKN
+			}
+			UKN = {
+				set_technology = {
+					centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKO
+			}
+			UKO = {
+				set_technology = {
+					centimetric_radar = 1
+				}
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.624
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_tech = improved_centimetric_radar
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = UKE
+			}
+			UKE = {
+				set_technology = {
+					improved_centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKM
+			}
+			UKM = {
+				set_technology = {
+					improved_centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKN
+			}
+			UKN = {
+				set_technology = {
+					improved_centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKO
+			}
+			UKO = {
+				set_technology = {
+					improved_centimetric_radar = 1
+				}
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.625
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_tech = advanced_centimetric_radar
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				country_exists = UKE
+			}
+			UKE = {
+				set_technology = {
+					advanced_centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKM
+			}
+			UKM = {
+				set_technology = {
+					advanced_centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKN
+			}
+			UKN = {
+				set_technology = {
+					advanced_centimetric_radar = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = UKO
+			}
+			UKO = {
+				set_technology = {
+					advanced_centimetric_radar = 1
+				}
+			}
+		}
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.626
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		date < 1937.1.1
+		has_country_flag = infantry_template_eng
+	}
+
+	immediate = {
+		delete_unit_template_and_units = { division_template = "Infantry Division" }
+		delete_unit_template_and_units = { division_template = "Colonial Garrison" }
+		delete_unit_template_and_units = { division_template = "Tank Brigade" }
+		delete_unit_template_and_units = { division_template = "Motorized Division" }
+		delete_unit_template_and_units = { division_template = "Royal Marine Division" }
+		load_oob = "ENG_Infantry"
+	}
+
+	option = {}
+
+}
+
+country_event = {
+	id = eng_armor.627
+	hidden = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { 331 = { is_fully_controlled_by = ROOT } }
+			give_resource_rights = { receiver = CAN state = 331 }
+		}
+	}
+
+	option = {
+	}
+}
+
+############################################ Romania asks for peace
+
+country_event = {
+	id = eng_armor.801
+	title = eng_armor.801.t
+	desc = eng_armor.801.d
+
+	picture = GFX_report_event_uk_unemployment
+
+	trigger = {
+		original_tag = ENG
+		date > 1938.1.1
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = eng_armor.801.a
+		economy_fatigue_level_up_5 = yes
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+############################################ Romania asks for peace
+
+country_event = {
+	id = eng_armor.804
+	title = eng_armor.804.t
+	desc = eng_armor.804.d
+
+	picture = GFX_report_event_romania_poland_visit
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.804.a
+		ROM = { country_event = { days = 1 id = rom_armor.813 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = eng_armor.804.b
+		ROM = { country_event = { days = 1 id = rom_armor.814 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+############################################ Britain demands Sweden embargo Germany
+
+country_event = {
+	id = eng_armor.805
+	title = eng_armor.805.t
+	desc = eng_armor.805.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.805.a
+		SWE = { add_opinion_modifier = { target = GER modifier = embargo } }
+		GER = { set_country_flag = ENG_sweden_coerced }
+		SWE = {
+			remove_opinion_modifier = { target = GER modifier = strongarm_swedish_trade }
+			remove_opinion_modifier = { target = GER modifier = strongarm_swedish }
+			set_country_flag = ENG_swedish_iron_blocked
+		}
+		GER = {
+			remove_opinion_modifier = { target = GER modifier = strongarm_swedish_trade }
+			remove_opinion_modifier = { target = GER modifier = strongarm_swedish }
+			set_country_flag = ENG_swedish_iron_blocked
+		}
+		hidden_effect = {
+			SWE = {
+				remove_opinion_modifier = { target = GER modifier = strongarm_swedish }
+			}
+			GER = {
+				remove_opinion_modifier = { target = GER modifier = strongarm_swedish }
+			}
+		}
+		ENG = { country_event = { id = eng_armor.806 hours = 6 } }
+		GER = { country_event = { id = eng_armor.811 hours = 6 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = eng_armor.805.b
+		ENG = { country_event = { id = eng_armor.807 hours = 6 } }
+		effect_tooltip = {
+			ENG = {
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SWE
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.806
+	title = eng_armor.806.t
+	desc = eng_armor.806.d
+
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.806.a
+	}
+}
+
+country_event = {
+	id = eng_armor.807
+	title = eng_armor.807.t
+	desc = eng_armor.807.d
+
+	picture = GFX_report_event_german_politician_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.807.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = SWE
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.808
+	title = eng_armor.808.t
+	desc = eng_armor.808.d
+
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.808.a
+		SWE = {
+			remove_opinion_modifier = { target = GER modifier = embargo }
+		}
+		if = {
+			limit = {
+				has_country_flag = ENG_swedish_iron_blocked
+			}
+			add_opinion_modifier = { target = GER modifier = strongarm_swedish_trade }
+			add_opinion_modifier = { target = GER modifier = strongarm_swedish }
+			reverse_add_opinion_modifier = { target = GER modifier = strongarm_swedish_trade }
+			reverse_add_opinion_modifier = { target = GER modifier = strongarm_swedish }
+			hidden_effect = {
+				add_opinion_modifier = { target = GER modifier = strongarm_swedish }
+				reverse_add_opinion_modifier = { target = GER modifier = strongarm_swedish }
+			}
+		}
+		GER = { country_event = { id = eng_armor.809 hours = 6 } }
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = eng_armor.808.b
+		GER = { country_event = { id = eng_armor.810 hours = 6 } }
+		effect_tooltip = {
+			GER = {
+				create_wargoal = {
+					type = annex_everything
+					target = SWE
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.809
+	title = eng_armor.809.t
+	desc = eng_armor.809.d
+
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = ENG_sweden_coerced
+		}
+	}
+
+	option = {
+		name = eng_armor.809.a
+	}
+}
+
+country_event = {
+	id = eng_armor.810
+	title = eng_armor.810.t
+	desc = eng_armor.810.d
+
+	picture = GFX_report_event_german_politician_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.810.a
+		create_wargoal = {
+			type = annex_everything
+			target = SWE
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.811
+	title = eng_armor.811.t
+	desc = eng_armor.811.d
+
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.811.a
+		ai_chance = {
+			factor = 95
+		}
+	}
+
+	option = {
+		name = eng_armor.811.b
+		ai_chance = {
+			factor = 5
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = SWE
+		}
+	}
+}
+
+############################################ We are imposing an embargo
+
+country_event = {
+	id = eng_armor.812
+	title = eng_armor.812.t
+	desc = eng_armor.812.d
+
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.812.a
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+############################################ Iran surrenders
+
+country_event = {
+	id = eng_armor.813
+	title = eng_armor.813.t
+	desc = eng_armor.813.d
+
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.813.a
+		every_country = {
+			limit = {
+				has_war_with = PER
+				OR = {
+					is_in_faction_with = ENG
+					is_in_faction_with = SOV
+				}
+			}
+			white_peace = PER
+		}
+		if = {
+			limit = {
+				GER = { is_in_faction_with = PER }
+			}
+			GER = {
+				remove_from_faction = PER
+			}
+		}
+		SOV = {
+			transfer_state = 413
+			transfer_state = 416
+			transfer_state = 418
+			give_resource_rights = { receiver = ENG state = 413 }
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = eng_armor.813.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+####################################### Evacuate UK
+
+country_event = {
+	id = eng_armor.815
+	title = eng_armor.815.t
+	desc = eng_armor.815.d
+
+	trigger = {
+		tag = ENG
+		has_war = yes
+		surrender_progress > 0.4
+		is_subject = no
+		CAN = { surrender_progress < 0.1 }
+		CAN = { has_government = ROOT }
+		OR = {
+			is_in_faction_with = CAN
+			CAN = { is_subject_of = ENG }
+		}
+	}
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = ENG_fall_of_the_uk
+		}
+	}
+
+	option = {
+		name = eng_armor.815.a
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				ENG = { is_ai = yes }
+				CAN = { is_ai = no }
+			}
+			ENG = { change_tag_from = CAN }
+		}
+		random_enemy_country = {
+			limit = {
+				OR = {
+					controls_state = 857
+					controls_state = 126
+					controls_state = 128
+					controls_state = 132
+					controls_state = 130
+					controls_state = 129
+					controls_state = 133
+				}
+			}
+			add_named_threat = {
+				threat = 28
+				name = ENG_fall_of_the_uk
+			}
+		}
+		set_cosmetic_tag = ENG_canadian_union
+		every_state = {
+			limit = { is_core_of = CAN }
+			add_core_of = ENG
+		}
+		CAN = {
+			every_unit_leader = {
+				set_nationality = ENG
+			}
+			every_army_leader = {
+				set_nationality = ENG
+			}
+			every_navy_leader = {
+				set_nationality = ENG
+			}
+			transfer_navy = { target = ENG }
+			transfer_units_fraction = {
+				target = ENG
+				size = 1.0
+				stockpile_ratio = 1.0
+				air_ratio = 1.0
+			}
+		}
+		ENG = {
+			annex_country = { target = CAN transfer_troops = yes }
+			add_ideas = winter_experts
+			set_capital = { state = 276 }
+			remove_ideas = ENG_george_vi
+			add_ideas = ENG_duel_cabinet
+			retire_country_leader = yes
+			add_country_leader_role = {
+				character = ENG_george_vi
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						popular_figurehead stammer humble
+					}
+				}
+				promote_leader = yes
+			}
+		}
+		ENG = { transfer_state = 332 }
+		ENG = { transfer_state = 331 }
+		custom_effect_tooltip = population_evacuates_tt
+		hidden_effect = {
+			set_global_flag = uk_evacuated
+			if = {
+				limit = {
+					ENG = { is_ai = yes }
+					CAN = { is_ai = yes }
+				}
+				468 = {
+					add_building_construction = {
+						type = fuel_silo
+						level = 2
+						instant_build = yes
+					}
+				}
+				471 = {
+					add_building_construction = {
+						type = fuel_silo
+						level = 2
+						instant_build = yes
+					}
+				}
+				682 = {
+					add_building_construction = {
+						type = fuel_silo
+						level = 2
+						instant_build = yes
+					}
+				}
+				ENG = { set_fuel_ratio = 1.0 }
+			}
+			120 = {
+				add_manpower = -15000
+			}
+			136 = {
+				add_manpower = -25000
+			}
+			121 = {
+				add_manpower = -65000
+			}
+			133 = {
+				add_manpower = -65000
+			}
+			131 = {
+				add_manpower = -65000
+			}
+			130 = {
+				add_manpower = -105000
+			}
+			132 = {
+				add_manpower = -115000
+			}
+			129 = {
+				add_manpower = -65000
+			}
+			128 = {
+				add_manpower = -65000
+			}
+			122 = {
+				add_manpower = -65000
+			}
+			860 = {
+				add_manpower = -15000
+			}
+			125 = {
+				add_manpower = -45000
+			}
+			126 = {
+				add_manpower = -200000
+			}
+			858 = {
+				add_manpower = -25000
+			}
+			338 = {
+				add_manpower = -45000
+			}
+			859 = {
+				add_manpower = -5000
+			}
+			123 = {
+				add_manpower = -15000
+			}
+			news_event = { id = afo_news.33 hours = 6 }
+			276 = {
+				add_manpower = 600000
+			}
+			468 = {
+				add_manpower = 300000
+			}
+			682 = {
+				add_manpower = 100000
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.815.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#################################################################### IRA Bombings
+
+country_event = {
+	id = eng_armor.816
+	hidden = yes
+
+	trigger = {
+		tag = ENG
+		119 = { is_controlled_by = ENG }
+		126 = { is_controlled_by = ENG }
+		128 = { is_controlled_by = ENG }
+		132 = { is_controlled_by = ENG }
+		130 = { is_controlled_by = ENG }
+		OR = {
+			IRE = { is_subject_of = ENG }
+			134 = {
+				CONTROLLER = {
+					AND = {
+						OR = {
+							is_in_faction_with = ENG
+							is_subject_of = ENG
+							tag = ENG
+						}
+						NOT = { tag = IRE }
+					}
+				}
+			}
+			113 = {
+				CONTROLLER = {
+					AND = {
+						OR = {
+							is_in_faction_with = ENG
+							is_subject_of = ENG
+							tag = ENG
+						}
+						NOT = { tag = IRE }
+					}
+				}
+			}
+			135 = {
+				CONTROLLER = {
+					AND = {
+						OR = {
+							is_in_faction_with = ENG
+							is_subject_of = ENG
+							tag = ENG
+						}
+						NOT = { tag = IRE }
+					}
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes
+
+	immediate = {
+		random_list = {
+			20 = {
+				ENG = { country_event = { id = eng_armor.818 days = 30 random_days = 30 } }
+			}
+			20 = {
+				ENG = { country_event = { id = eng_armor.819 days = 30 random_days = 30 } }
+			}
+			20 = {
+				ENG = { country_event = { id = eng_armor.820 days = 30 random_days = 30 } }
+			}
+			20 = {
+				ENG = { country_event = { id = eng_armor.821 days = 30 random_days = 30 } }
+			}
+			20 = {
+				ENG = { country_event = { id = eng_armor.822 days = 30 random_days = 30 } }
+			}
+		}
+	}
+
+	option = {
+	}
+}
+
+country_event = {
+	id = eng_armor.817
+	hidden = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				119 = { is_controlled_by = ENG }
+				126 = { is_controlled_by = ENG }
+				128 = { is_controlled_by = ENG }
+				132 = { is_controlled_by = ENG }
+				130 = { is_controlled_by = ENG }
+				OR = {
+					IRE = { is_subject_of = ENG }
+					134 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					113 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					135 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+				}
+				NOT = { has_country_flag = IRA_bombings_neutralized }
+			}
+			random_list = {
+				20 = {
+					ENG = { country_event = { id = eng_armor.818 days = 30 random_days = 30 } }
+				}
+				20 = {
+					ENG = { country_event = { id = eng_armor.819 days = 30 random_days = 30 } }
+				}
+				20 = {
+					ENG = { country_event = { id = eng_armor.820 days = 30 random_days = 30 } }
+				}
+				20 = {
+					ENG = { country_event = { id = eng_armor.821 days = 30 random_days = 30 } }
+				}
+				20 = {
+					ENG = { country_event = { id = eng_armor.822 days = 30 random_days = 30 } }
+				}
+			}
+		}
+	}
+
+	option = {
+	}
+}
+
+country_event = {
+	id = eng_armor.818
+	title = eng_armor.818.t
+	desc = {
+		text = eng_armor.818.d
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			NOT = { has_country_flag = IRA_bombings_started }
+		}
+	}
+	desc = {
+		text = eng_armor.818.e
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			has_country_flag = IRA_bombings_started
+		}
+	}
+	desc = {
+		text = eng_armor.818.f
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+	}
+
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				119 = { is_controlled_by = ENG }
+				126 = { is_controlled_by = ENG }
+				128 = { is_controlled_by = ENG }
+				132 = { is_controlled_by = ENG }
+				130 = { is_controlled_by = ENG }
+				OR = {
+					IRE = { is_subject_of = ENG }
+					134 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					113 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					135 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+				}
+				NOT = { has_country_flag = IRA_bombings_neutralized }
+			}
+			hidden_effect = {
+				country_event = { id = eng_armor.817 }
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.818.a
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+		}
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = IRA_bombings_started }
+			}
+			hidden_effect = {
+				set_country_flag = IRA_bombings_started
+			}
+		}
+		add_stability = -0.01
+		119 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1.5
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 1.5
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.818.b
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.819
+	title = eng_armor.819.t
+	desc = {
+		text = eng_armor.819.d
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			NOT = { has_country_flag = IRA_bombings_started }
+		}
+	}
+	desc = {
+		text = eng_armor.819.e
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			has_country_flag = IRA_bombings_started
+		}
+	}
+	desc = {
+		text = eng_armor.819.f
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+	}
+
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				119 = { is_controlled_by = ENG }
+				126 = { is_controlled_by = ENG }
+				128 = { is_controlled_by = ENG }
+				132 = { is_controlled_by = ENG }
+				130 = { is_controlled_by = ENG }
+				OR = {
+					IRE = { is_subject_of = ENG }
+					134 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					113 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					135 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+				}
+				NOT = { has_country_flag = IRA_bombings_neutralized }
+			}
+			hidden_effect = {
+				country_event = { id = eng_armor.817 }
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.819.a
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+		}
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = IRA_bombings_started }
+			}
+			hidden_effect = {
+				set_country_flag = IRA_bombings_started
+			}
+		}
+		add_stability = -0.01
+		126 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1.5
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 1.5
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.819.b
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.820
+	title = eng_armor.820.t
+	desc = {
+		text = eng_armor.820.d
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			NOT = { has_country_flag = IRA_bombings_started }
+		}
+	}
+	desc = {
+		text = eng_armor.820.e
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			has_country_flag = IRA_bombings_started
+		}
+	}
+	desc = {
+		text = eng_armor.820.f
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+	}
+
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				119 = { is_controlled_by = ENG }
+				126 = { is_controlled_by = ENG }
+				128 = { is_controlled_by = ENG }
+				132 = { is_controlled_by = ENG }
+				130 = { is_controlled_by = ENG }
+				OR = {
+					IRE = { is_subject_of = ENG }
+					134 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					113 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					135 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+				}
+				NOT = { has_country_flag = IRA_bombings_neutralized }
+			}
+			hidden_effect = {
+				country_event = { id = eng_armor.817 }
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.820.a
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+		}
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = IRA_bombings_started }
+			}
+			hidden_effect = {
+				set_country_flag = IRA_bombings_started
+			}
+		}
+		add_stability = -0.01
+		128 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1.5
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 1.5
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.820.b
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.821
+	title = eng_armor.821.t
+	desc = {
+		text = eng_armor.821.d
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			NOT = { has_country_flag = IRA_bombings_started }
+		}
+	}
+	desc = {
+		text = eng_armor.821.e
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			has_country_flag = IRA_bombings_started
+		}
+	}
+	desc = {
+		text = eng_armor.821.f
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+	}
+
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				119 = { is_controlled_by = ENG }
+				126 = { is_controlled_by = ENG }
+				128 = { is_controlled_by = ENG }
+				132 = { is_controlled_by = ENG }
+				130 = { is_controlled_by = ENG }
+				OR = {
+					IRE = { is_subject_of = ENG }
+					134 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					113 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					135 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+				}
+				NOT = { has_country_flag = IRA_bombings_neutralized }
+			}
+			hidden_effect = {
+				country_event = { id = eng_armor.817 }
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.821.a
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+		}
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = IRA_bombings_started }
+			}
+			hidden_effect = {
+				set_country_flag = IRA_bombings_started
+			}
+		}
+		add_stability = -0.01
+		132 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1.5
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 1.5
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.821.b
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.822
+	title = eng_armor.822.t
+	desc = {
+		text = eng_armor.822.d
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			NOT = { has_country_flag = IRA_bombings_started }
+		}
+	}
+	desc = {
+		text = eng_armor.822.e
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+			has_country_flag = IRA_bombings_started
+		}
+	}
+	desc = {
+		text = eng_armor.822.f
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+	}
+
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				119 = { is_controlled_by = ENG }
+				126 = { is_controlled_by = ENG }
+				128 = { is_controlled_by = ENG }
+				132 = { is_controlled_by = ENG }
+				130 = { is_controlled_by = ENG }
+				OR = {
+					IRE = { is_subject_of = ENG }
+					134 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					113 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+					135 = {
+						CONTROLLER = {
+							AND = {
+								OR = {
+									is_in_faction_with = ENG
+									is_subject_of = ENG
+									tag = ENG
+								}
+								NOT = { tag = IRE }
+							}
+						}
+					}
+				}
+				NOT = { has_country_flag = IRA_bombings_neutralized }
+			}
+			hidden_effect = {
+				country_event = { id = eng_armor.817 }
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.822.a
+		trigger = {
+			NOT = { has_country_flag = IRA_bombings_neutralized }
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = -0.01
+		if = {
+			limit = {
+				NOT = { has_country_flag = IRA_bombings_started }
+			}
+			hidden_effect = {
+				set_country_flag = IRA_bombings_started
+			}
+		}
+		130 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1.5
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 1.5
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.822.b
+		trigger = {
+			has_country_flag = IRA_bombings_neutralized
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+####################################### Dealing with the IRA
+
+
+country_event = {
+	id = eng_armor.823
+	title = eng_armor.823.t
+	desc = eng_armor.823.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = IRA_bombings_neutralized
+		}
+	}
+
+	option = {
+		name = eng_armor.823.a
+		add_stability = 0.05
+		134 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+		}
+		113 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+		}
+		135 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.824
+	title = eng_armor.824.t
+	desc = eng_armor.824.d
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = eng_armor.824.a
+		add_stability = -0.01
+		134 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+		}
+		113 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+		}
+		135 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.825
+	title = eng_armor.825.t
+	desc = eng_armor.825.d
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = eng_armor.825.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = eng_armor.826
+	title = eng_armor.826.t
+	desc = eng_armor.826.d
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = eng_armor.826.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = eng_armor.827
+	title = eng_armor.827.t
+	desc = eng_armor.827.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = IRA_bombings_neutralized
+		}
+	}
+
+	option = {
+		name = eng_armor.827.a
+		add_stability = 0.01
+	}
+}
+
+############################################ We are imposing an embargo
+
+country_event = {
+	id = eng_armor.828
+	title = eng_armor.828.t
+	desc = eng_armor.828.d
+
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.828.a
+		hidden_effect = {
+			set_country_flag = lon_embargo_flag
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+############################################ We are lifting an embargo
+
+country_event = {
+	id = eng_armor.829
+	title = eng_armor.829.t
+	desc = eng_armor.829.d
+
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.829.a
+		hidden_effect = {
+			clr_country_flag = lon_embargo_flag
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+############################################ We are kicking a member
+
+country_event = {
+	id = eng_armor.830
+	title = eng_armor.830.t
+	desc = eng_armor.830.d
+
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.830.a
+		add_stability = -0.05
+		effect_tooltip = {
+			remove_ideas = league_of_nations
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+############################################ We are kicking a member
+
+country_event = {
+	id = eng_armor.831
+	title = eng_armor.831.t
+	desc = eng_armor.831.d
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_subject = no
+		NOT = { country_exists = ETH }
+		910 = {
+			is_fully_controlled_by = controller
+			CONTROLLER = {
+				OR = {
+					is_subject_of = ROOT
+					original_tag = ROOT
+				}
+			}
+		}
+		271 = {
+			is_fully_controlled_by = controller
+			CONTROLLER = {
+				OR = {
+					is_subject_of = ROOT
+					original_tag = ROOT
+				}
+			}
+		}
+		909 = {
+			is_fully_controlled_by = controller
+			CONTROLLER = {
+				OR = {
+					is_subject_of = ROOT
+					original_tag = ROOT
+				}
+			}
+		}
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = eng_armor.831.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 100
+		if = {
+			limit = {
+				has_defensive_war = yes
+			}
+			add_war_support = 0.05
+		}
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			release = ETH
+			ETH = { transfer_state = 910 }
+			ETH = { transfer_state = 271 }
+			ETH = { transfer_state = 909 }
+			ETH = {
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.2
+				}
+				add_stability = 0.3
+				add_political_power = 100
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_dlc = "Together for Victory"
+					has_dlc = "Man the Guns"
+				}
+			}
+			release = ETH
+			ETH = { transfer_state = 910 }
+			ETH = { transfer_state = 271 }
+			ETH = { transfer_state = 909 }
+			set_autonomy = {
+				target = ETH
+				autonomous_state = autonomy_integrated_puppet
+			}
+		}
+		else = {
+			release = ETH
+			ETH = { transfer_state = 910 }
+			ETH = { transfer_state = 271 }
+			ETH = { transfer_state = 909 }
+			puppet = ETH
+		}
+		if = {
+			limit = {
+				is_faction_leader = yes
+			}
+			ENG = { add_to_faction = ETH }
+		}
+		if = {
+			limit = {
+				has_war_with = ITA
+			}
+			ETH = {
+				add_to_war = { targeted_alliance = ENG enemy = ITA hostility_reason = asked_to_join }
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.831.b
+		trigger = {
+			NOT = { country_exists = UKT }
+		}
+		ai_chance = {
+			factor = 99
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+
+		ENG = { transfer_state = 910 }
+		ENG = { transfer_state = 271 }
+		ENG = { transfer_state = 909 }
+	}
+
+	option = {
+		name = eng_armor.831.c
+		trigger = {
+			country_exists = UKT
+		}
+		ai_chance = {
+			factor = 99
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+
+		UKT = { transfer_state = 910 }
+		UKT = { transfer_state = 271 }
+		UKT = { transfer_state = 909 }
+	}
+}
+
+####################################### Radical Party
+
+country_event = { #Cable street March
+	id = eng_armor.832
+	title = eng_armor.832.t
+	desc = eng_armor.832.d
+	picture = GFX_report_event_generic_riot
+
+	trigger = {
+		tag = ENG
+		date > 1936.10.1
+		OR = {
+			has_completed_focus = ENG_steady_as_she_goes
+			has_completed_focus = ENG_the_kings_party
+		}
+		NOT = { has_country_flag = Radical_parties_banned }
+	}
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = cable_street_marches
+		}
+	}
+
+	option = {
+		name = eng_armor.832.a
+		custom_effect_tooltip = ENG_cable_street_march_tt
+		hidden_effect = {
+			add_to_variable = { ENG_radicalists_influence = -1 }
+			add_to_variable = { ENG_radicalists_stability_factor = -0.05 }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.832.b
+		add_political_power = 50
+		custom_effect_tooltip = ENG_cable_street_march_tt_2
+		hidden_effect = {
+			add_to_variable = { ENG_radicalists_influence = -1 }
+			add_to_variable = { ENG_radicalists_stability_factor = -0.05 }
+			add_to_variable = { ENG_radicalists_attitude = -1 }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = no
+			}
+		}
+	}
+}
+
+country_event = { #Lancashire Marches
+	id = eng_armor.833
+	title = eng_armor.833.t
+	desc = eng_armor.833.d
+	picture = GFX_report_event_eng_blackshirt_march
+
+	trigger = {
+		tag = ENG
+		date > 1937.1.1
+		OR = {
+			has_completed_focus = ENG_steady_as_she_goes
+			has_completed_focus = ENG_the_kings_party
+		}
+		has_country_flag = cable_street_marches
+		NOT = { has_country_flag = Radical_parties_banned }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = Blackshirt_marches_begin
+			set_country_flag = lancashire_marches
+		}
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = eng_armor.833.a
+		custom_effect_tooltip = ENG_lancashire_march_tt
+		hidden_effect = {
+			add_to_variable = { ENG_radicalists_influence = 2 }
+			add_to_variable = { ENG_radicalists_political_power_gain = -0.05 }
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	option = {
+		name = eng_armor.833.b
+		custom_effect_tooltip = ENG_lancashire_march_tt
+		hidden_effect = {
+			add_to_variable = { ENG_radicalists_influence = 2 }
+			add_to_variable = { ENG_radicalists_political_power_gain = -0.05 }
+			set_country_flag = Radical_party_discourse_open
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+country_event = { #London City Council Elections
+	id = eng_armor.834
+	title = eng_armor.834.t
+	desc = eng_armor.834.d
+	picture = GFX_report_event_eng_good_blackshirt_march
+
+	trigger = {
+		tag = ENG
+		date > 1937.3.1
+		OR = {
+			has_completed_focus = ENG_steady_as_she_goes
+			has_completed_focus = ENG_the_kings_party
+		}
+		has_country_flag = lancashire_marches
+		NOT = { has_country_flag = Radical_parties_banned }
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = eng_armor.834.a
+		trigger = {
+			NOT = { has_country_flag = Blackshirts_befriended }
+		}
+		custom_effect_tooltip = ENG_london_city_council_elections_tt
+		hidden_effect = {
+			add_to_variable = { ENG_radicalists_influence = 1 }
+			add_to_variable = { ENG_radicalists_political_power_gain = -0.05 }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = eng_armor.834.b
+		trigger = {
+			has_country_flag = Blackshirts_befriended
+		}
+		custom_effect_tooltip = ENG_london_city_council_elections_2_tt
+		custom_effect_tooltip = ENG_london_city_council_elections_3_tt
+		hidden_effect = {
+			add_to_variable = { ENG_radicalists_influence = 1 }
+			add_to_variable = { ENG_radicalists_political_power_gain = 0.05 }
+			add_to_variable = { ENG_labour_attitude = -1 }
+			add_to_variable = { ENG_conservative_attitude = -1 }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #Radical party Banned
+	id = eng_armor.835
+	title = eng_armor.835.t
+	desc = eng_armor.835.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = Radical_parties_banned
+		}
+	}
+
+	option = {
+		name = eng_armor.835.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #Radical Party protest against war with Germany
+	id = eng_armor.836
+	title = eng_armor.836.t
+	desc = eng_armor.836.d
+
+	trigger = {
+		tag = ENG
+		has_war_with = GER
+		NOT = { has_war_with = SOV }
+		NOT = { has_country_flag = Radical_parties_banned }
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = eng_armor.836.a
+		custom_effect_tooltip = ENG_Radical_party_protest_tt
+		hidden_effect = {
+			add_to_variable = { ENG_radicalists_attitude = -2 }
+			add_to_variable = { ENG_radicalists_political_power_gain = -0.05 }
+			add_to_variable = { ENG_radicalists_stability_factor = -0.05 }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #Radical Party support for war with SU
+	id = eng_armor.837
+	title = eng_armor.837.t
+	desc = eng_armor.837.d
+
+	trigger = {
+		tag = ENG
+		has_war_with = SOV
+		NOT = { has_war_with = GER }
+		check_variable = { ENG_radicalists_influence = 1 compare = greater_than_or_equals }
+		NOT = { has_country_flag = Radical_parties_banned }
+		has_country_flag = Blackshirts_befriended
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = eng_armor.837.a
+		custom_effect_tooltip = ENG_Radical_party_support_tt
+		hidden_effect = {
+			add_to_variable = { ENG_radicalists_attitude = 2 }
+			add_to_variable = { ENG_radicalists_political_power_gain = 0.05 }
+			add_to_variable = { ENG_radicalists_stability_factor = 0.05 }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+####################################### Blitz
+
+#country_event = { #London Bombing
+#	id = eng_armor.838
+#	title = eng_armor.838.t
+#	desc = eng_armor.838.d
+#
+#	trigger = {
+#		tag = ENG
+#		has_war = yes
+#		857 = {
+#			is_controlled_by = ENG
+#			days_since_last_strategic_bombing < 1
+#		}
+#		126 = {
+#			is_controlled_by = ENG
+#			days_since_last_strategic_bombing < 1
+#		}
+#		126 = {
+#			is_controlled_by = ENG
+#			days_since_last_strategic_bombing < 1
+#		}
+#		126 = {
+#			is_controlled_by = ENG
+#			days_since_last_strategic_bombing < 1
+#		}
+#	}
+#
+#	fire_only_once = yes
+#
+#	option = {
+#		name = eng_armor.837.a
+#		hidden_effect = {
+#			set_country_flag = London_bombing
+#		}
+#		every_state = {
+#			limit = {
+#				OR = {
+#					state = 857
+#					state = 127
+#					state = 126
+#					state = 961
+#					state = 125
+#					state = 860
+#					state = 858
+#					state = 338
+#					state = 859
+#					state = 123
+#				}
+#			}
+#			add_dynamic_modifier = { modifier = urban_areas_bombed }
+#		}
+#		ai_chance = {
+#			factor = 1
+#		}
+#	}
+#}
+
+############################################ Peace with the Soviets?
+
+country_event = {
+	id = eng_armor.840
+	title = eng_armor.840.t
+	desc = eng_armor.840.d
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_war_with = GER
+		has_war_with = SOV
+		NOT = { SOV = { is_in_faction_with = GER } }
+		OR = {
+			is_in_faction = no
+			is_faction_leader = yes
+		}
+		OR = {
+			NOT = { is_in_faction_with = POL }
+			POL = { has_capitulated = yes }
+		}
+		has_capitulated = no
+		is_historical_focus_on = yes
+	}
+
+	option = {
+		name = eng_armor.840.a
+		SOV = { country_event = { id = eng_armor.841 hours = 6 } }
+		effect_tooltip = {
+			every_country = {
+				limit = {
+					has_war_with = SOV
+					OR = {
+						tag = ENG
+						is_in_faction_with = ENG
+						is_subject_of = ENG
+					}
+				}
+				white_peace = SOV
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = eng_armor.840.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.841
+	title = eng_armor.841.t
+	desc = eng_armor.841.d
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.841.a
+		if = {
+			limit = { SOV = { SOV_is_stalinist = yes } }
+			white_peace = ENG
+		}
+		else = {
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+					is_major = no
+					is_puppet = no
+					any_core_state = {
+						controller = {
+							tag = SOV
+						}
+					}
+				}
+				leave_faction = yes
+			}
+			white_peace = ENG
+			ENG = {
+				set_truce = {
+					target = SOV
+					days = 180
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = eng_armor.841.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+####################################### Merchant fleet evacuation
+
+country_event = {
+	id = eng_armor.842
+	title = eng_armor.842.t
+	desc = eng_armor.842.d
+
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.842.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+####################################### UK demands Danish Colonies
+
+country_event = {
+	id = eng_armor.843
+	title = eng_armor.843.t
+	desc = eng_armor.843.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.843.a
+		ai_chance = {
+			factor = 1
+		}
+		add_war_support = 0.3
+		add_stability = -0.5
+		ENG = {
+			country_event = {
+				id = eng_armor.844
+				hours = 6
+			}
+		}
+		effect_tooltip = {
+			if = {
+				limit = {
+					DEG = {
+						is_subject_of = DEN
+					}
+				}
+				effect_tooltip = {
+					ENG = {
+						annex_country = { target = DEG }
+					}
+				}
+			}
+			if = {
+				limit = {
+					ICE = {
+						is_subject_of = DEN
+					}
+				}
+				effect_tooltip = {
+					ENG = {
+						annex_country = { target = ICE }
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.843.b
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				is_in_faction = no
+			}
+		}
+		ENG = {
+			country_event = {
+				id = eng_armor.845
+				hours = 6
+			}
+		}
+		if = {
+			limit = {
+				DEG = {
+					is_subject_of = DEN
+				}
+			}
+			effect_tooltip = {
+				ENG = {
+					create_wargoal = {
+						type = annex_everything
+						target = DEG
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ICE = {
+					is_subject_of = DEN
+				}
+			}
+			effect_tooltip = {
+				ENG = {
+					create_wargoal = {
+						type = annex_everything
+						target = ICE
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.844
+	title = eng_armor.844.t
+	desc = eng_armor.844.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.844.a
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				DEG = {
+					is_subject_of = DEN
+				}
+			}
+			ENG = {
+				annex_country = { target = DEG }
+			}
+			add_named_threat = { threat = 5 name = ENG_annexed_greenland }
+		}
+		if = {
+			limit = {
+				ICE = {
+					is_subject_of = DEN
+				}
+			}
+			ENG = {
+				annex_country = { target = ICE }
+			}
+			add_named_threat = { threat = 5 name = ENG_annexed_iceland }
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.845
+	title = eng_armor.845.t
+	desc = eng_armor.845.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.845.a
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = ENG_limited_invasion_tt
+		if = {
+			limit = {
+				DEG = {
+					is_subject_of = DEN
+				}
+			}
+			ENG = {
+				create_wargoal = {
+					type = annex_everything
+					target = DEG
+				}
+			}
+		}
+		if = {
+			limit = {
+				ICE = {
+					is_subject_of = DEN
+				}
+			}
+			ENG = {
+				create_wargoal = {
+					type = annex_everything
+					target = ICE
+				}
+			}
+		}
+		set_country_flag = ENG_island_limited_invasion_den
+	}
+}
+
+####################################### Ghazi warns of Iraq
+
+country_event = {
+	id = eng_armor.846
+	title = eng_armor.846.t
+	desc = eng_armor.846.d
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.846.a
+	}
+}
+
+####################################### Soviet accepts a joint invasion
+
+country_event = {
+	id = eng_armor.847
+	title = eng_armor.847.t
+	desc = eng_armor.847.d
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.847.a
+		SOV = {
+			create_wargoal = {
+				type = take_state
+				generator = { 419 420 266 418 416 }
+				target = PER
+			}
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			declare_war_on = {
+				target = PER
+				type = take_state_focus
+				generator = { 410 421 417 413 411 412 414 }
+			}
+		}
+		else = {
+			ENG = {
+				create_wargoal = {
+					type = take_state
+					generator = { 410 421 417 413 411 412 414 }
+					target = PER
+				}
+			}
+		}
+	}
+}
+
+####################################### Soviet rejects a joint invasion
+
+country_event = {
+	id = eng_armor.848
+	title = eng_armor.848.t
+	desc = eng_armor.848.d
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.848.a
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			declare_war_on = {
+				target = PER
+				type = take_state_focus
+				generator = { 419 420 266 418 416 410 421 417 413 411 412 414 }
+			}
+		}
+		else = {
+			ENG = {
+				create_wargoal = {
+					type = take_state
+					generator = { 419 420 266 418 416 410 421 417 413 411 412 414 }
+					target = PER
+				}
+			}
+		}
+	}
+	option = {
+		name = eng_armor.848.b
+	}
+}
+
+####################################### Post war British Elections
+
+country_event = {
+	id = eng_armor.849
+	title = eng_armor.849.t
+	desc = eng_armor.849.d
+
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.849.a
+		retire_country_leader = yes
+		promote_character = ENG_clement_attlee
+		news_event = { id = afo_news.46 hours = 6 }
+	}
+
+	option = {
+		name = eng_armor.849.b
+		add_stability = -0.1
+		news_event = { id = afo_news.47 hours = 6 }
+	}
+}
+
+####################################### Commitments to France
+
+country_event = {
+	id = eng_armor.850
+	title = eng_armor.850.t
+	desc = eng_armor.850.d
+	picture = GFX_report_event_worried_french
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = no
+		is_in_faction_with = FRA
+		has_war_with = GER
+	}
+
+	option = {
+		name = eng_armor.850.a
+		custom_effect_tooltip = ENG_commitments_to_france_tt
+	}
+}
+
+country_event = {
+	id = eng_armor.851
+	title = eng_armor.851.t
+	desc = eng_armor.851.d
+	picture = GFX_report_event_british_bef
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.851.a
+		custom_effect_tooltip = ENG_commitments_to_france_tt
+	}
+}
+
+#Fail
+country_event = {
+	id = eng_armor.852
+	title = eng_armor.852.t
+	desc = eng_armor.852.d
+	picture = GFX_report_event_british_bef
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.852.a
+		add_opinion_modifier = { target = ENG modifier = backstabbed }
+		leave_faction = yes
+		set_rule = {
+			can_create_factions = yes
+		}
+		create_faction = FRA_little_entente
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ENG
+				NOT = {
+					is_subject_of = ENG
+					tag = ENG
+				}
+			}
+			FRA = {
+				add_to_faction = PREV
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.853
+	title = eng_armor.853.t
+	desc = eng_armor.853.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.853.a
+		custom_effect_tooltip = ENG_commitments_to_france_tt_2
+	}
+}
+
+####################################### Fall of the empire
+
+country_event = {
+	id = eng_armor.854
+	title = eng_armor.854.t
+	desc = eng_armor.854.d
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		check_variable = { economic_fatigue > 49 }
+		has_war = no
+		date > 1943.1.1
+		num_subjects > 0
+		NOT = { has_completed_focus = ENG_imperial_federation }
+		has_completed_focus = ENG_the_empires_sterling_reserves
+	}
+
+	option = {
+		name = eng_armor.854.a
+		add_ideas = ENG_empire_bankrupt_1
+		every_country = {
+			limit = {
+				is_subject_of = ROOT
+			}
+			add_ideas = ENG_empire_collapsing
+		}
+		activate_mission = economy_fatigue_empire_mission
+	}
+}
+
+country_event = {
+	id = eng_armor.855
+	hidden = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		OR = {
+			has_idea = ENG_empire_bankrupt_1
+			has_idea = ENG_empire_bankrupt_2
+			has_idea = ENG_empire_bankrupt_3
+			has_idea = ENG_empire_bankrupt_4
+			has_idea = ENG_empire_bankrupt_5
+			has_idea = ENG_empire_bankrupt_6
+			has_idea = ENG_empire_bankrupt_7
+			has_idea = ENG_empire_bankrupt_8
+			has_idea = ENG_empire_bankrupt_9
+			has_idea = ENG_empire_bankrupt_10
+		}
+		num_subjects < 0
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_1
+			}
+			remove_ideas = ENG_empire_bankrupt_1
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_2
+			}
+			remove_ideas = ENG_empire_bankrupt_2
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_3
+			}
+			remove_ideas = ENG_empire_bankrupt_3
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_4
+			}
+			remove_ideas = ENG_empire_bankrupt_4
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_5
+			}
+			remove_ideas = ENG_empire_bankrupt_5
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_6
+			}
+			remove_ideas = ENG_empire_bankrupt_6
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_7
+			}
+			remove_ideas = ENG_empire_bankrupt_7
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_8
+			}
+			remove_ideas = ENG_empire_bankrupt_8
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_9
+			}
+			remove_ideas = ENG_empire_bankrupt_9
+		}
+		if = {
+			limit = {
+				has_idea = ENG_empire_bankrupt_10
+			}
+			remove_ideas = ENG_empire_bankrupt_10
+		}
+	}
+}
+
+####################################### Dealing with the IRA
+
+
+country_event = {
+	id = eng_armor.856
+	title = eng_armor.856.t
+	desc = eng_armor.856.d
+	picture = GFX_report_event_usa_joins_the_war
+
+	mean_time_to_happen = { days = 1 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_in_faction_with = USA
+		NOT = { is_in_faction_with = GER }
+		NOT = { is_in_faction_with = SOV }
+		any_enemy_country = {
+			is_major = yes
+		}
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = eng_armor.856.a
+		add_stability = 0.1
+		add_war_support = 0.1
+	}
+}
+
+####################################### UK demands Portugese Islands
+
+country_event = {
+	id = eng_armor.857
+	title = eng_armor.857.t
+	desc = eng_armor.857.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.857.a
+		ai_chance = {
+			factor = 1
+		}
+		add_war_support = 0.3
+		add_stability = -0.5
+		ENG = {
+			country_event = {
+				id = eng_armor.858
+				hours = 6
+			}
+		}
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 679
+				}
+				effect_tooltip = {
+					ENG = {
+						transfer_state = 679
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 698
+				}
+				effect_tooltip = {
+					ENG = {
+						transfer_state = 698
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 702
+				}
+				effect_tooltip = {
+					ENG = {
+						transfer_state = 702
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 705
+				}
+				effect_tooltip = {
+					ENG = {
+						transfer_state = 705
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = eng_armor.857.b
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				is_in_faction = no
+			}
+		}
+		ENG = {
+			country_event = {
+				id = eng_armor.859
+				hours = 6
+			}
+		}
+		effect_tooltip = {
+			ENG = {
+				create_wargoal = {
+					target = POR
+					type = annex_everything
+					generator = {
+						679
+						698
+						702
+						705
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.858
+	title = eng_armor.858.t
+	desc = eng_armor.858.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.858.a
+		ai_chance = {
+			factor = 1
+		}
+		every_state = {
+			limit = {
+				OR = {
+					state = 679
+					state = 698
+					state = 702
+					state = 705
+				}
+				is_controlled_by = POR
+			}
+			transfer_state_to = ENG
+		}
+	}
+}
+
+country_event = {
+	id = eng_armor.859
+	title = eng_armor.859.t
+	desc = eng_armor.859.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = eng_armor.859.a
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = ENG_limited_invasion_tt
+		create_wargoal = {
+			target = POR
+			type = annex_everything
+			generator = {
+				679
+				698
+				702
+				705
+			}
+		}
+		set_country_flag = ENG_island_limited_invasion_por
+	}
+}
+
+####################################### a change in course event chain
+
+country_event = { #chamberlain refuses premiership
+	id = eng_armor.860
+	title = eng_armor.860.t
+	desc = eng_armor.860.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = {
+			id = eng_armor.861
+			days = 5
+		}
+	}
+
+	option = {
+		name = eng_armor.860.a
+	}
+}
+
+
+country_event = { # Government falls
+	id = eng_armor.861
+	title = eng_armor.861.t
+	desc = eng_armor.861.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	trigger = { NOT = { has_country_flag = ENG_abdication_crisis_changed_mind } }
+
+	# Ok
+	option = {
+		name = eng_armor.861.a
+		add_political_power = -150
+		custom_effect_tooltip = ENG_government_fallen_tt
+		hidden_effect = {
+			set_variable = { ENG_labour_attitude = -3 }
+			set_variable = { ENG_conservative_attitude = -2 }
+			set_variable = { ENG_labour_stability_factor = -0.10 }
+			set_variable = { ENG_conservative_stability_factor = -0.10 }
+		}
+		retire_country_leader = yes
+		promote_character = {
+			character = ENG_fallen_government
+			ideology = conservatism
+		}
+		multiply_variable = {
+			commons_support
+    		= 0.1
+			tooltip = ENG_fallen_government_support_loss_commons
+		}
+		multiply_variable = {
+			lords_support
+    		= 0.1
+			tooltip = ENG_fallen_government_support_loss_lords
+		}
+		round_variable = commons_support
+		round_variable = lords_support
+		ENG_recalc_parliament_icon_frames = yes
+		set_country_flag = ENG_abdication_crisis_government_fell
+		# every_character = {
+		# 	limit = {
+		# 		is_character_slot = political_advisor
+		# 	}
+		# 	deactivate_advisor = this
+		# }
+		deactivate_advisor = ENG_edward_halifax
+		deactivate_advisor = ENG_ernest_bevin
+		deactivate_advisor = ENG_anthony_eden
+		deactivate_advisor = ENG_nevile_henderson
+		deactivate_advisor = ENG_winston_churchill
+		deactivate_advisor = ENG_james_chuter_ede
+		deactivate_advisor = ENG_herbert_morrison
+		deactivate_advisor = ENG_samuel_hoare
+		deactivate_advisor = ENG_oswald_mosley
+		deactivate_advisor = ENG_maxwell_aitken
+		deactivate_advisor = ENG_john_simon
+		deactivate_advisor = ENG_kingsley_wood
+		deactivate_advisor = ENG_hugh_dalton
+		deactivate_advisor = ENG_leslie_burgin
+		deactivate_advisor = ENG_frederick_leathers
+		deactivate_advisor = ENG_alfred_barnes
+		deactivate_advisor = ENG_harry_pollitt
+		deactivate_advisor = eng_stewart_menzies
+		deactivate_advisor = ENG_brendan_bracken
+		deactivate_advisor = ENG_john_beckett
+		deactivate_advisor = ENG_mary_sophia_allen
+		deactivate_advisor = ENG_philip_kerr
+		deactivate_advisor = ENG_leslie_hore_belisha
+		deactivate_advisor = ENG_george_orwell
+		deactivate_advisor = ENG_sylvia_pankhurst
+		deactivate_advisor = ENG_david_lloyd_george
+	}
+}
+
+####################################### Cheats
+
+
+##############Loicense mate
+
+country_event = {
+	id = eng_armor.937
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		is_in_faction_with = USA
+		USA = {
+			has_tech = usa_heavy_infantry_weapons_3
+		}
+	}
+
+	immediate = {
+		USA = {
+			create_production_license = {
+				target = ENG
+				equipment = {
+					type = usa_hv_inf_3
+				}
+				cost_factor = 0
+			}
+		}
+	}
+	
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.938
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		is_in_faction_with = USA
+		USA = {
+			has_tech = usa_heavy_infantry_weapons_4
+		}
+	}
+
+	immediate = {
+		USA = {
+			create_production_license = {
+				target = ENG
+				equipment = {
+					type = usa_hv_inf_4
+				}
+				cost_factor = 0
+			}
+		}
+	}
+	
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.939
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		is_in_faction_with = USA
+		USA = {
+			has_tech = usa_heavy_infantry_weapons_5
+		}
+	}
+
+	immediate = {
+		USA = {
+			create_production_license = {
+				target = ENG
+				equipment = {
+					type = usa_hv_inf_5
+				}
+				cost_factor = 0
+			}
+		}
+	}
+	
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.940
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		is_in_faction_with = USA
+		USA = {
+			has_tech = usa_heavy_infantry_weapons_6
+		}
+	}
+
+	immediate = {
+		USA = {
+			create_production_license = {
+				target = ENG
+				equipment = {
+					type = usa_hv_inf_6
+				}
+				cost_factor = 0
+			}
+		}
+	}
+	
+	option = {}
+}
+
+country_event = {
+	id = eng_armor.941
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		GER = {
+			has_war_with = SOV
+		}
+	}
+
+	immediate = {
+		set_technology = {
+			dispersed_industry = 0
+		}
+		set_technology = {
+			concentrated_industry = 1
+		}
+	}
+	
+	option = {}
+}
