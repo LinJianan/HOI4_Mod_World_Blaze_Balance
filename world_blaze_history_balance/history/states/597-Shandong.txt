@@ -1,0 +1,33 @@
+state = {
+	id = 597
+	name ="STATE_597"
+	manpower = 28171200
+	state_category = megalopolis
+	resources = {
+		bauxite = 600
+		coal = 1200
+		iron = 200
+	}
+
+	history = {
+		owner = SHA
+		add_core_of = SHA
+		add_core_of = CHI
+		#
+		victory_points = {
+			1069 5
+		}
+		victory_points = {
+			7089 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 12
+			arms_factory = 3
+			air_base = 5
+		}
+	}
+	provinces = {
+		1069 1084 1124 1154 1184 4037 4071 4089 4157 4181 7055 7089 7160 7189 9971 9987 10043 10072 10102 11933 11962 12015 12045 12069 12074 12093 13658 
+	}
+}

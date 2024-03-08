@@ -1,0 +1,27 @@
+
+state = {
+	id = 608
+	name ="STATE_608"
+	manpower = 6241000
+
+	state_category = megalopolis
+
+	history = {
+		owner = HPC
+		add_core_of = HPC
+		add_core_of = CHI
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 15
+			arms_factory = 6
+			air_base = 7
+		}
+		victory_points = {
+			9843 30
+		}
+	}
+
+	provinces = {
+		9843 11761
+	}
+}

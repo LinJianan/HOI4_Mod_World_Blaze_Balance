@@ -1,0 +1,30 @@
+
+state = {
+	id = 594
+	name ="STATE_594"
+	manpower = 4650000
+	state_category = megalopolis
+	resources = {
+		iron = 150
+		chromium = 30 # was: 4
+	}
+
+	history = {
+		owner = GXC
+		add_core_of = GXC
+		add_core_of = CHI
+		#
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 9
+			arms_factory = 3
+		}
+		victory_points = {
+			7137 10
+		}
+	}
+
+	provinces = {
+		4121 4177 7137 13440
+	}
+}
